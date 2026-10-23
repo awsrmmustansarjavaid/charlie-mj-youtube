@@ -556,7 +556,7 @@ function collectModes(){
   document.querySelectorAll('.threshold').forEach(x=>next[x.dataset.mode]={...(next[x.dataset.mode]||{}),[x.dataset.key]:Number(x.value)});
   const selectedValues=id=>{const el=$(id);if(!el)return[];try{if(el.dataset.selected){const parsed=JSON.parse(el.dataset.selected);if(Array.isArray(parsed))return parsed.filter(Boolean);if(parsed!=null&&parsed!=='')return[String(parsed)];}}catch(_){}return Array.from(el.selectedOptions||[]).map(v=>v.value).filter(Boolean)};
   next.tech={...(next.tech||{}),profileId:$('#techProfile').value||'devops',targetLanguage:$('#techTargetLanguage').value||'en',contentLanguages:selectedValues('#techLangs'),country:$('#techCountry').value||'GLOBAL'};
-  next.languageLearning={...(next.languageLearning||{}),learningLanguage:$('#learnLang').value,contentLanguages:selectedValues('#learnContentLangs'),country:$('#learnCountry').value||'GLOBAL',focus:Number($('#learnFocus').value||70),goals:lines('#learnGoals')};
+  next.languageLearning={...(next.languageLearning||{}),profileId: $('#languageLearningProfile').value || 'default',learningLanguage:$('#learnLang').value,contentLanguages:selectedValues('#learnContentLangs'),country:$('#learnCountry').value||'GLOBAL',focus:Number($('#learnFocus').value||70),goals:lines('#learnGoals')};
   next.niches={...(next.niches||{}),profileId:$('#nicheProfile').value||'technology',targetLanguage:$('#nicheTargetLanguage').value||'en',contentLanguages:selectedValues('#nicheLangs'),country:$('#nicheCountry').value||'GLOBAL'};
   next.productivity={...(next.productivity||{}),focusLevel:$('#focusLevel').value};
   const active=$('#activeMode').value;
@@ -572,7 +572,89 @@ async function saveModesNow(){
   return settings;
 }
 
+async function loadModeProfiles() {
+  const stored = await chrome.storage.local.get([
+    'techProfiles',
+    'languageProfiles',
+    'nicheProfiles'
+  ]);
+
+  return {
+    tech: Array.isArray(stored.techProfiles)
+      ? stored.techProfiles
+      : [],
+
+    languageLearning: Array.isArray(stored.languageProfiles)
+      ? stored.languageProfiles
+      : [],
+
+    niches: Array.isArray(stored.nicheProfiles)
+      ? stored.nicheProfiles
+      : []
+  };
+}
+
+function buildCustomProfileOptions(profiles) {
+  if (!Array.isArray(profiles)) return '';
+
+  return profiles
+    .filter(profile => profile && profile.id)
+    .map(profile => {
+      const id = String(profile.id);
+      const name = String(profile.name || profile.title || id);
+
+      return `<option value="${esc(id)}">${esc(name)}</option>`;
+    })
+    .join('');
+}
+
+async function refreshModeProfiles() {
+  const currentTechProfile =
+    $('#techProfile')?.value || settings.modeSettings?.tech?.profileId || '';
+
+  const currentLanguageProfile =
+    $('#learnProfile')?.value ||
+    settings.modeSettings?.languageLearning?.profileId ||
+    '';
+
+  const currentNicheProfile =
+    $('#nicheProfile')?.value ||
+    settings.modeSettings?.niches?.profileId ||
+    '';
+
+  await renderModes();
+
+  if (currentTechProfile && $('#techProfile')) {
+    $('#techProfile').value = currentTechProfile;
+  }
+
+  if (currentLanguageProfile && $('#learnProfile')) {
+    $('#learnProfile').value = currentLanguageProfile;
+  }
+
+  if (currentNicheProfile && $('#nicheProfile')) {
+    $('#nicheProfile').value = currentNicheProfile;
+  }
+}
+
+function filterModeProfileSelect(selectId, searchId) {
+  const select = document.getElementById(selectId);
+  const search = document.getElementById(searchId);
+
+  if (!select || !search) return;
+
+  const query = String(search.value || '').trim().toLowerCase();
+
+  [...select.options].forEach(option => {
+    const text =
+      `${option.textContent} ${option.value}`.toLowerCase();
+
+    option.hidden = Boolean(query && !text.includes(query));
+  });
+}
+
 async function renderModes(){
+  const modeProfiles = await loadModeProfiles();
   sharedLanguageCatalog = await loadLanguageCatalog();
   const ms = settings.modeSettings || {};
   const modes = [
@@ -585,6 +667,16 @@ async function renderModes(){
   ];
   const countryOpts = countryData?.countries?.map(c => `<option value="${esc(c.code)}">${esc(c.name)} (${esc(c.code)})</option>`).join("") || "";
   const tech = ms.tech || {}, lang = ms.languageLearning || {};
+
+  const customTechProfileOptions =
+    buildCustomProfileOptions(modeProfiles.tech);
+
+  const customLanguageProfileOptions =
+    buildCustomProfileOptions(modeProfiles.languageLearning);
+
+  const customNicheProfileOptions =
+    buildCustomProfileOptions(modeProfiles.niches);
+  
   const techLangs = Array.isArray(tech.contentLanguages) ? tech.contentLanguages : [];
   const learnLangs = Array.isArray(lang.contentLanguages) ? lang.contentLanguages : [];
   const langOptionMarkup = (selected, query='') => { const safeSelected=Array.isArray(selected)?selected.filter(Boolean):selected==null||selected===''?[]:[String(selected)]; const selectedSet=new Set(safeSelected.map(String).map(v=>v.toLowerCase())); return optionList(sharedLanguageCatalog.languages,safeSelected,query,sharedLanguageCatalog.languages.length).map(x=>`<option value="${esc(languageKey(x))}" ${selectedSet.has(languageKey(x))?'selected':''}>${esc(x.name)}${x.alpha_2?` (${esc(x.alpha_2)})`:x.alpha_3?` (${esc(x.alpha_3)})`:''}</option>`).join(''); };
@@ -593,16 +685,16 @@ async function renderModes(){
     return `<div class="card form mode-card">
       <div class="section-heading"><div><h3>${n}</h3><p class="muted">${d}</p></div>${id==='tech'?'<button class="btn danger-btn" id="resetTechMode">Reset Tech</button>':id==='languageLearning'?'<button class="btn danger-btn" id="resetLanguageMode">Reset Language Learning</button>':id==='niches'?'<button class="btn danger-btn" id="resetNicheMode">Reset Niches</button>':''}</div>
       <label class="check"><input class="modeEnable" data-mode="${id}" type="checkbox" ${c.enabled?'checked':''}> Enable mode</label>
-      ${id==='tech'?`<div class="field"><label>Tech profile</label><select id="techProfile"><option value="devops">DevOps Engineer</option><option value="frontend-developer">Frontend Developer</option><option value="backend-developer">Backend Developer</option><option value="full-stack-developer">Full Stack Developer</option><option value="network-engineer">Network Engineer</option><option value="cybersecurity">Cybersecurity</option><option value="cloud-engineer">Cloud Engineer</option><option value="data-engineer">Data Engineer</option><option value="graphic-designer">Graphic Designer</option><option value="ui-ux-designer">UI/UX Designer</option><option value="database-engineer">Database Engineer</option><option value="ai-ml-engineer">AI/ML Engineer</option><option value="student">Student</option><option value="researcher">Researcher</option><option value="custom">Custom</option></select></div>
+      ${id==='tech'?`<div class="field"><label>Tech profile</label><select id="techProfile"><option value="devops">DevOps Engineer</option><option value="frontend-developer">Frontend Developer</option><option value="backend-developer">Backend Developer</option><option value="full-stack-developer">Full Stack Developer</option><option value="network-engineer">Network Engineer</option><option value="cybersecurity">Cybersecurity</option><option value="cloud-engineer">Cloud Engineer</option><option value="data-engineer">Data Engineer</option><option value="graphic-designer">Graphic Designer</option><option value="ui-ux-designer">UI/UX Designer</option><option value="database-engineer">Database Engineer</option><option value="ai-ml-engineer">AI/ML Engineer</option><option value="student">Student</option><option value="researcher">Researcher</option><option value="custom">Custom</option>${customTechProfileOptions}</select></div>
       <div class="field"><label>Target Language — 7,000+ master catalog</label><input id="techTargetLanguageSearch" placeholder="Search target language…"><select id="techTargetLanguage" class="language-single" size="7">${langOptionMarkup(tech.targetLanguage?[tech.targetLanguage]:["en"])}</select><small class="muted">Country selection automatically suggests the country's primary/national language. You can manually change it.</small></div>
       <div class="field"><label>Content languages — 7,000+ master catalog</label><input id="techLangSearch" placeholder="Search languages…"><select id="techLangs" class="language-multi" multiple size="7">${langOptionMarkup(techLangs)}</select><small class="muted">Hold Ctrl/Cmd to select multiple. The same master catalog is used here and in Language Learning Mode.</small></div>
       <div class="field"><label>Target Country</label><select id="techCountry">${countryOpts}</select><button class="btn" id="techCountryLanguage" type="button" style="margin-top:8px">Use Country Language</button><small class="muted">Selecting a country automatically sets Target Language and Content Languages. You can then change either field manually.</small></div>`:''}
-      ${id==='languageLearning'?`<div class="field"><label>Target / Learning Language — 7,000+ master catalog</label><input id="learnLangSearch" placeholder="Search learning languages…"><select id="learnLang" class="language-single" size="7">${langOptionMarkup(lang.learningLanguage?[lang.learningLanguage]:[])}</select></div>
+      ${id==='languageLearning'?`<div class="field"><label>Language Learning Profile</label><select id="languageLearningProfile"><option value="default">Default — Current Language Settings</option><option value="custom">Custom</option>${customLanguageProfileOptions}</select><small class="muted">Optional. Leave Default to use the existing language and country settings.</small></div><div class="field"><label>Target / Learning Language — 7,000+ master catalog</label><input id="learnLangSearch" placeholder="Search learning languages…"><select id="learnLang" class="language-single" size="7">${langOptionMarkup(lang.learningLanguage?[lang.learningLanguage]:[])}</select></div>
       <div class="field"><label>Content languages — 7,000+ master catalog</label><input id="learnContentLangSearch" placeholder="Search content languages…"><select id="learnContentLangs" class="language-multi" multiple size="7">${langOptionMarkup(learnLangs)}</select></div>
       <div class="field"><label>Target Country</label><select id="learnCountry">${countryOpts}</select><button class="btn" id="learnCountryLanguage" type="button" style="margin-top:8px">Use Country Language</button><small class="muted">Selecting a country automatically sets Target / Learning Language and Content Languages. You can then change either field manually.</small></div>
       <div class="field"><label>Learning Focus: Strict ↔ Relaxed</label><input id="learnFocus" type="range" min="0" max="100" value="${c.focus??70}"></div>
       <div class="field"><label>Goals</label><textarea id="learnGoals" rows="5">${esc((c.goals||['learn-language','listening','vocabulary','grammar','conversation','culture','news','reading','pronunciation']).join('\n'))}</textarea></div>`:''}
-      ${id==='niches'?`<div class="field"><label>Niche profile</label><select id="nicheProfile"><option value="technology">Technology</option><option value="photography">Photography</option><option value="travel">Travel</option><option value="cooking">Cooking</option><option value="personal-finance">Personal Finance</option><option value="fitness">Fitness</option><option value="books">Books & Reading</option><option value="science">Science</option><option value="history">History</option><option value="cars">Cars & Automotive</option><option value="gaming">Gaming</option><option value="music">Music</option><option value="fashion">Fashion</option><option value="entrepreneurship">Entrepreneurship</option><option value="custom">Custom</option></select></div>
+      ${id==='niches'?`<div class="field"><label>Niche profile</label><select id="nicheProfile"><option value="technology">Technology</option><option value="photography">Photography</option><option value="travel">Travel</option><option value="cooking">Cooking</option><option value="personal-finance">Personal Finance</option><option value="fitness">Fitness</option><option value="books">Books & Reading</option><option value="science">Science</option><option value="history">History</option><option value="cars">Cars & Automotive</option><option value="gaming">Gaming</option><option value="music">Music</option><option value="fashion">Fashion</option><option value="entrepreneurship">Entrepreneurship</option><option value="custom">Custom</option>${customNicheProfileOptions}</select></div>
       <div class="field"><label>Target Language — 7,000+ master catalog</label><input id="nicheTargetLanguageSearch" placeholder="Search target language…"><select id="nicheTargetLanguage" class="language-single" size="7">${langOptionMarkup(c.targetLanguage?[c.targetLanguage]:["en"])}</select></div>
       <div class="field"><label>Content languages — 7,000+ master catalog</label><input id="nicheLangSearch" placeholder="Search languages…"><select id="nicheLangs" class="language-multi" multiple size="7">${langOptionMarkup(Array.isArray(c.contentLanguages)?c.contentLanguages:[])}</select></div>
       <div class="field"><label>Target Country</label><select id="nicheCountry">${countryOpts}</select><button class="btn" id="nicheCountryLanguage" type="button" style="margin-top:8px">Use Country Language</button><small class="muted">Selecting a country automatically sets Target Language and Content Languages. You can then change either field manually.</small></div>`:''}
@@ -618,6 +710,7 @@ async function renderModes(){
   $('#techTargetLanguage').value=tech.targetLanguage||tech.contentLanguages?.[0]||'en';
   $('#techCountry').value=tech.country||'GLOBAL'; if(!$('#techCountry').value)$('#techCountry').value='GLOBAL';
   $('#learnCountry').value=lang.country||'GLOBAL'; if(!$('#learnCountry').value)$('#learnCountry').value='GLOBAL';
+  $('#languageLearningProfile').value=lang.profileId||'default';
   const niche = ms.niches || {};
   $('#nicheProfile').value=niche.profileId||'technology';
   $('#nicheTargetLanguage').value=niche.targetLanguage||niche.contentLanguages?.[0]||'en';
@@ -640,6 +733,19 @@ async function renderModes(){
     el.dataset.selected=JSON.stringify(values);
   };
   $('#techLangs').onchange=()=>rememberSelection($('#techLangs')); $('#learnContentLangs').onchange=()=>rememberSelection($('#learnContentLangs')); $('#learnLang').onchange=()=>rememberSelection($('#learnLang'));
+
+  $('#languageLearningProfile').onchange=()=>{
+    const profileId=$('#languageLearningProfile').value||'default';
+
+    if(profileId==='default'){
+      notify('Using current Language Learning settings.');
+      return;
+    }
+
+    notify('Language Learning profile selected.');
+  };
+
+
   $('#techTargetLanguage').onchange=()=>rememberSelection($('#techTargetLanguage'));
   $('#nicheLangs').onchange=()=>rememberSelection($('#nicheLangs')); $('#nicheTargetLanguage').onchange=()=>rememberSelection($('#nicheTargetLanguage'));
   const bindLanguageSearch=(searchId,selectId,fallback,multi)=>{
@@ -695,12 +801,83 @@ async function renderModes(){
   $('#openLangLearning').onclick=()=>chrome.tabs.create({url:chrome.runtime.getURL('src/language-learning/language-learning.html')});
   $('#openNiches').onclick=()=>chrome.tabs.create({url:chrome.runtime.getURL('src/niches/niches.html')});
   $('#openLibrary').onclick=()=>chrome.tabs.create({url:chrome.runtime.getURL('src/library/library.html')});
+
+  $('#refreshModeProfiles').onclick = async () => {
+    const button = $('#refreshModeProfiles');
+    const status = $('#modeProfileStatus');
+
+    if (!button) return;
+
+    const originalText = button.textContent;
+
+    try {
+      button.disabled = true;
+      button.textContent = '⏳ Loading...';
+
+      if (status) {
+        status.textContent = 'Loading saved profiles...';
+      }
+
+      await renderModes();
+
+    } catch (error) {
+      console.error('Failed to refresh mode profiles:', error);
+
+      if (status) {
+        status.textContent =
+          `Profile refresh failed: ${error.message}`;
+      }
+
+      notify(
+        `Profile refresh failed: ${error.message}`,
+        'error'
+      );
+
+    } finally {
+      const refreshedButton = $('#refreshModeProfiles');
+
+      if (refreshedButton) {
+        refreshedButton.disabled = false;
+        refreshedButton.textContent = originalText;
+      }
+    }
+  };
+
 }
+
 function renderDistraction(){const cats=Object.keys(settings.distraction?.categories||{});$('#content').innerHTML=`<div class="card form"><div class="section-heading"><h3>Distraction engine</h3><button class="btn danger-btn" id="resetDistraction">Reset</button></div><label class="check"><input id="dcEnabled" type="checkbox" ${settings.distraction?.enabled?'checked':''}> Enable distraction scoring</label><div class="field"><label>Default action</label><select id="dcAction"><option value="allow">Allow</option><option value="deprioritize">Deprioritize</option><option value="hide">Hide</option></select></div><div class="field"><label>Threshold</label><input id="dcThreshold" type="number" value="${settings.distraction?.threshold??60}"></div></div><div class="grid">${cats.map(c=>`<div class="card form"><strong>${c}</strong><select class="dcCat" data-cat="${c}"><option value="allow">Allow</option><option value="deprioritize">Deprioritize</option><option value="hide">Hide</option></select></div>`).join('')}</div>`;$('#dcAction').value=settings.distraction?.action||'deprioritize';cats.forEach(c=>document.querySelector(`.dcCat[data-cat="${c}"]`).value=settings.distraction.categories[c]);$('#resetDistraction').onclick=async()=>{settings=await saveSettings({distraction:JSON.parse(JSON.stringify(DEFAULTS.distraction))});notify('Distraction settings reset.');renderDistraction();};}
 async function renderStatistics() {
   const st = await getStats();
   const safe = value => Number(value || 0);
+
   $("#content").innerHTML = `
+    
+    <div class="card form">
+
+      <div class="section-heading">
+        <div>
+          <h3>Profile Library</h3>
+          <p class="muted">
+            Load all built-in and saved profiles for Tech,
+            Language Learning, and Niches.
+          </p>
+        </div>
+
+        <button
+          type="button"
+          class="btn"
+          id="refreshModeProfiles"
+        >
+          🔄 Refresh & Load Profiles
+        </button>
+      </div>
+
+      <div id="modeProfileStatus" class="muted">
+        Profiles are loaded automatically.
+      </div>
+
+    </div>
+  
     <div class="grid">
       <div class="card"><h3>Scanned</h3><div class="metric">${safe(st.videosScanned)}</div></div>
       <div class="card"><h3>Shown</h3><div class="metric">${safe(st.videosShown)}</div></div>
@@ -863,3 +1040,31 @@ async function init(){settings=await getSettings();await render();}
 init().catch(e=>{console.error(e);$("#content").innerHTML=`<div class="card"><h3 class="danger">Charlie MJ settings could not start</h3><p>${esc(e.message)}</p></div>`;});
 
 function stamp(){return new Date().toISOString().replace(/[-:]/g,'').replace(/\.\d{3}Z$/,'Z')}
+
+// Automatically refresh the Modes tab when Tech, Language Learning, or Niche profiles change.
+chrome.storage.onChanged.addListener(
+  async (changes, areaName) => {
+    if (areaName !== 'local') return;
+
+    const profileChanged =
+      changes.techProfiles ||
+      changes.languageProfiles ||
+      changes.nicheProfiles;
+
+    if (!profileChanged) return;
+
+    if (currentTab !== 'modes') return;
+
+    try {
+      await refreshModeProfiles();
+
+      notify('Mode profiles refreshed automatically.');
+    } catch (error) {
+      console.error(
+        'Automatic mode profile refresh failed:',
+        error
+      );
+    }
+  }
+);
+
