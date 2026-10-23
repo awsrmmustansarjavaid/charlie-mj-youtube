@@ -1,0 +1,58 @@
+{
+  "code": "ZA",
+  "alpha3": "ZAF",
+  "numeric": "710",
+  "name": "South Africa",
+  "capital": "Pretoria",
+  "regions": [
+    {
+      "code": "ZA-NC",
+      "name": "Northern Cape",
+      "type": "Province"
+    },
+    {
+      "code": "ZA-FS",
+      "name": "Free State",
+      "type": "Province"
+    },
+    {
+      "code": "ZA-NW",
+      "name": "North-West",
+      "type": "Province"
+    },
+    {
+      "code": "ZA-GP",
+      "name": "Gauteng",
+      "type": "Province"
+    },
+    {
+      "code": "ZA-WC",
+      "name": "Western Cape",
+      "type": "Province"
+    },
+    {
+      "code": "ZA-KZN",
+      "name": "Kwazulu-Natal",
+      "type": "Province"
+    },
+    {
+      "code": "ZA-LP",
+      "name": "Limpopo",
+      "type": "Province"
+    },
+    {
+      "code": "ZA-MP",
+      "name": "Mpumalanga",
+      "type": "Province"
+    },
+    {
+      "code": "ZA-EC",
+      "name": "Eastern Cape",
+      "type": "Province"
+    }
+  ],
+  "cities": [
+    "Pretoria"
+  ],
+  "keywords": []
+}

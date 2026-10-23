@@ -1,0 +1,148 @@
+{
+  "code": "BR",
+  "alpha3": "BRA",
+  "numeric": "076",
+  "name": "Brazil",
+  "capital": "Brasília",
+  "regions": [
+    {
+      "code": "BR-PB",
+      "name": "Paraíba",
+      "type": "State"
+    },
+    {
+      "code": "BR-PE",
+      "name": "Pernambuco",
+      "type": "State"
+    },
+    {
+      "code": "BR-PI",
+      "name": "Piauí",
+      "type": "State"
+    },
+    {
+      "code": "BR-PR",
+      "name": "Paraná",
+      "type": "State"
+    },
+    {
+      "code": "BR-RJ",
+      "name": "Rio de Janeiro",
+      "type": "State"
+    },
+    {
+      "code": "BR-RN",
+      "name": "Rio Grande do Norte",
+      "type": "State"
+    },
+    {
+      "code": "BR-RO",
+      "name": "Rondônia",
+      "type": "State"
+    },
+    {
+      "code": "BR-AC",
+      "name": "Acre",
+      "type": "State"
+    },
+    {
+      "code": "BR-RR",
+      "name": "Roraima",
+      "type": "State"
+    },
+    {
+      "code": "BR-AL",
+      "name": "Alagoas",
+      "type": "State"
+    },
+    {
+      "code": "BR-RS",
+      "name": "Rio Grande do Sul",
+      "type": "State"
+    },
+    {
+      "code": "BR-AM",
+      "name": "Amazonas",
+      "type": "State"
+    },
+    {
+      "code": "BR-SC",
+      "name": "Santa Catarina",
+      "type": "State"
+    },
+    {
+      "code": "BR-AP",
+      "name": "Amapá",
+      "type": "State"
+    },
+    {
+      "code": "BR-SE",
+      "name": "Sergipe",
+      "type": "State"
+    },
+    {
+      "code": "BR-BA",
+      "name": "Bahia",
+      "type": "State"
+    },
+    {
+      "code": "BR-SP",
+      "name": "São Paulo",
+      "type": "State"
+    },
+    {
+      "code": "BR-CE",
+      "name": "Ceará",
+      "type": "State"
+    },
+    {
+      "code": "BR-TO",
+      "name": "Tocantins",
+      "type": "State"
+    },
+    {
+      "code": "BR-DF",
+      "name": "Distrito Federal",
+      "type": "Federal district"
+    },
+    {
+      "code": "BR-ES",
+      "name": "Espírito Santo",
+      "type": "State"
+    },
+    {
+      "code": "BR-GO",
+      "name": "Goiás",
+      "type": "State"
+    },
+    {
+      "code": "BR-MA",
+      "name": "Maranhão",
+      "type": "State"
+    },
+    {
+      "code": "BR-MG",
+      "name": "Minas Gerais",
+      "type": "State"
+    },
+    {
+      "code": "BR-MS",
+      "name": "Mato Grosso do Sul",
+      "type": "State"
+    },
+    {
+      "code": "BR-MT",
+      "name": "Mato Grosso",
+      "type": "State"
+    },
+    {
+      "code": "BR-PA",
+      "name": "Pará",
+      "type": "State"
+    }
+  ],
+  "cities": [
+    "Brasília"
+  ],
+  "keywords": []
+}

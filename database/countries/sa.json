@@ -1,0 +1,78 @@
+{
+  "code": "SA",
+  "alpha3": "SAU",
+  "numeric": "682",
+  "name": "Saudi Arabia",
+  "capital": "Riyadh",
+  "regions": [
+    {
+      "code": "SA-09",
+      "name": "Jāzān",
+      "type": "Region"
+    },
+    {
+      "code": "SA-04",
+      "name": "Ash Sharqīyah",
+      "type": "Region"
+    },
+    {
+      "code": "SA-10",
+      "name": "Najrān",
+      "type": "Region"
+    },
+    {
+      "code": "SA-05",
+      "name": "Al Qaşīm",
+      "type": "Region"
+    },
+    {
+      "code": "SA-11",
+      "name": "Al Bāḩah",
+      "type": "Region"
+    },
+    {
+      "code": "SA-06",
+      "name": "Ḩā'il",
+      "type": "Region"
+    },
+    {
+      "code": "SA-01",
+      "name": "Ar Riyāḑ",
+      "type": "Region"
+    },
+    {
+      "code": "SA-12",
+      "name": "Al Jawf",
+      "type": "Region"
+    },
+    {
+      "code": "SA-07",
+      "name": "Tabūk",
+      "type": "Region"
+    },
+    {
+      "code": "SA-02",
+      "name": "Makkah al Mukarramah",
+      "type": "Region"
+    },
+    {
+      "code": "SA-14",
+      "name": "'Asīr",
+      "type": "Region"
+    },
+    {
+      "code": "SA-08",
+      "name": "Al Ḩudūd ash Shamālīyah",
+      "type": "Region"
+    },
+    {
+      "code": "SA-03",
+      "name": "Al Madīnah al Munawwarah",
+      "type": "Region"
+    }
+  ],
+  "cities": [
+    "Riyadh"
+  ],
+  "keywords": []
+}

@@ -1,0 +1,133 @@
+{
+  "code": "EC",
+  "alpha3": "ECU",
+  "numeric": "218",
+  "name": "Ecuador",
+  "capital": "Quito",
+  "regions": [
+    {
+      "code": "EC-W",
+      "name": "Galápagos",
+      "type": "Province"
+    },
+    {
+      "code": "EC-X",
+      "name": "Cotopaxi",
+      "type": "Province"
+    },
+    {
+      "code": "EC-A",
+      "name": "Azuay",
+      "type": "Province"
+    },
+    {
+      "code": "EC-Y",
+      "name": "Pastaza",
+      "type": "Province"
+    },
+    {
+      "code": "EC-B",
+      "name": "Bolívar",
+      "type": "Province"
+    },
+    {
+      "code": "EC-Z",
+      "name": "Zamora Chinchipe",
+      "type": "Province"
+    },
+    {
+      "code": "EC-C",
+      "name": "Carchi",
+      "type": "Province"
+    },
+    {
+      "code": "EC-D",
+      "name": "Orellana",
+      "type": "Province"
+    },
+    {
+      "code": "EC-E",
+      "name": "Esmeraldas",
+      "type": "Province"
+    },
+    {
+      "code": "EC-F",
+      "name": "Cañar",
+      "type": "Province"
+    },
+    {
+      "code": "EC-G",
+      "name": "Guayas",
+      "type": "Province"
+    },
+    {
+      "code": "EC-H",
+      "name": "Chimborazo",
+      "type": "Province"
+    },
+    {
+      "code": "EC-I",
+      "name": "Imbabura",
+      "type": "Province"
+    },
+    {
+      "code": "EC-L",
+      "name": "Loja",
+      "type": "Province"
+    },
+    {
+      "code": "EC-M",
+      "name": "Manabí",
+      "type": "Province"
+    },
+    {
+      "code": "EC-N",
+      "name": "Napo",
+      "type": "Province"
+    },
+    {
+      "code": "EC-O",
+      "name": "El Oro",
+      "type": "Province"
+    },
+    {
+      "code": "EC-P",
+      "name": "Pichincha",
+      "type": "Province"
+    },
+    {
+      "code": "EC-R",
+      "name": "Los Ríos",
+      "type": "Province"
+    },
+    {
+      "code": "EC-S",
+      "name": "Morona Santiago",
+      "type": "Province"
+    },
+    {
+      "code": "EC-SD",
+      "name": "Santo Domingo de los Tsáchilas",
+      "type": "Province"
+    },
+    {
+      "code": "EC-SE",
+      "name": "Santa Elena",
+      "type": "Province"
+    },
+    {
+      "code": "EC-T",
+      "name": "Tungurahua",
+      "type": "Province"
+    },
+    {
+      "code": "EC-U",
+      "name": "Sucumbíos",
+      "type": "Province"
+    }
+  ],
+  "cities": [
+    "Quito"
+  ],
+  "keywords": []
+}

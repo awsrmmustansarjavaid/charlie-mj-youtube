@@ -1,0 +1,55 @@
+{
+  "id": "full-stack-developer",
+  "name": "Full Stack Developer",
+  "description": "End-to-end web application engineering.",
+  "categories": {
+    "HTML": [
+      "HTML"
+    ],
+    "CSS": [
+      "CSS"
+    ],
+    "JavaScript": [
+      "JavaScript"
+    ],
+    "TypeScript": [
+      "TypeScript"
+    ],
+    "React": [
+      "React"
+    ],
+    "Node.js": [
+      "Node.js"
+    ],
+    "Next.js": [
+      "Next.js"
+    ],
+    "REST API": [
+      "REST API"
+    ],
+    "GraphQL": [
+      "GraphQL"
+    ],
+    "PostgreSQL": [
+      "PostgreSQL"
+    ],
+    "MongoDB": [
+      "MongoDB"
+    ],
+    "Docker": [
+      "Docker"
+    ],
+    "Git": [
+      "Git"
+    ],
+    "Testing": [
+      "Testing"
+    ],
+    "Cloud": [
+      "Cloud"
+    ],
+    "Security": [
+      "Security"
+    ]
+  }
+}

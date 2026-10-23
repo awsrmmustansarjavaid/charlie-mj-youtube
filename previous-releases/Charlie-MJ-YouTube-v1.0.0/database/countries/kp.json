@@ -1,0 +1,76 @@
+{
+  "code": "KP",
+  "alpha3": "PRK",
+  "numeric": "408",
+  "name": "Korea, Democratic People's Republic of",
+  "capital": "",
+  "regions": [
+    {
+      "code": "KP-01",
+      "name": "P'yǒngyang",
+      "type": "Capital city"
+    },
+    {
+      "code": "KP-14",
+      "name": "Nampho",
+      "type": "Metropolitan city"
+    },
+    {
+      "code": "KP-07",
+      "name": "Kangweonto",
+      "type": "Province"
+    },
+    {
+      "code": "KP-02",
+      "name": "P'yǒngan-namdo",
+      "type": "Province"
+    },
+    {
+      "code": "KP-15",
+      "name": "Kaeseong",
+      "type": "Metropolitan city"
+    },
+    {
+      "code": "KP-08",
+      "name": "Hamgyǒng-namdo",
+      "type": "Province"
+    },
+    {
+      "code": "KP-03",
+      "name": "P'yǒngan-bukto",
+      "type": "Province"
+    },
+    {
+      "code": "KP-09",
+      "name": "Hamgyǒng-bukto",
+      "type": "Province"
+    },
+    {
+      "code": "KP-04",
+      "name": "Chagang-do",
+      "type": "Province"
+    },
+    {
+      "code": "KP-10",
+      "name": "Ryanggang-do",
+      "type": "Province"
+    },
+    {
+      "code": "KP-05",
+      "name": "Hwanghae-namdo",
+      "type": "Province"
+    },
+    {
+      "code": "KP-13",
+      "name": "Raseon",
+      "type": "Special city"
+    },
+    {
+      "code": "KP-06",
+      "name": "Hwanghae-bukto",
+      "type": "Province"
+    }
+  ],
+  "cities": [],
+  "keywords": []
+}

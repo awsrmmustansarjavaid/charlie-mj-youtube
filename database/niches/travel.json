@@ -1,0 +1,26 @@
+{
+  "id": "travel",
+  "name": "Travel",
+  "description": "Destinations and exploration.",
+  "categories": {
+    "Topics": [
+      "travel",
+      "destinations",
+      "tourism",
+      "backpacking",
+      "hotels",
+      "culture"
+    ],
+    "Formats": [
+      "guide",
+      "itinerary",
+      "tips",
+      "vlog"
+    ]
+  },
+  "country": "GLOBAL",
+  "targetLanguage": "en",
+  "contentLanguages": [
+    "en"
+  ]
+}

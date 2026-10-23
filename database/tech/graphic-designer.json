@@ -1,0 +1,46 @@
+{
+  "id": "graphic-designer",
+  "name": "Graphic Designer",
+  "description": "Visual design, branding and digital graphics.",
+  "categories": {
+    "Graphic Design": [
+      "Graphic Design"
+    ],
+    "Adobe Photoshop": [
+      "Adobe Photoshop"
+    ],
+    "Adobe Illustrator": [
+      "Adobe Illustrator"
+    ],
+    "InDesign": [
+      "InDesign"
+    ],
+    "Figma": [
+      "Figma"
+    ],
+    "Typography": [
+      "Typography"
+    ],
+    "Branding": [
+      "Branding"
+    ],
+    "Logo Design": [
+      "Logo Design"
+    ],
+    "Color Theory": [
+      "Color Theory"
+    ],
+    "Composition": [
+      "Composition"
+    ],
+    "UI Design": [
+      "UI Design"
+    ],
+    "Motion Graphics": [
+      "Motion Graphics"
+    ],
+    "3D Design": [
+      "3D Design"
+    ]
+  }
+}

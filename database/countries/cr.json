@@ -1,0 +1,48 @@
+{
+  "code": "CR",
+  "alpha3": "CRI",
+  "numeric": "188",
+  "name": "Costa Rica",
+  "capital": "San José",
+  "regions": [
+    {
+      "code": "CR-H",
+      "name": "Heredia",
+      "type": "Province"
+    },
+    {
+      "code": "CR-L",
+      "name": "Limón",
+      "type": "Province"
+    },
+    {
+      "code": "CR-P",
+      "name": "Puntarenas",
+      "type": "Province"
+    },
+    {
+      "code": "CR-A",
+      "name": "Alajuela",
+      "type": "Province"
+    },
+    {
+      "code": "CR-SJ",
+      "name": "San José",
+      "type": "Province"
+    },
+    {
+      "code": "CR-C",
+      "name": "Cartago",
+      "type": "Province"
+    },
+    {
+      "code": "CR-G",
+      "name": "Guanacaste",
+      "type": "Province"
+    }
+  ],
+  "cities": [
+    "San José"
+  ],
+  "keywords": []
+}

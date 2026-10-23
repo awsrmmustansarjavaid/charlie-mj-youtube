@@ -1,0 +1,81 @@
+{
+  "code": "CI",
+  "alpha3": "CIV",
+  "numeric": "384",
+  "name": "Côte d'Ivoire",
+  "capital": "",
+  "regions": [
+    {
+      "code": "CI-SM",
+      "name": "Sassandra-Marahoué",
+      "type": "District"
+    },
+    {
+      "code": "CI-DN",
+      "name": "Denguélé",
+      "type": "District"
+    },
+    {
+      "code": "CI-SV",
+      "name": "Savanes",
+      "type": "District"
+    },
+    {
+      "code": "CI-GD",
+      "name": "Gôh-Djiboua",
+      "type": "District"
+    },
+    {
+      "code": "CI-VB",
+      "name": "Vallée du Bandama",
+      "type": "District"
+    },
+    {
+      "code": "CI-LC",
+      "name": "Lacs",
+      "type": "District"
+    },
+    {
+      "code": "CI-AB",
+      "name": "Abidjan",
+      "type": "Autonomous district"
+    },
+    {
+      "code": "CI-WR",
+      "name": "Woroba",
+      "type": "District"
+    },
+    {
+      "code": "CI-LG",
+      "name": "Lagunes",
+      "type": "District"
+    },
+    {
+      "code": "CI-BS",
+      "name": "Bas-Sassandra",
+      "type": "District"
+    },
+    {
+      "code": "CI-YM",
+      "name": "Yamoussoukro",
+      "type": "Autonomous district"
+    },
+    {
+      "code": "CI-MG",
+      "name": "Montagnes",
+      "type": "District"
+    },
+    {
+      "code": "CI-CM",
+      "name": "Comoé",
+      "type": "District"
+    },
+    {
+      "code": "CI-ZZ",
+      "name": "Zanzan",
+      "type": "District"
+    }
+  ],
+  "cities": [],
+  "keywords": []
+}

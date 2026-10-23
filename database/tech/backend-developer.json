@@ -1,0 +1,64 @@
+{
+  "id": "backend-developer",
+  "name": "Backend Developer",
+  "description": "Server-side development, APIs, databases and distributed systems.",
+  "categories": {
+    "Node.js": [
+      "Node.js"
+    ],
+    "Python": [
+      "Python"
+    ],
+    "Java": [
+      "Java"
+    ],
+    "Go": [
+      "Go"
+    ],
+    "C#": [
+      "C#"
+    ],
+    "PHP": [
+      "PHP"
+    ],
+    "REST API": [
+      "REST API"
+    ],
+    "GraphQL": [
+      "GraphQL"
+    ],
+    "Microservices": [
+      "Microservices"
+    ],
+    "PostgreSQL": [
+      "PostgreSQL"
+    ],
+    "MySQL": [
+      "MySQL"
+    ],
+    "MongoDB": [
+      "MongoDB"
+    ],
+    "Redis": [
+      "Redis"
+    ],
+    "Kafka": [
+      "Kafka"
+    ],
+    "Docker": [
+      "Docker"
+    ],
+    "Kubernetes": [
+      "Kubernetes"
+    ],
+    "Git": [
+      "Git"
+    ],
+    "Authentication": [
+      "Authentication"
+    ],
+    "Authorization": [
+      "Authorization"
+    ]
+  }
+}

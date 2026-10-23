@@ -1,0 +1,73 @@
+{
+  "code": "JO",
+  "alpha3": "JOR",
+  "numeric": "400",
+  "name": "Jordan",
+  "capital": "Amman",
+  "regions": [
+    {
+      "code": "JO-KA",
+      "name": "Al Karak",
+      "type": "Governorate"
+    },
+    {
+      "code": "JO-AT",
+      "name": "Aţ Ţafīlah",
+      "type": "Governorate"
+    },
+    {
+      "code": "JO-MA",
+      "name": "Al Mafraq",
+      "type": "Governorate"
+    },
+    {
+      "code": "JO-AZ",
+      "name": "Az Zarqā’",
+      "type": "Governorate"
+    },
+    {
+      "code": "JO-MD",
+      "name": "Mādabā",
+      "type": "Governorate"
+    },
+    {
+      "code": "JO-BA",
+      "name": "Al Balqā’",
+      "type": "Governorate"
+    },
+    {
+      "code": "JO-AJ",
+      "name": "‘Ajlūn",
+      "type": "Governorate"
+    },
+    {
+      "code": "JO-MN",
+      "name": "Ma‘ān",
+      "type": "Governorate"
+    },
+    {
+      "code": "JO-IR",
+      "name": "Irbid",
+      "type": "Governorate"
+    },
+    {
+      "code": "JO-AM",
+      "name": "Al ‘A̅şimah",
+      "type": "Governorate"
+    },
+    {
+      "code": "JO-JA",
+      "name": "Jarash",
+      "type": "Governorate"
+    },
+    {
+      "code": "JO-AQ",
+      "name": "Al ‘Aqabah",
+      "type": "Governorate"
+    }
+  ],
+  "cities": [
+    "Amman"
+  ],
+  "keywords": []
+}

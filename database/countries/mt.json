@@ -1,0 +1,353 @@
+{
+  "code": "MT",
+  "alpha3": "MLT",
+  "numeric": "470",
+  "name": "Malta",
+  "capital": "Valletta",
+  "regions": [
+    {
+      "code": "MT-15",
+      "name": "Għargħur",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-58",
+      "name": "Ta' Xbiex",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-37",
+      "name": "Nadur",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-16",
+      "name": "Għasri",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-59",
+      "name": "Tarxien",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-38",
+      "name": "Naxxar",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-17",
+      "name": "Għaxaq",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-60",
+      "name": "Valletta",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-39",
+      "name": "Paola",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-18",
+      "name": "Ħamrun",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-61",
+      "name": "Xagħra",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-40",
+      "name": "Pembroke",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-19",
+      "name": "Iklin",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-62",
+      "name": "Xewkija",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-41",
+      "name": "Pietà",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-20",
+      "name": "Isla",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-63",
+      "name": "Xgħajra",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-42",
+      "name": "Qala",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-21",
+      "name": "Kalkara",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-64",
+      "name": "Żabbar",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-43",
+      "name": "Qormi",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-22",
+      "name": "Kerċem",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-01",
+      "name": "Attard",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-65",
+      "name": "Żebbuġ Gozo",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-44",
+      "name": "Qrendi",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-23",
+      "name": "Kirkop",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-02",
+      "name": "Balzan",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-66",
+      "name": "Żebbuġ Malta",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-45",
+      "name": "Rabat Gozo",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-24",
+      "name": "Lija",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-03",
+      "name": "Birgu",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-67",
+      "name": "Żejtun",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-46",
+      "name": "Rabat Malta",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-25",
+      "name": "Luqa",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-04",
+      "name": "Birkirkara",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-68",
+      "name": "Żurrieq",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-47",
+      "name": "Safi",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-26",
+      "name": "Marsa",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-05",
+      "name": "Birżebbuġa",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-48",
+      "name": "Saint Julian's",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-27",
+      "name": "Marsaskala",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-06",
+      "name": "Bormla",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-49",
+      "name": "Saint John",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-28",
+      "name": "Marsaxlokk",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-07",
+      "name": "Dingli",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-50",
+      "name": "Saint Lawrence",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-29",
+      "name": "Mdina",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-08",
+      "name": "Fgura",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-51",
+      "name": "Saint Paul's Bay",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-30",
+      "name": "Mellieħa",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-09",
+      "name": "Floriana",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-52",
+      "name": "Sannat",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-31",
+      "name": "Mġarr",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-10",
+      "name": "Fontana",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-53",
+      "name": "Saint Lucia's",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-32",
+      "name": "Mosta",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-11",
+      "name": "Gudja",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-54",
+      "name": "Santa Venera",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-33",
+      "name": "Mqabba",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-12",
+      "name": "Gżira",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-55",
+      "name": "Siġġiewi",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-34",
+      "name": "Msida",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-13",
+      "name": "Għajnsielem",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-56",
+      "name": "Sliema",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-35",
+      "name": "Mtarfa",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-14",
+      "name": "Għarb",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-57",
+      "name": "Swieqi",
+      "type": "Local council"
+    },
+    {
+      "code": "MT-36",
+      "name": "Munxar",
+      "type": "Local council"
+    }
+  ],
+  "cities": [
+    "Valletta"
+  ],
+  "keywords": []
+}

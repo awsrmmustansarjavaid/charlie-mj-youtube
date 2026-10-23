@@ -1,0 +1,83 @@
+{
+  "code": "SV",
+  "alpha3": "SLV",
+  "numeric": "222",
+  "name": "El Salvador",
+  "capital": "San Salvador",
+  "regions": [
+    {
+      "code": "SV-SV",
+      "name": "San Vicente",
+      "type": "Department"
+    },
+    {
+      "code": "SV-PA",
+      "name": "La Paz",
+      "type": "Department"
+    },
+    {
+      "code": "SV-CA",
+      "name": "Cabañas",
+      "type": "Department"
+    },
+    {
+      "code": "SV-UN",
+      "name": "La Unión",
+      "type": "Department"
+    },
+    {
+      "code": "SV-SA",
+      "name": "Santa Ana",
+      "type": "Department"
+    },
+    {
+      "code": "SV-CH",
+      "name": "Chalatenango",
+      "type": "Department"
+    },
+    {
+      "code": "SV-US",
+      "name": "Usulután",
+      "type": "Department"
+    },
+    {
+      "code": "SV-SM",
+      "name": "San Miguel",
+      "type": "Department"
+    },
+    {
+      "code": "SV-CU",
+      "name": "Cuscatlán",
+      "type": "Department"
+    },
+    {
+      "code": "SV-SO",
+      "name": "Sonsonate",
+      "type": "Department"
+    },
+    {
+      "code": "SV-LI",
+      "name": "La Libertad",
+      "type": "Department"
+    },
+    {
+      "code": "SV-SS",
+      "name": "San Salvador",
+      "type": "Department"
+    },
+    {
+      "code": "SV-MO",
+      "name": "Morazán",
+      "type": "Department"
+    },
+    {
+      "code": "SV-AH",
+      "name": "Ahuachapán",
+      "type": "Department"
+    }
+  ],
+  "cities": [
+    "San Salvador"
+  ],
+  "keywords": []
+}

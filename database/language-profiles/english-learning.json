@@ -1,0 +1,27 @@
+{
+  "id": "english-learning",
+  "name": "English Learning",
+  "learningLanguage": "en",
+  "contentLanguages": [
+    "en"
+  ],
+  "goals": [
+    "learn-language",
+    "listening",
+    "vocabulary",
+    "grammar",
+    "conversation",
+    "pronunciation"
+  ],
+  "preferredContent": [
+    "subtitles",
+    "lessons",
+    "native-content",
+    "documentaries",
+    "news",
+    "drama",
+    "music"
+  ],
+  "focus": 70,
+  "notes": "Packaged starter profile."
+}

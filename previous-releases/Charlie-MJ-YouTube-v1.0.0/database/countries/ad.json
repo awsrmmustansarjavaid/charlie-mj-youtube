@@ -1,0 +1,46 @@
+{
+  "code": "AD",
+  "alpha3": "AND",
+  "numeric": "020",
+  "name": "Andorra",
+  "capital": "",
+  "regions": [
+    {
+      "code": "AD-04",
+      "name": "La Massana",
+      "type": "Parish"
+    },
+    {
+      "code": "AD-06",
+      "name": "Sant Julià de Lòria",
+      "type": "Parish"
+    },
+    {
+      "code": "AD-02",
+      "name": "Canillo",
+      "type": "Parish"
+    },
+    {
+      "code": "AD-05",
+      "name": "Ordino",
+      "type": "Parish"
+    },
+    {
+      "code": "AD-03",
+      "name": "Encamp",
+      "type": "Parish"
+    },
+    {
+      "code": "AD-08",
+      "name": "Escaldes-Engordany",
+      "type": "Parish"
+    },
+    {
+      "code": "AD-07",
+      "name": "Andorra la Vella",
+      "type": "Parish"
+    }
+  ],
+  "cities": [],
+  "keywords": []
+}

@@ -1,0 +1,48 @@
+{
+  "code": "AE",
+  "alpha3": "ARE",
+  "numeric": "784",
+  "name": "United Arab Emirates",
+  "capital": "Abu Dhabi",
+  "regions": [
+    {
+      "code": "AE-UQ",
+      "name": "Umm al Qaywayn",
+      "type": "Emirate"
+    },
+    {
+      "code": "AE-FU",
+      "name": "Al Fujayrah",
+      "type": "Emirate"
+    },
+    {
+      "code": "AE-AZ",
+      "name": "Abū Z̧aby",
+      "type": "Emirate"
+    },
+    {
+      "code": "AE-RK",
+      "name": "Ra’s al Khaymah",
+      "type": "Emirate"
+    },
+    {
+      "code": "AE-AJ",
+      "name": "‘Ajmān",
+      "type": "Emirate"
+    },
+    {
+      "code": "AE-DU",
+      "name": "Dubayy",
+      "type": "Emirate"
+    },
+    {
+      "code": "AE-SH",
+      "name": "Ash Shāriqah",
+      "type": "Emirate"
+    }
+  ],
+  "cities": [
+    "Abu Dhabi"
+  ],
+  "keywords": []
+}

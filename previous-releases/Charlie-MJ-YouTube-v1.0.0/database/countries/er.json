@@ -1,0 +1,43 @@
+{
+  "code": "ER",
+  "alpha3": "ERI",
+  "numeric": "232",
+  "name": "Eritrea",
+  "capital": "Asmara",
+  "regions": [
+    {
+      "code": "ER-DU",
+      "name": "Al Janūbī",
+      "type": "Region"
+    },
+    {
+      "code": "ER-GB",
+      "name": "Gash-Barka",
+      "type": "Region"
+    },
+    {
+      "code": "ER-MA",
+      "name": "Al Awsaţ",
+      "type": "Region"
+    },
+    {
+      "code": "ER-SK",
+      "name": "Semienawi K’eyyĭḥ Baḥri",
+      "type": "Region"
+    },
+    {
+      "code": "ER-AN",
+      "name": "Ansabā",
+      "type": "Region"
+    },
+    {
+      "code": "ER-DK",
+      "name": "Debubawi K’eyyĭḥ Baḥri",
+      "type": "Region"
+    }
+  ],
+  "cities": [
+    "Asmara"
+  ],
+  "keywords": []
+}

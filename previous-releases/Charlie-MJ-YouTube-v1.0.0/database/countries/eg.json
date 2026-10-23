@@ -1,0 +1,148 @@
+{
+  "code": "EG",
+  "alpha3": "EGY",
+  "numeric": "818",
+  "name": "Egypt",
+  "capital": "Cairo",
+  "regions": [
+    {
+      "code": "EG-DT",
+      "name": "Dumyāţ",
+      "type": "Governorate"
+    },
+    {
+      "code": "EG-FYM",
+      "name": "Al Fayyūm",
+      "type": "Governorate"
+    },
+    {
+      "code": "EG-GH",
+      "name": "Al Gharbīyah",
+      "type": "Governorate"
+    },
+    {
+      "code": "EG-GZ",
+      "name": "Al Jīzah",
+      "type": "Governorate"
+    },
+    {
+      "code": "EG-IS",
+      "name": "Al Ismā'īlīyah",
+      "type": "Governorate"
+    },
+    {
+      "code": "EG-JS",
+      "name": "Janūb Sīnā'",
+      "type": "Governorate"
+    },
+    {
+      "code": "EG-KB",
+      "name": "Al Qalyūbīyah",
+      "type": "Governorate"
+    },
+    {
+      "code": "EG-KFS",
+      "name": "Kafr ash Shaykh",
+      "type": "Governorate"
+    },
+    {
+      "code": "EG-KN",
+      "name": "Qinā",
+      "type": "Governorate"
+    },
+    {
+      "code": "EG-LX",
+      "name": "Al Uqşur",
+      "type": "Governorate"
+    },
+    {
+      "code": "EG-MN",
+      "name": "Al Minyā",
+      "type": "Governorate"
+    },
+    {
+      "code": "EG-MNF",
+      "name": "Al Minūfīyah",
+      "type": "Governorate"
+    },
+    {
+      "code": "EG-MT",
+      "name": "Maţrūḩ",
+      "type": "Governorate"
+    },
+    {
+      "code": "EG-PTS",
+      "name": "Būr Sa‘īd",
+      "type": "Governorate"
+    },
+    {
+      "code": "EG-ALX",
+      "name": "Al Iskandarīyah",
+      "type": "Governorate"
+    },
+    {
+      "code": "EG-SHG",
+      "name": "Sūhāj",
+      "type": "Governorate"
+    },
+    {
+      "code": "EG-ASN",
+      "name": "Aswān",
+      "type": "Governorate"
+    },
+    {
+      "code": "EG-SHR",
+      "name": "Ash Sharqīyah",
+      "type": "Governorate"
+    },
+    {
+      "code": "EG-AST",
+      "name": "Asyūţ",
+      "type": "Governorate"
+    },
+    {
+      "code": "EG-SIN",
+      "name": "Shamāl Sīnā'",
+      "type": "Governorate"
+    },
+    {
+      "code": "EG-BA",
+      "name": "Al Baḩr al Aḩmar",
+      "type": "Governorate"
+    },
+    {
+      "code": "EG-SUZ",
+      "name": "As Suways",
+      "type": "Governorate"
+    },
+    {
+      "code": "EG-BH",
+      "name": "Al Buḩayrah",
+      "type": "Governorate"
+    },
+    {
+      "code": "EG-WAD",
+      "name": "Al Wādī al Jadīd",
+      "type": "Governorate"
+    },
+    {
+      "code": "EG-BNS",
+      "name": "Banī Suwayf",
+      "type": "Governorate"
+    },
+    {
+      "code": "EG-C",
+      "name": "Al Qāhirah",
+      "type": "Governorate"
+    },
+    {
+      "code": "EG-DK",
+      "name": "Ad Daqahlīyah",
+      "type": "Governorate"
+    }
+  ],
+  "cities": [
+    "Cairo"
+  ],
+  "keywords": []
+}

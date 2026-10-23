@@ -1,0 +1,25 @@
+{
+  "id": "cars",
+  "name": "Cars & Automotive",
+  "description": "Cars and automotive interests.",
+  "categories": {
+    "Topics": [
+      "cars",
+      "automotive",
+      "car review",
+      "electric vehicles",
+      "motorsport"
+    ],
+    "Formats": [
+      "review",
+      "test drive",
+      "guide",
+      "news"
+    ]
+  },
+  "country": "GLOBAL",
+  "targetLanguage": "en",
+  "contentLanguages": [
+    "en"
+  ]
+}

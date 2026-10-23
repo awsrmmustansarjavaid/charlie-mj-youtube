@@ -1,0 +1,38 @@
+{
+  "code": "GL",
+  "alpha3": "GRL",
+  "numeric": "304",
+  "name": "Greenland",
+  "capital": "Nuuk",
+  "regions": [
+    {
+      "code": "GL-SM",
+      "name": "Kommuneqarfik Sermersooq",
+      "type": "Municipality"
+    },
+    {
+      "code": "GL-AV",
+      "name": "Avannaata Kommunia",
+      "type": "Municipality"
+    },
+    {
+      "code": "GL-KU",
+      "name": "Kommune Kujalleq",
+      "type": "Municipality"
+    },
+    {
+      "code": "GL-QE",
+      "name": "Qeqqata Kommunia",
+      "type": "Municipality"
+    },
+    {
+      "code": "GL-QT",
+      "name": "Kommune Qeqertalik",
+      "type": "Municipality"
+    }
+  ],
+  "cities": [
+    "Nuuk"
+  ],
+  "keywords": []
+}

@@ -1,0 +1,193 @@
+{
+  "code": "IN",
+  "alpha3": "IND",
+  "numeric": "356",
+  "name": "India",
+  "capital": "New Delhi",
+  "regions": [
+    {
+      "code": "IN-MH",
+      "name": "Mahārāshtra",
+      "type": "State"
+    },
+    {
+      "code": "IN-ML",
+      "name": "Meghālaya",
+      "type": "State"
+    },
+    {
+      "code": "IN-MN",
+      "name": "Manipur",
+      "type": "State"
+    },
+    {
+      "code": "IN-AN",
+      "name": "Andaman and Nicobar Islands",
+      "type": "Union territory"
+    },
+    {
+      "code": "IN-MP",
+      "name": "Madhya Pradesh",
+      "type": "State"
+    },
+    {
+      "code": "IN-AP",
+      "name": "Andhra Pradesh",
+      "type": "State"
+    },
+    {
+      "code": "IN-MZ",
+      "name": "Mizoram",
+      "type": "State"
+    },
+    {
+      "code": "IN-AR",
+      "name": "Arunāchal Pradesh",
+      "type": "State"
+    },
+    {
+      "code": "IN-NL",
+      "name": "Nāgāland",
+      "type": "State"
+    },
+    {
+      "code": "IN-AS",
+      "name": "Assam",
+      "type": "State"
+    },
+    {
+      "code": "IN-OD",
+      "name": "Odisha",
+      "type": "State"
+    },
+    {
+      "code": "IN-BR",
+      "name": "Bihār",
+      "type": "State"
+    },
+    {
+      "code": "IN-PB",
+      "name": "Punjab",
+      "type": "State"
+    },
+    {
+      "code": "IN-CG",
+      "name": "Chhattīsgarh",
+      "type": "State"
+    },
+    {
+      "code": "IN-PY",
+      "name": "Puducherry",
+      "type": "Union territory"
+    },
+    {
+      "code": "IN-CH",
+      "name": "Chandīgarh",
+      "type": "Union territory"
+    },
+    {
+      "code": "IN-RJ",
+      "name": "Rājasthān",
+      "type": "State"
+    },
+    {
+      "code": "IN-DH",
+      "name": "Dādra and Nagar Haveli and Damān and Diu",
+      "type": "Union territory"
+    },
+    {
+      "code": "IN-SK",
+      "name": "Sikkim",
+      "type": "State"
+    },
+    {
+      "code": "IN-DL",
+      "name": "Delhi",
+      "type": "Union territory"
+    },
+    {
+      "code": "IN-TN",
+      "name": "Tamil Nādu",
+      "type": "State"
+    },
+    {
+      "code": "IN-GA",
+      "name": "Goa",
+      "type": "State"
+    },
+    {
+      "code": "IN-TR",
+      "name": "Tripura",
+      "type": "State"
+    },
+    {
+      "code": "IN-GJ",
+      "name": "Gujarāt",
+      "type": "State"
+    },
+    {
+      "code": "IN-TS",
+      "name": "Telangāna",
+      "type": "State"
+    },
+    {
+      "code": "IN-HP",
+      "name": "Himāchal Pradesh",
+      "type": "State"
+    },
+    {
+      "code": "IN-UK",
+      "name": "Uttarākhand",
+      "type": "State"
+    },
+    {
+      "code": "IN-HR",
+      "name": "Haryāna",
+      "type": "State"
+    },
+    {
+      "code": "IN-UP",
+      "name": "Uttar Pradesh",
+      "type": "State"
+    },
+    {
+      "code": "IN-JH",
+      "name": "Jhārkhand",
+      "type": "State"
+    },
+    {
+      "code": "IN-WB",
+      "name": "West Bengal",
+      "type": "State"
+    },
+    {
+      "code": "IN-JK",
+      "name": "Jammu and Kashmīr",
+      "type": "Union territory"
+    },
+    {
+      "code": "IN-KA",
+      "name": "Karnātaka",
+      "type": "State"
+    },
+    {
+      "code": "IN-KL",
+      "name": "Kerala",
+      "type": "State"
+    },
+    {
+      "code": "IN-LA",
+      "name": "Ladākh",
+      "type": "Union territory"
+    },
+    {
+      "code": "IN-LD",
+      "name": "Lakshadweep",
+      "type": "Union territory"
+    }
+  ],
+  "cities": [
+    "New Delhi"
+  ],
+  "keywords": []
+}

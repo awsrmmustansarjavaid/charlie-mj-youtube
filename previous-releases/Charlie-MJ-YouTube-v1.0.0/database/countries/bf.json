@@ -1,0 +1,303 @@
+{
+  "code": "BF",
+  "alpha3": "BFA",
+  "numeric": "854",
+  "name": "Burkina Faso",
+  "capital": "Ouagadougou",
+  "regions": [
+    {
+      "code": "BF-GNA",
+      "name": "Gnagna",
+      "type": "Province"
+    },
+    {
+      "code": "BF-02",
+      "name": "Cascades",
+      "type": "Region"
+    },
+    {
+      "code": "BF-PON",
+      "name": "Poni",
+      "type": "Province"
+    },
+    {
+      "code": "BF-GOU",
+      "name": "Gourma",
+      "type": "Province"
+    },
+    {
+      "code": "BF-03",
+      "name": "Centre",
+      "type": "Region"
+    },
+    {
+      "code": "BF-SEN",
+      "name": "Séno",
+      "type": "Province"
+    },
+    {
+      "code": "BF-HOU",
+      "name": "Houet",
+      "type": "Province"
+    },
+    {
+      "code": "BF-04",
+      "name": "Centre-Est",
+      "type": "Region"
+    },
+    {
+      "code": "BF-SIS",
+      "name": "Sissili",
+      "type": "Province"
+    },
+    {
+      "code": "BF-IOB",
+      "name": "Ioba",
+      "type": "Province"
+    },
+    {
+      "code": "BF-05",
+      "name": "Centre-Nord",
+      "type": "Region"
+    },
+    {
+      "code": "BF-SMT",
+      "name": "Sanmatenga",
+      "type": "Province"
+    },
+    {
+      "code": "BF-KAD",
+      "name": "Kadiogo",
+      "type": "Province"
+    },
+    {
+      "code": "BF-06",
+      "name": "Centre-Ouest",
+      "type": "Region"
+    },
+    {
+      "code": "BF-SNG",
+      "name": "Sanguié",
+      "type": "Province"
+    },
+    {
+      "code": "BF-KEN",
+      "name": "Kénédougou",
+      "type": "Province"
+    },
+    {
+      "code": "BF-07",
+      "name": "Centre-Sud",
+      "type": "Region"
+    },
+    {
+      "code": "BF-SOM",
+      "name": "Soum",
+      "type": "Province"
+    },
+    {
+      "code": "BF-KMD",
+      "name": "Komondjari",
+      "type": "Province"
+    },
+    {
+      "code": "BF-08",
+      "name": "Est",
+      "type": "Region"
+    },
+    {
+      "code": "BF-SOR",
+      "name": "Sourou",
+      "type": "Province"
+    },
+    {
+      "code": "BF-KMP",
+      "name": "Kompienga",
+      "type": "Province"
+    },
+    {
+      "code": "BF-09",
+      "name": "Hauts-Bassins",
+      "type": "Region"
+    },
+    {
+      "code": "BF-TAP",
+      "name": "Tapoa",
+      "type": "Province"
+    },
+    {
+      "code": "BF-KOP",
+      "name": "Koulpélogo",
+      "type": "Province"
+    },
+    {
+      "code": "BF-10",
+      "name": "Nord",
+      "type": "Region"
+    },
+    {
+      "code": "BF-TUI",
+      "name": "Tuy",
+      "type": "Province"
+    },
+    {
+      "code": "BF-KOS",
+      "name": "Kossi",
+      "type": "Province"
+    },
+    {
+      "code": "BF-11",
+      "name": "Plateau-Central",
+      "type": "Region"
+    },
+    {
+      "code": "BF-YAG",
+      "name": "Yagha",
+      "type": "Province"
+    },
+    {
+      "code": "BF-KOT",
+      "name": "Kouritenga",
+      "type": "Province"
+    },
+    {
+      "code": "BF-12",
+      "name": "Sahel",
+      "type": "Region"
+    },
+    {
+      "code": "BF-YAT",
+      "name": "Yatenga",
+      "type": "Province"
+    },
+    {
+      "code": "BF-KOW",
+      "name": "Kourwéogo",
+      "type": "Province"
+    },
+    {
+      "code": "BF-13",
+      "name": "Sud-Ouest",
+      "type": "Region"
+    },
+    {
+      "code": "BF-ZIR",
+      "name": "Ziro",
+      "type": "Province"
+    },
+    {
+      "code": "BF-LER",
+      "name": "Léraba",
+      "type": "Province"
+    },
+    {
+      "code": "BF-BAL",
+      "name": "Balé",
+      "type": "Province"
+    },
+    {
+      "code": "BF-ZON",
+      "name": "Zondoma",
+      "type": "Province"
+    },
+    {
+      "code": "BF-LOR",
+      "name": "Loroum",
+      "type": "Province"
+    },
+    {
+      "code": "BF-BAM",
+      "name": "Bam",
+      "type": "Province"
+    },
+    {
+      "code": "BF-ZOU",
+      "name": "Zoundwéogo",
+      "type": "Province"
+    },
+    {
+      "code": "BF-MOU",
+      "name": "Mouhoun",
+      "type": "Province"
+    },
+    {
+      "code": "BF-BAN",
+      "name": "Banwa",
+      "type": "Province"
+    },
+    {
+      "code": "BF-NAM",
+      "name": "Namentenga",
+      "type": "Province"
+    },
+    {
+      "code": "BF-BAZ",
+      "name": "Bazèga",
+      "type": "Province"
+    },
+    {
+      "code": "BF-NAO",
+      "name": "Nahouri",
+      "type": "Province"
+    },
+    {
+      "code": "BF-BGR",
+      "name": "Bougouriba",
+      "type": "Province"
+    },
+    {
+      "code": "BF-NAY",
+      "name": "Nayala",
+      "type": "Province"
+    },
+    {
+      "code": "BF-BLG",
+      "name": "Boulgou",
+      "type": "Province"
+    },
+    {
+      "code": "BF-NOU",
+      "name": "Noumbiel",
+      "type": "Province"
+    },
+    {
+      "code": "BF-BLK",
+      "name": "Boulkiemdé",
+      "type": "Province"
+    },
+    {
+      "code": "BF-OUB",
+      "name": "Oubritenga",
+      "type": "Province"
+    },
+    {
+      "code": "BF-COM",
+      "name": "Comoé",
+      "type": "Province"
+    },
+    {
+      "code": "BF-OUD",
+      "name": "Oudalan",
+      "type": "Province"
+    },
+    {
+      "code": "BF-GAN",
+      "name": "Ganzourgou",
+      "type": "Province"
+    },
+    {
+      "code": "BF-01",
+      "name": "Boucle du Mouhoun",
+      "type": "Region"
+    },
+    {
+      "code": "BF-PAS",
+      "name": "Passoré",
+      "type": "Province"
+    }
+  ],
+  "cities": [
+    "Ouagadougou"
+  ],
+  "keywords": []
+}

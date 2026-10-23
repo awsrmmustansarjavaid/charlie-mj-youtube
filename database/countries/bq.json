@@ -1,0 +1,26 @@
+{
+  "code": "BQ",
+  "alpha3": "BES",
+  "numeric": "535",
+  "name": "Bonaire, Sint Eustatius and Saba",
+  "capital": "",
+  "regions": [
+    {
+      "code": "BQ-SA",
+      "name": "Saba",
+      "type": "Special municipality"
+    },
+    {
+      "code": "BQ-BO",
+      "name": "Bonaire",
+      "type": "Special municipality"
+    },
+    {
+      "code": "BQ-SE",
+      "name": "Sint Eustatius",
+      "type": "Special municipality"
+    }
+  ],
+  "cities": [],
+  "keywords": []
+}

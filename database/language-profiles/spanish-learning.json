@@ -1,0 +1,27 @@
+{
+  "id": "spanish-learning",
+  "name": "Spanish Learning",
+  "learningLanguage": "es",
+  "contentLanguages": [
+    "es",
+    "en"
+  ],
+  "goals": [
+    "learn-language",
+    "listening",
+    "vocabulary",
+    "conversation",
+    "culture",
+    "pronunciation"
+  ],
+  "preferredContent": [
+    "subtitles",
+    "lessons",
+    "native-content",
+    "music",
+    "drama",
+    "news"
+  ],
+  "focus": 70,
+  "notes": "Packaged starter profile."
+}

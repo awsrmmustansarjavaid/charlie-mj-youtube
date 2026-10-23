@@ -1,0 +1,223 @@
+{
+  "code": "DO",
+  "alpha3": "DOM",
+  "numeric": "214",
+  "name": "Dominican Republic",
+  "capital": "Santo Domingo",
+  "regions": [
+    {
+      "code": "DO-15",
+      "name": "Monte Cristi",
+      "type": "Province"
+    },
+    {
+      "code": "DO-36",
+      "name": "Cibao Sur",
+      "type": "Region"
+    },
+    {
+      "code": "DO-16",
+      "name": "Pedernales",
+      "type": "Province"
+    },
+    {
+      "code": "DO-37",
+      "name": "El Valle",
+      "type": "Region"
+    },
+    {
+      "code": "DO-17",
+      "name": "Peravia",
+      "type": "Province"
+    },
+    {
+      "code": "DO-38",
+      "name": "Enriquillo",
+      "type": "Region"
+    },
+    {
+      "code": "DO-18",
+      "name": "Puerto Plata",
+      "type": "Province"
+    },
+    {
+      "code": "DO-39",
+      "name": "Higuamo",
+      "type": "Region"
+    },
+    {
+      "code": "DO-19",
+      "name": "Hermanas Mirabal",
+      "type": "Province"
+    },
+    {
+      "code": "DO-40",
+      "name": "Ozama",
+      "type": "Region"
+    },
+    {
+      "code": "DO-20",
+      "name": "Samaná",
+      "type": "Province"
+    },
+    {
+      "code": "DO-41",
+      "name": "Valdesia",
+      "type": "Region"
+    },
+    {
+      "code": "DO-21",
+      "name": "San Cristóbal",
+      "type": "Province"
+    },
+    {
+      "code": "DO-42",
+      "name": "Yuma",
+      "type": "Region"
+    },
+    {
+      "code": "DO-22",
+      "name": "San Juan",
+      "type": "Province"
+    },
+    {
+      "code": "DO-01",
+      "name": "Distrito Nacional (Santo Domingo)",
+      "type": "District"
+    },
+    {
+      "code": "DO-23",
+      "name": "San Pedro de Macorís",
+      "type": "Province"
+    },
+    {
+      "code": "DO-02",
+      "name": "Azua",
+      "type": "Province"
+    },
+    {
+      "code": "DO-24",
+      "name": "Sánchez Ramírez",
+      "type": "Province"
+    },
+    {
+      "code": "DO-03",
+      "name": "Baoruco",
+      "type": "Province"
+    },
+    {
+      "code": "DO-25",
+      "name": "Santiago",
+      "type": "Province"
+    },
+    {
+      "code": "DO-04",
+      "name": "Barahona",
+      "type": "Province"
+    },
+    {
+      "code": "DO-26",
+      "name": "Santiago Rodríguez",
+      "type": "Province"
+    },
+    {
+      "code": "DO-05",
+      "name": "Dajabón",
+      "type": "Province"
+    },
+    {
+      "code": "DO-27",
+      "name": "Valverde",
+      "type": "Province"
+    },
+    {
+      "code": "DO-06",
+      "name": "Duarte",
+      "type": "Province"
+    },
+    {
+      "code": "DO-28",
+      "name": "Monseñor Nouel",
+      "type": "Province"
+    },
+    {
+      "code": "DO-07",
+      "name": "Elías Piña",
+      "type": "Province"
+    },
+    {
+      "code": "DO-29",
+      "name": "Monte Plata",
+      "type": "Province"
+    },
+    {
+      "code": "DO-08",
+      "name": "El Seibo",
+      "type": "Province"
+    },
+    {
+      "code": "DO-30",
+      "name": "Hato Mayor",
+      "type": "Province"
+    },
+    {
+      "code": "DO-09",
+      "name": "Espaillat",
+      "type": "Province"
+    },
+    {
+      "code": "DO-31",
+      "name": "San José de Ocoa",
+      "type": "Province"
+    },
+    {
+      "code": "DO-10",
+      "name": "Independencia",
+      "type": "Province"
+    },
+    {
+      "code": "DO-32",
+      "name": "Santo Domingo",
+      "type": "Province"
+    },
+    {
+      "code": "DO-11",
+      "name": "La Altagracia",
+      "type": "Province"
+    },
+    {
+      "code": "DO-33",
+      "name": "Cibao Nordeste",
+      "type": "Region"
+    },
+    {
+      "code": "DO-12",
+      "name": "La Romana",
+      "type": "Province"
+    },
+    {
+      "code": "DO-34",
+      "name": "Cibao Noroeste",
+      "type": "Region"
+    },
+    {
+      "code": "DO-13",
+      "name": "La Vega",
+      "type": "Province"
+    },
+    {
+      "code": "DO-35",
+      "name": "Cibao Norte",
+      "type": "Region"
+    },
+    {
+      "code": "DO-14",
+      "name": "María Trinidad Sánchez",
+      "type": "Province"
+    }
+  ],
+  "cities": [
+    "Santo Domingo"
+  ],
+  "keywords": []
+}

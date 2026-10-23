@@ -1,0 +1,28 @@
+{
+  "code": "KI",
+  "alpha3": "KIR",
+  "numeric": "296",
+  "name": "Kiribati",
+  "capital": "South Tarawa",
+  "regions": [
+    {
+      "code": "KI-P",
+      "name": "Phoenix Islands",
+      "type": "Group of islands (20 inhabited islands)"
+    },
+    {
+      "code": "KI-L",
+      "name": "Line Islands",
+      "type": "Group of islands (20 inhabited islands)"
+    },
+    {
+      "code": "KI-G",
+      "name": "Gilbert Islands",
+      "type": "Group of islands (20 inhabited islands)"
+    }
+  ],
+  "cities": [
+    "South Tarawa"
+  ],
+  "keywords": []
+}

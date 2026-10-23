@@ -1,0 +1,83 @@
+{
+  "code": "GR",
+  "alpha3": "GRC",
+  "numeric": "300",
+  "name": "Greece",
+  "capital": "Athens",
+  "regions": [
+    {
+      "code": "GR-K",
+      "name": "Vóreio Aigaío",
+      "type": "Administrative region"
+    },
+    {
+      "code": "GR-F",
+      "name": "Ionía Nísia",
+      "type": "Administrative region"
+    },
+    {
+      "code": "GR-A",
+      "name": "Anatolikí Makedonía kai Thráki",
+      "type": "Administrative region"
+    },
+    {
+      "code": "GR-L",
+      "name": "Nótio Aigaío",
+      "type": "Administrative region"
+    },
+    {
+      "code": "GR-G",
+      "name": "Dytikí Elláda",
+      "type": "Administrative region"
+    },
+    {
+      "code": "GR-B",
+      "name": "Kentrikí Makedonía",
+      "type": "Administrative region"
+    },
+    {
+      "code": "GR-M",
+      "name": "Kríti",
+      "type": "Administrative region"
+    },
+    {
+      "code": "GR-H",
+      "name": "Stereá Elláda",
+      "type": "Administrative region"
+    },
+    {
+      "code": "GR-C",
+      "name": "Dytikí Makedonía",
+      "type": "Administrative region"
+    },
+    {
+      "code": "GR-I",
+      "name": "Attikí",
+      "type": "Administrative region"
+    },
+    {
+      "code": "GR-D",
+      "name": "Ípeiros",
+      "type": "Administrative region"
+    },
+    {
+      "code": "GR-J",
+      "name": "Pelopónnisos",
+      "type": "Administrative region"
+    },
+    {
+      "code": "GR-E",
+      "name": "Thessalía",
+      "type": "Administrative region"
+    },
+    {
+      "code": "GR-69",
+      "name": "Ágion Óros",
+      "type": "Self-governed part"
+    }
+  ],
+  "cities": [
+    "Athens"
+  ],
+  "keywords": []
+}

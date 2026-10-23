@@ -1,0 +1,25 @@
+{
+  "id": "cooking",
+  "name": "Cooking",
+  "description": "Cooking, recipes and food.",
+  "categories": {
+    "Topics": [
+      "cooking",
+      "recipes",
+      "baking",
+      "meal prep",
+      "kitchen skills"
+    ],
+    "Formats": [
+      "recipe",
+      "tutorial",
+      "tips",
+      "review"
+    ]
+  },
+  "country": "GLOBAL",
+  "targetLanguage": "en",
+  "contentLanguages": [
+    "en"
+  ]
+}

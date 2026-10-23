@@ -1,0 +1,363 @@
+{
+  "code": "LT",
+  "alpha3": "LTU",
+  "numeric": "440",
+  "name": "Lithuania",
+  "capital": "Vilnius",
+  "regions": [
+    {
+      "code": "LT-36",
+      "name": "Prienai",
+      "type": "District municipality"
+    },
+    {
+      "code": "LT-15",
+      "name": "Kauno miestas",
+      "type": "City municipality"
+    },
+    {
+      "code": "LT-57",
+      "name": "Vilniaus miestas",
+      "type": "City municipality"
+    },
+    {
+      "code": "LT-37",
+      "name": "Radviliškis",
+      "type": "District municipality"
+    },
+    {
+      "code": "LT-16",
+      "name": "Kaunas",
+      "type": "District municipality"
+    },
+    {
+      "code": "LT-58",
+      "name": "Vilnius",
+      "type": "District municipality"
+    },
+    {
+      "code": "LT-38",
+      "name": "Raseiniai",
+      "type": "District municipality"
+    },
+    {
+      "code": "LT-17",
+      "name": "Kazlų Rūdos",
+      "type": "Municipality"
+    },
+    {
+      "code": "LT-59",
+      "name": "Visaginas",
+      "type": "Municipality"
+    },
+    {
+      "code": "LT-39",
+      "name": "Rietavas",
+      "type": "Municipality"
+    },
+    {
+      "code": "LT-18",
+      "name": "Kėdainiai",
+      "type": "District municipality"
+    },
+    {
+      "code": "LT-60",
+      "name": "Zarasai",
+      "type": "District municipality"
+    },
+    {
+      "code": "LT-40",
+      "name": "Rokiškis",
+      "type": "District municipality"
+    },
+    {
+      "code": "LT-19",
+      "name": "Kelmė",
+      "type": "District municipality"
+    },
+    {
+      "code": "LT-AL",
+      "name": "Alytaus apskritis",
+      "type": "County"
+    },
+    {
+      "code": "LT-41",
+      "name": "Šakiai",
+      "type": "District municipality"
+    },
+    {
+      "code": "LT-20",
+      "name": "Klaipėdos miestas",
+      "type": "City municipality"
+    },
+    {
+      "code": "LT-KL",
+      "name": "Klaipėdos apskritis",
+      "type": "County"
+    },
+    {
+      "code": "LT-42",
+      "name": "Šalčininkai",
+      "type": "District municipality"
+    },
+    {
+      "code": "LT-21",
+      "name": "Klaipėda",
+      "type": "District municipality"
+    },
+    {
+      "code": "LT-KU",
+      "name": "Kauno apskritis",
+      "type": "County"
+    },
+    {
+      "code": "LT-43",
+      "name": "Šiaulių miestas",
+      "type": "City municipality"
+    },
+    {
+      "code": "LT-22",
+      "name": "Kretinga",
+      "type": "District municipality"
+    },
+    {
+      "code": "LT-MR",
+      "name": "Marijampolės apskritis",
+      "type": "County"
+    },
+    {
+      "code": "LT-01",
+      "name": "Akmenė",
+      "type": "District municipality"
+    },
+    {
+      "code": "LT-44",
+      "name": "Šiauliai",
+      "type": "District municipality"
+    },
+    {
+      "code": "LT-23",
+      "name": "Kupiškis",
+      "type": "District municipality"
+    },
+    {
+      "code": "LT-PN",
+      "name": "Panevėžio apskritis",
+      "type": "County"
+    },
+    {
+      "code": "LT-02",
+      "name": "Alytaus miestas",
+      "type": "City municipality"
+    },
+    {
+      "code": "LT-45",
+      "name": "Šilalė",
+      "type": "District municipality"
+    },
+    {
+      "code": "LT-24",
+      "name": "Lazdijai",
+      "type": "District municipality"
+    },
+    {
+      "code": "LT-SA",
+      "name": "Šiaulių apskritis",
+      "type": "County"
+    },
+    {
+      "code": "LT-03",
+      "name": "Alytus",
+      "type": "District municipality"
+    },
+    {
+      "code": "LT-46",
+      "name": "Šilutė",
+      "type": "District municipality"
+    },
+    {
+      "code": "LT-25",
+      "name": "Marijampolė",
+      "type": "District municipality"
+    },
+    {
+      "code": "LT-TA",
+      "name": "Tauragės apskritis",
+      "type": "County"
+    },
+    {
+      "code": "LT-04",
+      "name": "Anykščiai",
+      "type": "District municipality"
+    },
+    {
+      "code": "LT-47",
+      "name": "Širvintos",
+      "type": "District municipality"
+    },
+    {
+      "code": "LT-26",
+      "name": "Mažeikiai",
+      "type": "District municipality"
+    },
+    {
+      "code": "LT-TE",
+      "name": "Telšių apskritis",
+      "type": "County"
+    },
+    {
+      "code": "LT-05",
+      "name": "Birštonas",
+      "type": "Municipality"
+    },
+    {
+      "code": "LT-48",
+      "name": "Skuodas",
+      "type": "District municipality"
+    },
+    {
+      "code": "LT-27",
+      "name": "Molėtai",
+      "type": "District municipality"
+    },
+    {
+      "code": "LT-UT",
+      "name": "Utenos apskritis",
+      "type": "County"
+    },
+    {
+      "code": "LT-06",
+      "name": "Biržai",
+      "type": "District municipality"
+    },
+    {
+      "code": "LT-49",
+      "name": "Švenčionys",
+      "type": "District municipality"
+    },
+    {
+      "code": "LT-28",
+      "name": "Neringa",
+      "type": "Municipality"
+    },
+    {
+      "code": "LT-VL",
+      "name": "Vilniaus apskritis",
+      "type": "County"
+    },
+    {
+      "code": "LT-07",
+      "name": "Druskininkai",
+      "type": "Municipality"
+    },
+    {
+      "code": "LT-50",
+      "name": "Tauragė",
+      "type": "District municipality"
+    },
+    {
+      "code": "LT-29",
+      "name": "Pagėgiai",
+      "type": "Municipality"
+    },
+    {
+      "code": "LT-08",
+      "name": "Elektrėnai",
+      "type": "Municipality"
+    },
+    {
+      "code": "LT-51",
+      "name": "Telšiai",
+      "type": "District municipality"
+    },
+    {
+      "code": "LT-30",
+      "name": "Pakruojis",
+      "type": "District municipality"
+    },
+    {
+      "code": "LT-09",
+      "name": "Ignalina",
+      "type": "District municipality"
+    },
+    {
+      "code": "LT-52",
+      "name": "Trakai",
+      "type": "District municipality"
+    },
+    {
+      "code": "LT-31",
+      "name": "Palangos miestas",
+      "type": "City municipality"
+    },
+    {
+      "code": "LT-10",
+      "name": "Jonava",
+      "type": "District municipality"
+    },
+    {
+      "code": "LT-53",
+      "name": "Ukmergė",
+      "type": "District municipality"
+    },
+    {
+      "code": "LT-32",
+      "name": "Panevėžio miestas",
+      "type": "City municipality"
+    },
+    {
+      "code": "LT-11",
+      "name": "Joniškis",
+      "type": "District municipality"
+    },
+    {
+      "code": "LT-54",
+      "name": "Utena",
+      "type": "District municipality"
+    },
+    {
+      "code": "LT-33",
+      "name": "Panevėžys",
+      "type": "District municipality"
+    },
+    {
+      "code": "LT-12",
+      "name": "Jurbarkas",
+      "type": "District municipality"
+    },
+    {
+      "code": "LT-55",
+      "name": "Varėna",
+      "type": "District municipality"
+    },
+    {
+      "code": "LT-34",
+      "name": "Pasvalys",
+      "type": "District municipality"
+    },
+    {
+      "code": "LT-13",
+      "name": "Kaišiadorys",
+      "type": "District municipality"
+    },
+    {
+      "code": "LT-56",
+      "name": "Vilkaviškis",
+      "type": "District municipality"
+    },
+    {
+      "code": "LT-35",
+      "name": "Plungė",
+      "type": "District municipality"
+    },
+    {
+      "code": "LT-14",
+      "name": "Kalvarija",
+      "type": "Municipality"
+    }
+  ],
+  "cities": [
+    "Vilnius"
+  ],
+  "keywords": []
+}

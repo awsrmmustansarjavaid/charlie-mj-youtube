@@ -1,0 +1,58 @@
+{
+  "code": "GA",
+  "alpha3": "GAB",
+  "numeric": "266",
+  "name": "Gabon",
+  "capital": "Libreville",
+  "regions": [
+    {
+      "code": "GA-5",
+      "name": "Nyanga",
+      "type": "Province"
+    },
+    {
+      "code": "GA-6",
+      "name": "Ogooué-Ivindo",
+      "type": "Province"
+    },
+    {
+      "code": "GA-1",
+      "name": "Estuaire",
+      "type": "Province"
+    },
+    {
+      "code": "GA-7",
+      "name": "Ogooué-Lolo",
+      "type": "Province"
+    },
+    {
+      "code": "GA-2",
+      "name": "Haut-Ogooué",
+      "type": "Province"
+    },
+    {
+      "code": "GA-8",
+      "name": "Ogooué-Maritime",
+      "type": "Province"
+    },
+    {
+      "code": "GA-3",
+      "name": "Moyen-Ogooué",
+      "type": "Province"
+    },
+    {
+      "code": "GA-9",
+      "name": "Woleu-Ntem",
+      "type": "Province"
+    },
+    {
+      "code": "GA-4",
+      "name": "Ngounié",
+      "type": "Province"
+    }
+  ],
+  "cities": [
+    "Libreville"
+  ],
+  "keywords": []
+}

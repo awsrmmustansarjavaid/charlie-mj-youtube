@@ -1,0 +1,27 @@
+{
+  "id": "technology",
+  "name": "Technology",
+  "description": "Technology, software and digital interests.",
+  "categories": {
+    "Topics": [
+      "technology",
+      "software",
+      "AI",
+      "cloud",
+      "programming",
+      "Linux",
+      "open source"
+    ],
+    "Formats": [
+      "tutorial",
+      "guide",
+      "review",
+      "tips"
+    ]
+  },
+  "country": "GLOBAL",
+  "targetLanguage": "en",
+  "contentLanguages": [
+    "en"
+  ]
+}

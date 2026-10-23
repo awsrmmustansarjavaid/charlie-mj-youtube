@@ -1,0 +1,53 @@
+
+html[data-cmj-sidebar="hidden"] ytd-guide-renderer,
+html[data-cmj-sidebar="hidden"] #guide-button,
+html[data-cmj-home="hidden"] ytd-browse[page-subtype="home"] ytd-rich-section-renderer {
+  display:none !important;
+}
+html[data-cmj-adblock="on"] .ytp-ad-overlay-container,
+html[data-cmj-adblock="on"] .ytp-ad-image-overlay,
+html[data-cmj-adblock="on"] .ytp-ad-player-overlay,
+html[data-cmj-adblock="on"] ytd-ad-slot-renderer,
+html[data-cmj-adblock="on"] ytd-in-feed-ad-layout-renderer,
+html[data-cmj-adblock="on"] ytd-display-ad-renderer{display:none!important}
+
+/* Charlie MJ Target Feed */
+#cmj-target-feed {
+  display: block !important;
+  margin: 18px 0 28px;
+  padding: 16px;
+  background: var(--yt-spec-base-background, #fff);
+  border: 1px solid var(--yt-spec-10-percent-layer, #e5e5e5);
+  border-radius: 16px;
+  box-sizing: border-box;
+  width: 100%;
+}
+#cmj-target-feed .cmj-target-head { display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:14px; }
+#cmj-target-feed .cmj-target-head div { display:flex; flex-direction:column; gap:4px; }
+#cmj-target-feed .cmj-target-head strong { font-size:18px; color:var(--yt-spec-text-primary,#0f0f0f); }
+#cmj-target-feed .cmj-target-head span { font-size:12px; color:var(--yt-spec-text-secondary,#606060); }
+#cmj-target-feed .cmj-target-head button { border:0; border-radius:18px; padding:8px 14px; cursor:pointer; background:#f2f2f2; color:#111; font-weight:600; }
+#cmj-target-feed .cmj-target-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:18px 14px; }
+#cmj-target-feed .cmj-target-card { min-width:0; }
+#cmj-target-feed .cmj-target-thumb { display:block; position:relative; aspect-ratio:16/9; overflow:hidden; border-radius:10px; background:#eee; }
+#cmj-target-feed .cmj-target-thumb img { width:100%; height:100%; object-fit:cover; display:block; }
+#cmj-target-feed .cmj-target-thumb span { position:absolute; right:5px; bottom:5px; padding:2px 5px; border-radius:3px; background:rgba(0,0,0,.82); color:#fff; font-size:11px; }
+#cmj-target-feed .cmj-target-title { display:block; margin-top:8px; color:var(--yt-spec-text-primary,#0f0f0f); font-size:14px; line-height:1.35; font-weight:600; text-decoration:none; }
+#cmj-target-feed .cmj-target-channel,#cmj-target-feed .cmj-target-meta { margin-top:4px; color:var(--yt-spec-text-secondary,#606060); font-size:12px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+#cmj-target-feed .cmj-target-empty { padding:28px; text-align:center; color:var(--yt-spec-text-secondary,#606060); background:#f8f8f8; border-radius:12px; }
+@media (max-width:1200px){#cmj-target-feed .cmj-target-grid{grid-template-columns:repeat(3,minmax(0,1fr));}}
+@media (max-width:800px){#cmj-target-feed .cmj-target-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+.cmj-quick-block{position:absolute!important;top:8px!important;right:8px!important;z-index:10000!important;width:28px!important;height:28px!important;border:0!important;border-radius:50%!important;background:rgba(0,0,0,.72)!important;color:#fff!important;font-size:20px!important;line-height:28px!important;cursor:pointer!important;opacity:0!important;transition:opacity .15s ease!important}
+ytd-rich-item-renderer:hover .cmj-quick-block,ytd-video-renderer:hover .cmj-quick-block,ytd-grid-video-renderer:hover .cmj-quick-block,ytd-compact-video-renderer:hover .cmj-quick-block{opacity:1!important}
+
+.cmj-target-reason{font-size:11px;opacity:.68;margin-top:6px;line-height:1.35}.cmj-target-head span{display:block;font-size:12px;opacity:.72;margin-top:3px}
+
+/* Strict Target Feed: hide YouTube's own Home grid items, never the Charlie MJ feed box. */
+html[data-cmj-target-strict="1"] ytd-browse[page-subtype="home"] ytd-rich-item-renderer,
+html[data-cmj-target-strict="1"] ytd-browse[page-subtype="home"] ytd-rich-section-renderer,
+html[data-cmj-target-strict="1"] ytd-browse[page-subtype="home"] ytd-continuation-item-renderer { display: none !important; }
+#cmj-target-feed { display: block !important; }
+#cmj-target-feed .cmj-target-empty small { display:block; margin-top:8px; opacity:.7; }
+#cmj-target-feed .cmj-target-diag { margin-top:14px; font-size:12px; color:var(--yt-spec-text-secondary,#606060); }
+#cmj-target-feed .cmj-target-diag summary { cursor:pointer; }
+#cmj-target-feed .cmj-target-diag ul { margin:8px 0 0; padding-left:18px; line-height:1.6; }

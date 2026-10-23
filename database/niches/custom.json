@@ -1,0 +1,14 @@
+{
+  "id": "custom",
+  "name": "Custom Niche",
+  "description": "Your custom niche profile.",
+  "categories": {
+    "Topics": [],
+    "Formats": []
+  },
+  "country": "GLOBAL",
+  "targetLanguage": "en",
+  "contentLanguages": [
+    "en"
+  ]
+}

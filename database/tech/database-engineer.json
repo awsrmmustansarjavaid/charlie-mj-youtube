@@ -1,0 +1,58 @@
+{
+  "id": "database-engineer",
+  "name": "Database Engineer",
+  "description": "Database architecture, performance, reliability and operations.",
+  "categories": {
+    "PostgreSQL": [
+      "PostgreSQL"
+    ],
+    "MySQL": [
+      "MySQL"
+    ],
+    "MariaDB": [
+      "MariaDB"
+    ],
+    "SQL Server": [
+      "SQL Server"
+    ],
+    "Oracle": [
+      "Oracle"
+    ],
+    "MongoDB": [
+      "MongoDB"
+    ],
+    "Redis": [
+      "Redis"
+    ],
+    "Database Design": [
+      "Database Design"
+    ],
+    "SQL": [
+      "SQL"
+    ],
+    "Indexing": [
+      "Indexing"
+    ],
+    "Query Optimization": [
+      "Query Optimization"
+    ],
+    "Replication": [
+      "Replication"
+    ],
+    "Backup": [
+      "Backup"
+    ],
+    "High Availability": [
+      "High Availability"
+    ],
+    "Database Security": [
+      "Database Security"
+    ],
+    "ETL": [
+      "ETL"
+    ],
+    "Data Modeling": [
+      "Data Modeling"
+    ]
+  }
+}

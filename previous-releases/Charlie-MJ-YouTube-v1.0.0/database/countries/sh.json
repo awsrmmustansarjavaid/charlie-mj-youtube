@@ -1,0 +1,26 @@
+{
+  "code": "SH",
+  "alpha3": "SHN",
+  "numeric": "654",
+  "name": "Saint Helena, Ascension and Tristan da Cunha",
+  "capital": "",
+  "regions": [
+    {
+      "code": "SH-TA",
+      "name": "Tristan da Cunha",
+      "type": "Geographical entity"
+    },
+    {
+      "code": "SH-HL",
+      "name": "Saint Helena",
+      "type": "Geographical entity"
+    },
+    {
+      "code": "SH-AC",
+      "name": "Ascension",
+      "type": "Geographical entity"
+    }
+  ],
+  "cities": [],
+  "keywords": []
+}

@@ -1,0 +1,53 @@
+{
+  "code": "AU",
+  "alpha3": "AUS",
+  "numeric": "036",
+  "name": "Australia",
+  "capital": "Canberra",
+  "regions": [
+    {
+      "code": "AU-TAS",
+      "name": "Tasmania",
+      "type": "State"
+    },
+    {
+      "code": "AU-ACT",
+      "name": "Australian Capital Territory",
+      "type": "Territory"
+    },
+    {
+      "code": "AU-VIC",
+      "name": "Victoria",
+      "type": "State"
+    },
+    {
+      "code": "AU-NSW",
+      "name": "New South Wales",
+      "type": "State"
+    },
+    {
+      "code": "AU-WA",
+      "name": "Western Australia",
+      "type": "State"
+    },
+    {
+      "code": "AU-NT",
+      "name": "Northern Territory",
+      "type": "Territory"
+    },
+    {
+      "code": "AU-QLD",
+      "name": "Queensland",
+      "type": "State"
+    },
+    {
+      "code": "AU-SA",
+      "name": "South Australia",
+      "type": "State"
+    }
+  ],
+  "cities": [
+    "Canberra"
+  ],
+  "keywords": []
+}

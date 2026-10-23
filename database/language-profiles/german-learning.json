@@ -1,0 +1,26 @@
+{
+  "id": "german-learning",
+  "name": "German Learning",
+  "learningLanguage": "de",
+  "contentLanguages": [
+    "de",
+    "en"
+  ],
+  "goals": [
+    "learn-language",
+    "listening",
+    "vocabulary",
+    "grammar",
+    "conversation",
+    "reading"
+  ],
+  "preferredContent": [
+    "subtitles",
+    "lessons",
+    "native-content",
+    "documentaries",
+    "news"
+  ],
+  "focus": 70,
+  "notes": "Packaged starter profile."
+}

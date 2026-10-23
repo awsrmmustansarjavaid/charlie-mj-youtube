@@ -1,0 +1,43 @@
+{
+  "code": "TM",
+  "alpha3": "TKM",
+  "numeric": "795",
+  "name": "Turkmenistan",
+  "capital": "Ashgabat",
+  "regions": [
+    {
+      "code": "TM-M",
+      "name": "Mary",
+      "type": "Region"
+    },
+    {
+      "code": "TM-S",
+      "name": "Aşgabat",
+      "type": "City"
+    },
+    {
+      "code": "TM-A",
+      "name": "Ahal",
+      "type": "Region"
+    },
+    {
+      "code": "TM-B",
+      "name": "Balkan",
+      "type": "Region"
+    },
+    {
+      "code": "TM-D",
+      "name": "Daşoguz",
+      "type": "Region"
+    },
+    {
+      "code": "TM-L",
+      "name": "Lebap",
+      "type": "Region"
+    }
+  ],
+  "cities": [
+    "Ashgabat"
+  ],
+  "keywords": []
+}

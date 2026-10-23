@@ -1,0 +1,58 @@
+{
+  "code": "AT",
+  "alpha3": "AUT",
+  "numeric": "040",
+  "name": "Austria",
+  "capital": "Vienna",
+  "regions": [
+    {
+      "code": "AT-5",
+      "name": "Salzburg",
+      "type": "State"
+    },
+    {
+      "code": "AT-1",
+      "name": "Burgenland",
+      "type": "State"
+    },
+    {
+      "code": "AT-6",
+      "name": "Steiermark",
+      "type": "State"
+    },
+    {
+      "code": "AT-2",
+      "name": "Kärnten",
+      "type": "State"
+    },
+    {
+      "code": "AT-7",
+      "name": "Tirol",
+      "type": "State"
+    },
+    {
+      "code": "AT-3",
+      "name": "Niederösterreich",
+      "type": "State"
+    },
+    {
+      "code": "AT-8",
+      "name": "Vorarlberg",
+      "type": "State"
+    },
+    {
+      "code": "AT-4",
+      "name": "Oberösterreich",
+      "type": "State"
+    },
+    {
+      "code": "AT-9",
+      "name": "Wien",
+      "type": "State"
+    }
+  ],
+  "cities": [
+    "Vienna"
+  ],
+  "keywords": []
+}

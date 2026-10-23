@@ -1,0 +1,123 @@
+{
+  "code": "LY",
+  "alpha3": "LBY",
+  "numeric": "434",
+  "name": "Libya",
+  "capital": "Tripoli",
+  "regions": [
+    {
+      "code": "LY-SR",
+      "name": "Surt",
+      "type": "Popularate"
+    },
+    {
+      "code": "LY-TB",
+      "name": "Ţarābulus",
+      "type": "Popularate"
+    },
+    {
+      "code": "LY-WA",
+      "name": "Al Wāḩāt",
+      "type": "Popularate"
+    },
+    {
+      "code": "LY-WD",
+      "name": "Wādī al Ḩayāt",
+      "type": "Popularate"
+    },
+    {
+      "code": "LY-WS",
+      "name": "Wādī ash Shāţi’",
+      "type": "Popularate"
+    },
+    {
+      "code": "LY-ZA",
+      "name": "Az Zāwiyah",
+      "type": "Popularate"
+    },
+    {
+      "code": "LY-BA",
+      "name": "Banghāzī",
+      "type": "Popularate"
+    },
+    {
+      "code": "LY-BU",
+      "name": "Al Buţnān",
+      "type": "Popularate"
+    },
+    {
+      "code": "LY-DR",
+      "name": "Darnah",
+      "type": "Popularate"
+    },
+    {
+      "code": "LY-GT",
+      "name": "Ghāt",
+      "type": "Popularate"
+    },
+    {
+      "code": "LY-JA",
+      "name": "Al Jabal al Akhḑar",
+      "type": "Popularate"
+    },
+    {
+      "code": "LY-JG",
+      "name": "Al Jabal al Gharbī",
+      "type": "Popularate"
+    },
+    {
+      "code": "LY-JI",
+      "name": "Al Jafārah",
+      "type": "Popularate"
+    },
+    {
+      "code": "LY-JU",
+      "name": "Al Jufrah",
+      "type": "Popularate"
+    },
+    {
+      "code": "LY-KF",
+      "name": "Al Kufrah",
+      "type": "Popularate"
+    },
+    {
+      "code": "LY-MB",
+      "name": "Al Marqab",
+      "type": "Popularate"
+    },
+    {
+      "code": "LY-MI",
+      "name": "Mişrātah",
+      "type": "Popularate"
+    },
+    {
+      "code": "LY-MJ",
+      "name": "Al Marj",
+      "type": "Popularate"
+    },
+    {
+      "code": "LY-MQ",
+      "name": "Murzuq",
+      "type": "Popularate"
+    },
+    {
+      "code": "LY-NL",
+      "name": "Nālūt",
+      "type": "Popularate"
+    },
+    {
+      "code": "LY-NQ",
+      "name": "An Nuqāţ al Khams",
+      "type": "Popularate"
+    },
+    {
+      "code": "LY-SB",
+      "name": "Sabhā",
+      "type": "Popularate"
+    }
+  ],
+  "cities": [
+    "Tripoli"
+  ],
+  "keywords": []
+}

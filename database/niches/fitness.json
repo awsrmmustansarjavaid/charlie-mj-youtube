@@ -1,0 +1,25 @@
+{
+  "id": "fitness",
+  "name": "Fitness",
+  "description": "Fitness and training.",
+  "categories": {
+    "Topics": [
+      "fitness",
+      "workout",
+      "strength training",
+      "running",
+      "mobility"
+    ],
+    "Formats": [
+      "workout",
+      "training",
+      "tips",
+      "guide"
+    ]
+  },
+  "country": "GLOBAL",
+  "targetLanguage": "en",
+  "contentLanguages": [
+    "en"
+  ]
+}

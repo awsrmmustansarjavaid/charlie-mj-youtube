@@ -1,0 +1,38 @@
+{
+  "code": "RW",
+  "alpha3": "RWA",
+  "numeric": "646",
+  "name": "Rwanda",
+  "capital": "Kigali",
+  "regions": [
+    {
+      "code": "RW-03",
+      "name": "Northern",
+      "type": "Province"
+    },
+    {
+      "code": "RW-04",
+      "name": "Western",
+      "type": "Province"
+    },
+    {
+      "code": "RW-05",
+      "name": "Southern",
+      "type": "Province"
+    },
+    {
+      "code": "RW-01",
+      "name": "City of Kigali",
+      "type": "City"
+    },
+    {
+      "code": "RW-02",
+      "name": "Eastern",
+      "type": "Province"
+    }
+  ],
+  "cities": [
+    "Kigali"
+  ],
+  "keywords": []
+}

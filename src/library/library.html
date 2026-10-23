@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Charlie MJ YouTube — Library</title>
+  <link rel="stylesheet" href="library.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <div class="brand-icon">▶</div>
+      <div>
+        <h1>YouTube Library</h1>
+        <p>Channels, playlists, videos, categories and collections — managed locally.</p>
+      </div>
+    </div>
+    <div class="header-actions">
+      <button class="btn" id="back">← Settings</button>
+      <button class="btn primary" id="save">Save Library</button>
+    </div>
+  </header>
+
+  <main class="library-page">
+    <section class="library-shell">
+      <aside class="sidebar" id="libraryTabs">
+        <div class="sidebar-title">Library</div>
+        <button class="library-tab active" data-kind="channels"><span>◉</span> Channels <b id="count-channels">0</b></button>
+        <button class="library-tab" data-kind="playlists"><span>▤</span> Playlists <b id="count-playlists">0</b></button>
+        <button class="library-tab" data-kind="favorites"><span>★</span> Favorite Videos <b id="count-favorites">0</b></button>
+        <div class="sidebar-divider"></div>
+        <button class="library-tab" data-kind="categories"><span>▦</span> Categories <b id="count-categories">0</b></button>
+        <button class="library-tab" data-kind="collections"><span>▣</span> Collections <b id="count-collections">0</b></button>
+      </aside>
+
+      <section class="library-main">
+        <div class="page-heading">
+          <div>
+            <h2 id="page-title">Channels</h2>
+            <p id="page-description">Saved YouTube channels that can influence Charlie MJ feed intelligence.</p>
+          </div>
+          <div class="page-actions">
+            <button class="btn primary" id="addUrl">＋ Add YouTube URL</button>
+            <button class="btn" id="add">＋ Add</button>
+            <button class="btn" id="edit">Edit</button>
+            <button class="btn" id="detail">Details</button>
+            <button class="btn danger" id="remove">Delete</button>
+            <button class="btn" id="refresh">Refresh</button><button class="btn" id="refreshYouTube">↻ Refresh YouTube Data</button><button class="btn" id="refreshSettings">⚙ Data Refresh</button>
+            <button class="btn" id="import">Import</button>
+            <button class="btn" id="export">Export</button>
+            <input id="file" type="file" accept="application/json,.json" hidden>
+          </div>
+        </div>
+
+        <div class="library-toolbar">
+          <div class="search-wrap"><span>⌕</span><input id="search" placeholder="Search this library page…"></div>
+          <div class="selection-summary" id="selectionSummary">0 selected</div>
+        </div>
+
+        <div id="list" class="card-grid"></div>
+      </section>
+    </section>
+
+    <footer class="app-footer">Charlie MJ YouTube · v2.0.0</footer>
+  </main>
+
+  <div id="modal" class="modal-backdrop" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-head"><div><h2 id="modalTitle">Add YouTube URL</h2><p id="modalSubtitle">Fetch the original YouTube metadata before saving.</p></div><button class="icon-btn" data-close-modal>×</button></div>
+      <div id="modalBody" class="modal-body"></div>
+      <div id="modalActions" class="modal-actions"></div>
+    </div>
+  </div>
+
+  <script type="module" src="library.js"></script>
+</body>
+</html>

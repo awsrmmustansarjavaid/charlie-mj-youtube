@@ -1,0 +1,27 @@
+{
+  "id": "french-learning",
+  "name": "French Learning",
+  "learningLanguage": "fr",
+  "contentLanguages": [
+    "fr",
+    "en"
+  ],
+  "goals": [
+    "learn-language",
+    "listening",
+    "vocabulary",
+    "conversation",
+    "culture",
+    "pronunciation"
+  ],
+  "preferredContent": [
+    "subtitles",
+    "lessons",
+    "native-content",
+    "documentaries",
+    "news",
+    "drama"
+  ],
+  "focus": 70,
+  "notes": "Packaged starter profile."
+}

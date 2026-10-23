@@ -1,0 +1,108 @@
+{
+  "code": "IQ",
+  "alpha3": "IRQ",
+  "numeric": "368",
+  "name": "Iraq",
+  "capital": "Baghdad",
+  "regions": [
+    {
+      "code": "IQ-BG",
+      "name": "Baghdād",
+      "type": "Governorate"
+    },
+    {
+      "code": "IQ-DA",
+      "name": "Dahūk",
+      "type": "Governorate"
+    },
+    {
+      "code": "IQ-DI",
+      "name": "Diyālá",
+      "type": "Governorate"
+    },
+    {
+      "code": "IQ-DQ",
+      "name": "Dhī Qār",
+      "type": "Governorate"
+    },
+    {
+      "code": "IQ-KA",
+      "name": "Karbalā’",
+      "type": "Governorate"
+    },
+    {
+      "code": "IQ-KI",
+      "name": "Kirkūk",
+      "type": "Governorate"
+    },
+    {
+      "code": "IQ-KR",
+      "name": "Herêm-î Kurdistan",
+      "type": "Region"
+    },
+    {
+      "code": "IQ-MA",
+      "name": "Maysān",
+      "type": "Governorate"
+    },
+    {
+      "code": "IQ-MU",
+      "name": "Al Muthanná",
+      "type": "Governorate"
+    },
+    {
+      "code": "IQ-NA",
+      "name": "An Najaf",
+      "type": "Governorate"
+    },
+    {
+      "code": "IQ-NI",
+      "name": "Nīnawá",
+      "type": "Governorate"
+    },
+    {
+      "code": "IQ-QA",
+      "name": "Al Qādisīyah",
+      "type": "Governorate"
+    },
+    {
+      "code": "IQ-SD",
+      "name": "Şalāḩ ad Dīn",
+      "type": "Governorate"
+    },
+    {
+      "code": "IQ-SU",
+      "name": "As Sulaymānīyah",
+      "type": "Governorate"
+    },
+    {
+      "code": "IQ-WA",
+      "name": "Wāsiţ",
+      "type": "Governorate"
+    },
+    {
+      "code": "IQ-AN",
+      "name": "Al Anbār",
+      "type": "Governorate"
+    },
+    {
+      "code": "IQ-AR",
+      "name": "Arbīl",
+      "type": "Governorate"
+    },
+    {
+      "code": "IQ-BA",
+      "name": "Al Başrah",
+      "type": "Governorate"
+    },
+    {
+      "code": "IQ-BB",
+      "name": "Bābil",
+      "type": "Governorate"
+    }
+  ],
+  "cities": [
+    "Baghdad"
+  ],
+  "keywords": []
+}

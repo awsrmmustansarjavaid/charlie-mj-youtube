@@ -1,0 +1,31 @@
+{
+  "id": "custom",
+  "name": "Custom Language Profile",
+  "learningLanguage": "",
+  "contentLanguages": [],
+  "goals": [
+    "learn-language",
+    "listening",
+    "vocabulary",
+    "grammar",
+    "conversation",
+    "culture",
+    "news",
+    "children",
+    "reading",
+    "pronunciation"
+  ],
+  "preferredContent": [
+    "subtitles",
+    "audio",
+    "educational-channels",
+    "lessons",
+    "native-content",
+    "documentaries",
+    "news",
+    "drama",
+    "music"
+  ],
+  "focus": 70,
+  "notes": ""
+}

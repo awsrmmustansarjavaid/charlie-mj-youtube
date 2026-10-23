@@ -1,0 +1,53 @@
+{
+  "code": "QA",
+  "alpha3": "QAT",
+  "numeric": "634",
+  "name": "Qatar",
+  "capital": "Doha",
+  "regions": [
+    {
+      "code": "QA-RA",
+      "name": "Ar Rayyān",
+      "type": "Municipality"
+    },
+    {
+      "code": "QA-SH",
+      "name": "Ash Shīḩānīyah",
+      "type": "Municipality"
+    },
+    {
+      "code": "QA-US",
+      "name": "Umm Şalāl",
+      "type": "Municipality"
+    },
+    {
+      "code": "QA-DA",
+      "name": "Ad Dawḩah",
+      "type": "Municipality"
+    },
+    {
+      "code": "QA-WA",
+      "name": "Al Wakrah",
+      "type": "Municipality"
+    },
+    {
+      "code": "QA-KH",
+      "name": "Al Khawr wa adh Dhakhīrah",
+      "type": "Municipality"
+    },
+    {
+      "code": "QA-ZA",
+      "name": "Az̧ Z̧a‘āyin",
+      "type": "Municipality"
+    },
+    {
+      "code": "QA-MS",
+      "name": "Ash Shamāl",
+      "type": "Municipality"
+    }
+  ],
+  "cities": [
+    "Doha"
+  ],
+  "keywords": []
+}

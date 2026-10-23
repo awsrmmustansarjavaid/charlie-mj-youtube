@@ -1,0 +1,61 @@
+{
+  "id": "cloud-engineer",
+  "name": "Cloud Engineer",
+  "description": "Cloud platforms, architecture and operations.",
+  "categories": {
+    "AWS": [
+      "AWS"
+    ],
+    "Azure": [
+      "Azure"
+    ],
+    "GCP": [
+      "GCP"
+    ],
+    "Kubernetes": [
+      "Kubernetes"
+    ],
+    "Docker": [
+      "Docker"
+    ],
+    "Terraform": [
+      "Terraform"
+    ],
+    "OpenTofu": [
+      "OpenTofu"
+    ],
+    "CloudFormation": [
+      "CloudFormation"
+    ],
+    "IAM": [
+      "IAM"
+    ],
+    "VPC": [
+      "VPC"
+    ],
+    "Networking": [
+      "Networking"
+    ],
+    "Serverless": [
+      "Serverless"
+    ],
+    "Cloud Security": [
+      "Cloud Security"
+    ],
+    "Monitoring": [
+      "Monitoring"
+    ],
+    "Observability": [
+      "Observability"
+    ],
+    "FinOps": [
+      "FinOps"
+    ],
+    "High Availability": [
+      "High Availability"
+    ],
+    "Disaster Recovery": [
+      "Disaster Recovery"
+    ]
+  }
+}

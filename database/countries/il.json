@@ -1,0 +1,43 @@
+{
+  "code": "IL",
+  "alpha3": "ISR",
+  "numeric": "376",
+  "name": "Israel",
+  "capital": "Jerusalem",
+  "regions": [
+    {
+      "code": "IL-TA",
+      "name": "Tall Abīb",
+      "type": "District"
+    },
+    {
+      "code": "IL-D",
+      "name": "Al Janūbī",
+      "type": "District"
+    },
+    {
+      "code": "IL-Z",
+      "name": "Ash Shamālī",
+      "type": "District"
+    },
+    {
+      "code": "IL-HA",
+      "name": "H̱efa",
+      "type": "District"
+    },
+    {
+      "code": "IL-JM",
+      "name": "Al Quds",
+      "type": "District"
+    },
+    {
+      "code": "IL-M",
+      "name": "Al Awsaţ",
+      "type": "District"
+    }
+  ],
+  "cities": [
+    "Jerusalem"
+  ],
+  "keywords": []
+}

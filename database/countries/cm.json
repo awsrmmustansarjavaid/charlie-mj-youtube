@@ -1,0 +1,63 @@
+{
+  "code": "CM",
+  "alpha3": "CMR",
+  "numeric": "120",
+  "name": "Cameroon",
+  "capital": "Yaoundé",
+  "regions": [
+    {
+      "code": "CM-NO",
+      "name": "North",
+      "type": "Region"
+    },
+    {
+      "code": "CM-AD",
+      "name": "Adamaoua",
+      "type": "Region"
+    },
+    {
+      "code": "CM-NW",
+      "name": "North-West",
+      "type": "Region"
+    },
+    {
+      "code": "CM-CE",
+      "name": "Centre",
+      "type": "Region"
+    },
+    {
+      "code": "CM-OU",
+      "name": "West",
+      "type": "Region"
+    },
+    {
+      "code": "CM-EN",
+      "name": "Far North",
+      "type": "Region"
+    },
+    {
+      "code": "CM-SU",
+      "name": "South",
+      "type": "Region"
+    },
+    {
+      "code": "CM-ES",
+      "name": "East",
+      "type": "Region"
+    },
+    {
+      "code": "CM-SW",
+      "name": "South-West",
+      "type": "Region"
+    },
+    {
+      "code": "CM-LT",
+      "name": "Littoral",
+      "type": "Region"
+    }
+  ],
+  "cities": [
+    "Yaoundé"
+  ],
+  "keywords": []
+}

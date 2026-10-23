@@ -1,0 +1,46 @@
+{
+  "id": "ui-ux-designer",
+  "name": "UI/UX Designer",
+  "description": "User experience research, interaction and interface design.",
+  "categories": {
+    "UX": [
+      "UX"
+    ],
+    "UI": [
+      "UI"
+    ],
+    "User Research": [
+      "User Research"
+    ],
+    "Usability": [
+      "Usability"
+    ],
+    "Wireframes": [
+      "Wireframes"
+    ],
+    "Prototyping": [
+      "Prototyping"
+    ],
+    "Figma": [
+      "Figma"
+    ],
+    "Design Systems": [
+      "Design Systems"
+    ],
+    "Accessibility": [
+      "Accessibility"
+    ],
+    "Interaction Design": [
+      "Interaction Design"
+    ],
+    "Information Architecture": [
+      "Information Architecture"
+    ],
+    "Typography": [
+      "Typography"
+    ],
+    "Visual Design": [
+      "Visual Design"
+    ]
+  }
+}

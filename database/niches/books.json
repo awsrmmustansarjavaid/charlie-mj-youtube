@@ -1,0 +1,25 @@
+{
+  "id": "books",
+  "name": "Books & Reading",
+  "description": "Books and literary discovery.",
+  "categories": {
+    "Topics": [
+      "books",
+      "reading",
+      "book review",
+      "literature",
+      "authors"
+    ],
+    "Formats": [
+      "review",
+      "recommendation",
+      "discussion",
+      "analysis"
+    ]
+  },
+  "country": "GLOBAL",
+  "targetLanguage": "en",
+  "contentLanguages": [
+    "en"
+  ]
+}

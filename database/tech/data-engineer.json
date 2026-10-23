@@ -1,0 +1,67 @@
+{
+  "id": "data-engineer",
+  "name": "Data Engineer",
+  "description": "Data pipelines, warehouses, streaming and analytics infrastructure.",
+  "categories": {
+    "Python": [
+      "Python"
+    ],
+    "SQL": [
+      "SQL"
+    ],
+    "PostgreSQL": [
+      "PostgreSQL"
+    ],
+    "MySQL": [
+      "MySQL"
+    ],
+    "Spark": [
+      "Spark"
+    ],
+    "PySpark": [
+      "PySpark"
+    ],
+    "Kafka": [
+      "Kafka"
+    ],
+    "Airflow": [
+      "Airflow"
+    ],
+    "dbt": [
+      "dbt"
+    ],
+    "Snowflake": [
+      "Snowflake"
+    ],
+    "BigQuery": [
+      "BigQuery"
+    ],
+    "Redshift": [
+      "Redshift"
+    ],
+    "Databricks": [
+      "Databricks"
+    ],
+    "ETL": [
+      "ETL"
+    ],
+    "ELT": [
+      "ELT"
+    ],
+    "Data Warehouse": [
+      "Data Warehouse"
+    ],
+    "Data Lake": [
+      "Data Lake"
+    ],
+    "Data Pipelines": [
+      "Data Pipelines"
+    ],
+    "Docker": [
+      "Docker"
+    ],
+    "Kubernetes": [
+      "Kubernetes"
+    ]
+  }
+}

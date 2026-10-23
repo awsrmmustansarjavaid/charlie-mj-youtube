@@ -1,0 +1,43 @@
+{
+  "code": "DJ",
+  "alpha3": "DJI",
+  "numeric": "262",
+  "name": "Djibouti",
+  "capital": "Djibouti",
+  "regions": [
+    {
+      "code": "DJ-DJ",
+      "name": "Djibouti",
+      "type": "City"
+    },
+    {
+      "code": "DJ-OB",
+      "name": "Obock",
+      "type": "Region"
+    },
+    {
+      "code": "DJ-TA",
+      "name": "Tadjourah",
+      "type": "Region"
+    },
+    {
+      "code": "DJ-AR",
+      "name": "Arta",
+      "type": "Region"
+    },
+    {
+      "code": "DJ-AS",
+      "name": "Ali Sabieh",
+      "type": "Region"
+    },
+    {
+      "code": "DJ-DI",
+      "name": "Dikhil",
+      "type": "Region"
+    }
+  ],
+  "cities": [
+    "Djibouti"
+  ],
+  "keywords": []
+}

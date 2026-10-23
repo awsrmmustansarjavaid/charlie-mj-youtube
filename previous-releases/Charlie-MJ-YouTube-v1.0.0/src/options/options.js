@@ -1,0 +1,494 @@
+import { getSettings, saveSettings, getStats } from "../shared/core.js";
+
+const TAB_META = {
+  dashboard: ["Dashboard", "Overview and quick health status"],
+  general: ["General", "Global YouTube experience controls"],
+  blocktube: ["BlockTube Filters", "Granular title, channel, video, regex and context blocking"],
+  filtertube: ["FilterTube Controls", "Smart matching, quick blocking, shelves, playlists and watched-video controls"],
+  cleantubefilters: ["ClearnTube Filters UL", "Unified distraction, feed, navigation and interface controls"],
+  playback: ["Playback & Player", "Speed, quality, theater/cinema, loop, autoplay and player preferences"],
+  ads: ["YouTube Ad Control", "Network, video and cosmetic advertisement blocking"],
+  privacy: ["Privacy & Blocking", "Channels, video IDs, keywords and regex rules"],
+  language: ["Target Country & Language", "Searchable geographic and language targeting"],
+  targetfeed: ["Target Feed", "Make YouTube prioritize and display your selected country and language"],
+  tools: ["YouTube Tools", "Actions for the active YouTube tab"],
+  fetch: ["YouTube Fetch", "Inspect visible video cards without private APIs"],
+  suggestions: ["Suggestions", "Local topic scoring and discovery"],
+  algorithm: ["Algorithm Insights", "Transparent local observations"],
+  sync: ["Data Sync", "Compare local JSON data with GitHub"],
+  performance: ["Performance", "Runtime metrics and last scan"],
+  notifications: ["Notifications", "Desktop notification preferences"],
+  toolbar: ["Floating Toolbar", "Movable Windows-style YouTube control bar"],
+  database: ["Database Manager", "Backup, restore and database counts"],
+  profiles: ["Profiles & Backup", "Independent settings profiles, PIN protection and portable backups"]
+};
+
+const $ = (selector) => document.querySelector(selector);
+const esc = (value) => String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const lines = (id) => ($(id) ? $(id).value.split(/\r?\n/).map(v => v.trim()).filter(Boolean) : []);
+
+let currentTab = "dashboard";
+let settings;
+let countryData;
+let languageData;
+
+
+// Additional country → language intelligence. The first language is the automatic suggestion;
+// additional entries are offered as alternatives. Manual language choices are never overwritten
+// after the user explicitly changes the language selector.
+const COUNTRY_LANGUAGE_HINTS = {
+  TR: ["tr"], PK: ["ur", "en"], IN: ["hi", "en"], DE: ["de"], AT: ["de"], CH: ["de", "fr", "it"],
+  FR: ["fr"], BE: ["nl", "fr", "de"], NL: ["nl"], ES: ["es"], PT: ["pt"], IT: ["it"],
+  GB: ["en"], IE: ["en", "ga"], US: ["en"], CA: ["en", "fr"], AU: ["en"], NZ: ["en"],
+  ZA: ["en", "zu", "xh", "af"], NG: ["en"], GH: ["en"], KE: ["en", "sw"], TZ: ["sw", "en"],
+  EG: ["ar"], SA: ["ar"], AE: ["ar"], QA: ["ar"], JO: ["ar"], IQ: ["ar", "ku"], MA: ["ar", "fr"],
+  DZ: ["ar", "fr"], TN: ["ar", "fr"], IL: ["he", "ar"], IR: ["fa"], AF: ["ps", "fa"],
+  RU: ["ru"], UA: ["uk"], PL: ["pl"], CZ: ["cs"], SK: ["sk"], HU: ["hu"], RO: ["ro"],
+  BG: ["bg"], GR: ["el"], RS: ["sr"], HR: ["hr"], SI: ["sl"], AL: ["sq"], BA: ["bs", "hr", "sr"],
+  GE: ["ka"], AM: ["hy"], AZ: ["az"], KZ: ["kk", "ru"], UZ: ["uz"], MN: ["mn"],
+  CN: ["zh"], TW: ["zh"], HK: ["zh", "en"], MO: ["zh", "pt"], JP: ["ja"], KR: ["ko"],
+  VN: ["vi"], TH: ["th"], ID: ["id"], MY: ["ms"], SG: ["en", "zh", "ms", "ta"], PH: ["en", "fil"],
+  BD: ["bn"], LK: ["si", "ta"], NP: ["ne"], KH: ["km"], LA: ["lo"], MM: ["my"],
+  BR: ["pt"], MX: ["es"], AR: ["es"], CL: ["es"], CO: ["es"], PE: ["es"], VE: ["es"],
+  BO: ["es"], EC: ["es"], UY: ["es"], PY: ["es", "gn"], CR: ["es"], PA: ["es"], DO: ["es"],
+  CU: ["es"], GT: ["es"], HN: ["es"], SV: ["es"], NI: ["es"], PR: ["es"], JM: ["en"],
+  IS: ["is"], NO: ["no"], SE: ["sv"], DK: ["da"], FI: ["fi"], EE: ["et"], LV: ["lv"], LT: ["lt"],
+  LU: ["lb", "fr", "de"], MT: ["mt", "en"], CY: ["el", "tr"]
+};
+
+function languageCodeForRecord(record) {
+  return String(record?.alpha_2 || record?.alpha_3 || record?.terminology || record?.bibliographic || "").toLowerCase();
+}
+
+function findLanguageByCode(code) {
+  const c = String(code || "").toLowerCase();
+  return (languageData?.languages || []).find(x => [x.alpha_2, x.alpha_3, x.terminology, x.bibliographic].filter(Boolean).some(v => String(v).toLowerCase() === c));
+}
+
+function suggestedLanguagesForCountry(countryCode) {
+  return (COUNTRY_LANGUAGE_HINTS[String(countryCode || "").toUpperCase()] || [])
+    .map(findLanguageByCode).filter(Boolean);
+}
+
+function notify(message, type = "success") {
+  document.querySelector(".toast")?.remove();
+  const n = document.createElement("div");
+  n.className = `toast ${type}`;
+  n.textContent = message;
+  document.body.appendChild(n);
+  setTimeout(() => n.remove(), 3200);
+}
+
+function downloadJson(filename, data) {
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url; a.download = filename; document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
+async function deriveBackupKey(passphrase, salt) {
+  const base = await crypto.subtle.importKey("raw", new TextEncoder().encode(passphrase), "PBKDF2", false, ["deriveKey"]);
+  return crypto.subtle.deriveKey({name:"PBKDF2",salt,iterations:150000,hash:"SHA-256"}, base, {name:"AES-GCM",length:256}, false, ["encrypt","decrypt"]);
+}
+async function encryptBackup(data, passphrase) {
+  const salt=crypto.getRandomValues(new Uint8Array(16)); const iv=crypto.getRandomValues(new Uint8Array(12));
+  const key=await deriveBackupKey(passphrase,salt); const encoded=new TextEncoder().encode(JSON.stringify(data));
+  const cipher=await crypto.subtle.encrypt({name:"AES-GCM",iv},key,encoded);
+  return {format:"charlie-mj-encrypted-backup",version:"1.0.0",kdf:"PBKDF2-SHA256",iterations:150000,cipher:"AES-GCM",salt:btoa(String.fromCharCode(...salt)),iv:btoa(String.fromCharCode(...iv)),data:btoa(String.fromCharCode(...new Uint8Array(cipher)))};
+}
+async function decryptBackup(wrapper, passphrase) {
+  const salt=Uint8Array.from(atob(wrapper.salt),c=>c.charCodeAt(0)); const iv=Uint8Array.from(atob(wrapper.iv),c=>c.charCodeAt(0)); const cipher=Uint8Array.from(atob(wrapper.data),c=>c.charCodeAt(0));
+  const key=await deriveBackupKey(passphrase,salt); const plain=await crypto.subtle.decrypt({name:"AES-GCM",iv},key,cipher); return JSON.parse(new TextDecoder().decode(plain));
+}
+
+async function loadJson(path) {
+  const response = await fetch(chrome.runtime.getURL(path), { cache: "no-store" });
+  if (!response.ok) throw new Error(`Could not load ${path} (${response.status})`);
+  return response.json();
+}
+
+async function loadDatabase() {
+  countryData ||= await loadJson("database/countries/countries.json");
+  languageData ||= await loadJson("database/languages/languages.json");
+}
+
+function countryOptions(query = "") {
+  const q = query.trim().toLowerCase();
+  return (countryData?.countries || []).filter(x => !q || `${x.name} ${x.code} ${x.alpha3}`.toLowerCase().includes(q))
+    .map(x => `<option value="${esc(x.code)}" ${x.code === settings.country ? "selected" : ""}>${esc(x.name)} (${esc(x.code)})</option>`).join("");
+}
+
+function languageOptions(query = "") {
+  const q = query.trim().toLowerCase();
+  return (languageData?.languages || []).filter(x => `${x.name||""} ${x.alpha_2||""} ${x.alpha_3||""} ${x.bibliographic||""} ${x.terminology||""}`.toLowerCase().includes(q))
+    .map(x => { const code = x.alpha_2 || x.alpha_3 || x.terminology || x.bibliographic || ""; return `<option value="${esc(code)}" ${code === settings.targetLanguage ? "selected" : ""}>${esc(x.name)}${code ? ` (${esc(code)})` : ""}</option>`; }).join("");
+}
+
+async function sendToYouTube(message) {
+  const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+  if (!tab?.id || !/^https:\/\/(www\.)?youtube\.com\//i.test(tab.url || "")) {
+    notify("Open YouTube first, then try this action.", "warn");
+    return { ok: false, error: "Open YouTube first" };
+  }
+  const send = () => new Promise(resolve => chrome.tabs.sendMessage(tab.id, message, response => {
+    const error = chrome.runtime.lastError;
+    resolve(error ? { ok: false, error: error.message } : (response || { ok: true }));
+  }));
+  let result = await send();
+  if (!result.ok && /Receiving end does not exist/i.test(result.error || "")) {
+    try {
+      await chrome.scripting.executeScript({ target: { tabId: tab.id }, files: ["src/content/youtube.js"] });
+      result = await send();
+    } catch (e) { result = { ok: false, error: e.message }; }
+  }
+  if (!result.ok) notify(`YouTube action failed: ${result.error}`, "error");
+  return result;
+}
+
+function renderDashboard() {
+  return getStats().then(stats => {
+    $("#content").innerHTML = `<div class="grid">
+      <div class="card"><h3>Videos scanned</h3><div class="metric">${stats.videosScanned || 0}</div><span class="muted">Local extension metric</span></div>
+      <div class="card"><h3>Videos hidden</h3><div class="metric">${stats.videosHidden || 0}</div><span class="muted">Filtering actions</span></div>
+      <div class="card"><h3>Notifications</h3><div class="metric">${stats.notifications || 0}</div><span class="muted">Desktop notification events</span></div>
+    </div><div class="card" style="margin-top:14px"><h3>Extension status</h3><p class="ok">● Settings engine online</p><p>Version <strong>1.0.0</strong> · Manifest V3 · JSON database</p><p>Target: <strong>${esc(settings.country || "US")}</strong> / <strong>${esc(settings.targetLanguage || "en")}</strong></p><p class="muted">Filtering is based on information visible to the extension. It does not access YouTube's private recommendation system.</p></div>`;
+  });
+}
+
+const HIDE_CONTROL_KEYS = [
+  "hideHomeRecommendations", "hideRecommendations", "hideSidebar", "hideThumbnails", "disableAutoplay", "hideAds",
+  "hideShorts", "hideExplore", "hideTrending", "hideSubscriptions", "hideSearchSuggestions",
+  "hideComments", "hideLiveChat", "hideEndscreenRecommendations", "hideFeaturedContent", "hideMembersOnly",
+  "hideMerch", "hideDonationPromos", "hideMembershipPromos", "hideMixes", "hideCommunity", "hideMusic",
+  "hideGaming", "hideNews", "hideMovies", "hideLive", "hideStore", "hideChannelTabs"
+];
+
+function isFullControlActive() {
+  return settings.fullControl === true;
+}
+
+function renderGeneral() {
+  const s = settings;
+  $("#content").innerHTML = `<div class="grid">
+    <div class="card form"><h3>Extension Control Center</h3>
+      <label class="check"><input id="extEnabled" type="checkbox" ${s.extensionEnabled !== false ? "checked" : ""}> Enable Charlie MJ YouTube</label>
+      <label class="check"><input id="notifGeneral" type="checkbox" ${s.notifications !== false ? "checked" : ""}> Enable extension notifications</label>
+      <label class="check"><input id="targetShortcut" type="checkbox" ${s.targetFeedEnabled ? "checked" : ""}> Enable Target Feed</label>
+      <label class="check"><input id="profileGeneral" type="checkbox" ${s.applyYouTubeProfile !== false ? "checked" : ""}> Apply selected YouTube country/language profile</label>
+      <label class="check"><input id="toolbarGeneral" type="checkbox" ${s.toolbarEnabled !== false ? "checked" : ""}> Enable floating toolbar</label>
+      <p class="muted">Interface hiding is managed only from <strong>ClearnTube Filters UL</strong>. This prevents duplicate hide settings.</p>
+    </div>
+    <div class="card form"><h3>Target & automation</h3>
+      <div class="field"><label>Target country</label><div class="metric">${esc(s.country || "US")}</div></div>
+      <div class="field"><label>Target language</label><div class="metric">${esc(s.targetLanguage || "en")}</div></div>
+      <div class="actions"><button class="btn" id="openTargetSettings">Open Target Country & Language</button><button class="btn" id="openTargetFeed">Open Target Feed</button></div>
+    </div>
+    <div class="card"><h3>System tools</h3><p>Profiles, backup/restore, diagnostics, performance, ad control and the floating toolbar each have their own dedicated tab.</p><p class="muted">Version 1.0.0 · Manifest V3 · local JSON databases.</p></div>
+  </div>`;
+  $("#openTargetSettings").onclick = () => { currentTab = "language"; document.querySelectorAll(".nav").forEach(x => x.classList.toggle("active", x.dataset.tab === currentTab)); render(); };
+  $("#openTargetFeed").onclick = () => { currentTab = "targetfeed"; document.querySelectorAll(".nav").forEach(x => x.classList.toggle("active", x.dataset.tab === currentTab)); render(); };
+}
+
+function renderClearnTubeFilters() {
+  const s = settings;
+  const checks = key => s[key] ? "checked" : "";
+  const full = isFullControlActive();
+  $("#content").innerHTML = `<div class="card form">
+    <h3>Full Control</h3>
+    <label class="check"><input id="fullControl" type="checkbox" ${full ? "checked" : ""}> Enable complete distraction-control profile</label>
+    <p class="muted">When enabled, every hide/filter control in this tab is turned on. Turning it off restores the individual settings you had before Full Control was enabled.</p>
+    <div class="actions"><button class="btn" id="enableAll">Enable All</button><button class="btn" id="disableAll">Disable All</button></div>
+  </div>
+  <div class="grid">
+    <div class="card form"><h3>Global controls</h3>
+      <div class="row"><div class="field"><label>Theme</label><select id="ctTheme"><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select></div><div class="field"><label>UI density</label><select id="ctDensity"><option value="normal">Normal</option><option value="compact">Compact</option></select></div></div>
+      ${[
+        ["hideHomeRecommendations","Hide homepage recommendation feed"],["hideRecommendations","Hide related/recommended videos"],["hideSidebar","Hide YouTube sidebar"],["hideThumbnails","Hide video thumbnails"],["disableAutoplay","Disable autoplay"],["hideAds","Hide visible advertisement UI elements"]
+      ].map(([k,l])=>`<label class="check"><input class="ct" data-key="${k}" type="checkbox" ${checks(k)} ${full ? "disabled" : ""}> ${l}</label>`).join("")}
+    </div>
+    <div class="card form"><h3>Feed Filters</h3><p class="muted">Shorts, recommendations and distraction controls</p>
+      <div class="actions"><button class="btn" id="ctSave">Save Changes</button></div>
+      <h4>Feed & navigation</h4>
+      ${[["hideShorts","Hide Shorts"],["hideExplore","Hide Explore"],["hideTrending","Hide Trending"],["hideSubscriptions","Hide Subscriptions navigation"],["hideSearchSuggestions","Hide search suggestions"]].map(([k,l])=>`<label class="check"><input class="ct" data-key="${k}" type="checkbox" ${checks(k)} ${full ? "disabled" : ""}> ${l}</label>`).join("")}
+      <h4>Video page</h4>
+      ${[["hideComments","Hide comments"],["hideLiveChat","Hide live chat"],["hideEndscreenRecommendations","Hide end-screen recommendations"],["hideFeaturedContent","Hide featured/members-only promotional content"]].map(([k,l])=>`<label class="check"><input class="ct" data-key="${k}" type="checkbox" ${checks(k)} ${full ? "disabled" : ""}> ${l}</label>`).join("")}
+    </div>
+    <div class="card form"><h3>Geographic filter behavior</h3>
+      <label class="check"><input id="ctStrict" type="checkbox" ${s.strictCountry ? "checked" : ""}> Strict selected-country filtering</label>
+      <div class="field"><label>Country keywords — one per line</label><textarea id="ctCountryKeywords">${esc((s.countryKeywords || []).join("\n"))}</textarea></div>
+    </div>
+  </div>
+  <div class="card-section" style="margin-top:14px">
+    <div class="section-heading"><div><h3>CleanTube UI</h3><p class="muted">Distraction-free YouTube controls, organized as a responsive grid.</p></div><span class="section-badge">${full ? "FULL CONTROL ON" : "MANUAL"}</span></div>
+    <div class="ct-grid">
+      <div class="card form"><h3>Home & navigation</h3>
+        ${[["hideHomeRecommendations","Hide Home recommendations"],["hideRecommendations","Hide related recommendations"],["hideSidebar","Hide sidebar"],["hideExplore","Hide Explore"],["hideTrending","Hide Trending"],["hideSubscriptions","Hide Subscriptions"],["hideCommunity","Hide Community navigation"],["hideSearchSuggestions","Hide search suggestions"]].map(([k,l])=>`<label class="check"><input class="ct" data-key="${k}" type="checkbox" ${checks(k)} ${full ? "disabled" : ""}> ${l}</label>`).join("")}
+      </div>
+      <div class="card form"><h3>Video experience</h3>
+        ${[["hideShorts","Hide Shorts"],["hideComments","Hide comments"],["hideLiveChat","Hide live chat"],["hideEndscreenRecommendations","Hide end-screen recommendations"],["hideFeaturedContent","Hide featured content"],["hideThumbnails","Hide thumbnails"],["disableAutoplay","Disable autoplay"]].map(([k,l])=>`<label class="check"><input class="ct" data-key="${k}" type="checkbox" ${checks(k)} ${full ? "disabled" : ""}> ${l}</label>`).join("")}
+      </div>
+      <div class="card form"><h3>Shelves & promotions</h3>
+        ${[["hideMerch","Hide merch shelves"],["hideDonationPromos","Hide donation/promotional shelves"],["hideMembershipPromos","Hide membership promotions"],["hideMixes","Hide Mixes/radio shelves"],["hideFeaturedContent","Hide featured content"]].map(([k,l])=>`<label class="check"><input class="ct" data-key="${k}" type="checkbox" ${checks(k)} ${full ? "disabled" : ""}> ${l}</label>`).join("")}
+      </div>
+      <div class="card form"><h3>YouTube sections</h3>
+        ${[["hideMusic","Hide Music navigation"],["hideGaming","Hide Gaming navigation"],["hideNews","Hide News navigation"],["hideMovies","Hide Movies navigation"],["hideLive","Hide Live navigation"],["hideStore","Hide Store navigation"],["hideChannelTabs","Hide channel tabs"]].map(([k,l])=>`<label class="check"><input class="ct" data-key="${k}" type="checkbox" ${checks(k)} ${full ? "disabled" : ""}> ${l}</label>`).join("")}
+      </div>
+    </div>
+    <p class="muted" style="margin-top:12px">These controls only hide interface surfaces; they do not modify your YouTube account or remove Premium features.</p>
+    <div class="actions"><button class="btn" id="ctSave2">Save Changes</button></div>
+  </div>`;
+  $("#ctTheme").value = s.theme || "system";
+  $("#ctDensity").value = s.compactMode ? "compact" : "normal";
+  const applyFull = async on => {
+    if (on && !settings.fullControl) {
+      settings.fullControlBackup = Object.fromEntries(HIDE_CONTROL_KEYS.map(k => [k, !!settings[k]]));
+      HIDE_CONTROL_KEYS.forEach(k => settings[k] = true);
+      settings.fullControl = true;
+    } else if (!on && settings.fullControl) {
+      const backup = settings.fullControlBackup || {};
+      HIDE_CONTROL_KEYS.forEach(k => settings[k] = Object.prototype.hasOwnProperty.call(backup,k) ? !!backup[k] : false);
+      settings.fullControlBackup = null;
+      settings.fullControl = false;
+    }
+    settings = await saveSettings({ fullControl: settings.fullControl, fullControlBackup: settings.fullControlBackup, ...Object.fromEntries(HIDE_CONTROL_KEYS.map(k => [k, !!settings[k]])) });
+    notify(on ? "Complete distraction-control profile enabled." : "Complete distraction-control profile disabled; previous settings restored.");
+    renderClearnTubeFilters();
+  };
+  $("#fullControl").onchange = e => { void applyFull(e.target.checked); };
+  $("#enableAll").onclick = () => { void applyFull(true); };
+  $("#disableAll").onclick = () => { void applyFull(false); };
+  const saveLocal = async () => { settings = await saveSettings(collect()); notify("ClearnTube Filters UL saved."); };
+  $("#ctSave").onclick = saveLocal; $("#ctSave2").onclick = saveLocal;
+  $("#ctStrict").onchange = e => { settings.strictCountry = e.target.checked; };
+  $("#ctTheme").onchange = e => { settings.theme = e.target.value; };
+  $("#ctDensity").onchange = e => { settings.compactMode = e.target.value === "compact"; };
+}
+
+
+function renderPrivacy() {
+  $("#content").innerHTML = `<div class="grid"><div class="card form"><h3>Channel rules</h3><div class="field"><label>Channel whitelist</label><textarea id="whiteChannels">${esc((settings.whitelistChannels || []).join("\n"))}</textarea></div><div class="field"><label>Channel blocklist</label><textarea id="blackChannels">${esc((settings.blacklistChannels || []).join("\n"))}</textarea></div><div class="field"><label>Channel ID blocklist</label><textarea id="blackChannelIds">${esc((settings.blacklistChannelIds || []).join("\n"))}</textarea></div></div>
+  <div class="card form"><h3>Video & text rules</h3><div class="field"><label>Video ID blocklist</label><textarea id="blackVideoIds">${esc((settings.blacklistVideoIds || []).join("\n"))}</textarea></div><div class="field"><label>Keyword whitelist</label><textarea id="white">${esc((settings.whitelist || []).join("\n"))}</textarea></div><div class="field"><label>Keyword blocklist</label><textarea id="black">${esc((settings.blacklist || []).join("\n"))}</textarea></div></div>
+  <div class="card form"><h3>Regex rules</h3><div class="field"><label>Block regex /pattern/flags — one per line</label><textarea id="regex">${esc((settings.regexBlockRules || []).join("\n"))}</textarea></div><p class="muted">Inspired by rule-based blockers: plain lines are case-insensitive keywords; slash-delimited rules are regular expressions.</p><div class="actions"><button class="btn" id="exportRules">Export Rules</button><button class="btn" id="importRules">Import Rules</button><input id="ruleFile" type="file" accept="application/json,.json" hidden></div></div></div>`;
+  $("#exportRules").onclick = () => { downloadJson("charlie-mj-youtube-rules.json", {version:"1.0.0", exportedAt:new Date().toISOString(), whitelist:settings.whitelist||[], blacklist:settings.blacklist||[], whitelistChannels:settings.whitelistChannels||[], blacklistChannels:settings.blacklistChannels||[], blacklistChannelIds:settings.blacklistChannelIds||[], blacklistVideoIds:settings.blacklistVideoIds||[], regexBlockRules:settings.regexBlockRules||[]}); notify("Rules exported."); };
+  $("#importRules").onclick = () => $("#ruleFile").click();
+  $("#ruleFile").onchange = async e => { try { const f=e.target.files?.[0]; if(!f)return; const d=JSON.parse(await f.text()); settings=await saveSettings({whitelist:d.whitelist||[],blacklist:d.blacklist||[],whitelistChannels:d.whitelistChannels||[],blacklistChannels:d.blacklistChannels||[],blacklistChannelIds:d.blacklistChannelIds||[],blacklistVideoIds:d.blacklistVideoIds||[],regexBlockRules:d.regexBlockRules||[]}); notify("Rules imported."); render(); } catch(err){notify(`Import failed: ${err.message}`,"error");} };
+}
+
+async function renderLanguage() {
+  await loadDatabase();
+  $("#content").innerHTML = `<div class="card form"><h3>Target country & language</h3><div class="row"><div class="field"><label>Search country (${countryData.countries.length})</label><input id="countrySearch" placeholder="Search name, ISO-2 or ISO-3…"></div><div class="field"><label>Search language (${languageData.languages.length})</label><input id="languageSearch" placeholder="Search all languages A–Z…"></div></div><div class="row"><div class="field"><label>Target country</label><select id="country" size="10">${countryOptions()}</select></div><div class="field"><label>Target language</label><select id="lang" size="10">${languageOptions()}</select><div id="countryLanguageSuggestion" class="muted" style="margin-top:8px"></div></div></div><div class="row"><div class="field"><label>Geographic mode</label><select id="geoMode"><option value="strict">Strict</option><option value="balanced">Balanced</option><option value="priority">Priority</option><option value="whitelist">Whitelist</option></select></div><div class="field"><label>Unknown location</label><select id="unknownPolicy"><option value="keep">Keep visible</option><option value="hide">Hide</option></select></div></div><div class="card" style="margin-top:14px"><h3>Target Feed quick setup</h3><label class="check"><input id="languageTargetEnabled" type="checkbox" ${settings.targetFeedEnabled ? "checked" : ""}> Enable Target Feed for this country + language</label><p class="muted">For the full Target Feed Engine, use the dedicated Target Feed tab. Strict mode hides content that cannot be classified as your selected target.</p></div><p class="muted">The extension uses visible country/city/region signals plus language signals. It cannot access YouTube's private recommendation API.</p></div>`;
+  $("#geoMode").value=settings.geoMode||"balanced"; $("#unknownPolicy").value=settings.unknownPolicy||"keep";
+  $("#countrySearch").oninput=e=>$("#country").innerHTML=countryOptions(e.target.value); 
+  $("#languageSearch").oninput=e=>$("#lang").innerHTML=languageOptions(e.target.value);
+  const applyCountryLanguageSuggestion = () => {
+    const code = $("#country")?.value;
+    const suggestions = suggestedLanguagesForCountry(code);
+    const box = $("#countryLanguageSuggestion");
+    if (!box) return;
+    if (!suggestions.length) { box.textContent = "No automatic language mapping is configured for this country. You can choose any language manually."; return; }
+    const previousAuto = settings.targetLanguageAutoSuggested;
+    const current = String(settings.targetLanguage || "").toLowerCase();
+    const codes = suggestions.map(languageCodeForRecord);
+    if (!settings.targetLanguageManual || current === String(previousAuto || "").toLowerCase()) {
+      const first = languageCodeForRecord(suggestions[0]);
+      settings.targetLanguage = first;
+      settings.targetLanguageAutoSuggested = first;
+      $("#lang").value = first;
+    }
+    box.innerHTML = `Suggested language for <strong>${esc($("#country")?.selectedOptions?.[0]?.textContent || code)}</strong>: <strong>${esc(suggestions[0].name)}</strong>${suggestions.length > 1 ? ` · alternatives: ${suggestions.slice(1,4).map(x=>esc(x.name)).join(", ")}` : ""}. You can override this manually.`;
+  };
+  $("#country").onchange = applyCountryLanguageSuggestion;
+  $("#lang").onchange = () => { settings.targetLanguageManual = true; settings.targetLanguageAutoSuggested = null; };
+  applyCountryLanguageSuggestion();
+}
+
+function renderTargetFeed() {
+  const enabled = settings.targetFeedEnabled === true;
+  const mode = settings.targetFeedMode || "strict";
+  const unknown = settings.targetUnknownPolicy || "hide";
+  const requireLanguage = settings.targetRequireLanguage !== false;
+  const applyProfile = settings.applyYouTubeProfile !== false;
+  const autoApply = settings.autoApplyTargetProfile !== false;
+  $("#content").innerHTML = `<div class="grid">
+    <div class="card form"><h3>🎯 Target Feed Engine</h3>
+      <label class="check"><input id="targetEnabled" type="checkbox" ${enabled ? "checked" : ""}> Enable Target Feed Mode</label>
+      <div class="field"><label>Feed mode</label><select id="targetMode"><option value="strict">Strict — only target content</option><option value="balanced">Balanced — target content first, uncertain content allowed</option><option value="priority">Priority — target signals preferred</option></select></div>
+      <label class="check"><input id="targetRequireLanguage" type="checkbox" ${requireLanguage ? "checked" : ""}> Require target language signal with country signal</label>
+      <div class="field"><label>Unknown / unclassified content</label><select id="targetUnknown"><option value="hide">Hide — recommended for strict mode</option><option value="keep">Keep visible</option></select></div>
+    </div>
+    <div class="card form"><h3>🌍 YouTube profile preferences</h3>
+      <label class="check"><input id="applyProfile" type="checkbox" ${applyProfile ? "checked" : ""}> Set YouTube Location to selected country</label>
+      <label class="check"><input id="autoApplyProfile" type="checkbox" ${autoApply ? "checked" : ""}> Automatically apply profile when YouTube starts</label>
+      <p class="muted">This changes YouTube's web preference cookie (Location and interface language). It does not change your Google Account's permanent country or your IP address.</p>
+      <div class="actions"><button class="btn" id="applyTarget">Apply Target Profile Now</button><button class="btn" id="openHome">Open / Reload YouTube</button></div>
+    </div>
+  </div>
+  <div class="card" style="margin-top:14px"><h3>How Strict Target Feed works</h3><p>Charlie MJ combines YouTube's supported Location preference with local country, region, city, channel, title and language signals. In Strict mode, cards that cannot be classified as target content are hidden. Charlie MJ does not access YouTube's private recommendation algorithm.</p><div class="code">Selected country → YouTube Location\nSelected language → YouTube interface preference + language signals\n↓\nTarget Feed scoring\n↓\nTarget content: SHOW\nNon-target / unknown: HIDE in Strict mode</div></div>`;
+  $("#targetMode").value = mode; $("#targetUnknown").value = unknown;
+  $("#applyTarget").onclick = async () => { settings = await saveSettings({ targetFeedEnabled: $("#targetEnabled").checked, targetFeedMode: $("#targetMode").value, targetUnknownPolicy: $("#targetUnknown").value, targetRequireLanguage: $("#targetRequireLanguage").checked, applyYouTubeProfile: $("#applyProfile").checked, autoApplyTargetProfile: $("#autoApplyProfile").checked }); const r = await chrome.runtime.sendMessage({ type:"APPLY_YOUTUBE_PROFILE", reload:true }); notify(r?.ok ? "Target Feed profile applied. YouTube will reload if needed." : `Profile failed: ${r?.error || "Unknown error"}`, r?.ok ? "success" : "error"); };
+  $("#openHome").onclick = () => chrome.tabs.create({url:"https://www.youtube.com/"});
+}
+
+function isYouTubeUrl(url) {
+  return /^https:\/\/(?:www\.)?youtube\.com\//i.test(String(url || ""));
+}
+
+function renderToolbar() {
+  const s = settings;
+  $("#content").innerHTML = `<div class="grid">
+    <div class="card form"><h3>🧭 Floating toolbar</h3>
+      <label class="check"><input id="tbEnabled" type="checkbox" ${s.toolbarEnabled !== false ? "checked" : ""}> Enable Charlie MJ floating toolbar</label>
+      <label class="check"><input id="tbYoutubeOnly" type="checkbox" ${s.toolbarShowOnYouTubeOnly !== false ? "checked" : ""}> Show on YouTube pages only</label>
+      <label class="check"><input id="tbAuto" type="checkbox" ${s.toolbarAutoHide !== false ? "checked" : ""}> Auto-hide toolbar until the mouse comes near it</label>
+      <div class="field"><label>Mouse reveal distance (px)</label><input id="tbReveal" type="number" min="20" max="400" value="${Number(s.toolbarRevealDistance || 120)}"></div>
+    </div>
+    <div class="card form"><h3>📍 Default position</h3>
+      <div class="field"><label>Position</label><select id="tbPosition"><option value="bottom-center">Bottom center — above Windows taskbar</option><option value="bottom-left">Bottom left</option><option value="bottom-right">Bottom right</option><option value="top-center">Top center</option><option value="top-left">Top left</option><option value="top-right">Top right</option><option value="custom">Custom — use drag position</option></select></div>
+      <div class="row"><div class="field"><label>Custom X</label><input id="tbX" type="number" value="${s.toolbarCustomX ?? ""}"></div><div class="field"><label>Custom Y</label><input id="tbY" type="number" value="${s.toolbarCustomY ?? ""}"></div></div>
+      <div class="field"><label>Scale</label><input id="tbScale" type="number" min="0.75" max="1.5" step="0.05" value="${Number(s.toolbarScale || 1)}"></div>
+    </div>
+  </div>
+  <div class="card" style="margin-top:14px"><h3>Toolbar controls</h3><p>Users can drag the <strong>CMJ</strong> handle anywhere on YouTube. The default position is bottom-center, just above the Windows taskbar area. When Auto-hide is enabled, a small edge handle remains and the toolbar reappears when the mouse approaches its current position.</p><div class="actions"><button class="btn" id="tbReset">Reset to bottom-center</button><button class="btn" id="tbPreview">Preview on current YouTube tab</button></div></div>`;
+  $("#tbPosition").value = s.toolbarPosition || "bottom-center";
+  $("#tbReset").onclick = async () => { settings = await saveSettings({toolbarPosition:"bottom-center", toolbarCustomX:null, toolbarCustomY:null}); notify("Toolbar position reset to bottom-center."); };
+  $("#tbPreview").onclick = async () => { const [tab]=await chrome.tabs.query({active:true,currentWindow:true}); if(tab?.id && isYouTubeUrl(tab.url)) { try { await chrome.tabs.reload(tab.id); notify("YouTube reloaded with the toolbar settings."); } catch(e){ notify(e.message,"error"); } } else notify("Open YouTube first.","warn"); };
+}
+
+function renderTools() {
+  $("#content").innerHTML = `<div class="grid"><div class="card"><h3>Scan active page</h3><p>Re-scan visible cards after settings change.</p><button class="btn" id="scan">Scan YouTube</button></div><div class="card"><h3>Shorts quick control</h3><p>Toggle Shorts immediately.</p><button class="btn" id="shorts">${settings.hideShorts?"Disable":"Enable"} Shorts</button></div><div class="card"><h3>Open YouTube</h3><p>Apply changes on a live YouTube page.</p><button class="btn" id="openyt">Open YouTube</button></div></div>`;
+  $("#scan").onclick=()=>sendToYouTube({type:"SCAN_YOUTUBE"}).then(r=>r.ok&&notify("YouTube scan completed."));
+  $("#shorts").onclick=async()=>{settings=await saveSettings({hideShorts:!settings.hideShorts});notify(`Shorts ${settings.hideShorts?"enabled":"disabled"}.`);await sendToYouTube({type:"SCAN_YOUTUBE"});render();};
+  $("#openyt").onclick=()=>chrome.tabs.create({url:"https://www.youtube.com/"});
+}
+
+async function renderFetch() {
+  $("#content").innerHTML=`<div class="card"><h3>Visible video fetch</h3><p class="muted">Only reads DOM data already visible on the active YouTube page.</p><div class="actions"><button class="btn" id="fetchVideos">Fetch videos</button><button class="btn" id="copyFetch">Copy JSON</button></div><pre id="fetchResult" class="code">No data fetched.</pre></div>`;
+  let last={videos:[]}; $("#fetchVideos").onclick=async()=>{last=await sendToYouTube({type:"GET_VIDEOS"});$("#fetchResult").textContent=JSON.stringify(last,null,2);}; $("#copyFetch").onclick=async()=>{await navigator.clipboard.writeText(JSON.stringify(last,null,2));notify("JSON copied.");};
+}
+
+function renderSuggestions() { $("#content").innerHTML=`<div class="card form"><h3>Local suggestion engine</h3><label class="check"><input id="score" type="checkbox" ${settings.enableSuggestionScoring?"checked":""}> Enable local scoring</label><div class="field"><label>Preferred topics — one per line</label><textarea id="topics">${esc((settings.preferredTopics||[]).join("\n"))}</textarea></div><button class="btn" id="rank">Score active-page videos</button><pre id="ranked" class="code">Not scored yet.</pre></div>`; $("#rank").onclick=async()=>{const r=await sendToYouTube({type:"GET_VIDEOS"});const topics=(settings.preferredTopics||[]).map(x=>x.toLowerCase());const ranked=(r.videos||[]).map(v=>({...v,score:topics.reduce((n,t)=>n+(v.title||"").toLowerCase().includes(t)?2:0,0)})).sort((a,b)=>b.score-a.score);$("#ranked").textContent=JSON.stringify(ranked,null,2);}; }
+
+function renderAlgorithm() { $("#content").innerHTML=`<div class="card"><h3>Algorithm Insights</h3><div class="code">Charlie MJ does not access YouTube's private recommendation algorithm.\n\nLocal observations:\n+ approved channel / keyword\n+ preferred topic\n+ selected-country signal\n- blocked keyword / regex\n- blocked channel / video ID\n- strict country mismatch\n\nThis is an explainable local scoring/filtering layer, not a claim about YouTube's internal algorithm.</div></div>`; }
+
+function renderSync() {
+  const g=settings.github||{}; $("#content").innerHTML=`<div class="card form"><h3>GitHub Data Sync</h3><div class="row"><div class="field"><label>Owner</label><input id="owner" value="${esc(g.owner)}"></div><div class="field"><label>Repository</label><input id="repo" value="${esc(g.repo)}"></div></div><div class="row"><div class="field"><label>Branch</label><input id="branch" value="${esc(g.branch||"main")}"></div><div class="field"><label>JSON path</label><input id="path" value="${esc(g.path||"database/countries/countries.json")}"></div></div><div class="actions"><button class="btn" id="saveGithub">Save</button><button class="btn" id="compare">Compare</button><button class="btn" id="preview">Preview remote</button></div><pre id="syncResult" class="code">No comparison yet.</pre></div>`;
+  $("#saveGithub").onclick=async()=>{settings=await saveSettings({github:{owner:$("#owner").value.trim(),repo:$("#repo").value.trim(),branch:$("#branch").value.trim()||"main",path:$("#path").value.trim()}});notify("GitHub settings saved.");};
+  async function remote(preview){const g=settings.github||{};if(!g.owner||!g.repo||!g.path){notify("Configure GitHub owner, repo and path first.","warn");return;}try{const url=`https://raw.githubusercontent.com/${encodeURIComponent(g.owner)}/${encodeURIComponent(g.repo)}/${encodeURIComponent(g.branch||"main")}/${g.path.replace(/^\/+/,"")}`;const r=await fetch(url,{cache:"no-store"});if(!r.ok)throw new Error(`HTTP ${r.status}`);const data=await r.json();if(preview){$("#syncResult").textContent=JSON.stringify(data,null,2).slice(0,16000);return;}const local=await loadJson(g.path.replace(/^\/+/,""));const localText=JSON.stringify(local);const remoteText=JSON.stringify(data);$("#syncResult").textContent=`Status: ${localText===remoteText?"MATCH":"DIFFERENT"}\n\nLocal keys/items: ${Object.keys(local||{}).length}\nRemote keys/items: ${Object.keys(data||{}).length}\n\nLocal preview:\n${localText.slice(0,5000)}\n\nRemote preview:\n${remoteText.slice(0,5000)}`;}catch(e){$("#syncResult").textContent=`Sync error: ${e.message}`;notify(`GitHub sync failed: ${e.message}`,"error");}}
+  $("#compare").onclick=()=>remote(false); $("#preview").onclick=()=>remote(true);
+}
+
+async function renderPerformance(){const stats=await getStats();const {lastYouTubeScan={}}=await chrome.storage.local.get("lastYouTubeScan");$("#content").innerHTML=`<div class="grid"><div class="card"><h3>Runtime metrics</h3><p>Scanned: <strong>${stats.videosScanned||0}</strong></p><p>Hidden: <strong>${stats.videosHidden||0}</strong></p><p>Notifications: <strong>${stats.notifications||0}</strong></p><p>Syncs: <strong>${stats.syncs||0}</strong></p></div><div class="card"><h3>Last YouTube scan</h3><pre class="code">${esc(JSON.stringify(lastYouTubeScan,null,2))}</pre></div></div>`;}
+
+function renderAds() {
+  return chrome.storage.local.get("adStats").then(({ adStats = {} }) => {
+    const enabled = settings.adBlockEnabled !== false;
+    const mode = settings.adBlockMode || "balanced";
+    $("#content").innerHTML = `<div class="grid">
+      <div class="card form"><h3>Master ad protection</h3>
+        <label class="check"><input id="adEnabled" type="checkbox" ${enabled ? "checked" : ""}> Enable YouTube ad protection</label>
+        <div class="field"><label>Protection mode</label><select id="adMode">
+          <option value="basic">Basic — cosmetic cleanup</option>
+          <option value="balanced">Balanced — network + cleanup + skip assist</option>
+          <option value="aggressive">Aggressive — maximum local skip/fast-forward assist</option>
+        </select></div>
+        <p class="muted">YouTube changes its ad delivery frequently. Charlie MJ combines Chrome network rules with page-level detection; no method can guarantee permanent coverage.</p>
+      </div>
+      <div class="card form"><h3>Protection layers</h3>
+        <label class="check"><input id="adNetwork" type="checkbox" ${settings.adBlockNetwork !== false ? "checked" : ""}> Network ad/tracker request blocking</label>
+        <label class="check"><input id="adVideo" type="checkbox" ${settings.adBlockVideo !== false ? "checked" : ""}> Video-ad detection</label>
+        <label class="check"><input id="adCosmetic" type="checkbox" ${settings.adBlockCosmetic !== false ? "checked" : ""}> Hide ad slots, banners and overlays</label>
+        <label class="check"><input id="adSkip" type="checkbox" ${settings.adBlockSkip !== false ? "checked" : ""}> Automatically click Skip Ad / fast-forward detected ads</label>
+      </div>
+    </div>
+    <div class="grid" style="margin-top:14px">
+      <div class="card"><h3>Local ad statistics</h3><div class="metric">${Number(adStats.skipped || 0) + Number(adStats.hidden || 0)}</div><span class="muted">Detected, skipped or hidden events</span></div>
+      <div class="card"><h3>Video ads skipped</h3><div class="metric">${Number(adStats.skipped || 0)}</div><span class="muted">Best-effort player actions</span></div>
+      <div class="card"><h3>Ad UI hidden</h3><div class="metric">${Number(adStats.hidden || 0)}</div><span class="muted">Cosmetic ad elements</span></div>
+    </div>
+    <div class="card" style="margin-top:14px"><h3>Test protection</h3><p class="muted">Open or reload YouTube after changing network protection. Page-level controls can be tested without leaving this settings page.</p><div class="actions"><button class="btn" id="scanAds">Scan active YouTube page for ads</button><button class="btn" id="allowAds">Temporarily allow ads</button><button class="btn" id="enableAds">Enable ad protection</button></div></div>`;
+    $("#adMode").value = mode;
+    $("#scanAds").onclick = async () => { const r = await sendToYouTube({ type: "SCAN_ADS" }); notify(r?.ok ? "Ad protection scan completed." : `Ad scan failed: ${r?.error || "Unknown error"}`, r?.ok ? "success" : "error"); };
+    $("#allowAds").onclick = async () => { settings = await saveSettings({ adBlockEnabled: false }); notify("YouTube ad protection disabled.", "warn"); render(); };
+    $("#enableAds").onclick = async () => { settings = await saveSettings({ adBlockEnabled: true }); notify("YouTube ad protection enabled."); render(); };
+  });
+}
+
+function renderBlockTube() {
+  const s=settings;
+  document.querySelector("#content").innerHTML=`<div class="grid">
+    <div class="card form"><h3>Filtering syntax</h3>
+      <div class="field"><label>Match mode</label><select id="btMatch"><option value="partial">Partial text</option><option value="whole-word">Whole word</option><option value="exact">Exact</option></select></div>
+      <label class="check"><input id="btCase" type="checkbox" ${s.filterCaseSensitive?"checked":""}> Case-sensitive matching</label>
+      <p class="muted">One rule per line. Plain text is a keyword; <code>/pattern/flags</code> is regular expression syntax. The global <code>g</code> flag is ignored for deterministic matching.</p>
+    </div>
+    <div class="card form"><h3>Block targets</h3>
+      <label class="check"><input id="btContext" type="checkbox" ${s.contextBlockEnabled!==false?"checked":""}> Enable context-menu blocking</label>
+      <label class="check"><input id="btQuick" type="checkbox" ${s.quickBlockEnabled!==false?"checked":""}> Show quick block button on video cards</label>
+      <label class="check"><input id="btMenu" type="checkbox" ${s.quickBlockMenuEnabled!==false?"checked":""}> Add Charlie MJ action to YouTube 3-dot menus</label>
+      <div class="field"><label>Blocked video behavior</label><select id="btVideoAction"><option value="hide">Hide the video</option><option value="message">Show a blocked message</option><option value="redirect">Redirect to Home</option></select></div>
+    </div>
+  </div>
+  <div class="card form" style="margin-top:14px"><h3>Rule lists</h3><div class="row"><div class="field"><label>Video titles / keywords</label><textarea id="btKeywords">${esc((s.blacklist||[]).join("\n"))}</textarea></div><div class="field"><label>Channels / @handles / custom URLs</label><textarea id="btChannels">${esc((s.blacklistChannels||[]).join("\n"))}</textarea></div></div><div class="row"><div class="field"><label>Channel IDs</label><textarea id="btChannelIds">${esc((s.blacklistChannelIds||[]).join("\n"))}</textarea></div><div class="field"><label>Video IDs</label><textarea id="btVideoIds">${esc((s.blacklistVideoIds||[]).join("\n"))}</textarea></div></div><div class="field"><label>Raw regex rules</label><textarea id="btRegex">${esc((s.regexBlockRules||[]).join("\n"))}</textarea></div></div>`;
+  $("#btMatch").value=s.filterMatchMode||"whole-word"; $("#btVideoAction").value=s.blockedVideoAction||"hide";
+}
+
+function renderFilterTube() {
+  const s=settings;
+  $("#content").innerHTML=`<div class="grid"><div class="card form"><h3>Smart filtering</h3>
+    <div class="field"><label>Text matching</label><select id="ftMatch"><option value="partial">Partial</option><option value="whole-word">Whole word</option><option value="exact">Exact</option></select></div>
+    <label class="check"><input id="ftShelves" type="checkbox" ${s.filterShelves!==false?"checked":""}> Refilter shelves continuously</label>
+    <label class="check"><input id="ftPlaylists" type="checkbox" ${s.filterPlaylists!==false?"checked":""}> Filter playlists and playlist shelves</label>
+    <label class="check"><input id="ftWatched" type="checkbox" ${s.hideWatched?"checked":""}> Hide watched videos when YouTube marks them as watched</label>
+  </div><div class="card form"><h3>Quick actions</h3>
+    <label class="check"><input id="ftQuick" type="checkbox" ${s.quickBlockEnabled!==false?"checked":""}> Hover quick-block cross</label>
+    <label class="check"><input id="ftMenu" type="checkbox" ${s.quickBlockMenuEnabled!==false?"checked":""}> Charlie MJ item in YouTube's 3-dot menu</label>
+    <label class="check"><input id="ftHistory" type="checkbox" ${s.watchHistoryFiltering?"checked":""}> Track locally blocked/watched IDs for deterministic filtering</label>
+  </div></div><div class="card form" style="margin-top:14px"><h3>Content filters</h3><div class="row"><div class="field"><label>Minimum duration (seconds)</label><input id="ftMinDuration" type="number" min="0" value="${Number(s.minDurationSeconds||0)}"></div><div class="field"><label>Maximum duration (seconds)</label><input id="ftMaxDuration" type="number" min="0" value="${Number(s.maxDurationSeconds||0)}"></div></div><label class="check"><input id="ftCaps" type="checkbox" ${s.filterAllCaps?"checked":""}> Filter clickbait ALL-CAPS titles</label></div>`;
+  $("#ftMatch").value=s.filterMatchMode||"whole-word";
+}
+
+function renderPlayback() {
+  const s=settings;
+  $("#content").innerHTML=`<div class="grid"><div class="card form"><h3>Playback</h3>
+    <div class="field"><label>Default playback speed</label><select id="pbSpeed"><option value="1">1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option><option value="1.75">1.75×</option><option value="2">2×</option></select></div>
+    <div class="field"><label>Preferred quality</label><select id="pbQuality"><option value="auto">Auto</option><option value="2160">2160p</option><option value="1440">1440p</option><option value="1080">1080p</option><option value="720">720p</option><option value="480">480p</option></select></div>
+    <div class="field"><label>Volume boost</label><select id="pbVolume"><option value="1">100%</option><option value="1.1">110%</option><option value="1.25">125%</option><option value="1.5">150%</option></select></div>
+  </div><div class="card form"><h3>Player behavior</h3>
+    <label class="check"><input id="pbCinema" type="checkbox" ${s.cinemaMode?"checked":""}> Cinema mode</label>
+    <label class="check"><input id="pbTheater" type="checkbox" ${s.forceTheaterMode?"checked":""}> Prefer theater mode</label>
+    <label class="check"><input id="pbLoop" type="checkbox" ${s.loopVideo?"checked":""}> Loop videos</label>
+    <label class="check"><input id="pbPause" type="checkbox" ${s.pauseWhenHidden?"checked":""}> Pause when browser tab becomes hidden</label>
+    <label class="check"><input id="pbAnnotations" type="checkbox" ${s.disableAnnotations?"checked":""}> Disable legacy annotations/overlays where possible</label>
+  </div></div>`;
+  $("#pbSpeed").value=String(s.playbackSpeed||1); $("#pbQuality").value=s.preferredQuality||"auto"; $("#pbVolume").value=String(s.volumeBoost||1);
+}
+
+async function renderProfiles() {
+  const stored=(await chrome.storage.local.get("profileStore")).profileStore || { activeId: settings.activeProfileId||"default", profiles: settings.profiles||[{id:"default",name:"Master",pin:"",settings:null}] };
+  const profiles=stored.profiles||[];
+  $("#content").innerHTML=`<div class="grid"><div class="card form"><h3>Profiles</h3><div class="field"><label>Profile name</label><input id="profileName" placeholder="Focused Work"></div><div class="field"><label>PIN (optional)</label><input id="profilePin" type="password" inputmode="numeric" maxlength="12"></div><div class="actions"><button class="btn" id="addProfile">Add profile</button><button class="btn" id="saveProfile">Save current settings to active profile</button></div><div class="field"><label>Active profile</label><select id="profileSelect">${profiles.map(x=>`<option value="${esc(x.id)}" ${x.id===stored.activeId?"selected":""}>${esc(x.name)}</option>`).join("")}</select></div><button class="btn" id="switchProfile">Switch profile</button></div>
+  <div class="card form"><h3>Backup</h3><label class="check"><input id="backupAuto" type="checkbox" ${settings.backupAuto?"checked":""}> Automatic local backup</label><div class="field"><label>Backup interval (hours)</label><input id="backupHours" type="number" min="1" value="${Number(settings.backupIntervalHours||24)}"></div><label class="check"><input id="backupEncrypted" type="checkbox" ${settings.backupEncrypted?"checked":""}> Prefer encrypted backup format</label><div class="actions"><button class="btn" id="exportProfile">Export active profile</button><button class="btn" id="exportAllProfiles">Export all profiles</button><button class="btn" id="importProfile">Import backup</button><input id="profileFile" type="file" accept="application/json,.json" hidden></div><p class="muted">When encrypted format is enabled, export prompts for a passphrase and uses PBKDF2-SHA256 (150,000 iterations) + AES-GCM.</p></div></div>`;
+  $("#addProfile").onclick=async()=>{const name=$("#profileName").value.trim();if(!name)return notify("Enter a profile name.","warn");const id="p_"+Date.now();profiles.push({id,name,pin:$("#profilePin").value||"",settings:{...settings,profiles:undefined}});await chrome.storage.local.set({profileStore:{activeId:id,profiles}});settings=await saveSettings({activeProfileId:id,profiles});notify(`Profile ${name} created.`);renderProfiles();};
+  $("#saveProfile").onclick=async()=>{const active=profiles.find(x=>x.id===stored.activeId);if(!active)return;active.settings={...settings,profiles:undefined};await chrome.storage.local.set({profileStore:{activeId:stored.activeId,profiles}});notify("Active profile updated.");};
+  $("#switchProfile").onclick=async()=>{const id=$("#profileSelect").value;const target=profiles.find(x=>x.id===id);if(!target)return;const patch=target.settings?{...target.settings,activeProfileId:id,profiles}: {activeProfileId:id,profiles};settings=await saveSettings(patch);await chrome.storage.local.set({profileStore:{activeId:id,profiles}});notify(`Switched to ${target.name}.`);render();};
+  $("#exportProfile").onclick=async()=>{const payload={format:"charlie-mj-profile",version:"1.0.0",exportedAt:new Date().toISOString(),profile:profiles.find(x=>x.id===stored.activeId),settings};if(settings.backupEncrypted){const pass=prompt("Enter a passphrase for the encrypted backup:");if(!pass)return;downloadJson(`charlie-mj-profile-${stored.activeId}-encrypted.json`,await encryptBackup(payload,pass));}else downloadJson(`charlie-mj-profile-${stored.activeId}.json`,payload);};
+  $("#exportAllProfiles").onclick=async()=>{const payload={format:"charlie-mj-profiles",version:"1.0.0",exportedAt:new Date().toISOString(),profiles,activeId:stored.activeId};if(settings.backupEncrypted){const pass=prompt("Enter a passphrase for the encrypted backup:");if(!pass)return;downloadJson("charlie-mj-profiles-encrypted.json",await encryptBackup(payload,pass));}else downloadJson("charlie-mj-profiles.json",payload);};
+  $("#importProfile").onclick=()=>$("#profileFile").click();
+  $("#profileFile").onchange=async e=>{try{const f=e.target.files?.[0];if(!f)return;let payload=JSON.parse(await f.text());if(payload.format==="charlie-mj-encrypted-backup"){const pass=prompt("Enter the backup passphrase:");if(!pass)return;payload=await decryptBackup(payload,pass);}if(payload.format!=="charlie-mj-profile"&&payload.format!=="charlie-mj-profiles")throw new Error("Unsupported backup format");if(payload.format==="charlie-mj-profile"&&payload.settings){settings=await saveSettings(payload.settings);notify("Profile backup restored.");}else if(payload.profiles){await chrome.storage.local.set({profileStore:{activeId:payload.activeId||"default",profiles:payload.profiles}});settings=await getSettings();notify("Profiles backup restored.");}render();}catch(err){notify(`Backup import failed: ${err.message}`,"error");}};
+}
+
+function renderNotifications(){$("#content").innerHTML=`<div class="card form"><h3>Notifications</h3><label class="check"><input id="notif" type="checkbox" ${settings.notifications?"checked":""}> Enable desktop notifications</label><button class="btn" id="testNotif">Send test notification</button></div>`;$("#testNotif").onclick=async()=>{const r=await chrome.runtime.sendMessage({type:"NOTIFY",title:"Charlie MJ YouTube",message:"Notification system is working."});notify(r?.ok?"Test notification sent.":"Notification service unavailable.",r?.ok?"success":"error");};}
+
+async function renderDatabase(){await loadDatabase();$("#content").innerHTML=`<div class="grid"><div class="card"><h3>Countries</h3><div class="metric">${countryData.countries.length}</div><span class="muted">ISO country records</span></div><div class="card"><h3>Languages</h3><div class="metric">${languageData.languages.length}</div><span class="muted">Searchable A–Z language records</span></div><div class="card"><h3>Country files</h3><div class="metric">249</div><span class="muted">One JSON file per country</span></div></div><div class="card" style="margin-top:14px"><h3>Backup & Restore</h3><p class="muted">Download your extension settings and rules as a portable JSON backup.</p><div class="actions"><button class="btn" id="exportDb">Download Database Backup</button><button class="btn" id="importDb">Import Database Backup</button><input id="dbFile" type="file" accept="application/json,.json" hidden></div></div>`;$("#exportDb").onclick=async()=>{downloadJson("charlie-mj-youtube-database-backup.json",{format:"charlie-mj-youtube-backup",version:"1.0.0",exportedAt:new Date().toISOString(),storage:await chrome.storage.local.get(null)});notify("Database backup downloaded.");};$("#importDb").onclick=()=>$("#dbFile").click();$("#dbFile").onchange=async e=>{try{const f=e.target.files?.[0];if(!f)return;const d=JSON.parse(await f.text());if(d.format!=="charlie-mj-youtube-backup")throw new Error("Invalid backup format");await chrome.storage.local.clear();await chrome.storage.local.set(d.storage||{});settings=await getSettings();notify("Database restored.");render();}catch(err){notify(`Restore failed: ${err.message}`,"error");}};}
+
+function collect(){const p={}; if(currentTab==="blocktube"){p.filterMatchMode=$("#btMatch").value;p.filterCaseSensitive=$("#btCase").checked;p.contextBlockEnabled=$("#btContext").checked;p.quickBlockEnabled=$("#btQuick").checked;p.quickBlockMenuEnabled=$("#btMenu").checked;p.blockedVideoAction=$("#btVideoAction").value;p.blacklist=lines("#btKeywords");p.blacklistChannels=lines("#btChannels");p.blacklistChannelIds=lines("#btChannelIds");p.blacklistVideoIds=lines("#btVideoIds");p.regexBlockRules=lines("#btRegex");}if(currentTab==="filtertube"){p.filterMatchMode=$("#ftMatch").value;p.filterShelves=$("#ftShelves").checked;p.filterPlaylists=$("#ftPlaylists").checked;p.hideWatched=$("#ftWatched").checked;p.quickBlockEnabled=$("#ftQuick").checked;p.quickBlockMenuEnabled=$("#ftMenu").checked;p.watchHistoryFiltering=$("#ftHistory").checked;p.minDurationSeconds=Math.max(0,Number($("#ftMinDuration").value)||0);p.maxDurationSeconds=Math.max(0,Number($("#ftMaxDuration").value)||0);p.filterAllCaps=$("#ftCaps").checked;}if(currentTab==="cleantubefilters"||currentTab==="filters"||currentTab==="cleantube"){document.querySelectorAll(".ct").forEach(x=>p[x.dataset.key]=x.checked);p.fullControl=!!settings.fullControl;p.fullControlBackup=settings.fullControlBackup||null;p.hideMembersOnly=!!p.hideFeaturedContent;p.theme=$("#ctTheme")?.value||settings.theme;p.compactMode=$("#ctDensity")?.value==="compact";p.strictCountry=$("#ctStrict")?.checked ?? settings.strictCountry;p.countryKeywords=lines("#ctCountryKeywords");}if(currentTab==="playback"){p.playbackSpeed=Number($("#pbSpeed").value)||1;p.preferredQuality=$("#pbQuality").value;p.volumeBoost=Number($("#pbVolume").value)||1;p.cinemaMode=$("#pbCinema").checked;p.forceTheaterMode=$("#pbTheater").checked;p.loopVideo=$("#pbLoop").checked;p.pauseWhenHidden=$("#pbPause").checked;p.disableAnnotations=$("#pbAnnotations").checked;}if(currentTab==="general"){p.extensionEnabled=$("#extEnabled").checked;p.notifications=$("#notifGeneral").checked;p.targetFeedEnabled=$("#targetShortcut").checked;p.applyYouTubeProfile=$("#profileGeneral").checked;p.toolbarEnabled=$("#toolbarGeneral").checked;}if(currentTab==="ads"){p.adBlockEnabled=$("#adEnabled").checked;p.adBlockMode=$("#adMode").value;p.adBlockNetwork=$("#adNetwork").checked;p.adBlockVideo=$("#adVideo").checked;p.adBlockCosmetic=$("#adCosmetic").checked;p.adBlockSkip=$("#adSkip").checked;}if(currentTab==="privacy"){p.whitelistChannels=lines("#whiteChannels");p.blacklistChannels=lines("#blackChannels");p.blacklistChannelIds=lines("#blackChannelIds");p.blacklistVideoIds=lines("#blackVideoIds");p.whitelist=lines("#white");p.blacklist=lines("#black");p.regexBlockRules=lines("#regex");}if(currentTab==="language"){p.country=$("#country").value;p.targetLanguage=$("#lang").value;p.targetLanguageAutoSuggested=settings.targetLanguageAutoSuggested||null;p.targetLanguageManual=!!settings.targetLanguageManual;p.geoMode=$("#geoMode").value;p.unknownPolicy=$("#unknownPolicy").value;p.targetFeedEnabled=$("#languageTargetEnabled").checked;}if(currentTab==="targetfeed"){p.targetFeedEnabled=$("#targetEnabled").checked;p.targetFeedMode=$("#targetMode").value;p.targetUnknownPolicy=$("#targetUnknown").value;p.targetRequireLanguage=$("#targetRequireLanguage").checked;p.applyYouTubeProfile=$("#applyProfile").checked;p.autoApplyTargetProfile=$("#autoApplyProfile").checked;}if(currentTab==="toolbar"){p.toolbarEnabled=$("#tbEnabled").checked;p.toolbarShowOnYouTubeOnly=$("#tbYoutubeOnly").checked;p.toolbarAutoHide=$("#tbAuto").checked;p.toolbarRevealDistance=Math.max(20,Math.min(400,Number($("#tbReveal").value)||120));p.toolbarPosition=$("#tbPosition").value;p.toolbarCustomX=$("#tbX").value===""?null:Number($("#tbX").value);p.toolbarCustomY=$("#tbY").value===""?null:Number($("#tbY").value);p.toolbarScale=Math.max(.75,Math.min(1.5,Number($("#tbScale").value)||1));}if(currentTab==="suggestions"){p.enableSuggestionScoring=$("#score").checked;p.preferredTopics=lines("#topics");}if(currentTab==="notifications")p.notifications=$("#notif").checked;if(currentTab==="profiles"){p.backupAuto=$("#backupAuto").checked;p.backupIntervalHours=Math.max(1,Number($("#backupHours").value)||24);p.backupEncrypted=$("#backupEncrypted").checked;}return p;}
+
+async function render(){const [title,subtitle]=TAB_META[currentTab]||TAB_META.dashboard;$("#title").textContent=title;$("#subtitle").textContent=subtitle;$("#content").innerHTML='<div class="card"><p>Loading…</p></div>';try{switch(currentTab){case"dashboard":await renderDashboard();break;case"general":renderGeneral();break;case"cleantubefilters":renderClearnTubeFilters();break;case"blocktube":renderBlockTube();break;case"filtertube":renderFilterTube();break;case"playback":renderPlayback();break;case"ads":await renderAds();break;case"privacy":renderPrivacy();break;case"language":await renderLanguage();break;case"targetfeed":renderTargetFeed();break;case"tools":renderTools();break;case"fetch":await renderFetch();break;case"suggestions":renderSuggestions();break;case"algorithm":renderAlgorithm();break;case"sync":renderSync();break;case"performance":await renderPerformance();break;case"notifications":renderNotifications();break;case"toolbar":renderToolbar();break;case"database":await renderDatabase();break;case"profiles":await renderProfiles();break;default:await renderDashboard();}}catch(e){console.error(e);$("#content").innerHTML=`<div class="card"><h3 class="danger">Settings tab failed</h3><p>${esc(e.message)}</p><p class="muted">The rest of the extension remains available.</p></div>`;notify(`Settings error: ${e.message}`,"error");}}
+
+$("#save").onclick=async()=>{try{settings=await saveSettings(collect());$("#save").textContent="Saved ✓";notify("Changes saved successfully.");if((currentTab==="targetfeed"||currentTab==="language")&&settings.applyYouTubeProfile!==false){const r=await chrome.runtime.sendMessage({type:"APPLY_YOUTUBE_PROFILE",reload:settings.targetFeedEnabled===true});if(!r?.ok)notify(`Profile apply failed: ${r?.error||"Unknown error"}`,"error");}setTimeout(()=>$("#save").textContent="Save Changes",1200);}catch(e){notify(`Save failed: ${e.message}`,"error");}};
+
+document.querySelectorAll(".nav").forEach(button=>button.addEventListener("click",async()=>{document.querySelectorAll(".nav").forEach(x=>x.classList.remove("active"));button.classList.add("active");currentTab=button.dataset.tab;await render();}));
+
+async function init(){settings=await getSettings();await render();}
+init().catch(e=>{console.error(e);$("#content").innerHTML=`<div class="card"><h3 class="danger">Charlie MJ settings could not start</h3><p>${esc(e.message)}</p></div>`;});

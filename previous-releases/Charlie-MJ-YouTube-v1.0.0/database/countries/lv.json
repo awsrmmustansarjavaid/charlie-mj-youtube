@@ -1,0 +1,228 @@
+{
+  "code": "LV",
+  "alpha3": "LVA",
+  "numeric": "428",
+  "name": "Latvia",
+  "capital": "Riga",
+  "regions": [
+    {
+      "code": "LV-059",
+      "name": "Madonas novads",
+      "type": "Municipality"
+    },
+    {
+      "code": "LV-JUR",
+      "name": "Jūrmala",
+      "type": "State city"
+    },
+    {
+      "code": "LV-062",
+      "name": "Mārupes novads",
+      "type": "Municipality"
+    },
+    {
+      "code": "LV-LPX",
+      "name": "Liepāja",
+      "type": "State city"
+    },
+    {
+      "code": "LV-067",
+      "name": "Ogres novads",
+      "type": "Municipality"
+    },
+    {
+      "code": "LV-REZ",
+      "name": "Rēzekne",
+      "type": "State city"
+    },
+    {
+      "code": "LV-068",
+      "name": "Olaines novads",
+      "type": "Municipality"
+    },
+    {
+      "code": "LV-RIX",
+      "name": "Rīga",
+      "type": "State city"
+    },
+    {
+      "code": "LV-073",
+      "name": "Preiļu novads",
+      "type": "Municipality"
+    },
+    {
+      "code": "LV-VEN",
+      "name": "Ventspils",
+      "type": "State city"
+    },
+    {
+      "code": "LV-077",
+      "name": "Rēzeknes novads",
+      "type": "Municipality"
+    },
+    {
+      "code": "LV-002",
+      "name": "Aizkraukles novads",
+      "type": "Municipality"
+    },
+    {
+      "code": "LV-080",
+      "name": "Ropažu novads",
+      "type": "Municipality"
+    },
+    {
+      "code": "LV-007",
+      "name": "Alūksnes novads",
+      "type": "Municipality"
+    },
+    {
+      "code": "LV-087",
+      "name": "Salaspils novads",
+      "type": "Municipality"
+    },
+    {
+      "code": "LV-011",
+      "name": "Ādažu novads",
+      "type": "Municipality"
+    },
+    {
+      "code": "LV-088",
+      "name": "Saldus novads",
+      "type": "Municipality"
+    },
+    {
+      "code": "LV-015",
+      "name": "Balvu novads",
+      "type": "Municipality"
+    },
+    {
+      "code": "LV-089",
+      "name": "Saulkrastu novads",
+      "type": "Municipality"
+    },
+    {
+      "code": "LV-016",
+      "name": "Bauskas novads",
+      "type": "Municipality"
+    },
+    {
+      "code": "LV-091",
+      "name": "Siguldas novads",
+      "type": "Municipality"
+    },
+    {
+      "code": "LV-022",
+      "name": "Cēsu novads",
+      "type": "Municipality"
+    },
+    {
+      "code": "LV-094",
+      "name": "Smiltenes novads",
+      "type": "Municipality"
+    },
+    {
+      "code": "LV-026",
+      "name": "Dobeles novads",
+      "type": "Municipality"
+    },
+    {
+      "code": "LV-097",
+      "name": "Talsu novads",
+      "type": "Municipality"
+    },
+    {
+      "code": "LV-033",
+      "name": "Gulbenes novads",
+      "type": "Municipality"
+    },
+    {
+      "code": "LV-099",
+      "name": "Tukuma novads",
+      "type": "Municipality"
+    },
+    {
+      "code": "LV-041",
+      "name": "Jelgavas novads",
+      "type": "Municipality"
+    },
+    {
+      "code": "LV-101",
+      "name": "Valkas novads",
+      "type": "Municipality"
+    },
+    {
+      "code": "LV-042",
+      "name": "Jēkabpils novads",
+      "type": "Municipality"
+    },
+    {
+      "code": "LV-102",
+      "name": "Varakļānu novads",
+      "type": "Municipality"
+    },
+    {
+      "code": "LV-047",
+      "name": "Krāslavas novads",
+      "type": "Municipality"
+    },
+    {
+      "code": "LV-106",
+      "name": "Ventspils novads",
+      "type": "Municipality"
+    },
+    {
+      "code": "LV-050",
+      "name": "Kuldīgas novads",
+      "type": "Municipality"
+    },
+    {
+      "code": "LV-111",
+      "name": "Augšdaugavas novads",
+      "type": "Municipality"
+    },
+    {
+      "code": "LV-052",
+      "name": "Ķekavas novads",
+      "type": "Municipality"
+    },
+    {
+      "code": "LV-112",
+      "name": "Dienvidkurzemes Novads",
+      "type": "Municipality"
+    },
+    {
+      "code": "LV-054",
+      "name": "Limbažu novads",
+      "type": "Municipality"
+    },
+    {
+      "code": "LV-113",
+      "name": "Valmieras Novads",
+      "type": "Municipality"
+    },
+    {
+      "code": "LV-056",
+      "name": "Līvānu novads",
+      "type": "Municipality"
+    },
+    {
+      "code": "LV-DGV",
+      "name": "Daugavpils",
+      "type": "State city"
+    },
+    {
+      "code": "LV-058",
+      "name": "Ludzas novads",
+      "type": "Municipality"
+    },
+    {
+      "code": "LV-JEL",
+      "name": "Jelgava",
+      "type": "State city"
+    }
+  ],
+  "cities": [
+    "Riga"
+  ],
+  "keywords": []
+}

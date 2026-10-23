@@ -1,0 +1,33 @@
+{
+  "name": "Charlie MJ YouTube",
+  "version": "2.0.0",
+  "build": "Final v2.0.0 Modes-in-Settings + Library + Database Sync",
+  "manifestVersion": 3,
+  "generated": "2026-10-21",
+  "architecture": "local-first deterministic content intelligence",
+  "languageMasterRecords": 7910,
+  "countryFiles": 249,
+  "techProfiles": 15,
+  "modes": [
+    "General",
+    "Tech",
+    "Language Learning",
+    "Productivity",
+    "Custom"
+  ],
+  "notes": [
+    "General preserves the existing filtering/target-feed engine as the compatibility baseline.",
+    "Tech, Language Learning, Productivity and Custom intelligence are additive and opt-in.",
+    "Relevance and distraction are separate scores.",
+    "GitHub sync prepares/downloads data; packaged extension files are not silently rewritten and no unauthenticated push is claimed."
+  ],
+  "buildType": "Final Intelligence + Modes + Dedicated Pages",
+  "timestamp": "2026-10-21T20:16:06+05:00",
+  "dedicatedPages": [
+    "src/tech/tech.html",
+    "src/language-learning/language-learning.html",
+    "src/library/library.html"
+  ],
+  "buildDate": "2026-10-22T11:04:00.543562+00:00",
+  "buildLabel": "v2.0.0 Modes + Toolbar + CSP fixes"
+}

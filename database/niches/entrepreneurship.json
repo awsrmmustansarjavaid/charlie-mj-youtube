@@ -1,0 +1,25 @@
+{
+  "id": "entrepreneurship",
+  "name": "Entrepreneurship",
+  "description": "Business and startups.",
+  "categories": {
+    "Topics": [
+      "entrepreneurship",
+      "startups",
+      "business",
+      "marketing",
+      "leadership"
+    ],
+    "Formats": [
+      "guide",
+      "case study",
+      "interview",
+      "tips"
+    ]
+  },
+  "country": "GLOBAL",
+  "targetLanguage": "en",
+  "contentLanguages": [
+    "en"
+  ]
+}

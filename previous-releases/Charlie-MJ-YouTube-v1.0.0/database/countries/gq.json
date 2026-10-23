@@ -1,0 +1,63 @@
+{
+  "code": "GQ",
+  "alpha3": "GNQ",
+  "numeric": "226",
+  "name": "Equatorial Guinea",
+  "capital": "Malabo",
+  "regions": [
+    {
+      "code": "GQ-DJ",
+      "name": "Djibloho",
+      "type": "Province"
+    },
+    {
+      "code": "GQ-AN",
+      "name": "Annobon",
+      "type": "Province"
+    },
+    {
+      "code": "GQ-I",
+      "name": "Région Insulaire",
+      "type": "Region"
+    },
+    {
+      "code": "GQ-BN",
+      "name": "Bioko Nord",
+      "type": "Province"
+    },
+    {
+      "code": "GQ-KN",
+      "name": "Kié-Ntem",
+      "type": "Province"
+    },
+    {
+      "code": "GQ-BS",
+      "name": "Bioko Sud",
+      "type": "Province"
+    },
+    {
+      "code": "GQ-LI",
+      "name": "Littoral",
+      "type": "Province"
+    },
+    {
+      "code": "GQ-C",
+      "name": "Région Continentale",
+      "type": "Region"
+    },
+    {
+      "code": "GQ-WN",
+      "name": "Wele-Nzas",
+      "type": "Province"
+    },
+    {
+      "code": "GQ-CS",
+      "name": "Centro Sud",
+      "type": "Province"
+    }
+  ],
+  "cities": [
+    "Malabo"
+  ],
+  "keywords": []
+}

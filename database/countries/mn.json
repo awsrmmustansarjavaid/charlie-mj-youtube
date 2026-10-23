@@ -1,0 +1,123 @@
+{
+  "code": "MN",
+  "alpha3": "MNG",
+  "numeric": "496",
+  "name": "Mongolia",
+  "capital": "Ulan Bator",
+  "regions": [
+    {
+      "code": "MN-053",
+      "name": "Ömnögovĭ",
+      "type": "Province"
+    },
+    {
+      "code": "MN-055",
+      "name": "Övörhangay",
+      "type": "Province"
+    },
+    {
+      "code": "MN-057",
+      "name": "Dzavhan",
+      "type": "Province"
+    },
+    {
+      "code": "MN-059",
+      "name": "Dundgovĭ",
+      "type": "Province"
+    },
+    {
+      "code": "MN-061",
+      "name": "Dornod",
+      "type": "Province"
+    },
+    {
+      "code": "MN-063",
+      "name": "Dornogovĭ",
+      "type": "Province"
+    },
+    {
+      "code": "MN-064",
+      "name": "Govĭ-Sümber",
+      "type": "Province"
+    },
+    {
+      "code": "MN-065",
+      "name": "Govĭ-Altay",
+      "type": "Province"
+    },
+    {
+      "code": "MN-067",
+      "name": "Bulgan",
+      "type": "Province"
+    },
+    {
+      "code": "MN-069",
+      "name": "Bayanhongor",
+      "type": "Province"
+    },
+    {
+      "code": "MN-071",
+      "name": "Bayan-Ölgiy",
+      "type": "Province"
+    },
+    {
+      "code": "MN-073",
+      "name": "Arhangay",
+      "type": "Province"
+    },
+    {
+      "code": "MN-1",
+      "name": "Ulaanbaatar",
+      "type": "Capital city"
+    },
+    {
+      "code": "MN-035",
+      "name": "Orhon",
+      "type": "Province"
+    },
+    {
+      "code": "MN-037",
+      "name": "Darhan uul",
+      "type": "Province"
+    },
+    {
+      "code": "MN-039",
+      "name": "Hentiy",
+      "type": "Province"
+    },
+    {
+      "code": "MN-041",
+      "name": "Hövsgöl",
+      "type": "Province"
+    },
+    {
+      "code": "MN-043",
+      "name": "Hovd",
+      "type": "Province"
+    },
+    {
+      "code": "MN-046",
+      "name": "Uvs",
+      "type": "Province"
+    },
+    {
+      "code": "MN-047",
+      "name": "Töv",
+      "type": "Province"
+    },
+    {
+      "code": "MN-049",
+      "name": "Selenge",
+      "type": "Province"
+    },
+    {
+      "code": "MN-051",
+      "name": "Sühbaatar",
+      "type": "Province"
+    }
+  ],
+  "cities": [
+    "Ulan Bator"
+  ],
+  "keywords": []
+}

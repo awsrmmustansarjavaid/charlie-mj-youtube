@@ -1,0 +1,31 @@
+{
+  "code": "FM",
+  "alpha3": "FSM",
+  "numeric": "583",
+  "name": "Micronesia, Federated States of",
+  "capital": "",
+  "regions": [
+    {
+      "code": "FM-KSA",
+      "name": "Kosrae",
+      "type": "State"
+    },
+    {
+      "code": "FM-YAP",
+      "name": "Yap",
+      "type": "State"
+    },
+    {
+      "code": "FM-TRK",
+      "name": "Chuuk",
+      "type": "State"
+    },
+    {
+      "code": "FM-PNI",
+      "name": "Pohnpei",
+      "type": "State"
+    }
+  ],
+  "cities": [],
+  "keywords": []
+}

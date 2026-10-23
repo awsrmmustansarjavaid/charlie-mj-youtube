@@ -1,0 +1,38 @@
+{
+  "code": "TG",
+  "alpha3": "TGO",
+  "numeric": "768",
+  "name": "Togo",
+  "capital": "Lomé",
+  "regions": [
+    {
+      "code": "TG-S",
+      "name": "Savanes",
+      "type": "Region"
+    },
+    {
+      "code": "TG-C",
+      "name": "Centrale",
+      "type": "Region"
+    },
+    {
+      "code": "TG-K",
+      "name": "Kara",
+      "type": "Region"
+    },
+    {
+      "code": "TG-M",
+      "name": "Maritime (Région)",
+      "type": "Region"
+    },
+    {
+      "code": "TG-P",
+      "name": "Plateaux",
+      "type": "Region"
+    }
+  ],
+  "cities": [
+    "Lomé"
+  ],
+  "keywords": []
+}

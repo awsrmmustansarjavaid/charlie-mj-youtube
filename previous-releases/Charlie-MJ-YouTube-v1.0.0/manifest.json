@@ -1,0 +1,76 @@
+{
+  "manifest_version": 3,
+  "name": "Charlie MJ YouTube",
+  "short_name": "Charlie MJ",
+  "version": "1.0.0",
+  "description": "A modular YouTube productivity, filtering, suggestion and data-management toolkit.",
+  "permissions": [
+    "storage",
+    "notifications",
+    "activeTab",
+    "scripting",
+    "tabs",
+    "contextMenus",
+    "declarativeNetRequest",
+    "cookies"
+  ],
+  "host_permissions": [
+    "https://www.youtube.com/*",
+    "https://github.com/*",
+    "https://api.github.com/*",
+    "https://raw.githubusercontent.com/*"
+  ],
+  "action": {
+    "default_title": "Charlie MJ YouTube",
+    "default_popup": "src/popup/popup.html"
+  },
+  "background": {
+    "service_worker": "src/background/service-worker.js",
+    "type": "module"
+  },
+  "options_ui": {
+    "page": "src/options/options.html",
+    "open_in_tab": true
+  },
+  "icons": {
+    "16": "assets/icons/icon16.png",
+    "32": "assets/icons/icon32.png",
+    "48": "assets/icons/icon48.png",
+    "128": "assets/icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.youtube.com/*"
+      ],
+      "js": [
+        "src/content/youtube-main.js"
+      ],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": [
+        "https://www.youtube.com/*"
+      ],
+      "js": [
+        "src/content/langdetect.js",
+        "src/content/youtube.js",
+        "src/content/toolbar.js"
+      ],
+      "css": [
+        "src/content/youtube.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "youtube_ads",
+        "enabled": true,
+        "path": "rules/youtube_ads.json"
+      }
+    ]
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "code": "YE",
+  "alpha3": "YEM",
+  "numeric": "887",
+  "name": "Yemen",
+  "capital": "Sana'a",
+  "regions": [
+    {
+      "code": "YE-SH",
+      "name": "Shabwah",
+      "type": "Governorate"
+    },
+    {
+      "code": "YE-SN",
+      "name": "Şanʻā’",
+      "type": "Governorate"
+    },
+    {
+      "code": "YE-SU",
+      "name": "Arkhabīl Suquţrá",
+      "type": "Governorate"
+    },
+    {
+      "code": "YE-TA",
+      "name": "Tāʻizz",
+      "type": "Governorate"
+    },
+    {
+      "code": "YE-AB",
+      "name": "Abyan",
+      "type": "Governorate"
+    },
+    {
+      "code": "YE-AD",
+      "name": "‘Adan",
+      "type": "Governorate"
+    },
+    {
+      "code": "YE-AM",
+      "name": "‘Amrān",
+      "type": "Governorate"
+    },
+    {
+      "code": "YE-BA",
+      "name": "Al Bayḑā’",
+      "type": "Governorate"
+    },
+    {
+      "code": "YE-DA",
+      "name": "Aḑ Ḑāli‘",
+      "type": "Governorate"
+    },
+    {
+      "code": "YE-DH",
+      "name": "Dhamār",
+      "type": "Governorate"
+    },
+    {
+      "code": "YE-HD",
+      "name": "Ḩaḑramawt",
+      "type": "Governorate"
+    },
+    {
+      "code": "YE-HJ",
+      "name": "Ḩajjah",
+      "type": "Governorate"
+    },
+    {
+      "code": "YE-HU",
+      "name": "Al Ḩudaydah",
+      "type": "Governorate"
+    },
+    {
+      "code": "YE-IB",
+      "name": "Ibb",
+      "type": "Governorate"
+    },
+    {
+      "code": "YE-JA",
+      "name": "Al Jawf",
+      "type": "Governorate"
+    },
+    {
+      "code": "YE-LA",
+      "name": "Laḩij",
+      "type": "Governorate"
+    },
+    {
+      "code": "YE-MA",
+      "name": "Ma’rib",
+      "type": "Governorate"
+    },
+    {
+      "code": "YE-MR",
+      "name": "Al Mahrah",
+      "type": "Governorate"
+    },
+    {
+      "code": "YE-MW",
+      "name": "Al Maḩwīt",
+      "type": "Governorate"
+    },
+    {
+      "code": "YE-RA",
+      "name": "Raymah",
+      "type": "Governorate"
+    },
+    {
+      "code": "YE-SA",
+      "name": "Amānat al ‘Āşimah [city]",
+      "type": "Municipality"
+    },
+    {
+      "code": "YE-SD",
+      "name": "Şāʻdah",
+      "type": "Governorate"
+    }
+  ],
+  "cities": [
+    "Sana'a"
+  ],
+  "keywords": []
+}

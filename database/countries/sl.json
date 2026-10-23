@@ -1,0 +1,38 @@
+{
+  "code": "SL",
+  "alpha3": "SLE",
+  "numeric": "694",
+  "name": "Sierra Leone",
+  "capital": "Freetown",
+  "regions": [
+    {
+      "code": "SL-E",
+      "name": "Eastern",
+      "type": "Province"
+    },
+    {
+      "code": "SL-N",
+      "name": "Northern",
+      "type": "Province"
+    },
+    {
+      "code": "SL-NW",
+      "name": "North Western",
+      "type": "Province"
+    },
+    {
+      "code": "SL-S",
+      "name": "Southern",
+      "type": "Province"
+    },
+    {
+      "code": "SL-W",
+      "name": "Western Area (Freetown)",
+      "type": "Area"
+    }
+  ],
+  "cities": [
+    "Freetown"
+  ],
+  "keywords": []
+}

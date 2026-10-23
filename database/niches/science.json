@@ -1,0 +1,26 @@
+{
+  "id": "science",
+  "name": "Science",
+  "description": "Science and discovery.",
+  "categories": {
+    "Topics": [
+      "science",
+      "physics",
+      "biology",
+      "chemistry",
+      "space",
+      "astronomy"
+    ],
+    "Formats": [
+      "explained",
+      "documentary",
+      "experiment",
+      "lecture"
+    ]
+  },
+  "country": "GLOBAL",
+  "targetLanguage": "en",
+  "contentLanguages": [
+    "en"
+  ]
+}

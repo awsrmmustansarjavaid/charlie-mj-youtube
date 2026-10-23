@@ -1,0 +1,40 @@
+{
+  "id": "student",
+  "name": "Student",
+  "description": "General academic and technical learning.",
+  "categories": {
+    "Learning": [
+      "Learning"
+    ],
+    "Education": [
+      "Education"
+    ],
+    "Tutorial": [
+      "Tutorial"
+    ],
+    "Course": [
+      "Course"
+    ],
+    "Study": [
+      "Study"
+    ],
+    "Programming": [
+      "Programming"
+    ],
+    "Mathematics": [
+      "Mathematics"
+    ],
+    "Science": [
+      "Science"
+    ],
+    "Technology": [
+      "Technology"
+    ],
+    "Research": [
+      "Research"
+    ],
+    "Exam Preparation": [
+      "Exam Preparation"
+    ]
+  }
+}

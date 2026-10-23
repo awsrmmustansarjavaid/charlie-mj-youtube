@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "settings": {
+    "country": "US",
+    "language": "en",
+    "targetLanguage": "en",
+    "hideShorts": false,
+    "hideHomeRecommendations": false,
+    "hideSidebar": false,
+    "enableSuggestionScoring": true,
+    "notifications": true,
+    "theme": "system",
+    "compactMode": false
+  }
+}

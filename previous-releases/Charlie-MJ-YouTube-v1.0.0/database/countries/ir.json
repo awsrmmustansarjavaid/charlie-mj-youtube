@@ -1,0 +1,166 @@
+{
+  "code": "IR",
+  "alpha3": "IRN",
+  "numeric": "364",
+  "name": "Iran, Islamic Republic of",
+  "capital": "",
+  "regions": [
+    {
+      "code": "IR-28",
+      "name": "Khorāsān-e Shomālī",
+      "type": "Province"
+    },
+    {
+      "code": "IR-07",
+      "name": "Fārs",
+      "type": "Province"
+    },
+    {
+      "code": "IR-29",
+      "name": "Khorāsān-e Jonūbī",
+      "type": "Province"
+    },
+    {
+      "code": "IR-08",
+      "name": "Kermān",
+      "type": "Province"
+    },
+    {
+      "code": "IR-30",
+      "name": "Alborz",
+      "type": "Province"
+    },
+    {
+      "code": "IR-09",
+      "name": "Khorāsān-e Raẕavī",
+      "type": "Province"
+    },
+    {
+      "code": "IR-10",
+      "name": "Eşfahān",
+      "type": "Province"
+    },
+    {
+      "code": "IR-11",
+      "name": "Sīstān va Balūchestān",
+      "type": "Province"
+    },
+    {
+      "code": "IR-12",
+      "name": "Kordestān",
+      "type": "Province"
+    },
+    {
+      "code": "IR-13",
+      "name": "Hamadān",
+      "type": "Province"
+    },
+    {
+      "code": "IR-14",
+      "name": "Chahār Maḩāl va Bakhtīārī",
+      "type": "Province"
+    },
+    {
+      "code": "IR-15",
+      "name": "Lorestān",
+      "type": "Province"
+    },
+    {
+      "code": "IR-16",
+      "name": "Īlām",
+      "type": "Province"
+    },
+    {
+      "code": "IR-17",
+      "name": "Kohgīlūyeh va Bowyer Aḩmad",
+      "type": "Province"
+    },
+    {
+      "code": "IR-18",
+      "name": "Būshehr",
+      "type": "Province"
+    },
+    {
+      "code": "IR-19",
+      "name": "Zanjān",
+      "type": "Province"
+    },
+    {
+      "code": "IR-20",
+      "name": "Semnān",
+      "type": "Province"
+    },
+    {
+      "code": "IR-21",
+      "name": "Yazd",
+      "type": "Province"
+    },
+    {
+      "code": "IR-00",
+      "name": "Markazī",
+      "type": "Province"
+    },
+    {
+      "code": "IR-22",
+      "name": "Hormozgān",
+      "type": "Province"
+    },
+    {
+      "code": "IR-01",
+      "name": "Gīlān",
+      "type": "Province"
+    },
+    {
+      "code": "IR-23",
+      "name": "Tehrān",
+      "type": "Province"
+    },
+    {
+      "code": "IR-02",
+      "name": "Māzandarān",
+      "type": "Province"
+    },
+    {
+      "code": "IR-24",
+      "name": "Ardabīl",
+      "type": "Province"
+    },
+    {
+      "code": "IR-03",
+      "name": "Āz̄ārbāyjān-e Shārqī",
+      "type": "Province"
+    },
+    {
+      "code": "IR-25",
+      "name": "Qom",
+      "type": "Province"
+    },
+    {
+      "code": "IR-04",
+      "name": "Āz̄ārbāyjān-e Ghārbī",
+      "type": "Province"
+    },
+    {
+      "code": "IR-26",
+      "name": "Qazvīn",
+      "type": "Province"
+    },
+    {
+      "code": "IR-05",
+      "name": "Kermānshāh",
+      "type": "Province"
+    },
+    {
+      "code": "IR-27",
+      "name": "Golestān",
+      "type": "Province"
+    },
+    {
+      "code": "IR-06",
+      "name": "Khūzestān",
+      "type": "Province"
+    }
+  ],
+  "cities": [],
+  "keywords": []
+}

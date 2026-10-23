@@ -1,0 +1,46 @@
+{
+  "id": "researcher",
+  "name": "Researcher",
+  "description": "Research methods, papers, science and reproducible analysis.",
+  "categories": {
+    "Research": [
+      "Research"
+    ],
+    "Scientific Computing": [
+      "Scientific Computing"
+    ],
+    "Academic": [
+      "Academic"
+    ],
+    "Paper": [
+      "Paper"
+    ],
+    "Literature Review": [
+      "Literature Review"
+    ],
+    "Statistics": [
+      "Statistics"
+    ],
+    "Data Analysis": [
+      "Data Analysis"
+    ],
+    "Python": [
+      "Python"
+    ],
+    "R": [
+      "R"
+    ],
+    "Jupyter": [
+      "Jupyter"
+    ],
+    "LaTeX": [
+      "LaTeX"
+    ],
+    "Reproducibility": [
+      "Reproducibility"
+    ],
+    "Methodology": [
+      "Methodology"
+    ]
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "code": "CL",
+  "alpha3": "CHL",
+  "numeric": "152",
+  "name": "Chile",
+  "capital": "Santiago",
+  "regions": [
+    {
+      "code": "CL-MA",
+      "name": "Magallanes",
+      "type": "Region"
+    },
+    {
+      "code": "CL-BI",
+      "name": "Biobío",
+      "type": "Region"
+    },
+    {
+      "code": "CL-AI",
+      "name": "Aisén del General Carlos Ibañez del Campo",
+      "type": "Region"
+    },
+    {
+      "code": "CL-ML",
+      "name": "Maule",
+      "type": "Region"
+    },
+    {
+      "code": "CL-CO",
+      "name": "Coquimbo",
+      "type": "Region"
+    },
+    {
+      "code": "CL-AN",
+      "name": "Antofagasta",
+      "type": "Region"
+    },
+    {
+      "code": "CL-NB",
+      "name": "Ñuble",
+      "type": "Region"
+    },
+    {
+      "code": "CL-LI",
+      "name": "Libertador General Bernardo O'Higgins",
+      "type": "Region"
+    },
+    {
+      "code": "CL-AP",
+      "name": "Arica y Parinacota",
+      "type": "Region"
+    },
+    {
+      "code": "CL-RM",
+      "name": "Región Metropolitana de Santiago",
+      "type": "Region"
+    },
+    {
+      "code": "CL-LL",
+      "name": "Los Lagos",
+      "type": "Region"
+    },
+    {
+      "code": "CL-AR",
+      "name": "La Araucanía",
+      "type": "Region"
+    },
+    {
+      "code": "CL-TA",
+      "name": "Tarapacá",
+      "type": "Region"
+    },
+    {
+      "code": "CL-LR",
+      "name": "Los Ríos",
+      "type": "Region"
+    },
+    {
+      "code": "CL-AT",
+      "name": "Atacama",
+      "type": "Region"
+    },
+    {
+      "code": "CL-VS",
+      "name": "Valparaíso",
+      "type": "Region"
+    }
+  ],
+  "cities": [
+    "Santiago"
+  ],
+  "keywords": []
+}

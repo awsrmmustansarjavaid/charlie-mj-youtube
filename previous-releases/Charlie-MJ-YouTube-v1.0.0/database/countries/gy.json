@@ -1,0 +1,63 @@
+{
+  "code": "GY",
+  "alpha3": "GUY",
+  "numeric": "328",
+  "name": "Guyana",
+  "capital": "Georgetown",
+  "regions": [
+    {
+      "code": "GY-PM",
+      "name": "Pomeroon-Supenaam",
+      "type": "Region"
+    },
+    {
+      "code": "GY-CU",
+      "name": "Cuyuni-Mazaruni",
+      "type": "Region"
+    },
+    {
+      "code": "GY-PT",
+      "name": "Potaro-Siparuni",
+      "type": "Region"
+    },
+    {
+      "code": "GY-DE",
+      "name": "Demerara-Mahaica",
+      "type": "Region"
+    },
+    {
+      "code": "GY-UD",
+      "name": "Upper Demerara-Berbice",
+      "type": "Region"
+    },
+    {
+      "code": "GY-EB",
+      "name": "East Berbice-Corentyne",
+      "type": "Region"
+    },
+    {
+      "code": "GY-UT",
+      "name": "Upper Takutu-Upper Essequibo",
+      "type": "Region"
+    },
+    {
+      "code": "GY-ES",
+      "name": "Essequibo Islands-West Demerara",
+      "type": "Region"
+    },
+    {
+      "code": "GY-MA",
+      "name": "Mahaica-Berbice",
+      "type": "Region"
+    },
+    {
+      "code": "GY-BA",
+      "name": "Barima-Waini",
+      "type": "Region"
+    }
+  ],
+  "cities": [
+    "Georgetown"
+  ],
+  "keywords": []
+}

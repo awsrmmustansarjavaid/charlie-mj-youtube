@@ -1,0 +1,28 @@
+{
+  "code": "WF",
+  "alpha3": "WLF",
+  "numeric": "876",
+  "name": "Wallis and Futuna",
+  "capital": "Mata-Utu",
+  "regions": [
+    {
+      "code": "WF-UV",
+      "name": "Uvea",
+      "type": "Administrative precinct"
+    },
+    {
+      "code": "WF-SG",
+      "name": "Sigave",
+      "type": "Administrative precinct"
+    },
+    {
+      "code": "WF-AL",
+      "name": "Alo",
+      "type": "Administrative precinct"
+    }
+  ],
+  "cities": [
+    "Mata-Utu"
+  ],
+  "keywords": []
+}

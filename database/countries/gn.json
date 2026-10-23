@@ -1,0 +1,183 @@
+{
+  "code": "GN",
+  "alpha3": "GIN",
+  "numeric": "324",
+  "name": "Guinea",
+  "capital": "Conakry",
+  "regions": [
+    {
+      "code": "GN-L",
+      "name": "Labé",
+      "type": "Administrative region"
+    },
+    {
+      "code": "GN-C",
+      "name": "Conakry",
+      "type": "Governorate"
+    },
+    {
+      "code": "GN-CO",
+      "name": "Coyah",
+      "type": "Prefecture"
+    },
+    {
+      "code": "GN-LE",
+      "name": "Lélouma",
+      "type": "Prefecture"
+    },
+    {
+      "code": "GN-D",
+      "name": "Kindia",
+      "type": "Administrative region"
+    },
+    {
+      "code": "GN-LO",
+      "name": "Lola",
+      "type": "Prefecture"
+    },
+    {
+      "code": "GN-DB",
+      "name": "Dabola",
+      "type": "Prefecture"
+    },
+    {
+      "code": "GN-M",
+      "name": "Mamou",
+      "type": "Administrative region"
+    },
+    {
+      "code": "GN-DI",
+      "name": "Dinguiraye",
+      "type": "Prefecture"
+    },
+    {
+      "code": "GN-MC",
+      "name": "Macenta",
+      "type": "Prefecture"
+    },
+    {
+      "code": "GN-DL",
+      "name": "Dalaba",
+      "type": "Prefecture"
+    },
+    {
+      "code": "GN-MD",
+      "name": "Mandiana",
+      "type": "Prefecture"
+    },
+    {
+      "code": "GN-DU",
+      "name": "Dubréka",
+      "type": "Prefecture"
+    },
+    {
+      "code": "GN-ML",
+      "name": "Mali",
+      "type": "Prefecture"
+    },
+    {
+      "code": "GN-F",
+      "name": "Faranah",
+      "type": "Administrative region"
+    },
+    {
+      "code": "GN-N",
+      "name": "Nzérékoré",
+      "type": "Administrative region"
+    },
+    {
+      "code": "GN-FO",
+      "name": "Forécariah",
+      "type": "Prefecture"
+    },
+    {
+      "code": "GN-FR",
+      "name": "Fria",
+      "type": "Prefecture"
+    },
+    {
+      "code": "GN-PI",
+      "name": "Pita",
+      "type": "Prefecture"
+    },
+    {
+      "code": "GN-GA",
+      "name": "Gaoual",
+      "type": "Prefecture"
+    },
+    {
+      "code": "GN-SI",
+      "name": "Siguiri",
+      "type": "Prefecture"
+    },
+    {
+      "code": "GN-GU",
+      "name": "Guékédou",
+      "type": "Prefecture"
+    },
+    {
+      "code": "GN-TE",
+      "name": "Télimélé",
+      "type": "Prefecture"
+    },
+    {
+      "code": "GN-K",
+      "name": "Kankan",
+      "type": "Administrative region"
+    },
+    {
+      "code": "GN-TO",
+      "name": "Tougué",
+      "type": "Prefecture"
+    },
+    {
+      "code": "GN-YO",
+      "name": "Yomou",
+      "type": "Prefecture"
+    },
+    {
+      "code": "GN-KB",
+      "name": "Koubia",
+      "type": "Prefecture"
+    },
+    {
+      "code": "GN-KE",
+      "name": "Kérouané",
+      "type": "Prefecture"
+    },
+    {
+      "code": "GN-B",
+      "name": "Boké",
+      "type": "Administrative region"
+    },
+    {
+      "code": "GN-KN",
+      "name": "Koundara",
+      "type": "Prefecture"
+    },
+    {
+      "code": "GN-BE",
+      "name": "Beyla",
+      "type": "Prefecture"
+    },
+    {
+      "code": "GN-KO",
+      "name": "Kouroussa",
+      "type": "Prefecture"
+    },
+    {
+      "code": "GN-BF",
+      "name": "Boffa",
+      "type": "Prefecture"
+    },
+    {
+      "code": "GN-KS",
+      "name": "Kissidougou",
+      "type": "Prefecture"
+    }
+  ],
+  "cities": [
+    "Conakry"
+  ],
+  "keywords": []
+}

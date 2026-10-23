@@ -1,0 +1,141 @@
+{
+  "code": "CD",
+  "alpha3": "COD",
+  "numeric": "180",
+  "name": "Congo, The Democratic Republic of the",
+  "capital": "",
+  "regions": [
+    {
+      "code": "CD-SK",
+      "name": "Sud-Kivu",
+      "type": "Province"
+    },
+    {
+      "code": "CD-BC",
+      "name": "Kongo Central",
+      "type": "Province"
+    },
+    {
+      "code": "CD-SU",
+      "name": "Sud-Ubangi",
+      "type": "Province"
+    },
+    {
+      "code": "CD-BU",
+      "name": "Bas-Uélé",
+      "type": "Province"
+    },
+    {
+      "code": "CD-TA",
+      "name": "Tanganyika",
+      "type": "Province"
+    },
+    {
+      "code": "CD-EQ",
+      "name": "Équateur",
+      "type": "Province"
+    },
+    {
+      "code": "CD-TO",
+      "name": "Tshopo",
+      "type": "Province"
+    },
+    {
+      "code": "CD-HK",
+      "name": "Haut-Katanga",
+      "type": "Province"
+    },
+    {
+      "code": "CD-TU",
+      "name": "Tshuapa",
+      "type": "Province"
+    },
+    {
+      "code": "CD-HL",
+      "name": "Haut-Lomami",
+      "type": "Province"
+    },
+    {
+      "code": "CD-HU",
+      "name": "Haut-Uélé",
+      "type": "Province"
+    },
+    {
+      "code": "CD-IT",
+      "name": "Ituri",
+      "type": "Province"
+    },
+    {
+      "code": "CD-KC",
+      "name": "Kasaï Central",
+      "type": "Province"
+    },
+    {
+      "code": "CD-KE",
+      "name": "Kasaï Oriental",
+      "type": "Province"
+    },
+    {
+      "code": "CD-KG",
+      "name": "Kwango",
+      "type": "Province"
+    },
+    {
+      "code": "CD-KL",
+      "name": "Kwilu",
+      "type": "Province"
+    },
+    {
+      "code": "CD-KN",
+      "name": "Kinshasa",
+      "type": "City"
+    },
+    {
+      "code": "CD-KS",
+      "name": "Kasaï",
+      "type": "Province"
+    },
+    {
+      "code": "CD-LO",
+      "name": "Lomami",
+      "type": "Province"
+    },
+    {
+      "code": "CD-LU",
+      "name": "Lualaba",
+      "type": "Province"
+    },
+    {
+      "code": "CD-MA",
+      "name": "Maniema",
+      "type": "Province"
+    },
+    {
+      "code": "CD-MN",
+      "name": "Mai-Ndombe",
+      "type": "Province"
+    },
+    {
+      "code": "CD-MO",
+      "name": "Mongala",
+      "type": "Province"
+    },
+    {
+      "code": "CD-NK",
+      "name": "Nord-Kivu",
+      "type": "Province"
+    },
+    {
+      "code": "CD-NU",
+      "name": "Nord-Ubangi",
+      "type": "Province"
+    },
+    {
+      "code": "CD-SA",
+      "name": "Sankuru",
+      "type": "Province"
+    }
+  ],
+  "cities": [],
+  "keywords": []
+}

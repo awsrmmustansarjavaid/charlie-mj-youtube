@@ -1,0 +1,141 @@
+{
+  "id": "devops",
+  "name": "DevOps Engineer",
+  "description": "DevOps, cloud infrastructure, automation, reliability and delivery.",
+  "categories": {
+    "operatingSystems": [
+      "Linux",
+      "Ubuntu",
+      "Debian",
+      "RHEL",
+      "Alpine",
+      "Windows Server"
+    ],
+    "containers": [
+      "Docker",
+      "Podman",
+      "containerd"
+    ],
+    "orchestration": [
+      "Kubernetes",
+      "K3s",
+      "OpenShift",
+      "Helm",
+      "Kustomize"
+    ],
+    "cloud": [
+      "AWS",
+      "Azure",
+      "GCP",
+      "Cloud Infrastructure",
+      "EC2",
+      "EKS",
+      "ECS",
+      "S3",
+      "Lambda",
+      "IAM",
+      "VPC",
+      "Cloud Run",
+      "AKS",
+      "GKE"
+    ],
+    "iac": [
+      "Terraform",
+      "OpenTofu",
+      "Pulumi",
+      "Infrastructure as Code"
+    ],
+    "configuration": [
+      "Ansible",
+      "Chef",
+      "Puppet",
+      "SaltStack"
+    ],
+    "cicd": [
+      "CI/CD",
+      "Jenkins",
+      "GitHub Actions",
+      "GitLab CI",
+      "Argo CD",
+      "ArgoCD",
+      "Tekton",
+      "CircleCI"
+    ],
+    "vcs": [
+      "Git",
+      "GitHub",
+      "GitLab",
+      "Bitbucket"
+    ],
+    "observability": [
+      "Prometheus",
+      "Grafana",
+      "OpenTelemetry",
+      "Observability",
+      "Loki",
+      "ELK",
+      "Elastic Stack",
+      "Jaeger"
+    ],
+    "scripting": [
+      "Bash",
+      "Shell",
+      "Python",
+      "PowerShell"
+    ],
+    "programming": [
+      "Python",
+      "Go",
+      "Golang",
+      "Java",
+      "JavaScript",
+      "TypeScript"
+    ],
+    "databases": [
+      "PostgreSQL",
+      "MySQL",
+      "MariaDB",
+      "Redis",
+      "MongoDB",
+      "DynamoDB"
+    ],
+    "networking": [
+      "TCP/IP",
+      "DNS",
+      "HTTP",
+      "HTTPS",
+      "Load Balancer",
+      "Reverse Proxy",
+      "Nginx",
+      "Ingress",
+      "Firewall",
+      "VPN"
+    ],
+    "security": [
+      "DevSecOps",
+      "Secrets Management",
+      "Vault",
+      "KMS",
+      "TLS",
+      "Zero Trust",
+      "SAST",
+      "DAST",
+      "Container Security"
+    ],
+    "concepts": [
+      "SRE",
+      "Site Reliability Engineering",
+      "Platform Engineering",
+      "Microservices",
+      "Distributed Systems",
+      "Automation",
+      "Deployment",
+      "Release Engineering",
+      "Incident Response",
+      "Disaster Recovery",
+      "High Availability",
+      "Scalability",
+      "Reliability"
+    ]
+  }
+}

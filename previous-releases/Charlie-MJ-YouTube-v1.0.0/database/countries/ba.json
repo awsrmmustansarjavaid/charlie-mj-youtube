@@ -1,0 +1,28 @@
+{
+  "code": "BA",
+  "alpha3": "BIH",
+  "numeric": "070",
+  "name": "Bosnia and Herzegovina",
+  "capital": "Sarajevo",
+  "regions": [
+    {
+      "code": "BA-SRP",
+      "name": "Republika Srpska",
+      "type": "Entity"
+    },
+    {
+      "code": "BA-BRC",
+      "name": "Brčko distrikt",
+      "type": "District with special status"
+    },
+    {
+      "code": "BA-BIH",
+      "name": "Federacija Bosne i Hercegovine",
+      "type": "Entity"
+    }
+  ],
+  "cities": [
+    "Sarajevo"
+  ],
+  "keywords": []
+}

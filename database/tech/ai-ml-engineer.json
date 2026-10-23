@@ -1,0 +1,61 @@
+{
+  "id": "ai-ml-engineer",
+  "name": "AI/ML Engineer",
+  "description": "Machine learning, AI systems and production ML engineering.",
+  "categories": {
+    "Python": [
+      "Python"
+    ],
+    "Machine Learning": [
+      "Machine Learning"
+    ],
+    "Deep Learning": [
+      "Deep Learning"
+    ],
+    "Artificial Intelligence": [
+      "Artificial Intelligence"
+    ],
+    "PyTorch": [
+      "PyTorch"
+    ],
+    "TensorFlow": [
+      "TensorFlow"
+    ],
+    "scikit-learn": [
+      "scikit-learn"
+    ],
+    "Transformers": [
+      "Transformers"
+    ],
+    "LLM": [
+      "LLM"
+    ],
+    "Generative AI": [
+      "Generative AI"
+    ],
+    "NLP": [
+      "NLP"
+    ],
+    "Computer Vision": [
+      "Computer Vision"
+    ],
+    "MLOps": [
+      "MLOps"
+    ],
+    "Model Deployment": [
+      "Model Deployment"
+    ],
+    "Vector Database": [
+      "Vector Database"
+    ],
+    "RAG": [
+      "RAG"
+    ],
+    "Data Science": [
+      "Data Science"
+    ],
+    "Jupyter": [
+      "Jupyter"
+    ]
+  }
+}

@@ -1,0 +1,223 @@
+{
+  "code": "RO",
+  "alpha3": "ROU",
+  "numeric": "642",
+  "name": "Romania",
+  "capital": "Bucharest",
+  "regions": [
+    {
+      "code": "RO-HD",
+      "name": "Hunedoara",
+      "type": "Department"
+    },
+    {
+      "code": "RO-AB",
+      "name": "Alba",
+      "type": "Department"
+    },
+    {
+      "code": "RO-HR",
+      "name": "Harghita",
+      "type": "Department"
+    },
+    {
+      "code": "RO-AG",
+      "name": "Argeș",
+      "type": "Department"
+    },
+    {
+      "code": "RO-IF",
+      "name": "Ilfov",
+      "type": "Department"
+    },
+    {
+      "code": "RO-AR",
+      "name": "Arad",
+      "type": "Department"
+    },
+    {
+      "code": "RO-IL",
+      "name": "Ialomița",
+      "type": "Department"
+    },
+    {
+      "code": "RO-B",
+      "name": "București",
+      "type": "Municipality"
+    },
+    {
+      "code": "RO-IS",
+      "name": "Iași",
+      "type": "Department"
+    },
+    {
+      "code": "RO-BC",
+      "name": "Bacău",
+      "type": "Department"
+    },
+    {
+      "code": "RO-MH",
+      "name": "Mehedinți",
+      "type": "Department"
+    },
+    {
+      "code": "RO-BH",
+      "name": "Bihor",
+      "type": "Department"
+    },
+    {
+      "code": "RO-MM",
+      "name": "Maramureș",
+      "type": "Department"
+    },
+    {
+      "code": "RO-BN",
+      "name": "Bistrița-Năsăud",
+      "type": "Department"
+    },
+    {
+      "code": "RO-MS",
+      "name": "Mureș",
+      "type": "Department"
+    },
+    {
+      "code": "RO-BR",
+      "name": "Brăila",
+      "type": "Department"
+    },
+    {
+      "code": "RO-NT",
+      "name": "Neamț",
+      "type": "Department"
+    },
+    {
+      "code": "RO-BT",
+      "name": "Botoșani",
+      "type": "Department"
+    },
+    {
+      "code": "RO-OT",
+      "name": "Olt",
+      "type": "Department"
+    },
+    {
+      "code": "RO-BV",
+      "name": "Brașov",
+      "type": "Department"
+    },
+    {
+      "code": "RO-PH",
+      "name": "Prahova",
+      "type": "Department"
+    },
+    {
+      "code": "RO-BZ",
+      "name": "Buzău",
+      "type": "Department"
+    },
+    {
+      "code": "RO-SB",
+      "name": "Sibiu",
+      "type": "Department"
+    },
+    {
+      "code": "RO-CJ",
+      "name": "Cluj",
+      "type": "Department"
+    },
+    {
+      "code": "RO-SJ",
+      "name": "Sălaj",
+      "type": "Department"
+    },
+    {
+      "code": "RO-CL",
+      "name": "Călărași",
+      "type": "Department"
+    },
+    {
+      "code": "RO-SM",
+      "name": "Satu Mare",
+      "type": "Department"
+    },
+    {
+      "code": "RO-CS",
+      "name": "Caraș-Severin",
+      "type": "Department"
+    },
+    {
+      "code": "RO-SV",
+      "name": "Suceava",
+      "type": "Department"
+    },
+    {
+      "code": "RO-CT",
+      "name": "Constanța",
+      "type": "Department"
+    },
+    {
+      "code": "RO-TL",
+      "name": "Tulcea",
+      "type": "Department"
+    },
+    {
+      "code": "RO-CV",
+      "name": "Covasna",
+      "type": "Department"
+    },
+    {
+      "code": "RO-TM",
+      "name": "Timiș",
+      "type": "Department"
+    },
+    {
+      "code": "RO-DB",
+      "name": "Dâmbovița",
+      "type": "Department"
+    },
+    {
+      "code": "RO-TR",
+      "name": "Teleorman",
+      "type": "Department"
+    },
+    {
+      "code": "RO-DJ",
+      "name": "Dolj",
+      "type": "Department"
+    },
+    {
+      "code": "RO-VL",
+      "name": "Vâlcea",
+      "type": "Department"
+    },
+    {
+      "code": "RO-GJ",
+      "name": "Gorj",
+      "type": "Department"
+    },
+    {
+      "code": "RO-VN",
+      "name": "Vrancea",
+      "type": "Department"
+    },
+    {
+      "code": "RO-GL",
+      "name": "Galați",
+      "type": "Department"
+    },
+    {
+      "code": "RO-VS",
+      "name": "Vaslui",
+      "type": "Department"
+    },
+    {
+      "code": "RO-GR",
+      "name": "Giurgiu",
+      "type": "Department"
+    }
+  ],
+  "cities": [
+    "Bucharest"
+  ],
+  "keywords": []
+}

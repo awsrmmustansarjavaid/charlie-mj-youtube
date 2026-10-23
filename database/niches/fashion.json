@@ -1,0 +1,25 @@
+{
+  "id": "fashion",
+  "name": "Fashion",
+  "description": "Fashion and style.",
+  "categories": {
+    "Topics": [
+      "fashion",
+      "style",
+      "clothing",
+      "design",
+      "outfits"
+    ],
+    "Formats": [
+      "lookbook",
+      "guide",
+      "review",
+      "tips"
+    ]
+  },
+  "country": "GLOBAL",
+  "targetLanguage": "en",
+  "contentLanguages": [
+    "en"
+  ]
+}

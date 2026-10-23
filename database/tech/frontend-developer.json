@@ -1,0 +1,58 @@
+{
+  "id": "frontend-developer",
+  "name": "Frontend Developer",
+  "description": "Modern web UI and frontend engineering.",
+  "categories": {
+    "HTML": [
+      "HTML"
+    ],
+    "CSS": [
+      "CSS"
+    ],
+    "JavaScript": [
+      "JavaScript"
+    ],
+    "TypeScript": [
+      "TypeScript"
+    ],
+    "React": [
+      "React"
+    ],
+    "Vue": [
+      "Vue"
+    ],
+    "Angular": [
+      "Angular"
+    ],
+    "Next.js": [
+      "Next.js"
+    ],
+    "Nuxt": [
+      "Nuxt"
+    ],
+    "Vite": [
+      "Vite"
+    ],
+    "Webpack": [
+      "Webpack"
+    ],
+    "Tailwind CSS": [
+      "Tailwind CSS"
+    ],
+    "Accessibility": [
+      "Accessibility"
+    ],
+    "Web Performance": [
+      "Web Performance"
+    ],
+    "Testing": [
+      "Testing"
+    ],
+    "Git": [
+      "Git"
+    ],
+    "APIs": [
+      "APIs"
+    ]
+  }
+}

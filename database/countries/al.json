@@ -1,0 +1,73 @@
+{
+  "code": "AL",
+  "alpha3": "ALB",
+  "numeric": "008",
+  "name": "Albania",
+  "capital": "Tirana",
+  "regions": [
+    {
+      "code": "AL-06",
+      "name": "Korçë",
+      "type": "County"
+    },
+    {
+      "code": "AL-01",
+      "name": "Berat",
+      "type": "County"
+    },
+    {
+      "code": "AL-12",
+      "name": "Vlorë",
+      "type": "County"
+    },
+    {
+      "code": "AL-07",
+      "name": "Kukës",
+      "type": "County"
+    },
+    {
+      "code": "AL-02",
+      "name": "Durrës",
+      "type": "County"
+    },
+    {
+      "code": "AL-08",
+      "name": "Lezhë",
+      "type": "County"
+    },
+    {
+      "code": "AL-03",
+      "name": "Elbasan",
+      "type": "County"
+    },
+    {
+      "code": "AL-09",
+      "name": "Dibër",
+      "type": "County"
+    },
+    {
+      "code": "AL-04",
+      "name": "Fier",
+      "type": "County"
+    },
+    {
+      "code": "AL-10",
+      "name": "Shkodër",
+      "type": "County"
+    },
+    {
+      "code": "AL-05",
+      "name": "Gjirokastër",
+      "type": "County"
+    },
+    {
+      "code": "AL-11",
+      "name": "Tiranë",
+      "type": "County"
+    }
+  ],
+  "cities": [
+    "Tirana"
+  ],
+  "keywords": []
+}

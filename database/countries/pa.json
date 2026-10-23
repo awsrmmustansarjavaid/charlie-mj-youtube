@@ -1,0 +1,83 @@
+{
+  "code": "PA",
+  "alpha3": "PAN",
+  "numeric": "591",
+  "name": "Panama",
+  "capital": "Panama City",
+  "regions": [
+    {
+      "code": "PA-7",
+      "name": "Los Santos",
+      "type": "Province"
+    },
+    {
+      "code": "PA-2",
+      "name": "Coclé",
+      "type": "Province"
+    },
+    {
+      "code": "PA-NT",
+      "name": "Naso Tjër Di",
+      "type": "Indigenous region"
+    },
+    {
+      "code": "PA-8",
+      "name": "Panamá",
+      "type": "Province"
+    },
+    {
+      "code": "PA-3",
+      "name": "Colón",
+      "type": "Province"
+    },
+    {
+      "code": "PA-9",
+      "name": "Veraguas",
+      "type": "Province"
+    },
+    {
+      "code": "PA-4",
+      "name": "Chiriquí",
+      "type": "Province"
+    },
+    {
+      "code": "PA-EM",
+      "name": "Emberá",
+      "type": "Indigenous region"
+    },
+    {
+      "code": "PA-5",
+      "name": "Darién",
+      "type": "Province"
+    },
+    {
+      "code": "PA-1",
+      "name": "Bocas del Toro",
+      "type": "Province"
+    },
+    {
+      "code": "PA-KY",
+      "name": "Guna Yala",
+      "type": "Indigenous region"
+    },
+    {
+      "code": "PA-6",
+      "name": "Herrera",
+      "type": "Province"
+    },
+    {
+      "code": "PA-10",
+      "name": "Panamá Oeste",
+      "type": "Province"
+    },
+    {
+      "code": "PA-NB",
+      "name": "Ngäbe-Buglé",
+      "type": "Indigenous region"
+    }
+  ],
+  "cities": [
+    "Panama City"
+  ],
+  "keywords": []
+}

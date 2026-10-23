@@ -1,0 +1,48 @@
+{
+  "code": "BY",
+  "alpha3": "BLR",
+  "numeric": "112",
+  "name": "Belarus",
+  "capital": "Minsk",
+  "regions": [
+    {
+      "code": "BY-MA",
+      "name": "Mahilioŭskaja voblasć",
+      "type": "Oblast"
+    },
+    {
+      "code": "BY-MI",
+      "name": "Minskaja oblast'",
+      "type": "Oblast"
+    },
+    {
+      "code": "BY-BR",
+      "name": "Bresckaja voblasć",
+      "type": "Oblast"
+    },
+    {
+      "code": "BY-VI",
+      "name": "Viciebskaja voblasć",
+      "type": "Oblast"
+    },
+    {
+      "code": "BY-HM",
+      "name": "Gorod Minsk",
+      "type": "City"
+    },
+    {
+      "code": "BY-HO",
+      "name": "Gomel'skaja oblast'",
+      "type": "Oblast"
+    },
+    {
+      "code": "BY-HR",
+      "name": "Grodnenskaja oblast'",
+      "type": "Oblast"
+    }
+  ],
+  "cities": [
+    "Minsk"
+  ],
+  "keywords": []
+}

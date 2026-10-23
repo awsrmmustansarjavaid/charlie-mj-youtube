@@ -1,0 +1,25 @@
+{
+  "id": "personal-finance",
+  "name": "Personal Finance",
+  "description": "Personal finance and financial education.",
+  "categories": {
+    "Topics": [
+      "personal finance",
+      "budgeting",
+      "saving",
+      "investing",
+      "money management"
+    ],
+    "Formats": [
+      "guide",
+      "education",
+      "tips",
+      "explained"
+    ]
+  },
+  "country": "GLOBAL",
+  "targetLanguage": "en",
+  "contentLanguages": [
+    "en"
+  ]
+}

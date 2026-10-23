@@ -1,0 +1,27 @@
+{
+  "id": "arabic-learning",
+  "name": "Arabic Learning",
+  "learningLanguage": "ar",
+  "contentLanguages": [
+    "ar",
+    "en"
+  ],
+  "goals": [
+    "learn-language",
+    "listening",
+    "vocabulary",
+    "conversation",
+    "culture",
+    "reading"
+  ],
+  "preferredContent": [
+    "subtitles",
+    "lessons",
+    "native-content",
+    "news",
+    "documentaries",
+    "drama"
+  ],
+  "focus": 70,
+  "notes": "Packaged starter profile."
+}

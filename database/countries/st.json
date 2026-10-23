@@ -1,0 +1,46 @@
+{
+  "code": "ST",
+  "alpha3": "STP",
+  "numeric": "678",
+  "name": "Sao Tome and Principe",
+  "capital": "",
+  "regions": [
+    {
+      "code": "ST-03",
+      "name": "Caué",
+      "type": "District"
+    },
+    {
+      "code": "ST-04",
+      "name": "Lembá",
+      "type": "District"
+    },
+    {
+      "code": "ST-05",
+      "name": "Lobata",
+      "type": "District"
+    },
+    {
+      "code": "ST-06",
+      "name": "Mé-Zóchi",
+      "type": "District"
+    },
+    {
+      "code": "ST-01",
+      "name": "Água Grande",
+      "type": "District"
+    },
+    {
+      "code": "ST-P",
+      "name": "Príncipe",
+      "type": "Autonomous region"
+    },
+    {
+      "code": "ST-02",
+      "name": "Cantagalo",
+      "type": "District"
+    }
+  ],
+  "cities": [],
+  "keywords": []
+}

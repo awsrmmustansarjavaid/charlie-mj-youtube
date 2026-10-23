@@ -1,0 +1,68 @@
+{
+  "code": "AM",
+  "alpha3": "ARM",
+  "numeric": "051",
+  "name": "Armenia",
+  "capital": "Yerevan",
+  "regions": [
+    {
+      "code": "AM-TV",
+      "name": "Tavuš",
+      "type": "Region"
+    },
+    {
+      "code": "AM-GR",
+      "name": "Geġark'unik'",
+      "type": "Region"
+    },
+    {
+      "code": "AM-VD",
+      "name": "Vayoć Jor",
+      "type": "Region"
+    },
+    {
+      "code": "AM-KT",
+      "name": "Kotayk'",
+      "type": "Region"
+    },
+    {
+      "code": "AM-AG",
+      "name": "Aragac̣otn",
+      "type": "Region"
+    },
+    {
+      "code": "AM-LO",
+      "name": "Loṙi",
+      "type": "Region"
+    },
+    {
+      "code": "AM-AR",
+      "name": "Ararat",
+      "type": "Region"
+    },
+    {
+      "code": "AM-SH",
+      "name": "Širak",
+      "type": "Region"
+    },
+    {
+      "code": "AM-AV",
+      "name": "Armavir",
+      "type": "Region"
+    },
+    {
+      "code": "AM-SU",
+      "name": "Syunik'",
+      "type": "Region"
+    },
+    {
+      "code": "AM-ER",
+      "name": "Erevan",
+      "type": "City"
+    }
+  ],
+  "cities": [
+    "Yerevan"
+  ],
+  "keywords": []
+}

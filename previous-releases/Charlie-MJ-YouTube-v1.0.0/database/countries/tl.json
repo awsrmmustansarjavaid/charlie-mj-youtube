@@ -1,0 +1,76 @@
+{
+  "code": "TL",
+  "alpha3": "TLS",
+  "numeric": "626",
+  "name": "Timor-Leste",
+  "capital": "",
+  "regions": [
+    {
+      "code": "TL-ER",
+      "name": "Ermera",
+      "type": "Municipality"
+    },
+    {
+      "code": "TL-AN",
+      "name": "Ainaro",
+      "type": "Municipality"
+    },
+    {
+      "code": "TL-VI",
+      "name": "Vikeke",
+      "type": "Municipality"
+    },
+    {
+      "code": "TL-LA",
+      "name": "Lautein",
+      "type": "Municipality"
+    },
+    {
+      "code": "TL-BA",
+      "name": "Baucau",
+      "type": "Municipality"
+    },
+    {
+      "code": "TL-LI",
+      "name": "Likisá",
+      "type": "Municipality"
+    },
+    {
+      "code": "TL-BO",
+      "name": "Bobonaro",
+      "type": "Municipality"
+    },
+    {
+      "code": "TL-MF",
+      "name": "Manufahi",
+      "type": "Municipality"
+    },
+    {
+      "code": "TL-CO",
+      "name": "Cova Lima",
+      "type": "Municipality"
+    },
+    {
+      "code": "TL-MT",
+      "name": "Manatuto",
+      "type": "Municipality"
+    },
+    {
+      "code": "TL-DI",
+      "name": "Díli",
+      "type": "Municipality"
+    },
+    {
+      "code": "TL-AL",
+      "name": "Aileu",
+      "type": "Municipality"
+    },
+    {
+      "code": "TL-OE",
+      "name": "Oekusi-Ambenu",
+      "type": "Special administrative region"
+    }
+  ],
+  "cities": [],
+  "keywords": []
+}

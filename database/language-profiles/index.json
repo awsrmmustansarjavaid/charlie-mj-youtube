@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "profiles": [
+    {
+      "id": "custom",
+      "name": "Custom Language Profile",
+      "file": "database/language-profiles/custom.json"
+    },
+    {
+      "id": "english-learning",
+      "name": "English Learning",
+      "file": "database/language-profiles/english-learning.json"
+    },
+    {
+      "id": "turkish-learning",
+      "name": "Turkish Learning",
+      "file": "database/language-profiles/turkish-learning.json"
+    },
+    {
+      "id": "arabic-learning",
+      "name": "Arabic Learning",
+      "file": "database/language-profiles/arabic-learning.json"
+    },
+    {
+      "id": "spanish-learning",
+      "name": "Spanish Learning",
+      "file": "database/language-profiles/spanish-learning.json"
+    },
+    {
+      "id": "french-learning",
+      "name": "French Learning",
+      "file": "database/language-profiles/french-learning.json"
+    },
+    {
+      "id": "german-learning",
+      "name": "German Learning",
+      "file": "database/language-profiles/german-learning.json"
+    }
+  ]
+}

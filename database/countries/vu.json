@@ -1,0 +1,43 @@
+{
+  "code": "VU",
+  "alpha3": "VUT",
+  "numeric": "548",
+  "name": "Vanuatu",
+  "capital": "Port Vila",
+  "regions": [
+    {
+      "code": "VU-MAP",
+      "name": "Malampa",
+      "type": "Province"
+    },
+    {
+      "code": "VU-PAM",
+      "name": "Pénama",
+      "type": "Province"
+    },
+    {
+      "code": "VU-SAM",
+      "name": "Sanma",
+      "type": "Province"
+    },
+    {
+      "code": "VU-SEE",
+      "name": "Shéfa",
+      "type": "Province"
+    },
+    {
+      "code": "VU-TAE",
+      "name": "Taféa",
+      "type": "Province"
+    },
+    {
+      "code": "VU-TOB",
+      "name": "Torba",
+      "type": "Province"
+    }
+  ],
+  "cities": [
+    "Port Vila"
+  ],
+  "keywords": []
+}

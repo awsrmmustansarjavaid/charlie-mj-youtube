@@ -1,0 +1,83 @@
+{
+  "code": "SY",
+  "alpha3": "SYR",
+  "numeric": "760",
+  "name": "Syrian Arab Republic",
+  "capital": "Damascus",
+  "regions": [
+    {
+      "code": "SY-TA",
+      "name": "Ţarţūs",
+      "type": "Province"
+    },
+    {
+      "code": "SY-LA",
+      "name": "Al Lādhiqīyah",
+      "type": "Province"
+    },
+    {
+      "code": "SY-HA",
+      "name": "Al Ḩasakah",
+      "type": "Province"
+    },
+    {
+      "code": "SY-QU",
+      "name": "Al Qunayţirah",
+      "type": "Province"
+    },
+    {
+      "code": "SY-HI",
+      "name": "Ḩimş",
+      "type": "Province"
+    },
+    {
+      "code": "SY-RA",
+      "name": "Ar Raqqah",
+      "type": "Province"
+    },
+    {
+      "code": "SY-HL",
+      "name": "Ḩalab",
+      "type": "Province"
+    },
+    {
+      "code": "SY-DI",
+      "name": "Dimashq",
+      "type": "Province"
+    },
+    {
+      "code": "SY-RD",
+      "name": "Rīf Dimashq",
+      "type": "Province"
+    },
+    {
+      "code": "SY-HM",
+      "name": "Ḩamāh",
+      "type": "Province"
+    },
+    {
+      "code": "SY-DR",
+      "name": "Dar'ā",
+      "type": "Province"
+    },
+    {
+      "code": "SY-SU",
+      "name": "As Suwaydā'",
+      "type": "Province"
+    },
+    {
+      "code": "SY-ID",
+      "name": "Idlib",
+      "type": "Province"
+    },
+    {
+      "code": "SY-DY",
+      "name": "Dayr az Zawr",
+      "type": "Province"
+    }
+  ],
+  "cities": [
+    "Damascus"
+  ],
+  "keywords": []
+}

@@ -1,0 +1,25 @@
+{
+  "id": "music",
+  "name": "Music",
+  "description": "Music discovery and performance.",
+  "categories": {
+    "Topics": [
+      "music",
+      "music theory",
+      "songs",
+      "instruments",
+      "production"
+    ],
+    "Formats": [
+      "performance",
+      "tutorial",
+      "review",
+      "analysis"
+    ]
+  },
+  "country": "GLOBAL",
+  "targetLanguage": "en",
+  "contentLanguages": [
+    "en"
+  ]
+}

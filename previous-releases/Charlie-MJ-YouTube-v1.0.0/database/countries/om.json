@@ -1,0 +1,68 @@
+{
+  "code": "OM",
+  "alpha3": "OMN",
+  "numeric": "512",
+  "name": "Oman",
+  "capital": "Muscat",
+  "regions": [
+    {
+      "code": "OM-BU",
+      "name": "Al Buraymī",
+      "type": "Governorate"
+    },
+    {
+      "code": "OM-WU",
+      "name": "Al Wusţá",
+      "type": "Governorate"
+    },
+    {
+      "code": "OM-DA",
+      "name": "Ad Dākhilīyah",
+      "type": "Governorate"
+    },
+    {
+      "code": "OM-ZA",
+      "name": "Az̧ Z̧āhirah",
+      "type": "Governorate"
+    },
+    {
+      "code": "OM-MA",
+      "name": "Masqaţ",
+      "type": "Governorate"
+    },
+    {
+      "code": "OM-ZU",
+      "name": "Z̧ufār",
+      "type": "Governorate"
+    },
+    {
+      "code": "OM-MU",
+      "name": "Musandam",
+      "type": "Governorate"
+    },
+    {
+      "code": "OM-BJ",
+      "name": "Janūb al Bāţinah",
+      "type": "Governorate"
+    },
+    {
+      "code": "OM-SJ",
+      "name": "Janūb ash Sharqīyah",
+      "type": "Governorate"
+    },
+    {
+      "code": "OM-BS",
+      "name": "Shamāl al Bāţinah",
+      "type": "Governorate"
+    },
+    {
+      "code": "OM-SS",
+      "name": "Shamāl ash Sharqīyah",
+      "type": "Governorate"
+    }
+  ],
+  "cities": [
+    "Muscat"
+  ],
+  "keywords": []
+}

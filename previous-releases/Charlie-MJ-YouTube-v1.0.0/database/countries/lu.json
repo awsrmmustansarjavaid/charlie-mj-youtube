@@ -1,0 +1,73 @@
+{
+  "code": "LU",
+  "alpha3": "LUX",
+  "numeric": "442",
+  "name": "Luxembourg",
+  "capital": "Luxembourg",
+  "regions": [
+    {
+      "code": "LU-ME",
+      "name": "Mersch",
+      "type": "Canton"
+    },
+    {
+      "code": "LU-DI",
+      "name": "Diekirch",
+      "type": "Canton"
+    },
+    {
+      "code": "LU-RD",
+      "name": "Redange",
+      "type": "Canton"
+    },
+    {
+      "code": "LU-EC",
+      "name": "Echternach",
+      "type": "Canton"
+    },
+    {
+      "code": "LU-RM",
+      "name": "Remich",
+      "type": "Canton"
+    },
+    {
+      "code": "LU-ES",
+      "name": "Esch-sur-Alzette",
+      "type": "Canton"
+    },
+    {
+      "code": "LU-VD",
+      "name": "Vianden",
+      "type": "Canton"
+    },
+    {
+      "code": "LU-GR",
+      "name": "Grevenmacher",
+      "type": "Canton"
+    },
+    {
+      "code": "LU-CA",
+      "name": "Capellen",
+      "type": "Canton"
+    },
+    {
+      "code": "LU-WI",
+      "name": "Wiltz",
+      "type": "Canton"
+    },
+    {
+      "code": "LU-LU",
+      "name": "Luxembourg",
+      "type": "Canton"
+    },
+    {
+      "code": "LU-CL",
+      "name": "Clervaux",
+      "type": "Canton"
+    }
+  ],
+  "cities": [
+    "Luxembourg"
+  ],
+  "keywords": []
+}

@@ -1,0 +1,93 @@
+{
+  "code": "PL",
+  "alpha3": "POL",
+  "numeric": "616",
+  "name": "Poland",
+  "capital": "Warsaw",
+  "regions": [
+    {
+      "code": "PL-20",
+      "name": "Podlaskie",
+      "type": "Voivodship"
+    },
+    {
+      "code": "PL-10",
+      "name": "Łódzkie",
+      "type": "Voivodship"
+    },
+    {
+      "code": "PL-32",
+      "name": "Zachodniopomorskie",
+      "type": "Voivodship"
+    },
+    {
+      "code": "PL-22",
+      "name": "Pomorskie",
+      "type": "Voivodship"
+    },
+    {
+      "code": "PL-12",
+      "name": "Małopolskie",
+      "type": "Voivodship"
+    },
+    {
+      "code": "PL-02",
+      "name": "Dolnośląskie",
+      "type": "Voivodship"
+    },
+    {
+      "code": "PL-24",
+      "name": "Śląskie",
+      "type": "Voivodship"
+    },
+    {
+      "code": "PL-14",
+      "name": "Mazowieckie",
+      "type": "Voivodship"
+    },
+    {
+      "code": "PL-04",
+      "name": "Kujawsko-Pomorskie",
+      "type": "Voivodship"
+    },
+    {
+      "code": "PL-26",
+      "name": "Świętokrzyskie",
+      "type": "Voivodship"
+    },
+    {
+      "code": "PL-16",
+      "name": "Opolskie",
+      "type": "Voivodship"
+    },
+    {
+      "code": "PL-06",
+      "name": "Lubelskie",
+      "type": "Voivodship"
+    },
+    {
+      "code": "PL-28",
+      "name": "Warmińsko-Mazurskie",
+      "type": "Voivodship"
+    },
+    {
+      "code": "PL-18",
+      "name": "Podkarpackie",
+      "type": "Voivodship"
+    },
+    {
+      "code": "PL-08",
+      "name": "Lubuskie",
+      "type": "Voivodship"
+    },
+    {
+      "code": "PL-30",
+      "name": "Wielkopolskie",
+      "type": "Voivodship"
+    }
+  ],
+  "cities": [
+    "Warsaw"
+  ],
+  "keywords": []
+}

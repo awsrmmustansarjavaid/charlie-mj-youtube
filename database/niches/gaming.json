@@ -1,0 +1,25 @@
+{
+  "id": "gaming",
+  "name": "Gaming",
+  "description": "Gaming and games.",
+  "categories": {
+    "Topics": [
+      "gaming",
+      "games",
+      "gameplay",
+      "game reviews",
+      "esports"
+    ],
+    "Formats": [
+      "guide",
+      "review",
+      "gameplay",
+      "tips"
+    ]
+  },
+  "country": "GLOBAL",
+  "targetLanguage": "en",
+  "contentLanguages": [
+    "en"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "code": "BZ",
+  "alpha3": "BLZ",
+  "numeric": "084",
+  "name": "Belize",
+  "capital": "Belmopan",
+  "regions": [
+    {
+      "code": "BZ-CZL",
+      "name": "Corozal",
+      "type": "District"
+    },
+    {
+      "code": "BZ-OW",
+      "name": "Orange Walk",
+      "type": "District"
+    },
+    {
+      "code": "BZ-SC",
+      "name": "Stann Creek",
+      "type": "District"
+    },
+    {
+      "code": "BZ-TOL",
+      "name": "Toledo",
+      "type": "District"
+    },
+    {
+      "code": "BZ-BZ",
+      "name": "Belize",
+      "type": "District"
+    },
+    {
+      "code": "BZ-CY",
+      "name": "Cayo",
+      "type": "District"
+    }
+  ],
+  "cities": [
+    "Belmopan"
+  ],
+  "keywords": []
+}

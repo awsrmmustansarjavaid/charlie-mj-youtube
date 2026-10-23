@@ -1,0 +1,411 @@
+{
+  "code": "MK",
+  "alpha3": "MKD",
+  "numeric": "807",
+  "name": "North Macedonia",
+  "capital": "",
+  "regions": [
+    {
+      "code": "MK-604",
+      "name": "Gostivar",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-605",
+      "name": "Želino",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-606",
+      "name": "Jegunovce",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-607",
+      "name": "Mavrovo i Rostuše",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-608",
+      "name": "Tearce",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-609",
+      "name": "Tetovo",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-701",
+      "name": "Kratovo",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-702",
+      "name": "Kriva Palanka",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-703",
+      "name": "Kumanovo",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-704",
+      "name": "Lipkovo",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-705",
+      "name": "Rankovce",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-706",
+      "name": "Staro Nagoričane",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-801",
+      "name": "Aerodrom †",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-802",
+      "name": "Aračinovo",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-803",
+      "name": "Butel †",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-804",
+      "name": "Gazi Baba †",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-805",
+      "name": "Gjorče Petrov †",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-806",
+      "name": "Zelenikovo",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-807",
+      "name": "Ilinden",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-808",
+      "name": "Karpoš †",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-809",
+      "name": "Kisela Voda †",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-810",
+      "name": "Petrovec",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-811",
+      "name": "Saraj †",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-812",
+      "name": "Sopište",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-813",
+      "name": "Studeničani",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-814",
+      "name": "Centar †",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-815",
+      "name": "Čair †",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-816",
+      "name": "Čučer-Sandevo",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-817",
+      "name": "Šuto Orizari †",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-101",
+      "name": "Veles",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-102",
+      "name": "Gradsko",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-103",
+      "name": "Demir Kapija",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-104",
+      "name": "Kavadarci",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-105",
+      "name": "Lozovo",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-106",
+      "name": "Negotino",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-107",
+      "name": "Rosoman",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-108",
+      "name": "Sveti Nikole",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-109",
+      "name": "Čaška",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-201",
+      "name": "Berovo",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-202",
+      "name": "Vinica",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-203",
+      "name": "Delčevo",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-204",
+      "name": "Zrnovci",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-205",
+      "name": "Karbinci",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-206",
+      "name": "Kočani",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-207",
+      "name": "Makedonska Kamenica",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-208",
+      "name": "Pehčevo",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-209",
+      "name": "Probištip",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-210",
+      "name": "Češinovo-Obleševo",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-211",
+      "name": "Štip",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-301",
+      "name": "Vevčani",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-303",
+      "name": "Debar",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-304",
+      "name": "Debrca",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-307",
+      "name": "Kičevo",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-308",
+      "name": "Makedonski Brod",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-310",
+      "name": "Ohrid",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-311",
+      "name": "Plasnica",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-312",
+      "name": "Struga",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-313",
+      "name": "Centar Župa",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-401",
+      "name": "Bogdanci",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-402",
+      "name": "Bosilovo",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-403",
+      "name": "Valandovo",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-404",
+      "name": "Vasilevo",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-405",
+      "name": "Gevgelija",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-406",
+      "name": "Dojran",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-407",
+      "name": "Konče",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-408",
+      "name": "Novo Selo",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-409",
+      "name": "Radoviš",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-410",
+      "name": "Strumica",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-501",
+      "name": "Bitola",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-502",
+      "name": "Demir Hisar",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-503",
+      "name": "Dolneni",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-504",
+      "name": "Krivogaštani",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-505",
+      "name": "Kruševo",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-506",
+      "name": "Mogila",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-507",
+      "name": "Novaci",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-508",
+      "name": "Prilep",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-509",
+      "name": "Resen",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-601",
+      "name": "Bogovinje",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-602",
+      "name": "Brvenica",
+      "type": "Municipality"
+    },
+    {
+      "code": "MK-603",
+      "name": "Vrapčište",
+      "type": "Municipality"
+    }
+  ],
+  "cities": [],
+  "keywords": []
+}

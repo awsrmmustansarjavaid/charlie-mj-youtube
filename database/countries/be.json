@@ -1,0 +1,78 @@
+{
+  "code": "BE",
+  "alpha3": "BEL",
+  "numeric": "056",
+  "name": "Belgium",
+  "capital": "Brussels",
+  "regions": [
+    {
+      "code": "BE-VLG",
+      "name": "Vlaams Gewest",
+      "type": "Region"
+    },
+    {
+      "code": "BE-WHT",
+      "name": "Hainaut",
+      "type": "Province"
+    },
+    {
+      "code": "BE-VLI",
+      "name": "Limburg",
+      "type": "Province"
+    },
+    {
+      "code": "BE-WLG",
+      "name": "Liège",
+      "type": "Province"
+    },
+    {
+      "code": "BE-VOV",
+      "name": "Oost-Vlaanderen",
+      "type": "Province"
+    },
+    {
+      "code": "BE-BRU",
+      "name": "Bruxelles-Capitale, Région de",
+      "type": "Region"
+    },
+    {
+      "code": "BE-WLX",
+      "name": "Luxembourg",
+      "type": "Province"
+    },
+    {
+      "code": "BE-VWV",
+      "name": "West-Vlaanderen",
+      "type": "Province"
+    },
+    {
+      "code": "BE-VAN",
+      "name": "Antwerpen",
+      "type": "Province"
+    },
+    {
+      "code": "BE-WNA",
+      "name": "Namur",
+      "type": "Province"
+    },
+    {
+      "code": "BE-WAL",
+      "name": "wallonne, Région",
+      "type": "Region"
+    },
+    {
+      "code": "BE-VBR",
+      "name": "Vlaams-Brabant",
+      "type": "Province"
+    },
+    {
+      "code": "BE-WBR",
+      "name": "Brabant wallon",
+      "type": "Province"
+    }
+  ],
+  "cities": [
+    "Brussels"
+  ],
+  "keywords": []
+}

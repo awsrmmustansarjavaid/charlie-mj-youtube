@@ -1,0 +1,70 @@
+{
+  "id": "network-engineer",
+  "name": "Network Engineer",
+  "description": "Enterprise networking, routing, switching and network security.",
+  "categories": {
+    "TCP/IP": [
+      "TCP/IP"
+    ],
+    "IPv4": [
+      "IPv4"
+    ],
+    "IPv6": [
+      "IPv6"
+    ],
+    "DNS": [
+      "DNS"
+    ],
+    "DHCP": [
+      "DHCP"
+    ],
+    "BGP": [
+      "BGP"
+    ],
+    "OSPF": [
+      "OSPF"
+    ],
+    "EIGRP": [
+      "EIGRP"
+    ],
+    "VLAN": [
+      "VLAN"
+    ],
+    "VXLAN": [
+      "VXLAN"
+    ],
+    "Routing": [
+      "Routing"
+    ],
+    "Switching": [
+      "Switching"
+    ],
+    "Cisco": [
+      "Cisco"
+    ],
+    "Juniper": [
+      "Juniper"
+    ],
+    "MikroTik": [
+      "MikroTik"
+    ],
+    "Firewall": [
+      "Firewall"
+    ],
+    "VPN": [
+      "VPN"
+    ],
+    "Wireshark": [
+      "Wireshark"
+    ],
+    "SD-WAN": [
+      "SD-WAN"
+    ],
+    "Network Automation": [
+      "Network Automation"
+    ],
+    "Python": [
+      "Python"
+    ]
+  }
+}

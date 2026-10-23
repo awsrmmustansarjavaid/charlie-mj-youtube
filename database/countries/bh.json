@@ -1,0 +1,33 @@
+{
+  "code": "BH",
+  "alpha3": "BHR",
+  "numeric": "048",
+  "name": "Bahrain",
+  "capital": "Manama",
+  "regions": [
+    {
+      "code": "BH-13",
+      "name": "Al ‘Āşimah",
+      "type": "Governorate"
+    },
+    {
+      "code": "BH-17",
+      "name": "Ash Shamālīyah",
+      "type": "Governorate"
+    },
+    {
+      "code": "BH-15",
+      "name": "Al Muḩarraq",
+      "type": "Governorate"
+    },
+    {
+      "code": "BH-14",
+      "name": "Al Janūbīyah",
+      "type": "Governorate"
+    }
+  ],
+  "cities": [
+    "Manama"
+  ],
+  "keywords": []
+}

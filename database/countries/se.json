@@ -1,0 +1,118 @@
+{
+  "code": "SE",
+  "alpha3": "SWE",
+  "numeric": "752",
+  "name": "Sweden",
+  "capital": "Stockholm",
+  "regions": [
+    {
+      "code": "SE-D",
+      "name": "Södermanlands län [SE-04]",
+      "type": "County"
+    },
+    {
+      "code": "SE-E",
+      "name": "Östergötlands län [SE-05]",
+      "type": "County"
+    },
+    {
+      "code": "SE-F",
+      "name": "Jönköpings län [SE-06]",
+      "type": "County"
+    },
+    {
+      "code": "SE-G",
+      "name": "Kronobergs län [SE-07]",
+      "type": "County"
+    },
+    {
+      "code": "SE-H",
+      "name": "Kalmar län [SE-08]",
+      "type": "County"
+    },
+    {
+      "code": "SE-I",
+      "name": "Gotlands län [SE-09]",
+      "type": "County"
+    },
+    {
+      "code": "SE-K",
+      "name": "Blekinge län [SE-10]",
+      "type": "County"
+    },
+    {
+      "code": "SE-M",
+      "name": "Skåne län [SE-12]",
+      "type": "County"
+    },
+    {
+      "code": "SE-N",
+      "name": "Hallands län [SE-13]",
+      "type": "County"
+    },
+    {
+      "code": "SE-O",
+      "name": "Västra Götalands län [SE-14]",
+      "type": "County"
+    },
+    {
+      "code": "SE-S",
+      "name": "Värmlands län [SE-17]",
+      "type": "County"
+    },
+    {
+      "code": "SE-T",
+      "name": "Örebro län [SE-18]",
+      "type": "County"
+    },
+    {
+      "code": "SE-U",
+      "name": "Västmanlands län [SE-19]",
+      "type": "County"
+    },
+    {
+      "code": "SE-W",
+      "name": "Dalarnas län [SE-20]",
+      "type": "County"
+    },
+    {
+      "code": "SE-X",
+      "name": "Gävleborgs län [SE-21]",
+      "type": "County"
+    },
+    {
+      "code": "SE-Y",
+      "name": "Västernorrlands län [SE-22]",
+      "type": "County"
+    },
+    {
+      "code": "SE-Z",
+      "name": "Jämtlands län [SE-23]",
+      "type": "County"
+    },
+    {
+      "code": "SE-AB",
+      "name": "Stockholms län [SE-01]",
+      "type": "County"
+    },
+    {
+      "code": "SE-AC",
+      "name": "Västerbottens län [SE-24]",
+      "type": "County"
+    },
+    {
+      "code": "SE-BD",
+      "name": "Norrbottens län [SE-25]",
+      "type": "County"
+    },
+    {
+      "code": "SE-C",
+      "name": "Uppsala län [SE-03]",
+      "type": "County"
+    }
+  ],
+  "cities": [
+    "Stockholm"
+  ],
+  "keywords": []
+}

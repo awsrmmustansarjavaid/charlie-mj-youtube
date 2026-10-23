@@ -1,0 +1,25 @@
+{
+  "id": "history",
+  "name": "History",
+  "description": "History and civilizations.",
+  "categories": {
+    "Topics": [
+      "history",
+      "ancient history",
+      "world history",
+      "civilizations",
+      "archaeology"
+    ],
+    "Formats": [
+      "documentary",
+      "lecture",
+      "explained",
+      "analysis"
+    ]
+  },
+  "country": "GLOBAL",
+  "targetLanguage": "en",
+  "contentLanguages": [
+    "en"
+  ]
+}

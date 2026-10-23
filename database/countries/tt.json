@@ -1,0 +1,88 @@
+{
+  "code": "TT",
+  "alpha3": "TTO",
+  "numeric": "780",
+  "name": "Trinidad and Tobago",
+  "capital": "Port of Spain",
+  "regions": [
+    {
+      "code": "TT-ARI",
+      "name": "Arima",
+      "type": "Borough"
+    },
+    {
+      "code": "TT-SGE",
+      "name": "Sangre Grande",
+      "type": "Region"
+    },
+    {
+      "code": "TT-PED",
+      "name": "Penal-Debe",
+      "type": "Region"
+    },
+    {
+      "code": "TT-CHA",
+      "name": "Chaguanas",
+      "type": "Borough"
+    },
+    {
+      "code": "TT-SIP",
+      "name": "Siparia",
+      "type": "Region"
+    },
+    {
+      "code": "TT-POS",
+      "name": "Port of Spain",
+      "type": "City"
+    },
+    {
+      "code": "TT-TUP",
+      "name": "Tunapuna-Piarco",
+      "type": "Region"
+    },
+    {
+      "code": "TT-CTT",
+      "name": "Couva-Tabaquite-Talparo",
+      "type": "Region"
+    },
+    {
+      "code": "TT-SJL",
+      "name": "San Juan-Laventille",
+      "type": "Region"
+    },
+    {
+      "code": "TT-PRT",
+      "name": "Princes Town",
+      "type": "Region"
+    },
+    {
+      "code": "TT-DMN",
+      "name": "Diego Martin",
+      "type": "Region"
+    },
+    {
+      "code": "TT-TOB",
+      "name": "Tobago",
+      "type": "Ward"
+    },
+    {
+      "code": "TT-PTF",
+      "name": "Point Fortin",
+      "type": "Borough"
+    },
+    {
+      "code": "TT-MRC",
+      "name": "Mayaro-Rio Claro",
+      "type": "Region"
+    },
+    {
+      "code": "TT-SFO",
+      "name": "San Fernando",
+      "type": "City"
+    }
+  ],
+  "cities": [
+    "Port of Spain"
+  ],
+  "keywords": []
+}

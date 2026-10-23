@@ -1,0 +1,43 @@
+{
+  "code": "KW",
+  "alpha3": "KWT",
+  "numeric": "414",
+  "name": "Kuwait",
+  "capital": "Kuwait City",
+  "regions": [
+    {
+      "code": "KW-HA",
+      "name": "Ḩawallī",
+      "type": "Governorate"
+    },
+    {
+      "code": "KW-JA",
+      "name": "Al Jahrā’",
+      "type": "Governorate"
+    },
+    {
+      "code": "KW-KU",
+      "name": "Al ‘Āşimah",
+      "type": "Governorate"
+    },
+    {
+      "code": "KW-MU",
+      "name": "Mubārak al Kabīr",
+      "type": "Governorate"
+    },
+    {
+      "code": "KW-AH",
+      "name": "Al Aḩmadī",
+      "type": "Governorate"
+    },
+    {
+      "code": "KW-FA",
+      "name": "Al Farwānīyah",
+      "type": "Governorate"
+    }
+  ],
+  "cities": [
+    "Kuwait City"
+  ],
+  "keywords": []
+}

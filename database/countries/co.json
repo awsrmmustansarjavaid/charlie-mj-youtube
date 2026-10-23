@@ -1,0 +1,178 @@
+{
+  "code": "CO",
+  "alpha3": "COL",
+  "numeric": "170",
+  "name": "Colombia",
+  "capital": "Bogotá",
+  "regions": [
+    {
+      "code": "CO-DC",
+      "name": "Distrito Capital de Bogotá",
+      "type": "Capital district"
+    },
+    {
+      "code": "CO-GUA",
+      "name": "Guainía",
+      "type": "Department"
+    },
+    {
+      "code": "CO-GUV",
+      "name": "Guaviare",
+      "type": "Department"
+    },
+    {
+      "code": "CO-HUI",
+      "name": "Huila",
+      "type": "Department"
+    },
+    {
+      "code": "CO-LAG",
+      "name": "La Guajira",
+      "type": "Department"
+    },
+    {
+      "code": "CO-MAG",
+      "name": "Magdalena",
+      "type": "Department"
+    },
+    {
+      "code": "CO-MET",
+      "name": "Meta",
+      "type": "Department"
+    },
+    {
+      "code": "CO-NAR",
+      "name": "Nariño",
+      "type": "Department"
+    },
+    {
+      "code": "CO-AMA",
+      "name": "Amazonas",
+      "type": "Department"
+    },
+    {
+      "code": "CO-NSA",
+      "name": "Norte de Santander",
+      "type": "Department"
+    },
+    {
+      "code": "CO-ANT",
+      "name": "Antioquia",
+      "type": "Department"
+    },
+    {
+      "code": "CO-PUT",
+      "name": "Putumayo",
+      "type": "Department"
+    },
+    {
+      "code": "CO-ARA",
+      "name": "Arauca",
+      "type": "Department"
+    },
+    {
+      "code": "CO-QUI",
+      "name": "Quindío",
+      "type": "Department"
+    },
+    {
+      "code": "CO-ATL",
+      "name": "Atlántico",
+      "type": "Department"
+    },
+    {
+      "code": "CO-RIS",
+      "name": "Risaralda",
+      "type": "Department"
+    },
+    {
+      "code": "CO-BOL",
+      "name": "Bolívar",
+      "type": "Department"
+    },
+    {
+      "code": "CO-SAN",
+      "name": "Santander",
+      "type": "Department"
+    },
+    {
+      "code": "CO-BOY",
+      "name": "Boyacá",
+      "type": "Department"
+    },
+    {
+      "code": "CO-SAP",
+      "name": "San Andrés, Providencia y Santa Catalina",
+      "type": "Department"
+    },
+    {
+      "code": "CO-CAL",
+      "name": "Caldas",
+      "type": "Department"
+    },
+    {
+      "code": "CO-SUC",
+      "name": "Sucre",
+      "type": "Department"
+    },
+    {
+      "code": "CO-CAQ",
+      "name": "Caquetá",
+      "type": "Department"
+    },
+    {
+      "code": "CO-TOL",
+      "name": "Tolima",
+      "type": "Department"
+    },
+    {
+      "code": "CO-CAS",
+      "name": "Casanare",
+      "type": "Department"
+    },
+    {
+      "code": "CO-VAC",
+      "name": "Valle del Cauca",
+      "type": "Department"
+    },
+    {
+      "code": "CO-CAU",
+      "name": "Cauca",
+      "type": "Department"
+    },
+    {
+      "code": "CO-VAU",
+      "name": "Vaupés",
+      "type": "Department"
+    },
+    {
+      "code": "CO-CES",
+      "name": "Cesar",
+      "type": "Department"
+    },
+    {
+      "code": "CO-VID",
+      "name": "Vichada",
+      "type": "Department"
+    },
+    {
+      "code": "CO-CHO",
+      "name": "Chocó",
+      "type": "Department"
+    },
+    {
+      "code": "CO-COR",
+      "name": "Córdoba",
+      "type": "Department"
+    },
+    {
+      "code": "CO-CUN",
+      "name": "Cundinamarca",
+      "type": "Department"
+    }
+  ],
+  "cities": [
+    "Bogotá"
+  ],
+  "keywords": []
+}

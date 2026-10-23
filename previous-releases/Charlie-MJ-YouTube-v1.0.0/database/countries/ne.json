@@ -1,0 +1,53 @@
+{
+  "code": "NE",
+  "alpha3": "NER",
+  "numeric": "562",
+  "name": "Niger",
+  "capital": "Niamey",
+  "regions": [
+    {
+      "code": "NE-7",
+      "name": "Zinder",
+      "type": "Region"
+    },
+    {
+      "code": "NE-2",
+      "name": "Diffa",
+      "type": "Region"
+    },
+    {
+      "code": "NE-8",
+      "name": "Niamey",
+      "type": "Urban community"
+    },
+    {
+      "code": "NE-3",
+      "name": "Dosso",
+      "type": "Region"
+    },
+    {
+      "code": "NE-4",
+      "name": "Maradi",
+      "type": "Region"
+    },
+    {
+      "code": "NE-5",
+      "name": "Tahoua",
+      "type": "Region"
+    },
+    {
+      "code": "NE-6",
+      "name": "Tillabéri",
+      "type": "Region"
+    },
+    {
+      "code": "NE-1",
+      "name": "Agadez",
+      "type": "Region"
+    }
+  ],
+  "cities": [
+    "Niamey"
+  ],
+  "keywords": []
+}

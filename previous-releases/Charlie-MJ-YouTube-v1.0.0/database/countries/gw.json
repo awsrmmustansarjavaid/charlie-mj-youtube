@@ -1,0 +1,73 @@
+{
+  "code": "GW",
+  "alpha3": "GNB",
+  "numeric": "624",
+  "name": "Guinea-Bissau",
+  "capital": "Bissau",
+  "regions": [
+    {
+      "code": "GW-N",
+      "name": "Norte",
+      "type": "Province"
+    },
+    {
+      "code": "GW-BM",
+      "name": "Biombo",
+      "type": "Region"
+    },
+    {
+      "code": "GW-OI",
+      "name": "Oio",
+      "type": "Region"
+    },
+    {
+      "code": "GW-BS",
+      "name": "Bissau",
+      "type": "Autonomous sector"
+    },
+    {
+      "code": "GW-QU",
+      "name": "Quinara",
+      "type": "Region"
+    },
+    {
+      "code": "GW-CA",
+      "name": "Cacheu",
+      "type": "Region"
+    },
+    {
+      "code": "GW-S",
+      "name": "Sul",
+      "type": "Province"
+    },
+    {
+      "code": "GW-GA",
+      "name": "Gabú",
+      "type": "Region"
+    },
+    {
+      "code": "GW-BA",
+      "name": "Bafatá",
+      "type": "Region"
+    },
+    {
+      "code": "GW-TO",
+      "name": "Tombali",
+      "type": "Region"
+    },
+    {
+      "code": "GW-L",
+      "name": "Leste",
+      "type": "Province"
+    },
+    {
+      "code": "GW-BL",
+      "name": "Bolama / Bijagós",
+      "type": "Region"
+    }
+  ],
+  "cities": [
+    "Bissau"
+  ],
+  "keywords": []
+}

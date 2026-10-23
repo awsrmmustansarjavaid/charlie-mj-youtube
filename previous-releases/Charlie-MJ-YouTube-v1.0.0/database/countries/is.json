@@ -1,0 +1,373 @@
+{
+  "code": "IS",
+  "alpha3": "ISL",
+  "numeric": "352",
+  "name": "Iceland",
+  "capital": "Reykjavik",
+  "regions": [
+    {
+      "code": "IS-EYF",
+      "name": "Eyjafjarðarsveit",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-SOL",
+      "name": "Sveitarfélagið Ölfus",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-MOS",
+      "name": "Mosfellsbær",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-FJD",
+      "name": "Fjarðabyggð",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-SSS",
+      "name": "Sveitarfélagið Skagaströnd",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-MUL",
+      "name": "Múlaþing",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-FJL",
+      "name": "Fjallabyggð",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-STR",
+      "name": "Strandabyggð",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-MYR",
+      "name": "Mýrdalshreppur",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-FLA",
+      "name": "Flóahreppur",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-1",
+      "name": "Höfuðborgarsvæði",
+      "type": "Region"
+    },
+    {
+      "code": "IS-STY",
+      "name": "Stykkishólmsbær",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-NOR",
+      "name": "Norðurþing",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-FLR",
+      "name": "Fljótsdalshreppur",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-2",
+      "name": "Suðurnes",
+      "type": "Region"
+    },
+    {
+      "code": "IS-SVG",
+      "name": "Sveitarfélagið Vogar",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-RGE",
+      "name": "Rangárþing eystra",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-GAR",
+      "name": "Garðabær",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-3",
+      "name": "Vesturland",
+      "type": "Region"
+    },
+    {
+      "code": "IS-TAL",
+      "name": "Tálknafjarðarhreppur",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-RGY",
+      "name": "Rangárþing ytra",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-GOG",
+      "name": "Grímsnes- og Grafningshreppur",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-4",
+      "name": "Vestfirðir",
+      "type": "Region"
+    },
+    {
+      "code": "IS-THG",
+      "name": "Þingeyjarsveit",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-RHH",
+      "name": "Reykhólahreppur",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-GRN",
+      "name": "Grindavíkurbær",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-5",
+      "name": "Norðurland vestra",
+      "type": "Region"
+    },
+    {
+      "code": "IS-TJO",
+      "name": "Tjörneshreppur",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-RKN",
+      "name": "Reykjanesbær",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-GRU",
+      "name": "Grundarfjarðarbær",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-6",
+      "name": "Norðurland eystra",
+      "type": "Region"
+    },
+    {
+      "code": "IS-VEM",
+      "name": "Vestmannaeyjabær",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-RKV",
+      "name": "Reykjavíkurborg",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-GRY",
+      "name": "Grýtubakkahreppur",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-7",
+      "name": "Austurland",
+      "type": "Region"
+    },
+    {
+      "code": "IS-VER",
+      "name": "Vesturbyggð",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-SBT",
+      "name": "Svalbarðsstrandarhreppur",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-HAF",
+      "name": "Hafnarfjarðarkaupstaður",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-8",
+      "name": "Suðurland",
+      "type": "Region"
+    },
+    {
+      "code": "IS-VOP",
+      "name": "Vopnafjarðarhreppur",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-SDN",
+      "name": "Suðurnesjabær",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-HRG",
+      "name": "Hörgársveit",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-AKN",
+      "name": "Akraneskaupstaður",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-SDV",
+      "name": "Súðavíkurhreppur",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-HRU",
+      "name": "Hrunamannahreppur",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-AKU",
+      "name": "Akureyrarbær",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-SEL",
+      "name": "Seltjarnarnesbær",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-HUG",
+      "name": "Húnabyggð",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-ARN",
+      "name": "Árneshreppur",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-SFA",
+      "name": "Sveitarfélagið Árborg",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-HUV",
+      "name": "Húnaþing vestra",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-ASA",
+      "name": "Ásahreppur",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-SHF",
+      "name": "Sveitarfélagið Hornafjörður",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-HVA",
+      "name": "Hvalfjarðarsveit",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-BLA",
+      "name": "Bláskógabyggð",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-SKF",
+      "name": "Skaftárhreppur",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-HVE",
+      "name": "Hveragerðisbær",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-BOG",
+      "name": "Borgarbyggð",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-SKG",
+      "name": "Skagabyggð",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-ISA",
+      "name": "Ísafjarðarbær",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-BOL",
+      "name": "Bolungarvíkurkaupstaður",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-SKO",
+      "name": "Skorradalshreppur",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-KAL",
+      "name": "Kaldrananeshreppur",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-DAB",
+      "name": "Dalabyggð",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-SKR",
+      "name": "Skagafjörður",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-KJO",
+      "name": "Kjósarhreppur",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-DAV",
+      "name": "Dalvíkurbyggð",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-SNF",
+      "name": "Snæfellsbær",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-KOP",
+      "name": "Kópavogsbær",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-EOM",
+      "name": "Eyja- og Miklaholtshreppur",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-SOG",
+      "name": "Skeiða- og Gnúpverjahreppur",
+      "type": "Municipality"
+    },
+    {
+      "code": "IS-LAN",
+      "name": "Langanesbyggð",
+      "type": "Municipality"
+    }
+  ],
+  "cities": [
+    "Reykjavik"
+  ],
+  "keywords": []
+}

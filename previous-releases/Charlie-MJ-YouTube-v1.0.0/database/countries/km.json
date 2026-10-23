@@ -1,0 +1,28 @@
+{
+  "code": "KM",
+  "alpha3": "COM",
+  "numeric": "174",
+  "name": "Comoros",
+  "capital": "Moroni",
+  "regions": [
+    {
+      "code": "KM-M",
+      "name": "Mohéli",
+      "type": "Island"
+    },
+    {
+      "code": "KM-G",
+      "name": "Grande Comore",
+      "type": "Island"
+    },
+    {
+      "code": "KM-A",
+      "name": "Anjouan",
+      "type": "Island"
+    }
+  ],
+  "cities": [
+    "Moroni"
+  ],
+  "keywords": []
+}

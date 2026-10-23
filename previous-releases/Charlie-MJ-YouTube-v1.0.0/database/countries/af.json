@@ -1,0 +1,183 @@
+{
+  "code": "AF",
+  "alpha3": "AFG",
+  "numeric": "004",
+  "name": "Afghanistan",
+  "capital": "Kabul",
+  "regions": [
+    {
+      "code": "AF-PIA",
+      "name": "Paktiyā",
+      "type": "Province"
+    },
+    {
+      "code": "AF-FYB",
+      "name": "Fāryāb",
+      "type": "Province"
+    },
+    {
+      "code": "AF-DAY",
+      "name": "Dāykundī",
+      "type": "Province"
+    },
+    {
+      "code": "AF-PKA",
+      "name": "Paktīkā",
+      "type": "Province"
+    },
+    {
+      "code": "AF-BGL",
+      "name": "Baghlān",
+      "type": "Province"
+    },
+    {
+      "code": "AF-GHO",
+      "name": "Ghōr",
+      "type": "Province"
+    },
+    {
+      "code": "AF-SAM",
+      "name": "Samangān",
+      "type": "Province"
+    },
+    {
+      "code": "AF-BDG",
+      "name": "Bādghīs",
+      "type": "Province"
+    },
+    {
+      "code": "AF-SAR",
+      "name": "Sar-e Pul",
+      "type": "Province"
+    },
+    {
+      "code": "AF-TAK",
+      "name": "Takhār",
+      "type": "Province"
+    },
+    {
+      "code": "AF-BAL",
+      "name": "Balkh",
+      "type": "Province"
+    },
+    {
+      "code": "AF-BAM",
+      "name": "Bāmyān",
+      "type": "Province"
+    },
+    {
+      "code": "AF-BDS",
+      "name": "Badakhshān",
+      "type": "Province"
+    },
+    {
+      "code": "AF-URU",
+      "name": "Uruzgān",
+      "type": "Province"
+    },
+    {
+      "code": "AF-WAR",
+      "name": "Wardak",
+      "type": "Province"
+    },
+    {
+      "code": "AF-ZAB",
+      "name": "Zābul",
+      "type": "Province"
+    },
+    {
+      "code": "AF-JOW",
+      "name": "Jowzjān",
+      "type": "Province"
+    },
+    {
+      "code": "AF-KAB",
+      "name": "Kābul",
+      "type": "Province"
+    },
+    {
+      "code": "AF-FRA",
+      "name": "Farāh",
+      "type": "Province"
+    },
+    {
+      "code": "AF-KAN",
+      "name": "Kandahār",
+      "type": "Province"
+    },
+    {
+      "code": "AF-KAP",
+      "name": "Kāpīsā",
+      "type": "Province"
+    },
+    {
+      "code": "AF-KDZ",
+      "name": "Kunduz",
+      "type": "Province"
+    },
+    {
+      "code": "AF-KHO",
+      "name": "Khōst",
+      "type": "Province"
+    },
+    {
+      "code": "AF-KNR",
+      "name": "Kunaṟ",
+      "type": "Province"
+    },
+    {
+      "code": "AF-LAG",
+      "name": "Laghmān",
+      "type": "Province"
+    },
+    {
+      "code": "AF-LOG",
+      "name": "Lōgar",
+      "type": "Province"
+    },
+    {
+      "code": "AF-NAN",
+      "name": "Nangarhār",
+      "type": "Province"
+    },
+    {
+      "code": "AF-NIM",
+      "name": "Nīmrōz",
+      "type": "Province"
+    },
+    {
+      "code": "AF-NUR",
+      "name": "Nūristān",
+      "type": "Province"
+    },
+    {
+      "code": "AF-GHA",
+      "name": "Ghaznī",
+      "type": "Province"
+    },
+    {
+      "code": "AF-HEL",
+      "name": "Helmand",
+      "type": "Province"
+    },
+    {
+      "code": "AF-PAN",
+      "name": "Panjshayr",
+      "type": "Province"
+    },
+    {
+      "code": "AF-HER",
+      "name": "Herāt",
+      "type": "Province"
+    },
+    {
+      "code": "AF-PAR",
+      "name": "Parwān",
+      "type": "Province"
+    }
+  ],
+  "cities": [
+    "Kabul"
+  ],
+  "keywords": []
+}

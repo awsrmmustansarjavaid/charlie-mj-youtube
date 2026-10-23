@@ -1,0 +1,83 @@
+{
+  "code": "SN",
+  "alpha3": "SEN",
+  "numeric": "686",
+  "name": "Senegal",
+  "capital": "Dakar",
+  "regions": [
+    {
+      "code": "SN-KL",
+      "name": "Kaolack",
+      "type": "Region"
+    },
+    {
+      "code": "SN-DK",
+      "name": "Dakar",
+      "type": "Region"
+    },
+    {
+      "code": "SN-TH",
+      "name": "Thiès",
+      "type": "Region"
+    },
+    {
+      "code": "SN-LG",
+      "name": "Louga",
+      "type": "Region"
+    },
+    {
+      "code": "SN-FK",
+      "name": "Fatick",
+      "type": "Region"
+    },
+    {
+      "code": "SN-ZG",
+      "name": "Ziguinchor",
+      "type": "Region"
+    },
+    {
+      "code": "SN-MT",
+      "name": "Matam",
+      "type": "Region"
+    },
+    {
+      "code": "SN-KA",
+      "name": "Kaffrine",
+      "type": "Region"
+    },
+    {
+      "code": "SN-SE",
+      "name": "Sédhiou",
+      "type": "Region"
+    },
+    {
+      "code": "SN-KD",
+      "name": "Kolda",
+      "type": "Region"
+    },
+    {
+      "code": "SN-SL",
+      "name": "Saint-Louis",
+      "type": "Region"
+    },
+    {
+      "code": "SN-KE",
+      "name": "Kédougou",
+      "type": "Region"
+    },
+    {
+      "code": "SN-DB",
+      "name": "Diourbel",
+      "type": "Region"
+    },
+    {
+      "code": "SN-TC",
+      "name": "Tambacounda",
+      "type": "Region"
+    }
+  ],
+  "cities": [
+    "Dakar"
+  ],
+  "keywords": []
+}

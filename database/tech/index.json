@@ -1,0 +1,80 @@
+{
+  "version": 1,
+  "profiles": [
+    {
+      "id": "ai-ml-engineer",
+      "name": "AI/ML Engineer",
+      "file": "database/tech/ai-ml-engineer.json"
+    },
+    {
+      "id": "backend-developer",
+      "name": "Backend Developer",
+      "file": "database/tech/backend-developer.json"
+    },
+    {
+      "id": "cloud-engineer",
+      "name": "Cloud Engineer",
+      "file": "database/tech/cloud-engineer.json"
+    },
+    {
+      "id": "custom",
+      "name": "Custom Profile",
+      "file": "database/tech/custom.json"
+    },
+    {
+      "id": "cybersecurity",
+      "name": "Cybersecurity",
+      "file": "database/tech/cybersecurity.json"
+    },
+    {
+      "id": "data-engineer",
+      "name": "Data Engineer",
+      "file": "database/tech/data-engineer.json"
+    },
+    {
+      "id": "database-engineer",
+      "name": "Database Engineer",
+      "file": "database/tech/database-engineer.json"
+    },
+    {
+      "id": "devops",
+      "name": "DevOps Engineer",
+      "file": "database/tech/devops.json"
+    },
+    {
+      "id": "frontend-developer",
+      "name": "Frontend Developer",
+      "file": "database/tech/frontend-developer.json"
+    },
+    {
+      "id": "full-stack-developer",
+      "name": "Full Stack Developer",
+      "file": "database/tech/full-stack-developer.json"
+    },
+    {
+      "id": "graphic-designer",
+      "name": "Graphic Designer",
+      "file": "database/tech/graphic-designer.json"
+    },
+    {
+      "id": "network-engineer",
+      "name": "Network Engineer",
+      "file": "database/tech/network-engineer.json"
+    },
+    {
+      "id": "researcher",
+      "name": "Researcher",
+      "file": "database/tech/researcher.json"
+    },
+    {
+      "id": "student",
+      "name": "Student",
+      "file": "database/tech/student.json"
+    },
+    {
+      "id": "ui-ux-designer",
+      "name": "UI/UX Designer",
+      "file": "database/tech/ui-ux-designer.json"
+    }
+  ]
+}

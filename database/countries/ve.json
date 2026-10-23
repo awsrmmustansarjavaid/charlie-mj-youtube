@@ -1,0 +1,136 @@
+{
+  "code": "VE",
+  "alpha3": "VEN",
+  "numeric": "862",
+  "name": "Venezuela, Bolivarian Republic of",
+  "capital": "",
+  "regions": [
+    {
+      "code": "VE-U",
+      "name": "Yaracuy",
+      "type": "State"
+    },
+    {
+      "code": "VE-V",
+      "name": "Zulia",
+      "type": "State"
+    },
+    {
+      "code": "VE-W",
+      "name": "Dependencias Federales",
+      "type": "Federal dependency"
+    },
+    {
+      "code": "VE-A",
+      "name": "Distrito Capital",
+      "type": "Capital district"
+    },
+    {
+      "code": "VE-X",
+      "name": "La Guaira",
+      "type": "State"
+    },
+    {
+      "code": "VE-B",
+      "name": "Anzoátegui",
+      "type": "State"
+    },
+    {
+      "code": "VE-Y",
+      "name": "Delta Amacuro",
+      "type": "State"
+    },
+    {
+      "code": "VE-C",
+      "name": "Apure",
+      "type": "State"
+    },
+    {
+      "code": "VE-Z",
+      "name": "Amazonas",
+      "type": "State"
+    },
+    {
+      "code": "VE-D",
+      "name": "Aragua",
+      "type": "State"
+    },
+    {
+      "code": "VE-E",
+      "name": "Barinas",
+      "type": "State"
+    },
+    {
+      "code": "VE-F",
+      "name": "Bolívar",
+      "type": "State"
+    },
+    {
+      "code": "VE-G",
+      "name": "Carabobo",
+      "type": "State"
+    },
+    {
+      "code": "VE-H",
+      "name": "Cojedes",
+      "type": "State"
+    },
+    {
+      "code": "VE-I",
+      "name": "Falcón",
+      "type": "State"
+    },
+    {
+      "code": "VE-J",
+      "name": "Guárico",
+      "type": "State"
+    },
+    {
+      "code": "VE-K",
+      "name": "Lara",
+      "type": "State"
+    },
+    {
+      "code": "VE-L",
+      "name": "Mérida",
+      "type": "State"
+    },
+    {
+      "code": "VE-M",
+      "name": "Miranda",
+      "type": "State"
+    },
+    {
+      "code": "VE-N",
+      "name": "Monagas",
+      "type": "State"
+    },
+    {
+      "code": "VE-O",
+      "name": "Nueva Esparta",
+      "type": "State"
+    },
+    {
+      "code": "VE-P",
+      "name": "Portuguesa",
+      "type": "State"
+    },
+    {
+      "code": "VE-R",
+      "name": "Sucre",
+      "type": "State"
+    },
+    {
+      "code": "VE-S",
+      "name": "Táchira",
+      "type": "State"
+    },
+    {
+      "code": "VE-T",
+      "name": "Trujillo",
+      "type": "State"
+    }
+  ],
+  "cities": [],
+  "keywords": []
+}

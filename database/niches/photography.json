@@ -1,0 +1,25 @@
+{
+  "id": "photography",
+  "name": "Photography",
+  "description": "Photography and visual storytelling.",
+  "categories": {
+    "Topics": [
+      "photography",
+      "camera",
+      "portrait photography",
+      "street photography",
+      "landscape photography"
+    ],
+    "Formats": [
+      "tutorial",
+      "review",
+      "editing",
+      "tips"
+    ]
+  },
+  "country": "GLOBAL",
+  "targetLanguage": "en",
+  "contentLanguages": [
+    "en"
+  ]
+}

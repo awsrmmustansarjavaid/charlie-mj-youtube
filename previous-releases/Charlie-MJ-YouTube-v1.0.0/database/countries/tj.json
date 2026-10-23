@@ -1,0 +1,38 @@
+{
+  "code": "TJ",
+  "alpha3": "TJK",
+  "numeric": "762",
+  "name": "Tajikistan",
+  "capital": "Dushanbe",
+  "regions": [
+    {
+      "code": "TJ-GB",
+      "name": "Kŭhistoni Badakhshon",
+      "type": "Autonomous region"
+    },
+    {
+      "code": "TJ-KT",
+      "name": "Khatlon",
+      "type": "Region"
+    },
+    {
+      "code": "TJ-RA",
+      "name": "nohiyahoi tobei jumhurí",
+      "type": "Districts under republic administration"
+    },
+    {
+      "code": "TJ-SU",
+      "name": "Sughd",
+      "type": "Region"
+    },
+    {
+      "code": "TJ-DU",
+      "name": "Dushanbe",
+      "type": "Capital territory"
+    }
+  ],
+  "cities": [
+    "Dushanbe"
+  ],
+  "keywords": []
+}

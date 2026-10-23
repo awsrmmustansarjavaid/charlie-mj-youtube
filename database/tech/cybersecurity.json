@@ -1,0 +1,61 @@
+{
+  "id": "cybersecurity",
+  "name": "Cybersecurity",
+  "description": "Defensive security, security engineering and threat analysis.",
+  "categories": {
+    "Cybersecurity": [
+      "Cybersecurity"
+    ],
+    "Information Security": [
+      "Information Security"
+    ],
+    "SOC": [
+      "SOC"
+    ],
+    "SIEM": [
+      "SIEM"
+    ],
+    "Threat Detection": [
+      "Threat Detection"
+    ],
+    "Incident Response": [
+      "Incident Response"
+    ],
+    "Digital Forensics": [
+      "Digital Forensics"
+    ],
+    "Penetration Testing": [
+      "Penetration Testing"
+    ],
+    "OWASP": [
+      "OWASP"
+    ],
+    "Zero Trust": [
+      "Zero Trust"
+    ],
+    "IAM": [
+      "IAM"
+    ],
+    "PKI": [
+      "PKI"
+    ],
+    "TLS": [
+      "TLS"
+    ],
+    "Linux": [
+      "Linux"
+    ],
+    "Windows": [
+      "Windows"
+    ],
+    "Networking": [
+      "Networking"
+    ],
+    "Python": [
+      "Python"
+    ],
+    "Security Automation": [
+      "Security Automation"
+    ]
+  }
+}
