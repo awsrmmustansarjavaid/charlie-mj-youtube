@@ -1,0 +1,65 @@
+{
+  "version": "2.0.0",
+  "exportedAt": "2026-10-23T12:02:40.882Z",
+  "activeMode": "general",
+  "enabledModes": [
+    "general"
+  ],
+  "modeSettings": {
+    "custom": {
+      "deprioritizeThreshold": 30,
+      "enabled": false,
+      "hideThreshold": 0,
+      "rules": [],
+      "showThreshold": 60
+    },
+    "general": {
+      "deprioritizeThreshold": 0,
+      "enabled": true,
+      "hideThreshold": -999,
+      "showThreshold": 0
+    },
+    "languageLearning": {
+      "contentLanguages": [],
+      "deprioritizeThreshold": 45,
+      "enabled": false,
+      "focus": 70,
+      "hideThreshold": 0,
+      "learningLanguage": "",
+      "profileId": "custom",
+      "showThreshold": 70
+    },
+    "niches": {
+      "contentLanguages": [
+        "en"
+      ],
+      "country": "GLOBAL",
+      "deprioritizeThreshold": 40,
+      "enabled": false,
+      "hideThreshold": 0,
+      "profileId": "technology",
+      "showThreshold": 65,
+      "targetLanguage": "en"
+    },
+    "productivity": {
+      "deprioritizeThreshold": 30,
+      "enabled": false,
+      "focusLevel": "balanced",
+      "hideThreshold": 0,
+      "showThreshold": 60
+    },
+    "tech": {
+      "contentLanguages": [
+        "en"
+      ],
+      "country": "GLOBAL",
+      "deprioritizeThreshold": 40,
+      "enabled": false,
+      "hideThreshold": 0,
+      "profileId": "devops",
+      "showThreshold": 65,
+      "targetLanguage": "en"
+    }
+  },
+  "intelligenceEnabled": true
+}
