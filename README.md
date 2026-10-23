@@ -62,3 +62,26 @@ No required backend or AI API is needed. Runtime intelligence is local and deter
 
 ## Niches Mode
 Niches is a dedicated focused-discovery mode with its own HTML manager, JSON profiles, target country, target language, 7,910-language content catalog, import/export/download/refresh/search controls, and a focused YouTube feed. It is independent from Tech and Language Learning.
+
+## 2.0.0 Data Safety & Sync Update — 2026-10-23
+
+Charlie MJ YouTube keeps YouTube Library data type-safe and database sync scoped.
+
+### YouTube Library type safety
+- **Channels** can only receive channel records.
+- **Playlists** can only receive playlist records.
+- **Favorite Videos** can only receive video records and remain backed by the canonical `videos` collection.
+- Importing or adding a different YouTube entity from the wrong Library tab is rejected instead of silently saving it into the wrong database.
+- Duplicate protection remains enabled by default.
+
+### Data Sync
+- **Select Extension Directory** reads only the selected extension's `database/` directory. Non-database extension files are not uploaded or compared.
+- Compare now reports YouTube Library counts for channels, playlists, videos, favorite videos, categories and collections.
+- Compare also reports Tech, Language Learning and Niches profile counts and content/file differences.
+- GitHub Pull restores runtime Library, mode settings and profile snapshots.
+- Prepare for GitHub creates a timestamped ZIP containing only `database/`; Chrome-generated `_metadata/` content is excluded.
+
+### Database Manager
+The YouTube Library section has separate exports for **Channels**, **Playlists** and **Videos** instead of one combined button.
+
+All extension release ZIPs use the format `Charlie-MJ-YouTube-v2.0.0-<timestamp>.zip`.

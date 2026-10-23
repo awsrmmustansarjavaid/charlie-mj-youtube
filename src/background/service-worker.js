@@ -472,6 +472,19 @@ chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
         sendResponse({ ok: true, tree: Array.isArray(data?.tree) ? data.tree : [] });
         return;
       }
+      if (msg?.type === "GITHUB_FILE") {
+        const owner = String(msg.owner || "").trim();
+        const repo = String(msg.repo || "").trim();
+        const branch = String(msg.branch || "main").trim() || "main";
+        const path = String(msg.path || "").replace(/^\/+/, "");
+        if (!owner || !repo || !path || path.includes("..") || !path.startsWith("database/")) throw new Error("Invalid GitHub database file request.");
+        const encodedPath = path.split("/").map(encodeURIComponent).join("/");
+        const url = `https://raw.githubusercontent.com/${encodeURIComponent(owner)}/${encodeURIComponent(repo)}/${encodeURIComponent(branch)}/${encodedPath}`;
+        const response = await fetch(url, { cache: "no-store" });
+        if (!response.ok) throw new Error(`GitHub file HTTP ${response.status} for ${path}`);
+        sendResponse({ ok: true, path, text: await response.text() });
+        return;
+      }
       if (msg?.type === "GET_TARGET_FEED") { sendResponse(await getTargetFeed()); return; }
       if (msg?.type === "NOTIFY") {
         const s = await getSettings();

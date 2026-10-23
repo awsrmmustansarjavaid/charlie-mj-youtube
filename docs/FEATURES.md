@@ -28,3 +28,11 @@
 
 ## Niches Mode
 A dedicated niche-discovery mode with independent JSON profiles, target country/language, the shared 7,910-language catalog, searchable multi-language content selection, and a dedicated management page with import/export/download/refresh controls.
+
+## Current Data Management Features
+
+- Type-safe YouTube Library tabs for Channels, Playlists and Favorite Videos.
+- Local-vs-GitHub count comparison for YouTube Library, Tech Profiles, Language Learning Profiles and Niches Profiles.
+- Detailed local-only, GitHub-only and content-difference reporting.
+- Database Manager exports for Channels, Playlists and Videos.
+- Extension-directory selection that reads only `database/`.

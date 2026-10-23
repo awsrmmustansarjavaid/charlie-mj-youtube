@@ -18,3 +18,7 @@ Additive changes should preserve the existing working General, Tech, Language Le
 ## Validation
 
 Before packaging, validate all JSON files and run `node --check` against JavaScript files. Verify ZIP integrity after packaging.
+
+## Directory Selection and Sync Testing
+
+Use **Data Sync → Select Extension Directory** to select the unpacked extension root. The page reads only `database/`; it does not upload the complete extension directory. Test Compare with the same repository/branch used by the GitHub settings, then verify the Library and mode/profile count sections and detailed differences.

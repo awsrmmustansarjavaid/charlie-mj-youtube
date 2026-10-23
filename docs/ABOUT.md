@@ -15,3 +15,7 @@ See `src/about/about.html` for the in-extension overview.
 
 ## In-app notifications
 Normal user-facing notifications are rendered as bottom-right in-app toasts. YouTube-page notifications appear inside the YouTube page; settings, popup and Library pages render their own local toast components.
+
+## 2.0.0 Data Boundary Note
+
+Data Sync and database exports operate on the `database/` scope. Runtime YouTube Library and mode/profile snapshots are designed for portable synchronization, while generated Chrome `_metadata/` content is excluded.

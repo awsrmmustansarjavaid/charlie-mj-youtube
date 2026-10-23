@@ -42,6 +42,32 @@ function findDuplicateItem(item, target) {
 }
 
 
+
+function normalizeLibraryKind(value) {
+  const t=String(value||'').toLowerCase().trim();
+  if (t==='channel' || t==='channels') return 'channels';
+  if (t==='playlist' || t==='playlists') return 'playlists';
+  if (t==='video' || t==='videos' || t==='favorite' || t==='favorites') return 'videos';
+  return '';
+}
+
+function detectImportedKind(item) {
+  const explicit=normalizeLibraryKind(item?.type);
+  if (explicit) return explicit;
+  if (item?.channelId || item?.handle) return 'channels';
+  if (item?.playlistId) return 'playlists';
+  if (item?.videoId) return 'videos';
+  try {
+    const u=new URL(String(item?.url||'').trim());
+    const host=u.hostname.toLowerCase();
+    if (u.searchParams.get('list') && !u.searchParams.get('v')) return 'playlists';
+    if (u.searchParams.get('v') || host==='youtu.be') return 'videos';
+    if (/\/(channel|c|user)\//i.test(u.pathname) || /(^|\/)@[^/]+/.test(u.pathname)) return 'channels';
+    if (/\/playlist\//i.test(u.pathname)) return 'playlists';
+  } catch (_) {}
+  return '';
+}
+
 const PROFILE_OPTIONS = [
   ['devops','DevOps Engineer'], ['frontend-developer','Frontend Developer'], ['backend-developer','Backend Developer'],
   ['full-stack-developer','Full Stack Developer'], ['network-engineer','Network Engineer'], ['cybersecurity','Cybersecurity'],
@@ -220,6 +246,12 @@ function addUrlDialog() {
     const btn = $('#modalActions [data-modal-action="fetch"]'); btn.disabled = true; btn.textContent = 'Fetching…';
     try {
       fetched = await fetchYouTubeUrl(raw);
+      const fetchedKind = normalizeLibraryKind(fetched.type);
+      const expectedKind = kind === 'favorites' ? 'videos' : kind;
+      if (!fetchedKind || fetchedKind !== expectedKind) {
+        fetched = null;
+        throw new Error(`This URL is a ${fetchedKind || 'different YouTube item'} and cannot be added from the ${PAGE_INFO[kind][0]} tab.`);
+      }
       const type = fetched.type;
       const img = fetched.thumbnail ? `<img src="${esc(fetched.thumbnail)}" alt="Original YouTube thumbnail">` : '<div></div>';
       $('#urlPreview').innerHTML = `<div class="preview">${img}<div><h3>${esc(fetched.title || 'Untitled')}</h3><div class="card-meta">${esc(type)}${fetched.channel?` · ${esc(fetched.channel)}`:''}${fetched.views?` · ${esc(fetched.views)} views`:''}</div><p class="help">${esc(fetched.description || 'YouTube metadata fetched successfully.')}</p></div></div>`;
@@ -308,8 +340,15 @@ function detailItem(index = activeIndex()) {
 function addManual() {
   if (kind === 'categories') return editCategory();
   if (kind === 'collections') return editCollection();
-  const defaults = kind === 'channels' ? {type:'channel',id:uid('channel'),title:'New Channel',url:'',categories:[],categoryIds:[],professionalProfiles:['devops'],professionalProfile:'devops',trusted:false,followFeed:true} : kind === 'playlists' ? {type:'playlist',id:uid('playlist'),title:'New Playlist',url:'',categoryIds:[],professionalProfiles:['devops'],professionalProfile:'devops'} : {type:'video',id:uid('video'),title:'New Video',url:'',favorite:true,categoryIds:[],professionalProfiles:['devops'],professionalProfile:'devops'};
-  db[kind].push(defaults); activeId = defaults.id; selected.clear(); selected.add(db[kind].length-1); render(); editItem(db[kind].length-1);
+  const target = kind === 'favorites' ? 'videos' : kind;
+  const defaults = target === 'channels' ? {type:'channel',id:uid('channel'),title:'New Channel',url:'',categories:[],categoryIds:[],professionalProfiles:['devops'],professionalProfile:'devops',trusted:false,followFeed:true} : target === 'playlists' ? {type:'playlist',id:uid('playlist'),title:'New Playlist',url:'',categoryIds:[],professionalProfiles:['devops'],professionalProfile:'devops'} : {type:'video',id:uid('video'),title:'New Video',url:'',favorite:true,categoryIds:[],professionalProfiles:['devops'],professionalProfile:'devops'};
+  db[target].push(defaults);
+  if (target === 'videos') db.favorites = db.videos.filter(v => v.favorite);
+  activeId = defaults.id; selected.clear();
+  const viewItems = currentItems();
+  const idx = viewItems.findIndex(x => x.id === defaults.id);
+  if (idx >= 0) selected.add(idx);
+  render(); editItem(idx >= 0 ? idx : viewItems.length - 1);
 }
 
 function editCategory(index = activeIndex()) {
@@ -400,6 +439,13 @@ $('#file').onchange = async event => {
     const data=JSON.parse(await file.text());
     const imported = Array.isArray(data) ? data : (Array.isArray(data.items) ? data.items : (Array.isArray(data.playlists) ? data.playlists : (data[kind] || [])));
     if (!Array.isArray(imported)) throw new Error('No importable items found.');
+
+    const expectedKind = kind === 'favorites' ? 'videos' : kind;
+    const mismatches = imported.map((item,i) => ({item,i,detected:detectImportedKind(item)})).filter(x => x.detected && x.detected !== expectedKind);
+    if (mismatches.length) {
+      const detected = mismatches[0].detected === 'channels' ? 'Channel' : mismatches[0].detected === 'playlists' ? 'Playlist' : 'Video';
+      throw new Error(`Import rejected: ${detected} data cannot be imported into the ${PAGE_INFO[kind][0]} tab. Select the matching tab and import again.`);
+    }
 
     // Favorite Videos are backed by the canonical `videos` bucket. Importing
     // directly into `favorites` would be lost because saveLibrary() rebuilds

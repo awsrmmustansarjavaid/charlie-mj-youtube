@@ -19,3 +19,7 @@
 
 ## Mode reuse
 Tech Mode and Language Learning Mode consume the same `database/languages/languages.json` catalog through the shared language-catalog module. Country selection uses the country-to-language map to select the relevant language(s) in both target/learning language and content-language controls. Manual changes remain fully editable. Tech Mode stores a dedicated `targetLanguage` plus optional multiple content languages.
+
+## 2.0.0 Data Boundary Note
+
+Data Sync and database exports operate on the `database/` scope. Runtime YouTube Library and mode/profile snapshots are designed for portable synchronization, while generated Chrome `_metadata/` content is excluded.

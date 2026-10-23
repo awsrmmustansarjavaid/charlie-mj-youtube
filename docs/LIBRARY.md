@@ -13,3 +13,7 @@ Each Channel, Playlist and Video card has a manual Refresh action. The Library a
 
 ## Duplicate protection
 Duplicate protection is enabled by default through `settings.preventLibraryDuplicates`. Channels, playlists and videos are checked using stable YouTube IDs and normalized URLs before a new record is created. Duplicate imports are skipped.
+
+## 2.0.0 Library Type Safety Update — 2026-10-23
+
+Library actions are tab-scoped. A Channel tab import/add operation accepts only channels, a Playlist tab accepts only playlists, and Favorite Videos accepts only videos. Mismatched imports are rejected with a clear message. Favorite Videos remain a view of canonical `videos` records so they cannot disappear during save/import normalization.
