@@ -1,1449 +1,262 @@
 {
   "version": "2.0.0",
-  "exportedAt": "2026-10-23T14:50:34.963Z",
-  "techProfiles": [
-    {
-      "categories": {
-        "Artificial Intelligence": [
-          "Artificial Intelligence"
-        ],
-        "Computer Vision": [
-          "Computer Vision"
-        ],
-        "Data Science": [
-          "Data Science"
-        ],
-        "Deep Learning": [
-          "Deep Learning"
-        ],
-        "Generative AI": [
-          "Generative AI"
-        ],
-        "Jupyter": [
-          "Jupyter"
-        ],
-        "LLM": [
-          "LLM"
-        ],
-        "MLOps": [
-          "MLOps"
-        ],
-        "Machine Learning": [
-          "Machine Learning"
-        ],
-        "Model Deployment": [
-          "Model Deployment"
-        ],
-        "NLP": [
-          "NLP"
-        ],
-        "PyTorch": [
-          "PyTorch"
-        ],
-        "Python": [
-          "Python"
-        ],
-        "RAG": [
-          "RAG"
-        ],
-        "TensorFlow": [
-          "TensorFlow"
-        ],
-        "Transformers": [
-          "Transformers"
-        ],
-        "Vector Database": [
-          "Vector Database"
-        ],
-        "scikit-learn": [
-          "scikit-learn"
-        ]
-      },
-      "description": "Machine learning, AI systems and production ML engineering.",
-      "id": "ai-ml-engineer",
-      "name": "AI/ML Engineer"
-    },
-    {
-      "categories": {
-        "Authentication": [
-          "Authentication"
-        ],
-        "Authorization": [
-          "Authorization"
-        ],
-        "C#": [
-          "C#"
-        ],
-        "Docker": [
-          "Docker"
-        ],
-        "Git": [
-          "Git"
-        ],
-        "Go": [
-          "Go"
-        ],
-        "GraphQL": [
-          "GraphQL"
-        ],
-        "Java": [
-          "Java"
-        ],
-        "Kafka": [
-          "Kafka"
-        ],
-        "Kubernetes": [
-          "Kubernetes"
-        ],
-        "Microservices": [
-          "Microservices"
-        ],
-        "MongoDB": [
-          "MongoDB"
-        ],
-        "MySQL": [
-          "MySQL"
-        ],
-        "Node.js": [
-          "Node.js"
-        ],
-        "PHP": [
-          "PHP"
-        ],
-        "PostgreSQL": [
-          "PostgreSQL"
-        ],
-        "Python": [
-          "Python"
-        ],
-        "REST API": [
-          "REST API"
-        ],
-        "Redis": [
-          "Redis"
-        ]
-      },
-      "description": "Server-side development, APIs, databases and distributed systems.",
-      "id": "backend-developer",
-      "name": "Backend Developer"
-    },
-    {
-      "categories": {
-        "AWS": [
-          "AWS"
-        ],
-        "Azure": [
-          "Azure"
-        ],
-        "Cloud Security": [
-          "Cloud Security"
-        ],
-        "CloudFormation": [
-          "CloudFormation"
-        ],
-        "Disaster Recovery": [
-          "Disaster Recovery"
-        ],
-        "Docker": [
-          "Docker"
-        ],
-        "FinOps": [
-          "FinOps"
-        ],
-        "GCP": [
-          "GCP"
-        ],
-        "High Availability": [
-          "High Availability"
-        ],
-        "IAM": [
-          "IAM"
-        ],
-        "Kubernetes": [
-          "Kubernetes"
-        ],
-        "Monitoring": [
-          "Monitoring"
-        ],
-        "Networking": [
-          "Networking"
-        ],
-        "Observability": [
-          "Observability"
-        ],
-        "OpenTofu": [
-          "OpenTofu"
-        ],
-        "Serverless": [
-          "Serverless"
-        ],
-        "Terraform": [
-          "Terraform"
-        ],
-        "VPC": [
-          "VPC"
-        ]
-      },
-      "description": "Cloud platforms, architecture and operations.",
-      "id": "cloud-engineer",
-      "name": "Cloud Engineer"
-    },
-    {
-      "categories": {},
-      "description": "User-defined technology profile.",
-      "id": "custom",
-      "name": "Custom Profile"
-    },
-    {
-      "categories": {
-        "Cybersecurity": [
-          "Cybersecurity"
-        ],
-        "Digital Forensics": [
-          "Digital Forensics"
-        ],
-        "IAM": [
-          "IAM"
-        ],
-        "Incident Response": [
-          "Incident Response"
-        ],
-        "Information Security": [
-          "Information Security"
-        ],
-        "Linux": [
-          "Linux"
-        ],
-        "Networking": [
-          "Networking"
-        ],
-        "OWASP": [
-          "OWASP"
-        ],
-        "PKI": [
-          "PKI"
-        ],
-        "Penetration Testing": [
-          "Penetration Testing"
-        ],
-        "Python": [
-          "Python"
-        ],
-        "SIEM": [
-          "SIEM"
-        ],
-        "SOC": [
-          "SOC"
-        ],
-        "Security Automation": [
-          "Security Automation"
-        ],
-        "TLS": [
-          "TLS"
-        ],
-        "Threat Detection": [
-          "Threat Detection"
-        ],
-        "Windows": [
-          "Windows"
-        ],
-        "Zero Trust": [
-          "Zero Trust"
-        ]
-      },
-      "description": "Defensive security, security engineering and threat analysis.",
-      "id": "cybersecurity",
-      "name": "Cybersecurity"
-    },
-    {
-      "categories": {
-        "Airflow": [
-          "Airflow"
-        ],
-        "BigQuery": [
-          "BigQuery"
-        ],
-        "Data Lake": [
-          "Data Lake"
-        ],
-        "Data Pipelines": [
-          "Data Pipelines"
-        ],
-        "Data Warehouse": [
-          "Data Warehouse"
-        ],
-        "Databricks": [
-          "Databricks"
-        ],
-        "Docker": [
-          "Docker"
-        ],
-        "ELT": [
-          "ELT"
-        ],
-        "ETL": [
-          "ETL"
-        ],
-        "Kafka": [
-          "Kafka"
-        ],
-        "Kubernetes": [
-          "Kubernetes"
-        ],
-        "MySQL": [
-          "MySQL"
-        ],
-        "PostgreSQL": [
-          "PostgreSQL"
-        ],
-        "PySpark": [
-          "PySpark"
-        ],
-        "Python": [
-          "Python"
-        ],
-        "Redshift": [
-          "Redshift"
-        ],
-        "SQL": [
-          "SQL"
-        ],
-        "Snowflake": [
-          "Snowflake"
-        ],
-        "Spark": [
-          "Spark"
-        ],
-        "dbt": [
-          "dbt"
-        ]
-      },
-      "description": "Data pipelines, warehouses, streaming and analytics infrastructure.",
-      "id": "data-engineer",
-      "name": "Data Engineer"
-    },
-    {
-      "categories": {
-        "Backup": [
-          "Backup"
-        ],
-        "Data Modeling": [
-          "Data Modeling"
-        ],
-        "Database Design": [
-          "Database Design"
-        ],
-        "Database Security": [
-          "Database Security"
-        ],
-        "ETL": [
-          "ETL"
-        ],
-        "High Availability": [
-          "High Availability"
-        ],
-        "Indexing": [
-          "Indexing"
-        ],
-        "MariaDB": [
-          "MariaDB"
-        ],
-        "MongoDB": [
-          "MongoDB"
-        ],
-        "MySQL": [
-          "MySQL"
-        ],
-        "Oracle": [
-          "Oracle"
-        ],
-        "PostgreSQL": [
-          "PostgreSQL"
-        ],
-        "Query Optimization": [
-          "Query Optimization"
-        ],
-        "Redis": [
-          "Redis"
-        ],
-        "Replication": [
-          "Replication"
-        ],
-        "SQL": [
-          "SQL"
-        ],
-        "SQL Server": [
-          "SQL Server"
-        ]
-      },
-      "description": "Database architecture, performance, reliability and operations.",
-      "id": "database-engineer",
-      "name": "Database Engineer"
-    },
-    {
-      "categories": {
-        "cicd": [
-          "CI/CD",
-          "Jenkins",
-          "GitHub Actions",
-          "GitLab CI",
-          "Argo CD",
-          "ArgoCD",
-          "Tekton",
-          "CircleCI"
-        ],
-        "cloud": [
-          "AWS",
-          "Azure",
-          "GCP",
-          "Cloud Infrastructure",
-          "EC2",
-          "EKS",
-          "ECS",
-          "S3",
-          "Lambda",
-          "IAM",
-          "VPC",
-          "Cloud Run",
-          "AKS",
-          "GKE"
-        ],
-        "concepts": [
-          "SRE",
-          "Site Reliability Engineering",
-          "Platform Engineering",
-          "Microservices",
-          "Distributed Systems",
-          "Automation",
-          "Deployment",
-          "Release Engineering",
-          "Incident Response",
-          "Disaster Recovery",
-          "High Availability",
-          "Scalability",
-          "Reliability"
-        ],
-        "configuration": [
-          "Ansible",
-          "Chef",
-          "Puppet",
-          "SaltStack"
-        ],
-        "containers": [
-          "Docker",
-          "Podman",
-          "containerd"
-        ],
-        "databases": [
-          "PostgreSQL",
-          "MySQL",
-          "MariaDB",
-          "Redis",
-          "MongoDB",
-          "DynamoDB"
-        ],
-        "iac": [
-          "Terraform",
-          "OpenTofu",
-          "Pulumi",
-          "Infrastructure as Code"
-        ],
-        "networking": [
-          "TCP/IP",
-          "DNS",
-          "HTTP",
-          "HTTPS",
-          "Load Balancer",
-          "Reverse Proxy",
-          "Nginx",
-          "Ingress",
-          "Firewall",
-          "VPN"
-        ],
-        "observability": [
-          "Prometheus",
-          "Grafana",
-          "OpenTelemetry",
-          "Observability",
-          "Loki",
-          "ELK",
-          "Elastic Stack",
-          "Jaeger"
-        ],
-        "operatingSystems": [
-          "Linux",
-          "Ubuntu",
-          "Debian",
-          "RHEL",
-          "Alpine",
-          "Windows Server"
-        ],
-        "orchestration": [
-          "Kubernetes",
-          "K3s",
-          "OpenShift",
-          "Helm",
-          "Kustomize"
-        ],
-        "programming": [
-          "Python",
-          "Go",
-          "Golang",
-          "Java",
-          "JavaScript",
-          "TypeScript"
-        ],
-        "scripting": [
-          "Bash",
-          "Shell",
-          "Python",
-          "PowerShell"
-        ],
-        "security": [
-          "DevSecOps",
-          "Secrets Management",
-          "Vault",
-          "KMS",
-          "TLS",
-          "Zero Trust",
-          "SAST",
-          "DAST",
-          "Container Security"
-        ],
-        "vcs": [
-          "Git",
-          "GitHub",
-          "GitLab",
-          "Bitbucket"
-        ]
-      },
-      "description": "DevOps, cloud infrastructure, automation, reliability and delivery.",
-      "id": "devops",
-      "name": "DevOps Engineer"
-    },
-    {
-      "categories": {
-        "APIs": [
-          "APIs"
-        ],
-        "Accessibility": [
-          "Accessibility"
-        ],
-        "Angular": [
-          "Angular"
-        ],
-        "CSS": [
-          "CSS"
-        ],
-        "Git": [
-          "Git"
-        ],
-        "HTML": [
-          "HTML"
-        ],
-        "JavaScript": [
-          "JavaScript"
-        ],
-        "Next.js": [
-          "Next.js"
-        ],
-        "Nuxt": [
-          "Nuxt"
-        ],
-        "React": [
-          "React"
-        ],
-        "Tailwind CSS": [
-          "Tailwind CSS"
-        ],
-        "Testing": [
-          "Testing"
-        ],
-        "TypeScript": [
-          "TypeScript"
-        ],
-        "Vite": [
-          "Vite"
-        ],
-        "Vue": [
-          "Vue"
-        ],
-        "Web Performance": [
-          "Web Performance"
-        ],
-        "Webpack": [
-          "Webpack"
-        ]
-      },
-      "description": "Modern web UI and frontend engineering.",
-      "id": "frontend-developer",
-      "name": "Frontend Developer"
-    },
-    {
-      "categories": {
-        "CSS": [
-          "CSS"
-        ],
-        "Cloud": [
-          "Cloud"
-        ],
-        "Docker": [
-          "Docker"
-        ],
-        "Git": [
-          "Git"
-        ],
-        "GraphQL": [
-          "GraphQL"
-        ],
-        "HTML": [
-          "HTML"
-        ],
-        "JavaScript": [
-          "JavaScript"
-        ],
-        "MongoDB": [
-          "MongoDB"
-        ],
-        "Next.js": [
-          "Next.js"
-        ],
-        "Node.js": [
-          "Node.js"
-        ],
-        "PostgreSQL": [
-          "PostgreSQL"
-        ],
-        "REST API": [
-          "REST API"
-        ],
-        "React": [
-          "React"
-        ],
-        "Security": [
-          "Security"
-        ],
-        "Testing": [
-          "Testing"
-        ],
-        "TypeScript": [
-          "TypeScript"
-        ]
-      },
-      "description": "End-to-end web application engineering.",
-      "id": "full-stack-developer",
-      "name": "Full Stack Developer"
-    },
-    {
-      "categories": {
-        "3D Design": [
-          "3D Design"
-        ],
-        "Adobe Illustrator": [
-          "Adobe Illustrator"
-        ],
-        "Adobe Photoshop": [
-          "Adobe Photoshop"
-        ],
-        "Branding": [
-          "Branding"
-        ],
-        "Color Theory": [
-          "Color Theory"
-        ],
-        "Composition": [
-          "Composition"
-        ],
-        "Figma": [
-          "Figma"
-        ],
-        "Graphic Design": [
-          "Graphic Design"
-        ],
-        "InDesign": [
-          "InDesign"
-        ],
-        "Logo Design": [
-          "Logo Design"
-        ],
-        "Motion Graphics": [
-          "Motion Graphics"
-        ],
-        "Typography": [
-          "Typography"
-        ],
-        "UI Design": [
-          "UI Design"
-        ]
-      },
-      "description": "Visual design, branding and digital graphics.",
-      "id": "graphic-designer",
-      "name": "Graphic Designer"
-    },
-    {
-      "categories": {
-        "BGP": [
-          "BGP"
-        ],
-        "Cisco": [
-          "Cisco"
-        ],
-        "DHCP": [
-          "DHCP"
-        ],
-        "DNS": [
-          "DNS"
-        ],
-        "EIGRP": [
-          "EIGRP"
-        ],
-        "Firewall": [
-          "Firewall"
-        ],
-        "IPv4": [
-          "IPv4"
-        ],
-        "IPv6": [
-          "IPv6"
-        ],
-        "Juniper": [
-          "Juniper"
-        ],
-        "MikroTik": [
-          "MikroTik"
-        ],
-        "Network Automation": [
-          "Network Automation"
-        ],
-        "OSPF": [
-          "OSPF"
-        ],
-        "Python": [
-          "Python"
-        ],
-        "Routing": [
-          "Routing"
-        ],
-        "SD-WAN": [
-          "SD-WAN"
-        ],
-        "Switching": [
-          "Switching"
-        ],
-        "TCP/IP": [
-          "TCP/IP"
-        ],
-        "VLAN": [
-          "VLAN"
-        ],
-        "VPN": [
-          "VPN"
-        ],
-        "VXLAN": [
-          "VXLAN"
-        ],
-        "Wireshark": [
-          "Wireshark"
-        ]
-      },
-      "description": "Enterprise networking, routing, switching and network security.",
-      "id": "network-engineer",
-      "name": "Network Engineer"
-    },
-    {
-      "categories": {
-        "Academic": [
-          "Academic"
-        ],
-        "Data Analysis": [
-          "Data Analysis"
-        ],
-        "Jupyter": [
-          "Jupyter"
-        ],
-        "LaTeX": [
-          "LaTeX"
-        ],
-        "Literature Review": [
-          "Literature Review"
-        ],
-        "Methodology": [
-          "Methodology"
-        ],
-        "Paper": [
-          "Paper"
-        ],
-        "Python": [
-          "Python"
-        ],
-        "R": [
-          "R"
-        ],
-        "Reproducibility": [
-          "Reproducibility"
-        ],
-        "Research": [
-          "Research"
-        ],
-        "Scientific Computing": [
-          "Scientific Computing"
-        ],
-        "Statistics": [
-          "Statistics"
-        ]
-      },
-      "description": "Research methods, papers, science and reproducible analysis.",
-      "id": "researcher",
-      "name": "Researcher"
-    },
-    {
-      "categories": {
-        "Course": [
-          "Course"
-        ],
-        "Education": [
-          "Education"
-        ],
-        "Exam Preparation": [
-          "Exam Preparation"
-        ],
-        "Learning": [
-          "Learning"
-        ],
-        "Mathematics": [
-          "Mathematics"
-        ],
-        "Programming": [
-          "Programming"
-        ],
-        "Research": [
-          "Research"
-        ],
-        "Science": [
-          "Science"
-        ],
-        "Study": [
-          "Study"
-        ],
-        "Technology": [
-          "Technology"
-        ],
-        "Tutorial": [
-          "Tutorial"
-        ]
-      },
-      "description": "General academic and technical learning.",
-      "id": "student",
-      "name": "Student"
-    },
-    {
-      "categories": {
-        "Accessibility": [
-          "Accessibility"
-        ],
-        "Design Systems": [
-          "Design Systems"
-        ],
-        "Figma": [
-          "Figma"
-        ],
-        "Information Architecture": [
-          "Information Architecture"
-        ],
-        "Interaction Design": [
-          "Interaction Design"
-        ],
-        "Prototyping": [
-          "Prototyping"
-        ],
-        "Typography": [
-          "Typography"
-        ],
-        "UI": [
-          "UI"
-        ],
-        "UX": [
-          "UX"
-        ],
-        "Usability": [
-          "Usability"
-        ],
-        "User Research": [
-          "User Research"
-        ],
-        "Visual Design": [
-          "Visual Design"
-        ],
-        "Wireframes": [
-          "Wireframes"
-        ]
-      },
-      "description": "User experience research, interaction and interface design.",
-      "id": "ui-ux-designer",
-      "name": "UI/UX Designer"
-    }
-  ],
-  "languageProfiles": [
-    {
-      "contentLanguages": [
-        "ar",
-        "en"
-      ],
-      "focus": 70,
-      "goals": [
-        "learn-language",
-        "listening",
-        "vocabulary",
-        "conversation",
-        "culture",
-        "reading"
-      ],
-      "id": "arabic-learning",
-      "learningLanguage": "ar",
-      "name": "Arabic Learning",
-      "notes": "Packaged starter profile.",
-      "preferredContent": [
-        "subtitles",
-        "lessons",
-        "native-content",
-        "news",
-        "documentaries",
-        "drama"
-      ]
-    },
-    {
-      "contentLanguages": [],
-      "focus": 70,
-      "goals": [
-        "learn-language",
-        "listening",
-        "vocabulary",
-        "grammar",
-        "conversation",
-        "culture",
-        "news",
-        "children",
-        "reading",
-        "pronunciation"
-      ],
-      "id": "custom",
-      "learningLanguage": "",
-      "name": "Custom Language Profile",
-      "notes": "",
-      "preferredContent": [
-        "subtitles",
-        "audio",
-        "educational-channels",
-        "lessons",
-        "native-content",
-        "documentaries",
-        "news",
-        "drama",
-        "music"
-      ]
-    },
-    {
-      "contentLanguages": [
-        "en"
-      ],
-      "focus": 70,
-      "goals": [
-        "learn-language",
-        "listening",
-        "vocabulary",
-        "grammar",
-        "conversation",
-        "pronunciation"
-      ],
-      "id": "english-learning",
-      "learningLanguage": "en",
-      "name": "English Learning",
-      "notes": "Packaged starter profile.",
-      "preferredContent": [
-        "subtitles",
-        "lessons",
-        "native-content",
-        "documentaries",
-        "news",
-        "drama",
-        "music"
-      ]
-    },
-    {
-      "contentLanguages": [
-        "fr",
-        "en"
-      ],
-      "focus": 70,
-      "goals": [
-        "learn-language",
-        "listening",
-        "vocabulary",
-        "conversation",
-        "culture",
-        "pronunciation"
-      ],
-      "id": "french-learning",
-      "learningLanguage": "fr",
-      "name": "French Learning",
-      "notes": "Packaged starter profile.",
-      "preferredContent": [
-        "subtitles",
-        "lessons",
-        "native-content",
-        "documentaries",
-        "news",
-        "drama"
-      ]
-    },
-    {
-      "contentLanguages": [
-        "de",
-        "en"
-      ],
-      "focus": 70,
-      "goals": [
-        "learn-language",
-        "listening",
-        "vocabulary",
-        "grammar",
-        "conversation",
-        "reading"
-      ],
-      "id": "german-learning",
-      "learningLanguage": "de",
-      "name": "German Learning",
-      "notes": "Packaged starter profile.",
-      "preferredContent": [
-        "subtitles",
-        "lessons",
-        "native-content",
-        "documentaries",
-        "news"
-      ]
-    },
-    {
-      "contentLanguages": [
-        "es",
-        "en"
-      ],
-      "focus": 70,
-      "goals": [
-        "learn-language",
-        "listening",
-        "vocabulary",
-        "conversation",
-        "culture",
-        "pronunciation"
-      ],
-      "id": "spanish-learning",
-      "learningLanguage": "es",
-      "name": "Spanish Learning",
-      "notes": "Packaged starter profile.",
-      "preferredContent": [
-        "subtitles",
-        "lessons",
-        "native-content",
-        "music",
-        "drama",
-        "news"
-      ]
-    },
-    {
-      "contentLanguages": [
-        "tr",
-        "en"
-      ],
-      "focus": 70,
-      "goals": [
-        "learn-language",
-        "listening",
-        "vocabulary",
-        "conversation",
-        "culture",
-        "pronunciation"
-      ],
-      "id": "turkish-learning",
-      "learningLanguage": "tr",
-      "name": "Turkish Learning",
-      "notes": "Packaged starter profile.",
-      "preferredContent": [
-        "subtitles",
-        "lessons",
-        "native-content",
-        "drama",
-        "music",
-        "news"
-      ]
-    }
-  ],
+  "exportedAt": "2026-10-23T17:18:45.891Z",
+  "techProfiles": [],
+  "languageProfiles": [],
   "nicheProfiles": [
     {
       "categories": {
-        "Formats": [
-          "review",
-          "recommendation",
-          "discussion",
-          "analysis"
+        "Discussion": [
+          "psychology discussion",
+          "psychology debate",
+          "psychology explained",
+          "human behavior explained",
+          "relationship discussion",
+          "life discussion",
+          "expert discussion",
+          "research discussion",
+          "deep conversation",
+          "long form discussion"
         ],
-        "Topics": [
-          "books",
-          "reading",
-          "book review",
-          "literature",
-          "authors"
-        ]
-      },
-      "contentLanguages": [
-        "en"
-      ],
-      "country": "GLOBAL",
-      "description": "Books and literary discovery.",
-      "id": "books",
-      "name": "Books & Reading",
-      "targetLanguage": "en"
-    },
-    {
-      "categories": {
         "Formats": [
-          "review",
-          "test drive",
-          "guide",
-          "news"
-        ],
-        "Topics": [
-          "cars",
-          "automotive",
-          "car review",
-          "electric vehicles",
-          "motorsport"
-        ]
-      },
-      "contentLanguages": [
-        "en"
-      ],
-      "country": "GLOBAL",
-      "description": "Cars and automotive interests.",
-      "id": "cars",
-      "name": "Cars & Automotive",
-      "targetLanguage": "en"
-    },
-    {
-      "categories": {
-        "Formats": [
-          "recipe",
-          "tutorial",
-          "tips",
-          "review"
-        ],
-        "Topics": [
-          "cooking",
-          "recipes",
-          "baking",
-          "meal prep",
-          "kitchen skills"
-        ]
-      },
-      "contentLanguages": [
-        "en"
-      ],
-      "country": "GLOBAL",
-      "description": "Cooking, recipes and food.",
-      "id": "cooking",
-      "name": "Cooking",
-      "targetLanguage": "en"
-    },
-    {
-      "categories": {
-        "Formats": [],
-        "Topics": []
-      },
-      "contentLanguages": [
-        "en"
-      ],
-      "country": "GLOBAL",
-      "description": "Your custom niche profile.",
-      "id": "custom",
-      "name": "Custom Niche",
-      "targetLanguage": "en"
-    },
-    {
-      "categories": {
-        "Formats": [
-          "guide",
-          "case study",
+          "podcast",
           "interview",
-          "tips"
-        ],
-        "Topics": [
-          "entrepreneurship",
-          "startups",
-          "business",
-          "marketing",
-          "leadership"
-        ]
-      },
-      "contentLanguages": [
-        "en"
-      ],
-      "country": "GLOBAL",
-      "description": "Business and startups.",
-      "id": "entrepreneurship",
-      "name": "Entrepreneurship",
-      "targetLanguage": "en"
-    },
-    {
-      "categories": {
-        "Formats": [
-          "lookbook",
-          "guide",
-          "review",
-          "tips"
-        ],
-        "Topics": [
-          "fashion",
-          "style",
-          "clothing",
-          "design",
-          "outfits"
-        ]
-      },
-      "contentLanguages": [
-        "en"
-      ],
-      "country": "GLOBAL",
-      "description": "Fashion and style.",
-      "id": "fashion",
-      "name": "Fashion",
-      "targetLanguage": "en"
-    },
-    {
-      "categories": {
-        "Formats": [
-          "workout",
-          "training",
-          "tips",
-          "guide"
-        ],
-        "Topics": [
-          "fitness",
-          "workout",
-          "strength training",
-          "running",
-          "mobility"
-        ]
-      },
-      "contentLanguages": [
-        "en"
-      ],
-      "country": "GLOBAL",
-      "description": "Fitness and training.",
-      "id": "fitness",
-      "name": "Fitness",
-      "targetLanguage": "en"
-    },
-    {
-      "categories": {
-        "Formats": [
-          "guide",
-          "review",
-          "gameplay",
-          "tips"
-        ],
-        "Topics": [
-          "gaming",
-          "games",
-          "gameplay",
-          "game reviews",
-          "esports"
-        ]
-      },
-      "contentLanguages": [
-        "en"
-      ],
-      "country": "GLOBAL",
-      "description": "Gaming and games.",
-      "id": "gaming",
-      "name": "Gaming",
-      "targetLanguage": "en"
-    },
-    {
-      "categories": {
-        "Formats": [
-          "documentary",
+          "conversation",
+          "discussion",
+          "debate",
           "lecture",
-          "explained",
-          "analysis"
-        ],
-        "Topics": [
-          "history",
-          "ancient history",
-          "world history",
-          "civilizations",
-          "archaeology"
-        ]
-      },
-      "contentLanguages": [
-        "en"
-      ],
-      "country": "GLOBAL",
-      "description": "History and civilizations.",
-      "id": "history",
-      "name": "History",
-      "targetLanguage": "en"
-    },
-    {
-      "categories": {
-        "Formats": [
-          "performance",
-          "tutorial",
-          "review",
-          "analysis"
-        ],
-        "Topics": [
-          "music",
-          "music theory",
-          "songs",
-          "instruments",
-          "production"
-        ]
-      },
-      "contentLanguages": [
-        "en"
-      ],
-      "country": "GLOBAL",
-      "description": "Music discovery and performance.",
-      "id": "music",
-      "name": "Music",
-      "targetLanguage": "en"
-    },
-    {
-      "categories": {
-        "Formats": [
-          "guide",
-          "education",
-          "tips",
-          "explained"
-        ],
-        "Topics": [
-          "personal finance",
-          "budgeting",
-          "saving",
-          "investing",
-          "money management"
-        ]
-      },
-      "contentLanguages": [
-        "en"
-      ],
-      "country": "GLOBAL",
-      "description": "Personal finance and financial education.",
-      "id": "personal-finance",
-      "name": "Personal Finance",
-      "targetLanguage": "en"
-    },
-    {
-      "categories": {
-        "Formats": [
-          "tutorial",
-          "review",
-          "editing",
-          "tips"
-        ],
-        "Topics": [
-          "photography",
-          "camera",
-          "portrait photography",
-          "street photography",
-          "landscape photography"
-        ]
-      },
-      "contentLanguages": [
-        "en"
-      ],
-      "country": "GLOBAL",
-      "description": "Photography and visual storytelling.",
-      "id": "photography",
-      "name": "Photography",
-      "targetLanguage": "en"
-    },
-    {
-      "categories": {
-        "Formats": [
-          "explained",
           "documentary",
-          "experiment",
-          "lecture"
+          "explained",
+          "long form",
+          "Q&A"
         ],
         "Topics": [
-          "science",
-          "physics",
-          "biology",
-          "chemistry",
-          "space",
-          "astronomy"
+          "psychology",
+          "human psychology",
+          "human behavior",
+          "behavioral science",
+          "cognitive psychology",
+          "social psychology",
+          "personality",
+          "emotions",
+          "communication",
+          "relationships",
+          "self awareness",
+          "self improvement",
+          "motivation",
+          "habits",
+          "decision making",
+          "critical thinking",
+          "mindset",
+          "personal growth",
+          "psychology research",
+          "psychology books",
+          "everyday psychology"
         ]
       },
       "contentLanguages": [
         "en"
       ],
       "country": "GLOBAL",
-      "description": "Science and discovery.",
-      "id": "science",
-      "name": "Science",
+      "description": "Psychology, human behavior, relationships, personal development and thoughtful long-form discussions and podcasts.",
+      "id": "psychology-discussion-podcasts",
+      "name": "Psychology Discussions & Podcasts",
+      "targetLanguage": "en"
+    },
+    {
+      "categories": {
+        "Discussion": [
+          "philosophy discussion",
+          "philosophy debate",
+          "deep questions",
+          "big questions",
+          "ideas discussion",
+          "ethics discussion",
+          "meaning of life discussion",
+          "philosophical conversation",
+          "intellectual discussion",
+          "deep conversation"
+        ],
+        "Formats": [
+          "podcast",
+          "interview",
+          "conversation",
+          "discussion",
+          "debate",
+          "lecture",
+          "essay",
+          "documentary",
+          "explained",
+          "long form"
+        ],
+        "Topics": [
+          "philosophy",
+          "ethics",
+          "moral philosophy",
+          "logic",
+          "epistemology",
+          "metaphysics",
+          "existentialism",
+          "stoicism",
+          "ancient philosophy",
+          "modern philosophy",
+          "political philosophy",
+          "philosophy of science",
+          "philosophy of mind",
+          "meaning of life",
+          "free will",
+          "consciousness",
+          "truth",
+          "knowledge",
+          "wisdom",
+          "human nature",
+          "society",
+          "critical thinking",
+          "philosophical ideas",
+          "philosophy books"
+        ]
+      },
+      "contentLanguages": [
+        "en"
+      ],
+      "country": "GLOBAL",
+      "description": "Philosophy, ideas, ethics, meaning, wisdom and deep conversations about life, society and human thought.",
+      "id": "philosophy-discussion-podcasts",
+      "name": "Philosophy Discussions & Podcasts",
       "targetLanguage": "en"
     },
     {
       "categories": {
         "Formats": [
           "tutorial",
-          "guide",
-          "review",
-          "tips"
+          "step by step",
+          "how to",
+          "project guide",
+          "build video",
+          "workshop",
+          "demonstration",
+          "before and after",
+          "tips",
+          "project showcase"
+        ],
+        "Project Types": [
+          "build",
+          "make",
+          "repair",
+          "restore",
+          "modify",
+          "upgrade",
+          "recycle",
+          "upcycle",
+          "craft",
+          "prototype",
+          "beginner project",
+          "weekend project",
+          "budget project"
         ],
         "Topics": [
-          "technology",
-          "software",
-          "AI",
-          "cloud",
-          "programming",
-          "Linux",
-          "open source"
+          "DIY",
+          "DIY projects",
+          "do it yourself",
+          "making",
+          "maker projects",
+          "home projects",
+          "home improvement",
+          "repairs",
+          "woodworking",
+          "metalworking",
+          "electronics projects",
+          "Arduino",
+          "Raspberry Pi",
+          "3D printing",
+          "crafts",
+          "handmade",
+          "upcycling",
+          "recycling projects",
+          "furniture making",
+          "workshop projects",
+          "tools",
+          "tool tips",
+          "garage projects",
+          "garden projects",
+          "organization projects"
         ]
       },
       "contentLanguages": [
         "en"
       ],
       "country": "GLOBAL",
-      "description": "Technology, software and digital interests.",
-      "id": "technology",
-      "name": "Technology",
+      "description": "Practical DIY projects, making, repairs, woodworking, crafts, home projects and hands-on creativity.",
+      "id": "diy-projects-making",
+      "name": "DIY Projects & Making",
       "targetLanguage": "en"
     },
     {
       "categories": {
+        "Discussion": [
+          "life advice discussion",
+          "wisdom discussion",
+          "older people advice",
+          "elder advice",
+          "grandparents advice",
+          "life story",
+          "personal story",
+          "lessons learned",
+          "things I wish I knew",
+          "what I learned in life",
+          "advice to younger people",
+          "generational conversation"
+        ],
         "Formats": [
-          "guide",
-          "itinerary",
-          "tips",
-          "vlog"
+          "podcast",
+          "interview",
+          "conversation",
+          "storytelling",
+          "documentary",
+          "Q&A",
+          "discussion",
+          "personal essay",
+          "long form",
+          "life story"
         ],
         "Topics": [
-          "travel",
-          "destinations",
-          "tourism",
-          "backpacking",
-          "hotels",
-          "culture"
+          "life advice",
+          "life wisdom",
+          "wisdom from experience",
+          "older generation",
+          "elder wisdom",
+          "lessons from life",
+          "life lessons",
+          "personal stories",
+          "family wisdom",
+          "relationships",
+          "marriage advice",
+          "friendship advice",
+          "career advice",
+          "work life",
+          "money lessons",
+          "saving money",
+          "mistakes and lessons",
+          "regret",
+          "aging",
+          "retirement",
+          "meaningful life",
+          "simple living",
+          "resilience",
+          "discipline",
+          "patience",
+          "perspective",
+          "generational stories",
+          "oral history"
         ]
       },
       "contentLanguages": [
         "en"
       ],
       "country": "GLOBAL",
-      "description": "Destinations and exploration.",
-      "id": "travel",
-      "name": "Travel",
+      "description": "Thoughtful life advice, stories and practical wisdom from older generations and experienced people.",
+      "id": "life-wisdom-older-generation",
+      "name": "Life Wisdom & Advice",
       "targetLanguage": "en"
     }
   ],

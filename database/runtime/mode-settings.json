@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "exportedAt": "2026-10-23T14:50:34.963Z",
+  "exportedAt": "2026-10-23T17:18:45.891Z",
   "activeMode": "niches",
   "enabledModes": [
     "niches"
@@ -20,10 +20,8 @@
       "showThreshold": 0
     },
     "languageLearning": {
-      "contentLanguages": [
-        "sv"
-      ],
-      "country": "SE",
+      "contentLanguages": [],
+      "country": "GLOBAL",
       "deprioritizeThreshold": 45,
       "enabled": false,
       "focus": 70,
@@ -39,21 +37,21 @@
         "pronunciation"
       ],
       "hideThreshold": 0,
-      "learningLanguage": "sv",
+      "learningLanguage": "",
       "profileId": "custom",
       "showThreshold": 70
     },
     "niches": {
       "contentLanguages": [
-        "tr"
+        "en"
       ],
-      "country": "TR",
+      "country": "GLOBAL",
       "deprioritizeThreshold": 40,
       "enabled": true,
       "hideThreshold": 0,
-      "profileId": "photography",
+      "profileId": "diy-projects-making",
       "showThreshold": 65,
-      "targetLanguage": "tr"
+      "targetLanguage": "en"
     },
     "productivity": {
       "deprioritizeThreshold": 30,
@@ -70,7 +68,7 @@
       "deprioritizeThreshold": 40,
       "enabled": false,
       "hideThreshold": 0,
-      "profileId": "cybersecurity",
+      "profileId": "devops",
       "showThreshold": 65,
       "targetLanguage": "en"
     }

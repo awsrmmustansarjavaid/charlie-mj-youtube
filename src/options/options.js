@@ -613,7 +613,7 @@ async function refreshModeProfiles() {
     $('#techProfile')?.value || settings.modeSettings?.tech?.profileId || '';
 
   const currentLanguageProfile =
-    $('#learnProfile')?.value ||
+    $('#languageLearningProfile')?.value ||
     settings.modeSettings?.languageLearning?.profileId ||
     '';
 
@@ -628,8 +628,8 @@ async function refreshModeProfiles() {
     $('#techProfile').value = currentTechProfile;
   }
 
-  if (currentLanguageProfile && $('#learnProfile')) {
-    $('#learnProfile').value = currentLanguageProfile;
+  if (currentLanguageProfile && $('#languageLearningProfile')) {
+    $('#languageLearningProfile').value = currentLanguageProfile;
   }
 
   if (currentNicheProfile && $('#nicheProfile')) {
@@ -680,7 +680,67 @@ async function renderModes(){
   const techLangs = Array.isArray(tech.contentLanguages) ? tech.contentLanguages : [];
   const learnLangs = Array.isArray(lang.contentLanguages) ? lang.contentLanguages : [];
   const langOptionMarkup = (selected, query='') => { const safeSelected=Array.isArray(selected)?selected.filter(Boolean):selected==null||selected===''?[]:[String(selected)]; const selectedSet=new Set(safeSelected.map(String).map(v=>v.toLowerCase())); return optionList(sharedLanguageCatalog.languages,safeSelected,query,sharedLanguageCatalog.languages.length).map(x=>`<option value="${esc(languageKey(x))}" ${selectedSet.has(languageKey(x))?'selected':''}>${esc(x.name)}${x.alpha_2?` (${esc(x.alpha_2)})`:x.alpha_3?` (${esc(x.alpha_3)})`:''}</option>`).join(''); };
-  $('#content').innerHTML = `<div class="grid mode-grid">${modes.map(([id,n,d])=>{
+  
+  const refreshProfilesButton = $('#refreshModeProfiles');
+
+    if (refreshProfilesButton) {
+      refreshProfilesButton.onclick = async () => {
+        const status = $('#modeProfileStatus');
+        const originalText = refreshProfilesButton.textContent;
+
+        try {
+          refreshProfilesButton.disabled = true;
+          refreshProfilesButton.textContent = '⏳ Loading...';
+
+          if (status) {
+            status.textContent = 'Loading saved profiles...';
+          }
+
+          await refreshModeProfiles();
+
+          if (status) {
+            status.textContent = 'Profiles loaded successfully.';
+          }
+        } catch (error) {
+          console.error('Failed to refresh mode profiles:', error);
+
+          if (status) {
+            status.textContent = 'Failed to load profiles.';
+          }
+        } finally {
+          refreshProfilesButton.disabled = false;
+          refreshProfilesButton.textContent = originalText;
+        }
+      };
+    }
+  
+  $('#content').innerHTML = `
+
+  <div class="card form" style="margin-top:14px">
+    <div class="section-heading">
+      <div>
+        <h3>Profile Library</h3>
+        <p class="muted">
+          Load all built-in and saved profiles for Tech,
+          Language Learning, and Niches.
+        </p>
+      </div>
+
+      <button
+        type="button"
+        class="btn"
+        id="refreshModeProfiles"
+      >
+        🔄 Refresh & Load Profiles
+      </button>
+    </div>
+
+    <div id="modeProfileStatus" class="muted">
+      Profiles are loaded automatically.
+    </div>
+  </div>  
+  
+  <div class="grid mode-grid">${modes.map(([id,n,d])=>{
     const c=ms[id]||{};
     return `<div class="card form mode-card">
       <div class="section-heading"><div><h3>${n}</h3><p class="muted">${d}</p></div>${id==='tech'?'<button class="btn danger-btn" id="resetTechMode">Reset Tech</button>':id==='languageLearning'?'<button class="btn danger-btn" id="resetLanguageMode">Reset Language Learning</button>':id==='niches'?'<button class="btn danger-btn" id="resetNicheMode">Reset Niches</button>':''}</div>
@@ -851,33 +911,7 @@ async function renderStatistics() {
   const safe = value => Number(value || 0);
 
   $("#content").innerHTML = `
-    
-    <div class="card form">
-
-      <div class="section-heading">
-        <div>
-          <h3>Profile Library</h3>
-          <p class="muted">
-            Load all built-in and saved profiles for Tech,
-            Language Learning, and Niches.
-          </p>
-        </div>
-
-        <button
-          type="button"
-          class="btn"
-          id="refreshModeProfiles"
-        >
-          🔄 Refresh & Load Profiles
-        </button>
-      </div>
-
-      <div id="modeProfileStatus" class="muted">
-        Profiles are loaded automatically.
-      </div>
-
-    </div>
-  
+      
     <div class="grid">
       <div class="card"><h3>Scanned</h3><div class="metric">${safe(st.videosScanned)}</div></div>
       <div class="card"><h3>Shown</h3><div class="metric">${safe(st.videosShown)}</div></div>
@@ -939,7 +973,8 @@ function renderAds() {
         <label class="check"><input id="adCosmetic" type="checkbox" ${settings.adBlockCosmetic !== false ? "checked" : ""}> Hide ad slots, banners and overlays</label>
         <label class="check"><input id="adSkip" type="checkbox" ${settings.adBlockSkip !== false ? "checked" : ""}> Automatically click Skip Ad / fast-forward detected ads</label>
       </div>
-    </div>
+    </div>  
+
     <div class="grid" style="margin-top:14px">
       <div class="card"><h3>Local ad statistics</h3><div class="metric">${Number(adStats.skipped || 0) + Number(adStats.hidden || 0)}</div><span class="muted">Detected, skipped or hidden events</span></div>
       <div class="card"><h3>Video ads skipped</h3><div class="metric">${Number(adStats.skipped || 0)}</div><span class="muted">Best-effort player actions</span></div>
