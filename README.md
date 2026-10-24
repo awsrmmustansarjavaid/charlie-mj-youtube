@@ -16,13 +16,13 @@ Charlie MJ YouTube is a lightweight, local-first Chrome MV3 extension for YouTub
 
 <p align="center">
   <a href="/downloads/Charlie-MJ-YouTube-v1.0.0.zip">
-    <img src="https://img.shields.io/badge/%E2%AC%87%20Download%20Chrome%20Extension-2ea44f?style=for-the-badge" alt="Download Chrome Extension Charlie-MJ-YouTube-v1.0.0">
+    <img src="https://img.shields.io/badge/%E2%AC%87%20Download%20Chrome%20Extension%20v1.0.0-2ea44f?style=for-the-badge" alt="Download Chrome Extension Charlie-MJ-YouTube-v1.0.0">
   </a>
 </p>
 
 <p align="center">
   <a href="/downloads/Charlie-MJ-YouTube-v2.0.0.zip">
-    <img src="https://img.shields.io/badge/%E2%AC%87%20Download%20Chrome%20Extension-2ea44f?style=for-the-badge" alt="Download Chrome Extension Charlie-MJ-YouTube-v2.0.0">
+    <img src="https://img.shields.io/badge/%E2%AC%87%20Download%20Chrome%20Extension%20v2.0.0-2ea44f?style=for-the-badge" alt="Download Chrome Extension Charlie-MJ-YouTube-v2.0.0">
   </a>
 </p>
 
