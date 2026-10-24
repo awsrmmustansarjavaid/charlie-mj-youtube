@@ -2,7 +2,7 @@
 
 Charlie MJ YouTube is a lightweight, local-first Chrome MV3 extension for YouTube content intelligence, target country/language control, professional technology learning, language learning, productivity, filtering and a metadata-rich YouTube Library.
 
-![Charlie MJ Language v1.0.0 Stable Beta](assets/Charlie%20MJ%20YouTube%20Extension%20Infographic.png)
+![Charlie MJ Language v1.0.0 Stable Beta](assets/Charlie%20MJ%20YouTube%20Extension%20Poster.png)
 
 ## Modes
 - **General** — compatibility baseline and general content intelligence.
@@ -11,6 +11,9 @@ Charlie MJ YouTube is a lightweight, local-first Chrome MV3 extension for YouTub
 - **Productivity** — focus and distraction behavior.
 - **Custom** — user-defined rules.
 - **Niches** — focused discovery with its own profiles, target country and content languages.
+
+
+![Charlie MJ Language v1.0.0 Stable Beta](assets/Charlie%20MJ%20YouTube%20Extension%20Infographic.png)
 
 ## Download
 
