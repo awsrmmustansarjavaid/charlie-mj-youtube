@@ -1,3 +1,5 @@
+[← Main README](../README.md) · [Documentation index](README.md)
+
 # Charlie MJ YouTube — Feature Matrix
 
 - Countries & Regions: search/select country; country-specific JSON; city/region signals
@@ -32,7 +34,10 @@ A dedicated niche-discovery mode with independent JSON profiles, target country/
 ## Current Data Management Features
 
 - Type-safe YouTube Library tabs for Channels, Playlists and Favorite Videos.
-- Local-vs-GitHub count comparison for YouTube Library, Tech Profiles, Language Learning Profiles and Niches Profiles.
+- Live Local-vs-GitHub comparison (real saved counts, not file counts) for YouTube Library, Tech, Language Learning and Niches profiles, shown in a closable summary window - see [DATA-SYNC](DATA-SYNC.md).
 - Detailed local-only, GitHub-only and content-difference reporting.
 - Database Manager exports for Channels, Playlists and Videos.
 - Extension-directory selection that reads only `database/`.
+
+---
+[← Main README](../README.md) · [Documentation index](README.md)

@@ -27,3 +27,8 @@ The extension uses the selected country's name, ISO codes, bundled country citie
 - `languages/languages.json`: single 7,000+ master language catalog shared by modes.
 - `tech/index.json` and `tech/<profile>.json`: separate Tech profile files.
 - `language-profiles/index.json` and `language-profiles/<profile>.json`: separate Language Learning profile files.
+
+
+[← Main README](../README.md) · [Documentation](../docs/README.md)
+
+- `youtube-library/courses/` — dedicated database area for saved long-form YouTube courses.

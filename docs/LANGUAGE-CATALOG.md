@@ -1,3 +1,5 @@
+[← Main README](../README.md) · [Documentation index](README.md)
+
 # Unified Language Catalog
 
 `database/languages/languages.json` is the single master language catalog and currently contains 7,000+ records.
@@ -23,3 +25,6 @@ Tech Mode and Language Learning Mode consume the same `database/languages/langua
 ## 2.0.0 Data Boundary Note
 
 Data Sync and database exports operate on the `database/` scope. Runtime YouTube Library and mode/profile snapshots are designed for portable synchronization, while generated Chrome `_metadata/` content is excluded.
+
+---
+[← Main README](../README.md) · [Documentation index](README.md)

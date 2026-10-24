@@ -1,13 +1,326 @@
+/**
+ * Tech Mode profile manager page.
+ *
+ * Lists the 15 packaged tech profiles plus custom ones, edits categories/terms, target
+ * country and content languages, and imports/exports profile JSON.
+ */
+
 import { getSettings, saveSettings } from "../shared/core.js";
-import { loadLanguageCatalog, countryDefaults, languageKey, optionList } from "../shared/language-catalog.js";
-const showToast=(message,type='success')=>{document.querySelector('.cmj-page-toast')?.remove();const n=document.createElement('div');n.className=`cmj-page-toast ${type}`;n.textContent=message;Object.assign(n.style,{position:'fixed',right:'22px',bottom:'22px',zIndex:'9999',maxWidth:'380px',padding:'12px 16px',borderRadius:'10px',background:type==='error'?'#da3633':type==='warn'?'#9e6a03':'#238636',color:'#fff',boxShadow:'0 10px 30px rgba(0,0,0,.35)',fontWeight:'650'});document.body.appendChild(n);setTimeout(()=>n.remove(),3200)};
-const $=s=>document.querySelector(s), esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const defaults=['devops','frontend-developer','backend-developer','full-stack-developer','network-engineer','cybersecurity','cloud-engineer','data-engineer','graphic-designer','ui-ux-designer','database-engineer','ai-ml-engineer','student','researcher','custom'];
-let profiles=[], selected='devops', catalog={languages:[],languagesByCountry:{}}, countries=[];
-async function load(){catalog=await loadLanguageCatalog();try{const cur=await getSettings();selected=cur.modeSettings?.tech?.profileId||selected}catch{}try{const cr=await fetch(chrome.runtime.getURL('database/countries/countries.json'));countries=(await cr.json()).countries||[]}catch{countries=[]}profiles=[];for(const id of defaults){try{const r=await fetch(chrome.runtime.getURL(`database/tech/${id}.json`));if(r.ok)profiles.push(await r.json())}catch{}}const x=await chrome.storage.local.get('techProfiles');for(const p of (x.techProfiles||[])){if(!profiles.some(q=>q.id===p.id))profiles.push(p)}renderList();select(selected)}
-function renderList(){const q=$('#search').value.toLowerCase();$('#profiles').innerHTML=profiles.filter(p=>(p.name+' '+p.description+' '+JSON.stringify(p.categories)).toLowerCase().includes(q)).map(p=>`<div class="profile ${p.id===selected?'active':''}" data-id="${esc(p.id)}"><input class="profileSelect" type="checkbox" data-id="${esc(p.id)}"><strong>${esc(p.name)}</strong><div class="muted">${Object.values(p.categories||{}).flat().length} terms</div></div>`).join('')||'<p class="muted">No profiles found.</p>';document.querySelectorAll('.profile').forEach(x=>x.onclick=()=>select(x.dataset.id));document.querySelectorAll('.profileSelect').forEach(x=>x.addEventListener('click',e=>e.stopPropagation()))}
-function langOptions(selected=[],query=''){return optionList(catalog.languages,selected,query,catalog.languages.length).map(x=>`<option value="${esc(languageKey(x))}" ${selected.map(String).map(v=>v.toLowerCase()).includes(languageKey(x))?'selected':''}>${esc(x.name)}${x.alpha_2?` (${esc(x.alpha_2)})`:x.alpha_3?` (${esc(x.alpha_3)})`:''}</option>`).join('')}
-function select(id){selected=id;renderList();const p=profiles.find(x=>x.id===id)||profiles[0];if(!p)return;const cur=JSON.parse(JSON.stringify(p));const settingsPromise=getSettings();settingsPromise.then(settings=>{const ms=settings.modeSettings?.tech||{};const selectedLangs=Array.isArray(ms.contentLanguages)&&ms.contentLanguages.length?ms.contentLanguages:(p.contentLanguages||['en']);const country=ms.country||p.country||'GLOBAL';$('#editor').innerHTML=`<h2>${esc(p.name)}</h2><p class="muted">${esc(p.description||'')}</p><div class="grid"><div class="field"><label>Profile ID</label><input id="pid" value="${esc(p.id)}"></div><div class="field"><label>Profile name</label><input id="pname" value="${esc(p.name)}"></div></div><div class="field"><label>Description</label><input id="pdesc" value="${esc(p.description||'')}"></div><div class="grid"><div class="field"><label>Target Country</label><select id="techCountry">${countries.map(c=>`<option value="${esc(c.code)}">${esc(c.name)} (${esc(c.code)})</option>`).join('')}</select><small class="muted">Selecting a country automatically suggests its national/official languages. You can manually change or add languages.</small></div><div class="field"><label>Content Languages — 7,000+ master catalog</label><input id="techLangSearch" placeholder="Search languages…"><select id="techContentLanguages" multiple size="8">${langOptions(selectedLangs)}</select></div></div><div class="field"><label>Technology terms — one category per line: Category: term, term, term</label><textarea id="terms" rows="20">${esc(Object.entries(p.categories||{}).map(([k,v])=>`${k}: ${v.join(', ')}`).join('\n'))}</textarea></div><button id="apply">Apply to profile</button><div class="chips">${Object.values(p.categories||{}).flat().map(x=>`<span class="chip">${esc(x)}</span>`).join('')}</div>`;$('#techCountry').value=country;const langEl=$('#techContentLanguages');langEl.dataset.selected=JSON.stringify(selectedLangs);$('#apply').onclick=apply;langEl.onchange=()=>{const visible=[...langEl.options].map(o=>o.value);const stored=JSON.parse(langEl.dataset.selected||'[]').filter(v=>!visible.includes(v));const current=[...langEl.selectedOptions].map(o=>o.value);langEl.dataset.selected=JSON.stringify([...new Set([...stored,...current])]);};const refreshTechLanguages=()=>{let values=[];try{const parsed=JSON.parse(langEl.dataset.selected||'[]');values=Array.isArray(parsed)?parsed.filter(Boolean):parsed?[String(parsed)]:[]}catch(_){}langEl.innerHTML=langOptions(values,$('#techLangSearch').value||'');values.forEach(v=>{const o=[...langEl.options].find(x=>x.value===String(v));if(o)o.selected=true;});};$('#techLangSearch').addEventListener('input',refreshTechLanguages);$('#techLangSearch').addEventListener('search',refreshTechLanguages);$('#techLangSearch').addEventListener('change',refreshTechLanguages);$('#techCountry').onchange=()=>{const defs=countryDefaults(catalog.languages,catalog.languagesByCountry,$('#techCountry').value).map(languageKey);const cur=JSON.parse(langEl.dataset.selected||'[]');const vals=[...new Set([...cur,...defs])];langEl.innerHTML=langOptions(vals);vals.forEach(v=>{const o=[...langEl.options].find(x=>x.value===v);if(o)o.selected=true;});langEl.dataset.selected=JSON.stringify(vals);};});}
-async function apply(){const p=profiles.find(x=>x.id===selected);if(!p)return;p.id=$('#pid').value.trim().toLowerCase().replace(/[^a-z0-9-]+/g,'-');p.name=$('#pname').value.trim()||p.id;p.description=$('#pdesc').value.trim();p.categories={};for(const line of $('#terms').value.split(/\n/)){const [k,...rest]=line.split(':');if(!k||!rest.length)continue;p.categories[k.trim()]=rest.join(':').split(',').map(x=>x.trim()).filter(Boolean)}p.country=$('#techCountry').value;p.contentLanguages=[...$('#techContentLanguages').selectedOptions].map(x=>x.value).filter(Boolean);selected=p.id;const cur=await getSettings();const ms=JSON.parse(JSON.stringify(cur.modeSettings||{}));ms.tech={...(ms.tech||{}),profileId:selected,country:p.country,contentLanguages:p.contentLanguages};await saveSettings({modeSettings:ms});renderList();select(selected)}
-$('#save').onclick=async()=>{await apply();const custom=profiles.filter(p=>!defaults.includes(p.id));await chrome.storage.local.set({techProfiles:custom});const cur=await getSettings();const ms=JSON.parse(JSON.stringify(cur.modeSettings||{}));ms.tech={...(ms.tech||{}),profileId:selected};await saveSettings({modeSettings:ms});showToast('Tech profile saved and set as the active Tech Mode profile: '+selected+'. Custom profiles are stored locally; packaged profiles remain as the baseline.')};$('#refresh').onclick=load;$('#search').oninput=renderList;$('#back').onclick=()=>chrome.runtime.openOptionsPage();$('#add').onclick=()=>{const id='custom-'+Date.now();profiles.push({id,name:'New Tech Profile',description:'',categories:{General:[]}});selected=id;profiles.at(-1).id=id;select(id)};$('#edit').onclick=()=>apply();$('#remove').onclick=()=>{if(defaults.includes(selected)){showToast('Packaged profiles are protected. Create a custom copy to remove it from your local profile list.','warn');return}profiles=profiles.filter(p=>p.id!==selected);selected=profiles[0]?.id||'devops';renderList();select(selected)};$('#export').onclick=()=>{const chosen=[...document.querySelectorAll('.profileSelect:checked')].map(x=>profiles.find(p=>p.id===x.dataset.id)).filter(Boolean);download(`tech-profile-${chosen[0]?.id||'all'}-${stamp()}.json`,{exportType:'tech-profile',version:'2.0.0',exportedAt:new Date().toISOString(),source:'Charlie MJ YouTube',items:chosen.length?chosen:profiles})};$('#download').onclick=()=>download(`tech-profiles-all-${stamp()}.json`,{exportType:'tech-profiles',version:'2.0.0',exportedAt:new Date().toISOString(),source:'Charlie MJ YouTube',items:profiles});$('#import').onclick=()=>$('#file').click();$('#file').onchange=async e=>{try{const data=JSON.parse(await e.target.files[0].text());const arr=Array.isArray(data)?data:[data];for(const p of arr){if(p?.id){const i=profiles.findIndex(x=>x.id===p.id);if(i>=0)profiles[i]=p;else profiles.push(p)}}renderList();select(profiles.at(-1).id)}catch(e){showToast('Import failed: '+e.message,'error')}};
-function stamp(){return new Date().toISOString().replace(/[-:]/g,'').replace(/\.\d{3}Z$/,'Z')};function download(n,d){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(d,null,2)],{type:'application/json'}));a.download=n;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}load();
+import {
+  loadLanguageCatalog,
+  countryDefaults,
+  languageKey,
+  optionList,
+} from "../shared/language-catalog.js";
+const showToast = (message, type = "success") => {
+  document.querySelector(".cmj-page-toast")?.remove();
+  const n = document.createElement("div");
+  n.className = `cmj-page-toast ${type}`;
+  n.textContent = message;
+  Object.assign(n.style, {
+    position: "fixed",
+    right: "22px",
+    bottom: "22px",
+    zIndex: "9999",
+    maxWidth: "380px",
+    padding: "12px 16px",
+    borderRadius: "10px",
+    background: type === "error" ? "#da3633" : type === "warn" ? "#9e6a03" : "#238636",
+    color: "#fff",
+    boxShadow: "0 10px 30px rgba(0,0,0,.35)",
+    fontWeight: "650",
+  });
+  document.body.appendChild(n);
+  setTimeout(() => n.remove(), 3200);
+};
+const $ = (s) => document.querySelector(s),
+  esc = (v) =>
+    String(v ?? "").replace(
+      /[&<>"']/g,
+      (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c],
+    );
+const defaults = [
+  "devops",
+  "frontend-developer",
+  "backend-developer",
+  "full-stack-developer",
+  "network-engineer",
+  "cybersecurity",
+  "cloud-engineer",
+  "data-engineer",
+  "graphic-designer",
+  "ui-ux-designer",
+  "database-engineer",
+  "ai-ml-engineer",
+  "student",
+  "researcher",
+  "custom",
+];
+let profiles = [],
+  selected = "devops",
+  catalog = { languages: [], languagesByCountry: {} },
+  countries = [];
+/** Load the profiles, countries and language catalog. */
+async function load() {
+  catalog = await loadLanguageCatalog();
+  try {
+    const cur = await getSettings();
+    selected = cur.modeSettings?.tech?.profileId || selected;
+  } catch {}
+  try {
+    const cr = await fetch(chrome.runtime.getURL("database/countries/countries.json"));
+    countries = (await cr.json()).countries || [];
+  } catch {
+    countries = [];
+  }
+  profiles = [];
+  for (const id of defaults) {
+    try {
+      const r = await fetch(chrome.runtime.getURL(`database/tech/${id}.json`));
+      if (r.ok) profiles.push(await r.json());
+    } catch {}
+  }
+  const x = await chrome.storage.local.get("techProfiles");
+  for (const p of x.techProfiles || []) {
+    if (!profiles.some((q) => q.id === p.id)) profiles.push(p);
+  }
+  renderList();
+  select(selected);
+}
+/** Render the searchable profile list. */
+function renderList() {
+  const q = $("#search").value.toLowerCase();
+  $("#profiles").innerHTML =
+    profiles
+      .filter((p) =>
+        (p.name + " " + p.description + " " + JSON.stringify(p.categories))
+          .toLowerCase()
+          .includes(q),
+      )
+      .map(
+        (p) =>
+          `<div class="profile ${p.id === selected ? "active" : ""}" data-id="${esc(p.id)}"><input class="profileSelect" type="checkbox" data-id="${esc(p.id)}"><strong>${esc(p.name)}</strong><div class="muted">${Object.values(p.categories || {}).flat().length} terms</div></div>`,
+      )
+      .join("") || '<p class="muted">No profiles found.</p>';
+  document.querySelectorAll(".profile").forEach((x) => (x.onclick = () => select(x.dataset.id)));
+  document
+    .querySelectorAll(".profileSelect")
+    .forEach((x) => x.addEventListener("click", (e) => e.stopPropagation()));
+}
+/** <option> markup for the language picker. */
+function langOptions(selected = [], query = "") {
+  return optionList(catalog.languages, selected, query, catalog.languages.length)
+    .map(
+      (x) =>
+        `<option value="${esc(languageKey(x))}" ${
+          selected
+            .map(String)
+            .map((v) => v.toLowerCase())
+            .includes(languageKey(x))
+            ? "selected"
+            : ""
+        }>${esc(x.name)}${x.alpha_2 ? ` (${esc(x.alpha_2)})` : x.alpha_3 ? ` (${esc(x.alpha_3)})` : ""}</option>`,
+    )
+    .join("");
+}
+/** Open a profile in the editor. */
+function select(id) {
+  selected = id;
+  renderList();
+  const p = profiles.find((x) => x.id === id) || profiles[0];
+  if (!p) return;
+  const cur = JSON.parse(JSON.stringify(p));
+  const settingsPromise = getSettings();
+  settingsPromise.then((settings) => {
+    const ms = settings.modeSettings?.tech || {};
+    const selectedLangs =
+      Array.isArray(ms.contentLanguages) && ms.contentLanguages.length
+        ? ms.contentLanguages
+        : p.contentLanguages || ["en"];
+    const country = ms.country || p.country || "GLOBAL";
+    $("#editor").innerHTML =
+      `<h2>${esc(p.name)}</h2><p class="muted">${esc(p.description || "")}</p><div class="grid"><div class="field"><label>Profile ID</label><input id="pid" value="${esc(p.id)}"></div><div class="field"><label>Profile name</label><input id="pname" value="${esc(p.name)}"></div></div><div class="field"><label>Description</label><input id="pdesc" value="${esc(p.description || "")}"></div><div class="grid"><div class="field"><label>Target Country</label><select id="techCountry">${countries.map((c) => `<option value="${esc(c.code)}">${esc(c.name)} (${esc(c.code)})</option>`).join("")}</select><small class="muted">Selecting a country automatically suggests its national/official languages. You can manually change or add languages.</small></div><div class="field"><label>Content Languages — 7,000+ master catalog</label><input id="techLangSearch" placeholder="Search languages…"><select id="techContentLanguages" multiple size="8">${langOptions(selectedLangs)}</select></div></div><div class="field"><label>Technology terms — one category per line: Category: term, term, term</label><textarea id="terms" rows="20">${esc(
+        Object.entries(p.categories || {})
+          .map(([k, v]) => `${k}: ${v.join(", ")}`)
+          .join("\n"),
+      )}</textarea></div><button id="apply">Apply to profile</button><div class="chips">${Object.values(
+        p.categories || {},
+      )
+        .flat()
+        .map((x) => `<span class="chip">${esc(x)}</span>`)
+        .join("")}</div>`;
+    $("#techCountry").value = country;
+    const langEl = $("#techContentLanguages");
+    langEl.dataset.selected = JSON.stringify(selectedLangs);
+    $("#apply").onclick = apply;
+    langEl.onchange = () => {
+      const visible = [...langEl.options].map((o) => o.value);
+      const stored = JSON.parse(langEl.dataset.selected || "[]").filter(
+        (v) => !visible.includes(v),
+      );
+      const current = [...langEl.selectedOptions].map((o) => o.value);
+      langEl.dataset.selected = JSON.stringify([...new Set([...stored, ...current])]);
+    };
+    const refreshTechLanguages = () => {
+      let values = [];
+      try {
+        const parsed = JSON.parse(langEl.dataset.selected || "[]");
+        values = Array.isArray(parsed) ? parsed.filter(Boolean) : parsed ? [String(parsed)] : [];
+      } catch (_) {}
+      langEl.innerHTML = langOptions(values, $("#techLangSearch").value || "");
+      values.forEach((v) => {
+        const o = [...langEl.options].find((x) => x.value === String(v));
+        if (o) o.selected = true;
+      });
+    };
+    $("#techLangSearch").addEventListener("input", refreshTechLanguages);
+    $("#techLangSearch").addEventListener("search", refreshTechLanguages);
+    $("#techLangSearch").addEventListener("change", refreshTechLanguages);
+    $("#techCountry").onchange = () => {
+      const defs = countryDefaults(
+        catalog.languages,
+        catalog.languagesByCountry,
+        $("#techCountry").value,
+      ).map(languageKey);
+      const cur = JSON.parse(langEl.dataset.selected || "[]");
+      const vals = [...new Set([...cur, ...defs])];
+      langEl.innerHTML = langOptions(vals);
+      vals.forEach((v) => {
+        const o = [...langEl.options].find((x) => x.value === v);
+        if (o) o.selected = true;
+      });
+      langEl.dataset.selected = JSON.stringify(vals);
+    };
+  });
+}
+/** Copy the editor fields into the selected profile. */
+async function apply() {
+  const p = profiles.find((x) => x.id === selected);
+  if (!p) return;
+  p.id = $("#pid")
+    .value.trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9-]+/g, "-");
+  p.name = $("#pname").value.trim() || p.id;
+  p.description = $("#pdesc").value.trim();
+  p.categories = {};
+  for (const line of $("#terms").value.split(/\n/)) {
+    const [k, ...rest] = line.split(":");
+    if (!k || !rest.length) continue;
+    p.categories[k.trim()] = rest
+      .join(":")
+      .split(",")
+      .map((x) => x.trim())
+      .filter(Boolean);
+  }
+  p.country = $("#techCountry").value;
+  p.contentLanguages = [...$("#techContentLanguages").selectedOptions]
+    .map((x) => x.value)
+    .filter(Boolean);
+  selected = p.id;
+  const cur = await getSettings();
+  const ms = JSON.parse(JSON.stringify(cur.modeSettings || {}));
+  ms.tech = {
+    ...(ms.tech || {}),
+    profileId: selected,
+    country: p.country,
+    contentLanguages: p.contentLanguages,
+  };
+  await saveSettings({ modeSettings: ms });
+  renderList();
+  select(selected);
+}
+$("#save").onclick = async () => {
+  await apply();
+  const custom = profiles.filter((p) => !defaults.includes(p.id));
+  await chrome.storage.local.set({ techProfiles: custom });
+  const cur = await getSettings();
+  const ms = JSON.parse(JSON.stringify(cur.modeSettings || {}));
+  ms.tech = { ...(ms.tech || {}), profileId: selected };
+  await saveSettings({ modeSettings: ms });
+  showToast(
+    "Tech profile saved and set as the active Tech Mode profile: " +
+      selected +
+      ". Custom profiles are stored locally; packaged profiles remain as the baseline.",
+  );
+};
+$("#refresh").onclick = load;
+$("#search").oninput = renderList;
+$("#back").onclick = () => chrome.runtime.openOptionsPage();
+$("#add").onclick = () => {
+  const id = "custom-" + Date.now();
+  profiles.push({ id, name: "New Tech Profile", description: "", categories: { General: [] } });
+  selected = id;
+  profiles.at(-1).id = id;
+  select(id);
+};
+$("#edit").onclick = () => apply();
+$("#remove").onclick = () => {
+  if (defaults.includes(selected)) {
+    showToast(
+      "Packaged profiles are protected. Create a custom copy to remove it from your local profile list.",
+      "warn",
+    );
+    return;
+  }
+  profiles = profiles.filter((p) => p.id !== selected);
+  selected = profiles[0]?.id || "devops";
+  renderList();
+  select(selected);
+};
+$("#export").onclick = () => {
+  const chosen = [...document.querySelectorAll(".profileSelect:checked")]
+    .map((x) => profiles.find((p) => p.id === x.dataset.id))
+    .filter(Boolean);
+  download(`tech-profile-${chosen[0]?.id || "all"}-${stamp()}.json`, {
+    exportType: "tech-profile",
+    version: "2.0.0",
+    exportedAt: new Date().toISOString(),
+    source: "Charlie MJ YouTube",
+    items: chosen.length ? chosen : profiles,
+  });
+};
+$("#download").onclick = () =>
+  download(`tech-profiles-all-${stamp()}.json`, {
+    exportType: "tech-profiles",
+    version: "2.0.0",
+    exportedAt: new Date().toISOString(),
+    source: "Charlie MJ YouTube",
+    items: profiles,
+  });
+$("#import").onclick = () => $("#file").click();
+$("#file").onchange = async (e) => {
+  try {
+    const data = JSON.parse(await e.target.files[0].text());
+    const arr = Array.isArray(data) ? data : [data];
+    for (const p of arr) {
+      if (p?.id) {
+        const i = profiles.findIndex((x) => x.id === p.id);
+        if (i >= 0) profiles[i] = p;
+        else profiles.push(p);
+      }
+    }
+    renderList();
+    select(profiles.at(-1).id);
+  } catch (e) {
+    showToast("Import failed: " + e.message, "error");
+  }
+};
+/** Compact timestamp used in download file names. */
+function stamp() {
+  return new Date()
+    .toISOString()
+    .replace(/[-:]/g, "")
+    .replace(/\.\d{3}Z$/, "Z");
+}
+/** Download an object as a JSON file. */
+function download(n, d) {
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(
+    new Blob([JSON.stringify(d, null, 2)], { type: "application/json" }),
+  );
+  a.download = n;
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+}
+load();

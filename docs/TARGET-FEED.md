@@ -1,3 +1,5 @@
+[← Main README](../README.md) · [Documentation index](README.md)
+
 # Target Feed Engine
 
 ## Purpose
@@ -36,3 +38,23 @@ The extension does not claim access to YouTube's private recommendation algorith
 ## 2.0.0 Data Boundary Note
 
 Data Sync and database exports operate on the `database/` scope. Runtime YouTube Library and mode/profile snapshots are designed for portable synchronization, while generated Chrome `_metadata/` content is excluded.
+
+## Mode feeds (2.0.0)
+
+General, Tech, Language Learning and Niches all use the same Target Feed engine; only the query builder and the ranking differ.
+
+| Mode | Queries | Gate / ranking |
+| --- | --- | --- |
+| General | native-language topics plus country | country and language gate |
+| Tech | `<profile> tutorial`, `<term> tutorial` from the profile JSON | content-language gate, ranked by profile-term matches |
+| Language Learning | native topics of the learning language plus lesson searches | native results are language-gated, lesson results are not |
+| Niches | profile terms of the niche | content-language gate |
+
+- The header shows a **Mode:** subtitle (General, Tech, Language Learning, Niches).
+- YouTube's own Home grid is hidden while the Target Feed is active (`html[data-cmj-hide-home]`); a Retry button is shown if searches fail.
+- `gl` (country) is sent only when it is a valid 2-letter code. `GLOBAL` means "no country" - sending it makes YouTube answer 403.
+- Results load as you scroll (continuation tokens), with cache, back-off and a retry cap.
+- Productivity and Custom keep the legacy ranked feed.
+
+---
+[← Main README](../README.md) · [Documentation index](README.md)

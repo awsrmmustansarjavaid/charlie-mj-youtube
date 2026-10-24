@@ -1,44 +1,91 @@
 <!doctype html>
+<!--
+  Toolbar popup: protection status, mode switch and quick actions.
+  Loaded by the extension; script and style files are referenced below.
+-->
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Charlie MJ YouTube</title>
-  <link rel="stylesheet" href="popup.css">
-</head>
-<body>
-  <div class="app">
-    <header>
-      <img src="../../assets/icons/icon48.png" alt="Charlie MJ">
-      <div><b>Charlie MJ YouTube</b><small>Toolbar Control Center</small></div>
-    </header>
-    <section class="hero">
-      <div><span class="eyebrow">PROTECTION STATUS</span><strong id="adStatus">Checking…</strong></div>
-      <button class="switch" id="adToggle" aria-label="Toggle YouTube ad protection"><span></span></button>
-    </section>
-    <div class="stats">
-      <div><b id="adSkipped">0</b><small>Ads skipped</small></div>
-      <div><b id="adHidden">0</b><small>Ad UI hidden</small></div>
-      <div><b id="videosHidden">0</b><small>Videos filtered</small></div>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Charlie MJ YouTube</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header>
+        <img src="../../assets/icons/icon48.png" alt="Charlie MJ" />
+        <div><b>Charlie MJ YouTube</b><small>Toolbar Control Center</small></div>
+      </header>
+      <section class="hero">
+        <div>
+          <span class="eyebrow">PROTECTION STATUS</span><strong id="adStatus">Checking…</strong>
+        </div>
+        <button class="switch" id="adToggle" aria-label="Toggle YouTube ad protection">
+          <span></span>
+        </button>
+      </section>
+      <div class="stats">
+        <div><b id="adSkipped">0</b><small>Ads skipped</small></div>
+        <div><b id="adHidden">0</b><small>Ad UI hidden</small></div>
+        <div><b id="videosHidden">0</b><small>Videos filtered</small></div>
+      </div>
+      <h3>Mode Switch</h3>
+      <select id="modeSwitch">
+        <option value="general">General</option>
+        <option value="tech">Tech</option>
+        <option value="languageLearning">Language Learning</option>
+        <option value="niches">Niches</option>
+        <option value="productivity">Productivity</option>
+        <option value="custom">Custom</option>
+      </select>
+      <h3>Quick actions</h3>
+      <div class="grid">
+        <button data-action="scan">
+          <span>🔎</span><b>Scan YouTube</b><small>Apply filters now</small>
+        </button>
+        <button data-action="adscan">
+          <span>🛡️</span><b>Clean Ads</b><small>Scan ad surfaces</small>
+        </button>
+        <button data-action="block">
+          <span>🚫</span><b>Block Video</b><small>Block current video</small>
+        </button>
+        <button data-action="shorts">
+          <span>◉</span><b>Shorts</b><small id="shortsLabel">Toggle filter</small>
+        </button>
+        <button data-action="fullcontrol" id="fullControlAction">
+          <span>🧹</span><b>Full Control</b
+          ><small id="fullControlLabel">Distraction profile OFF</small>
+        </button>
+        <button data-action="modes">
+          <span>🎛️</span><b>Modes</b><small>Mode control center</small>
+        </button>
+        <button data-action="library">
+          <span>📚</span><b>YouTube Library</b><small>Channels, playlists & videos</small>
+        </button>
+        <button data-action="tech">
+          <span>⚙️</span><b>Tech Mode</b><small>Technology profiles</small>
+        </button>
+        <button data-action="languageLearning">
+          <span>🌐</span><b>Language Learning</b><small>Learning profiles</small>
+        </button>
+        <button data-action="niches">
+          <span>🎯</span><b>Niches Mode</b><small>Interest & niche profiles</small>
+        </button>
+        <button data-action="options">
+          <span>⚙️</span><b>Settings</b><small>Full control center</small></button
+        ><button data-action="about">
+          <span>ℹ️</span><b>About Me</b><small>About Charlie MJ YouTube</small>
+        </button>
+        <button data-action="openyt">
+          <span>▶️</span><b>YouTube</b><small>Open YouTube</small>
+        </button>
+      </div>
+      <section class="status-card">
+        <h3>Current status</h3>
+        <div id="status">Loading…</div>
+      </section>
+      <footer>Charlie MJ YouTube · v2.0.0</footer>
     </div>
-    <h3>Mode Switch</h3><select id="modeSwitch"><option value="general">General</option><option value="tech">Tech</option><option value="languageLearning">Language Learning</option><option value="niches">Niches</option><option value="productivity">Productivity</option><option value="custom">Custom</option></select><h3>Quick actions</h3>
-    <div class="grid">
-      <button data-action="scan"><span>🔎</span><b>Scan YouTube</b><small>Apply filters now</small></button>
-      <button data-action="adscan"><span>🛡️</span><b>Clean Ads</b><small>Scan ad surfaces</small></button>
-      <button data-action="block"><span>🚫</span><b>Block Video</b><small>Block current video</small></button>
-      <button data-action="shorts"><span>◉</span><b>Shorts</b><small id="shortsLabel">Toggle filter</small></button>
-      <button data-action="fullcontrol" id="fullControlAction"><span>🧹</span><b>Full Control</b><small id="fullControlLabel">Distraction profile OFF</small></button>
-      <button data-action="modes"><span>🎛️</span><b>Modes</b><small>Mode control center</small></button>
-      <button data-action="library"><span>📚</span><b>YouTube Library</b><small>Channels, playlists & videos</small></button>
-      <button data-action="tech"><span>⚙️</span><b>Tech Mode</b><small>Technology profiles</small></button>
-      <button data-action="languageLearning"><span>🌐</span><b>Language Learning</b><small>Learning profiles</small></button>
-      <button data-action="niches"><span>🎯</span><b>Niches Mode</b><small>Interest & niche profiles</small></button>
-      <button data-action="options"><span>⚙️</span><b>Settings</b><small>Full control center</small></button><button data-action="about"><span>ℹ️</span><b>About Me</b><small>About Charlie MJ YouTube</small></button>
-      <button data-action="openyt"><span>▶️</span><b>YouTube</b><small>Open YouTube</small></button>
-    </div>
-    <section class="status-card"><h3>Current status</h3><div id="status">Loading…</div></section>
-    <footer>Charlie MJ YouTube · v2.0.0</footer>
-  </div>
-  <script src="popup.js"></script>
-</body>
+    <script src="popup.js"></script>
+  </body>
 </html>

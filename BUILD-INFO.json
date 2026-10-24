@@ -1,9 +1,9 @@
 {
   "name": "Charlie MJ YouTube",
   "version": "2.0.0",
-  "build": "Final v2.0.0 Modes-in-Settings + Library + Database Sync",
+  "build": "Final v2.0.0 + YouTube Courses + All-Mode Library Profiles + Exact-ID Duplicate Protection",
   "manifestVersion": 3,
-  "generated": "2026-10-21",
+  "generated": "2026-10-24",
   "architecture": "local-first deterministic content intelligence",
   "languageMasterRecords": 7910,
   "countryFiles": 249,
@@ -29,5 +29,12 @@
     "src/library/library.html"
   ],
   "buildDate": "2026-10-22T11:04:00.543562+00:00",
-  "buildLabel": "v2.0.0 Modes + Toolbar + CSP fixes"
+  "buildLabel": "v2.0.0 Modes + Toolbar + CSP fixes",
+  "featuresAdded": [
+    "Exact identity duplicate protection: channelId for channels, playlistId for playlists, videoId for videos, and videoId/playlistId for courses; title similarity is never a duplicate key.",
+    "Dedicated YouTube Courses library tab with separate database/sync/download support.",
+    "YouTube Library Add URL dialog now supports General, Tech, Language Learning, Niches and Productivity mode/profile selection.",
+    "Library profile lists automatically refresh when Tech, Language Learning or Niche profiles change.",
+    "Added Productivity, Business and Fitness/Health niche profiles to the packaged Niche database."
+  ]
 }

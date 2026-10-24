@@ -1,3 +1,5 @@
+[← Main README](../README.md) · [Documentation index](README.md)
+
 # Import and Export
 
 Exports are self-identifying JSON documents.
@@ -15,3 +17,6 @@ Each export includes `exportType`, extension `version`, `exportedAt`, `source` a
 ## Data Sync Comparison and Exports
 
 The Data Sync page reads only `database/` from the selected extension directory. It can compare local and GitHub YouTube Library counts and Tech, Language Learning and Niches profile counts, while listing local-only, GitHub-only and content-different database paths. The Database Manager provides separate timestamped Channels, Playlists and Videos exports.
+
+---
+[← Main README](../README.md) · [Documentation index](README.md)

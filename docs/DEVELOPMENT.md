@@ -1,3 +1,5 @@
+[← Main README](../README.md) · [Documentation index](README.md)
+
 # Development Notes
 
 ## Runtime
@@ -22,3 +24,9 @@ Before packaging, validate all JSON files and run `node --check` against JavaScr
 ## Directory Selection and Sync Testing
 
 Use **Data Sync → Select Extension Directory** to select the unpacked extension root. The page reads only `database/`; it does not upload the complete extension directory. Test Compare with the same repository/branch used by the GitHub settings, then verify the Library and mode/profile count sections and detailed differences.
+
+## Code style
+Source files are formatted with Prettier (print width 100) and documented with file headers and JSDoc. See [CODE-STYLE](CODE-STYLE.md).
+
+---
+[← Main README](../README.md) · [Documentation index](README.md)

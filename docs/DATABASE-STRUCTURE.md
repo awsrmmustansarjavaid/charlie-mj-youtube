@@ -1,3 +1,5 @@
+[← Main README](../README.md) · [Documentation index](README.md)
+
 # Database Structure
 
 ```text
@@ -26,3 +28,6 @@ Static databases are versioned with the extension. User-owned runtime data is st
 ## Runtime Library Snapshot
 
 `database/youtube-library/library.json` is the runtime snapshot used for portable synchronization. It contains the canonical `channels`, `playlists`, `videos`, `favorites`, `categories` and `collections` arrays. Favorites are derived from canonical video records.
+
+---
+[← Main README](../README.md) · [Documentation index](README.md)

@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "exportedAt": "2026-10-23T17:21:51.948Z",
+  "exportedAt": "2026-10-24T09:17:44.113Z",
   "techProfiles": [
     {
       "categories": {
@@ -1138,6 +1138,1060 @@
       "description": "Thoughtful life advice, stories and practical wisdom from older generations and experienced people.",
       "id": "life-wisdom-older-generation",
       "name": "Life Wisdom & Advice",
+      "targetLanguage": "en"
+    },
+    {
+      "categories": {
+        "Daily Hygiene": [
+          "personal hygiene",
+          "daily hygiene routine",
+          "morning hygiene routine",
+          "night hygiene routine",
+          "shower routine",
+          "bath routine",
+          "body hygiene",
+          "hand hygiene",
+          "foot hygiene",
+          "hygiene habits",
+          "personal cleanliness",
+          "hygiene tips",
+          "grooming routine",
+          "self care routine"
+        ],
+        "Fragrance & Appearance": [
+          "fragrance",
+          "perfume basics",
+          "cologne basics",
+          "how to apply perfume",
+          "fragrance layering",
+          "personal scent",
+          "grooming essentials",
+          "personal presentation",
+          "looking well groomed",
+          "everyday grooming"
+        ],
+        "Haircare": [
+          "haircare routine",
+          "hair washing",
+          "shampoo technique",
+          "conditioner technique",
+          "hair brushing",
+          "hair styling",
+          "hair grooming",
+          "scalp care",
+          "hair maintenance",
+          "men's haircare",
+          "women's haircare",
+          "curly hair care",
+          "straight hair care"
+        ],
+        "Nail & Hand Care": [
+          "nail care",
+          "nail trimming",
+          "manicure basics",
+          "pedicure basics",
+          "hand care",
+          "cuticle care",
+          "nail hygiene",
+          "foot care",
+          "healthy nails",
+          "at home manicure"
+        ],
+        "Oral Care": [
+          "oral hygiene",
+          "teeth brushing",
+          "proper brushing technique",
+          "flossing",
+          "mouthwash",
+          "tongue cleaning",
+          "dental hygiene routine",
+          "toothbrush care",
+          "healthy teeth habits",
+          "fresh breath",
+          "oral care for beginners"
+        ],
+        "Shaving & Beard Grooming": [
+          "shaving",
+          "shaving for beginners",
+          "wet shaving",
+          "electric shaving",
+          "beard grooming",
+          "beard trimming",
+          "beard shaping",
+          "mustache grooming",
+          "razor care",
+          "shaving routine",
+          "aftershave routine",
+          "beard care"
+        ],
+        "Skincare": [
+          "skincare routine",
+          "skincare for beginners",
+          "face cleansing",
+          "facial moisturizer",
+          "sunscreen routine",
+          "skin hydration",
+          "basic skincare",
+          "morning skincare",
+          "night skincare",
+          "body skincare",
+          "skin exfoliation",
+          "skin care tips"
+        ]
+      },
+      "contentLanguages": [
+        "en"
+      ],
+      "description": "Practical personal grooming, hygiene, skincare, haircare, oral care, body care, grooming routines and everyday self-care skills.",
+      "id": "personal-grooming-hygiene-care",
+      "name": "Personal Grooming & Hygiene Care",
+      "targetLanguage": "en"
+    },
+    {
+      "categories": {
+        "Ancient Civilizations": [
+          "ancient Egypt",
+          "ancient Rome",
+          "ancient Greece",
+          "Mesopotamia",
+          "ancient Persia",
+          "Maya civilization",
+          "Aztec civilization",
+          "Inca civilization",
+          "ancient China",
+          "ancient India",
+          "ancient civilizations",
+          "archaeology documentaries"
+        ],
+        "Archaeology": [
+          "archaeology documentaries",
+          "archaeological discoveries",
+          "ancient ruins",
+          "lost cities",
+          "archaeological excavation",
+          "ancient artifacts",
+          "historical artifacts",
+          "archaeological mysteries",
+          "underwater archaeology"
+        ],
+        "Culture & Society": [
+          "cultural documentaries",
+          "society documentaries",
+          "human culture",
+          "anthropology documentaries",
+          "religion and culture documentaries",
+          "language documentaries",
+          "traditions around the world",
+          "social issues documentaries",
+          "human stories"
+        ],
+        "Geography & Exploration": [
+          "geography documentaries",
+          "world geography",
+          "travel documentaries",
+          "exploration documentaries",
+          "mountain documentaries",
+          "river documentaries",
+          "island documentaries",
+          "remote places",
+          "world cultures",
+          "geographical discoveries"
+        ],
+        "History Documentaries": [
+          "history documentaries",
+          "world history",
+          "ancient history",
+          "medieval history",
+          "modern history",
+          "military history",
+          "political history",
+          "social history",
+          "economic history",
+          "historical events",
+          "historical biographies",
+          "historical mysteries"
+        ],
+        "Mysteries & Investigations": [
+          "mystery documentaries",
+          "historical mysteries",
+          "unsolved mysteries",
+          "archaeological mysteries",
+          "investigative documentaries",
+          "true crime documentaries",
+          "missing history",
+          "unknown discoveries",
+          "historical investigations"
+        ],
+        "Nature & Wildlife": [
+          "nature documentaries",
+          "wildlife documentaries",
+          "animal documentaries",
+          "ocean documentaries",
+          "marine life",
+          "rainforest documentaries",
+          "desert wildlife",
+          "bird documentaries",
+          "big cats documentaries",
+          "conservation documentaries",
+          "ecosystems",
+          "natural world"
+        ],
+        "Science Documentaries": [
+          "science documentaries",
+          "physics documentaries",
+          "chemistry documentaries",
+          "biology documentaries",
+          "astronomy documentaries",
+          "space documentaries",
+          "quantum physics documentaries",
+          "evolution documentaries",
+          "human biology documentaries",
+          "scientific discoveries",
+          "science explained"
+        ],
+        "Technology & Engineering Documentaries": [
+          "technology documentaries",
+          "engineering documentaries",
+          "industrial documentaries",
+          "invention documentaries",
+          "computer history",
+          "internet history",
+          "space technology",
+          "transportation technology",
+          "engineering breakthroughs",
+          "future technology"
+        ]
+      },
+      "contentLanguages": [
+        "en"
+      ],
+      "description": "Documentary-style learning across history, geography, science, nature, archaeology, technology, culture and major world events.",
+      "id": "documentaries-history-science-culture",
+      "name": "Documentaries, History, Science & Culture",
+      "targetLanguage": "en"
+    },
+    {
+      "categories": {
+        "Instrument Lessons": [
+          "piano lessons",
+          "guitar lessons",
+          "ukulele lessons",
+          "violin lessons",
+          "cello lessons",
+          "flute lessons",
+          "saxophone lessons",
+          "drum lessons",
+          "tabla lessons",
+          "beginner instrument lessons",
+          "instrument practice",
+          "instrument technique",
+          "music practice routine"
+        ],
+        "Music Instruments": [
+          "piano",
+          "guitar",
+          "acoustic guitar",
+          "electric guitar",
+          "bass guitar",
+          "ukulele",
+          "violin",
+          "cello",
+          "flute",
+          "clarinet",
+          "saxophone",
+          "trumpet",
+          "harmonica",
+          "drums",
+          "percussion",
+          "tabla",
+          "sitar",
+          "oud",
+          "mandolin",
+          "harp"
+        ],
+        "Music Production": [
+          "music production",
+          "home recording",
+          "music recording",
+          "mixing music",
+          "mastering music",
+          "beat making",
+          "MIDI",
+          "DAW",
+          "digital audio workstation",
+          "sound design",
+          "vocal recording",
+          "audio editing",
+          "music studio"
+        ],
+        "Music Theory": [
+          "music theory",
+          "musical notes",
+          "scales",
+          "chords",
+          "chord progressions",
+          "rhythm",
+          "melody",
+          "harmony",
+          "ear training",
+          "sight reading",
+          "sheet music",
+          "music notation",
+          "music intervals",
+          "key signatures",
+          "time signatures"
+        ],
+        "Poetry Writing": [
+          "poetry",
+          "poetry writing",
+          "writing poems",
+          "poetry prompts",
+          "poetic imagery",
+          "metaphor",
+          "simile",
+          "alliteration",
+          "rhyme",
+          "free verse",
+          "sonnet",
+          "haiku",
+          "limerick",
+          "narrative poetry",
+          "lyric poetry",
+          "prose poetry",
+          "poetry editing",
+          "poetry revision"
+        ],
+        "Songwriting & Composition": [
+          "songwriting",
+          "writing songs",
+          "song lyrics",
+          "melody writing",
+          "music composition",
+          "song structure",
+          "verse chorus",
+          "bridge writing",
+          "hook writing",
+          "chord progression writing",
+          "instrumental composition",
+          "music arrangement",
+          "orchestration"
+        ],
+        "Spoken Word & Performance": [
+          "spoken word poetry",
+          "slam poetry",
+          "poetry performance",
+          "poetry reading",
+          "poetry recital",
+          "open mic poetry",
+          "performance poetry",
+          "creative expression",
+          "poetry storytelling",
+          "poetry voice and delivery"
+        ]
+      },
+      "contentLanguages": [
+        "en"
+      ],
+      "description": "Learning, creating, performing and appreciating music and poetry, including instruments, songwriting, composition, poetry writing and spoken word.",
+      "id": "music-poetry",
+      "name": "Music & Poetry",
+      "targetLanguage": "en"
+    },
+    {
+      "categories": {
+        "Confidence & Self-Esteem": [
+          "self confidence",
+          "building confidence",
+          "self esteem",
+          "healthy self esteem",
+          "self acceptance",
+          "positive self talk",
+          "confidence habits",
+          "personal confidence",
+          "overcoming self doubt"
+        ],
+        "Digital & Mental Wellbeing": [
+          "digital wellbeing",
+          "social media wellbeing",
+          "screen time management",
+          "digital detox",
+          "healthy technology habits",
+          "online boundaries",
+          "phone addiction awareness",
+          "balanced digital life"
+        ],
+        "Emotional Wellbeing": [
+          "emotional wellbeing",
+          "emotional health",
+          "self awareness",
+          "emotional awareness",
+          "understanding emotions",
+          "emotional regulation",
+          "healthy emotional habits",
+          "self reflection",
+          "personal wellbeing"
+        ],
+        "Mindfulness & Meditation": [
+          "meditation",
+          "meditation for beginners",
+          "mindfulness meditation",
+          "guided meditation",
+          "breathing meditation",
+          "body scan meditation",
+          "mindful living",
+          "present moment awareness",
+          "mindfulness exercises",
+          "daily meditation"
+        ],
+        "Professional Support Awareness": [
+          "mental health education",
+          "therapy education",
+          "counseling awareness",
+          "psychology education",
+          "when to seek professional help",
+          "mental health resources",
+          "mental health conversations",
+          "supporting emotional wellbeing"
+        ],
+        "Resilience & Life Challenges": [
+          "resilience",
+          "building resilience",
+          "coping with change",
+          "handling setbacks",
+          "personal growth",
+          "emotional resilience",
+          "adapting to change",
+          "life challenges",
+          "healthy coping strategies"
+        ],
+        "Sleep & Rest Habits": [
+          "sleep routine",
+          "healthy sleep habits",
+          "sleep hygiene",
+          "bedtime routine",
+          "relaxation before sleep",
+          "rest and recovery",
+          "digital detox before bed",
+          "morning routine",
+          "evening routine"
+        ],
+        "Stress Management": [
+          "stress management",
+          "stress relief",
+          "managing daily stress",
+          "relaxation techniques",
+          "breathing exercises",
+          "mindfulness",
+          "mindfulness practice",
+          "relaxation routine",
+          "work stress management",
+          "stress coping skills"
+        ]
+      },
+      "contentLanguages": [
+        "en"
+      ],
+      "description": "Educational and practical content about emotional wellbeing, stress management, healthy habits, self-awareness, resilience and personal self-care.",
+      "id": "personal-mental-wellness",
+      "name": "Personal Mental Wellness & Self-Care",
+      "targetLanguage": "en"
+    },
+    {
+      "categories": {
+        "Breakups & Relationship Recovery": [
+          "breakup advice",
+          "healing after breakup",
+          "relationship recovery",
+          "moving on after relationship",
+          "relationship lessons",
+          "healthy separation",
+          "emotional recovery",
+          "relationship closure"
+        ],
+        "Communication Skills": [
+          "communication skills",
+          "effective communication",
+          "active listening",
+          "difficult conversations",
+          "conflict resolution",
+          "emotional communication",
+          "assertive communication",
+          "communication in relationships",
+          "healthy boundaries"
+        ],
+        "Dating & Relationships": [
+          "dating advice",
+          "healthy dating",
+          "relationship advice",
+          "relationship communication",
+          "building healthy relationships",
+          "relationship compatibility",
+          "dating conversations",
+          "long term relationships",
+          "relationship growth",
+          "relationship problems"
+        ],
+        "Family & Parenting Relationships": [
+          "family relationships",
+          "family communication",
+          "parent child relationships",
+          "healthy family habits",
+          "family conflict resolution",
+          "family wellbeing",
+          "relationship with parents",
+          "relationship with children"
+        ],
+        "Life Coaching": [
+          "life coaching",
+          "personal coaching",
+          "life advice",
+          "personal development",
+          "goal setting",
+          "life goals",
+          "personal growth",
+          "self improvement",
+          "finding purpose",
+          "life direction",
+          "decision making",
+          "life planning"
+        ],
+        "Marriage & Wedding Life": [
+          "marriage advice",
+          "marriage communication",
+          "healthy marriage",
+          "marriage podcast",
+          "wedding planning",
+          "wedding advice",
+          "engagement advice",
+          "newlywed advice",
+          "married life",
+          "building a strong marriage",
+          "marriage goals",
+          "couples conversations"
+        ],
+        "Professional Life": [
+          "professional development",
+          "career growth",
+          "work life balance",
+          "leadership development",
+          "workplace communication",
+          "professional confidence",
+          "career decisions",
+          "career transitions",
+          "professional relationships",
+          "workplace wellbeing"
+        ],
+        "Relationship Podcasts": [
+          "relationship podcast",
+          "marriage podcast",
+          "dating podcast",
+          "couples podcast",
+          "life coaching podcast",
+          "personal development podcast",
+          "relationship interviews",
+          "relationship discussions",
+          "love and relationship conversations"
+        ]
+      },
+      "contentLanguages": [
+        "en"
+      ],
+      "description": "Personal development, life coaching, communication, relationships, dating, marriage, family life and relationship-focused conversations and podcasts.",
+      "id": "life-coaching-relationships-marriage",
+      "name": "Life Coaching, Relationships & Marriage",
+      "targetLanguage": "en"
+    },
+    {
+      "categories": {
+        "Business & Entrepreneurship Podcasts": [
+          "business podcast",
+          "entrepreneurship podcast",
+          "startup podcast",
+          "founder podcast",
+          "small business podcast",
+          "marketing podcast",
+          "sales podcast",
+          "finance business podcast",
+          "business strategy podcast",
+          "CEO podcast",
+          "company building podcast"
+        ],
+        "Career Podcasts": [
+          "career podcast",
+          "career advice podcast",
+          "job search podcast",
+          "career development podcast",
+          "leadership podcast",
+          "workplace podcast",
+          "professional growth podcast",
+          "career change podcast",
+          "interview podcast careers"
+        ],
+        "Creative Podcasts": [
+          "creative podcast",
+          "art podcast",
+          "music podcast",
+          "poetry podcast",
+          "writing podcast",
+          "photography podcast",
+          "design podcast",
+          "fashion podcast"
+        ],
+        "Education & Learning Podcasts": [
+          "education podcast",
+          "learning podcast",
+          "history podcast",
+          "science podcast",
+          "language learning podcast",
+          "book podcast",
+          "knowledge podcast",
+          "documentary podcast"
+        ],
+        "Fitness Podcasts": [
+          "fitness podcast",
+          "workout podcast",
+          "strength training podcast",
+          "running podcast",
+          "sports performance podcast",
+          "fitness motivation podcast",
+          "healthy lifestyle podcast",
+          "exercise science podcast"
+        ],
+        "Health Podcasts": [
+          "health podcast",
+          "wellness podcast",
+          "health education podcast",
+          "nutrition podcast",
+          "healthy lifestyle podcast",
+          "medical education podcast",
+          "health science podcast"
+        ],
+        "Mental Wellness Podcasts": [
+          "mental wellness podcast",
+          "mental health podcast",
+          "mindfulness podcast",
+          "self care podcast",
+          "stress management podcast",
+          "psychology podcast",
+          "personal wellbeing podcast"
+        ],
+        "Personal Development Podcasts": [
+          "personal development podcast",
+          "self improvement podcast",
+          "motivation podcast",
+          "life coaching podcast",
+          "productivity podcast",
+          "habits podcast",
+          "confidence podcast",
+          "personal growth podcast"
+        ],
+        "Relationships & Marriage Podcasts": [
+          "relationship podcast",
+          "marriage podcast",
+          "dating podcast",
+          "couples podcast",
+          "love podcast",
+          "family podcast",
+          "relationship advice podcast"
+        ],
+        "Society & Culture Podcasts": [
+          "culture podcast",
+          "society podcast",
+          "social issues podcast",
+          "current affairs podcast",
+          "interview podcast",
+          "storytelling podcast",
+          "human interest podcast"
+        ],
+        "Sports Podcasts": [
+          "sports podcast",
+          "football podcast",
+          "soccer podcast",
+          "cricket podcast",
+          "basketball podcast",
+          "tennis podcast",
+          "sports analysis podcast",
+          "athlete interview podcast"
+        ],
+        "Technology Podcasts": [
+          "technology podcast",
+          "AI podcast",
+          "artificial intelligence podcast",
+          "software podcast",
+          "programming podcast",
+          "cybersecurity podcast",
+          "future technology podcast",
+          "innovation podcast",
+          "tech news podcast"
+        ]
+      },
+      "contentLanguages": [
+        "en"
+      ],
+      "description": "Broad podcast discovery across careers, business, health, fitness, relationships, technology, education, culture, creativity, personal development and everyday life.",
+      "id": "podcasts-all-topics",
+      "name": "Podcasts — All Topics",
+      "targetLanguage": "en"
+    },
+    {
+      "categories": {
+        "Business Ideas": [
+          "unique business ideas",
+          "small business ideas",
+          "startup ideas",
+          "online business ideas",
+          "creative business ideas",
+          "side hustle ideas",
+          "service business ideas",
+          "product ideas",
+          "business innovation"
+        ],
+        "Creative Experiments": [
+          "creative experiments",
+          "science experiments",
+          "art experiments",
+          "DIY experiments",
+          "maker experiments",
+          "creative challenges",
+          "interesting experiments",
+          "experimental projects"
+        ],
+        "Creative Ideas": [
+          "unique ideas",
+          "creative ideas",
+          "creative thinking",
+          "idea generation",
+          "creative projects",
+          "interesting ideas",
+          "unusual ideas",
+          "innovative ideas",
+          "original ideas",
+          "creative inspiration"
+        ],
+        "Future Ideas": [
+          "future ideas",
+          "future technology",
+          "future lifestyle",
+          "future inventions",
+          "future of work",
+          "future cities",
+          "future education",
+          "future business ideas",
+          "emerging ideas",
+          "innovation trends"
+        ],
+        "Inventions & DIY Innovation": [
+          "inventions",
+          "simple inventions",
+          "DIY inventions",
+          "creative inventions",
+          "useful inventions",
+          "home inventions",
+          "engineering ideas",
+          "prototype ideas",
+          "invention projects",
+          "maker projects"
+        ],
+        "Life Hacks & Clever Solutions": [
+          "life hacks",
+          "useful life hacks",
+          "clever life hacks",
+          "everyday solutions",
+          "home hacks",
+          "organization hacks",
+          "productivity hacks",
+          "budget hacks",
+          "travel hacks",
+          "creative household solutions"
+        ],
+        "Problem Solving": [
+          "problem solving",
+          "creative problem solving",
+          "design thinking",
+          "lateral thinking",
+          "critical thinking",
+          "brainstorming",
+          "decision making",
+          "practical solutions",
+          "clever solutions"
+        ],
+        "Unusual Knowledge": [
+          "interesting facts",
+          "unusual facts",
+          "hidden knowledge",
+          "unknown inventions",
+          "strange history",
+          "unusual discoveries",
+          "curious ideas",
+          "interesting concepts"
+        ]
+      },
+      "contentLanguages": [
+        "en"
+      ],
+      "description": "Unusual ideas, creative problem solving, inventions, experiments, unconventional projects, clever solutions and innovative ways of thinking.",
+      "id": "unique-ideas-innovation",
+      "name": "Unique Ideas, Creativity & Innovation",
+      "targetLanguage": "en"
+    },
+    {
+      "categories": {
+        "Flowers & Ornamental Plants": [
+          "flower gardening",
+          "flower garden",
+          "growing flowers",
+          "rose gardening",
+          "flower planting",
+          "ornamental plants",
+          "flower bed design",
+          "cut flower garden",
+          "seasonal flowers",
+          "pollinator garden"
+        ],
+        "Garden Design & Landscaping": [
+          "garden design",
+          "landscaping",
+          "landscape gardening",
+          "small garden design",
+          "backyard garden",
+          "front yard landscaping",
+          "garden paths",
+          "raised beds",
+          "container garden design",
+          "vertical garden"
+        ],
+        "Gardening Basics": [
+          "gardening",
+          "gardening for beginners",
+          "home gardening",
+          "garden planning",
+          "garden maintenance",
+          "gardening tips",
+          "beginner gardener",
+          "garden tools",
+          "garden calendar",
+          "garden routine"
+        ],
+        "Indoor Plants": [
+          "indoor plants",
+          "houseplants",
+          "indoor gardening",
+          "houseplant care",
+          "low light plants",
+          "easy houseplants",
+          "indoor plant propagation",
+          "plant watering",
+          "plant repotting",
+          "plant care routine"
+        ],
+        "Pest & Plant Care": [
+          "garden pests",
+          "natural pest control",
+          "plant diseases",
+          "plant problems",
+          "yellow leaves",
+          "overwatering plants",
+          "underwatering plants",
+          "pruning",
+          "plant nutrition",
+          "garden troubleshooting"
+        ],
+        "Plant Propagation": [
+          "plant propagation",
+          "propagating plants",
+          "cuttings",
+          "water propagation",
+          "seed propagation",
+          "seed starting",
+          "plant division",
+          "grafting",
+          "air layering",
+          "propagation techniques"
+        ],
+        "Soil & Compost": [
+          "garden soil",
+          "soil preparation",
+          "soil testing",
+          "composting",
+          "home composting",
+          "compost bin",
+          "organic compost",
+          "mulching",
+          "garden fertilizer",
+          "organic gardening"
+        ],
+        "Sustainable Gardening": [
+          "sustainable gardening",
+          "organic gardening",
+          "water saving garden",
+          "rainwater gardening",
+          "companion planting",
+          "natural pest control",
+          "pollinator gardening",
+          "wildlife garden",
+          "eco friendly gardening"
+        ],
+        "Vegetable Gardening": [
+          "vegetable gardening",
+          "growing vegetables",
+          "kitchen garden",
+          "home vegetable garden",
+          "tomato growing",
+          "pepper growing",
+          "cucumber growing",
+          "potato growing",
+          "carrot growing",
+          "lettuce growing",
+          "herb garden"
+        ]
+      },
+      "contentLanguages": [
+        "en"
+      ],
+      "description": "Home gardening, vegetable gardening, flowers, indoor plants, landscaping, composting, propagation and practical horticulture skills.",
+      "id": "gardening-plants",
+      "name": "Gardening, Plants & Horticulture",
+      "targetLanguage": "en"
+    },
+    {
+      "categories": {
+        "Candle & Soap Making": [
+          "candle making",
+          "homemade candles",
+          "soy candle making",
+          "candle design",
+          "soap making",
+          "cold process soap",
+          "melt and pour soap",
+          "handmade soap",
+          "soap design",
+          "home fragrance crafts"
+        ],
+        "Embroidery & Needlework": [
+          "embroidery",
+          "hand embroidery",
+          "embroidery stitches",
+          "cross stitch",
+          "needlepoint",
+          "embroidery patterns",
+          "thread art",
+          "needlework",
+          "decorative stitching",
+          "hand stitched crafts"
+        ],
+        "Jewelry Making": [
+          "jewelry making",
+          "jewelry design",
+          "beaded jewelry",
+          "wire jewelry",
+          "handmade earrings",
+          "handmade bracelets",
+          "handmade necklaces",
+          "jewelry making for beginners",
+          "beadwork",
+          "jewelry techniques"
+        ],
+        "Knitting & Crochet": [
+          "knitting",
+          "knitting for beginners",
+          "crochet",
+          "crochet for beginners",
+          "knitting stitches",
+          "crochet stitches",
+          "knitting patterns",
+          "crochet patterns",
+          "amigurumi",
+          "hand knitted crafts"
+        ],
+        "Leathercraft": [
+          "leathercraft",
+          "leather working",
+          "leather crafting for beginners",
+          "leather wallet making",
+          "leather bag making",
+          "leather tooling",
+          "leather stitching",
+          "leather carving",
+          "leather projects"
+        ],
+        "Miniatures & Model Making": [
+          "miniature making",
+          "model making",
+          "miniature crafts",
+          "dollhouse making",
+          "scale models",
+          "miniature painting",
+          "model building",
+          "diorama making",
+          "miniature woodworking"
+        ],
+        "Paper Crafts": [
+          "paper crafts",
+          "origami",
+          "paper flowers",
+          "paper quilling",
+          "paper cutting",
+          "card making",
+          "scrapbooking",
+          "paper sculpture",
+          "handmade cards",
+          "paper art"
+        ],
+        "Pottery & Ceramics": [
+          "pottery",
+          "pottery for beginners",
+          "ceramics",
+          "clay art",
+          "wheel throwing",
+          "hand building pottery",
+          "pottery glazing",
+          "ceramic painting",
+          "ceramic crafts",
+          "clay sculpting"
+        ],
+        "Upcycling & Handmade DIY": [
+          "upcycling",
+          "upcycled crafts",
+          "recycled crafts",
+          "DIY handmade crafts",
+          "repurposing materials",
+          "creative reuse",
+          "upcycled furniture",
+          "upcycled clothing",
+          "sustainable crafts",
+          "zero waste crafts"
+        ],
+        "Weaving & Fiber Arts": [
+          "weaving",
+          "hand weaving",
+          "loom weaving",
+          "fiber art",
+          "textile crafts",
+          "macrame",
+          "macrame for beginners",
+          "fiber crafts",
+          "handmade textiles"
+        ],
+        "Woodworking": [
+          "woodworking",
+          "woodworking for beginners",
+          "wood carving",
+          "wood furniture",
+          "woodworking projects",
+          "hand tools woodworking",
+          "wood joinery",
+          "wood finishing",
+          "wooden crafts",
+          "DIY woodworking"
+        ]
+      },
+      "contentLanguages": [
+        "en"
+      ],
+      "country": "GLOBAL",
+      "description": "Practical handmade skills including woodworking, pottery, knitting, crochet, embroidery, leatherwork, jewelry, paper crafts and other maker skills.",
+      "id": "handmade-skills",
+      "name": "Handmade Skills & Crafts",
       "targetLanguage": "en"
     }
   ],

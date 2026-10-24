@@ -1,6 +1,209 @@
-:root{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#eef2f7;background:#09101d}*{box-sizing:border-box}body{margin:0;width:380px;background:#09101d}.app{padding:16px}header{display:flex;align-items:center;gap:10px;margin-bottom:14px}header img{width:38px;height:38px;border-radius:9px}header b,header small{display:block}header small{font-size:11px;color:#8390a8;margin-top:2px}.hero{display:flex;justify-content:space-between;align-items:center;background:#111b2e;border:1px solid #263550;border-radius:13px;padding:13px 14px;margin-bottom:10px}.eyebrow{display:block;font-size:9px;letter-spacing:.12em;color:#7f8da7;margin-bottom:3px}.hero strong{font-size:13px}.switch{width:44px;height:25px;border:0;border-radius:99px;background:#33425b;padding:3px;cursor:pointer}.switch span{display:block;width:19px;height:19px;border-radius:50%;background:#d9dfeb;transition:.18s}.switch.on{background:#e62f5e}.switch.on span{transform:translateX(19px);background:#fff}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:16px}.stats>div{background:#0f1728;border:1px solid #202e47;border-radius:10px;padding:10px;text-align:center}.stats b,.stats small{display:block}.stats b{font-size:18px}.stats small{font-size:9px;color:#8491a9;margin-top:3px}h3{font-size:12px;margin:0 0 8px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.grid button{min-height:72px;text-align:left;background:#111b2e;border:1px solid #263550;border-radius:11px;color:#eef2f7;padding:10px;cursor:pointer}.grid button:hover{border-color:#ff3d68;background:#16223a}.grid span{font-size:16px;display:block;margin-bottom:5px}.grid b,.grid small{display:block}.grid b{font-size:11px}.grid small{font-size:9px;color:#7f8da7;margin-top:2px}.status-card{margin-top:14px;background:#0f1728;border:1px solid #202e47;border-radius:11px;padding:11px;font-size:11px;line-height:1.7}.status-card h3{margin-bottom:5px}.status-card b{color:#fff}footer{text-align:center;color:#68768f;font-size:9px;margin-top:13px}.popup-toast{position:fixed;right:12px;bottom:12px;max-width:340px;padding:10px 12px;border-radius:9px;background:#17233a;border:1px solid #334563;color:#fff;font-size:11px;box-shadow:0 10px 30px rgba(0,0,0,.35);z-index:10}.popup-toast.warn{border-color:#a17a35}.popup-toast.error{border-color:#a64251}
+/* ==========================================================================
+   Popup layout and theme.
+   ========================================================================== */
 
+:root {
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  color: #eef2f7;
+  background: #09101d;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  width: 380px;
+  background: #09101d;
+}
+.app {
+  padding: 16px;
+}
+header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+header img {
+  width: 38px;
+  height: 38px;
+  border-radius: 9px;
+}
+header b,
+header small {
+  display: block;
+}
+header small {
+  font-size: 11px;
+  color: #8390a8;
+  margin-top: 2px;
+}
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #111b2e;
+  border: 1px solid #263550;
+  border-radius: 13px;
+  padding: 13px 14px;
+  margin-bottom: 10px;
+}
+.eyebrow {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  color: #7f8da7;
+  margin-bottom: 3px;
+}
+.hero strong {
+  font-size: 13px;
+}
+.switch {
+  width: 44px;
+  height: 25px;
+  border: 0;
+  border-radius: 99px;
+  background: #33425b;
+  padding: 3px;
+  cursor: pointer;
+}
+.switch span {
+  display: block;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  background: #d9dfeb;
+  transition: 0.18s;
+}
+.switch.on {
+  background: #e62f5e;
+}
+.switch.on span {
+  transform: translateX(19px);
+  background: #fff;
+}
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.stats > div {
+  background: #0f1728;
+  border: 1px solid #202e47;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+}
+.stats b,
+.stats small {
+  display: block;
+}
+.stats b {
+  font-size: 18px;
+}
+.stats small {
+  font-size: 9px;
+  color: #8491a9;
+  margin-top: 3px;
+}
+h3 {
+  font-size: 12px;
+  margin: 0 0 8px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.grid button {
+  min-height: 72px;
+  text-align: left;
+  background: #111b2e;
+  border: 1px solid #263550;
+  border-radius: 11px;
+  color: #eef2f7;
+  padding: 10px;
+  cursor: pointer;
+}
+.grid button:hover {
+  border-color: #ff3d68;
+  background: #16223a;
+}
+.grid span {
+  font-size: 16px;
+  display: block;
+  margin-bottom: 5px;
+}
+.grid b,
+.grid small {
+  display: block;
+}
+.grid b {
+  font-size: 11px;
+}
+.grid small {
+  font-size: 9px;
+  color: #7f8da7;
+  margin-top: 2px;
+}
+.status-card {
+  margin-top: 14px;
+  background: #0f1728;
+  border: 1px solid #202e47;
+  border-radius: 11px;
+  padding: 11px;
+  font-size: 11px;
+  line-height: 1.7;
+}
+.status-card h3 {
+  margin-bottom: 5px;
+}
+.status-card b {
+  color: #fff;
+}
+footer {
+  text-align: center;
+  color: #68768f;
+  font-size: 9px;
+  margin-top: 13px;
+}
+.popup-toast {
+  position: fixed;
+  right: 12px;
+  bottom: 12px;
+  max-width: 340px;
+  padding: 10px 12px;
+  border-radius: 9px;
+  background: #17233a;
+  border: 1px solid #334563;
+  color: #fff;
+  font-size: 11px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  z-index: 10;
+}
+.popup-toast.warn {
+  border-color: #a17a35;
+}
+.popup-toast.error {
+  border-color: #a64251;
+}
 
-.grid{grid-template-columns:repeat(3,minmax(0,1fr));}
-.grid button.active{border-color:#ff3d68;box-shadow:0 0 0 1px rgba(255,61,104,.25) inset;}
-@media(max-width:360px){.grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+.grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.grid button.active {
+  border-color: #ff3d68;
+  box-shadow: 0 0 0 1px rgba(255, 61, 104, 0.25) inset;
+}
+@media (max-width: 360px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

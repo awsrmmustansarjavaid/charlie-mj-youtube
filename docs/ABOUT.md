@@ -1,3 +1,5 @@
+[← Main README](../README.md) · [Documentation index](README.md)
+
 # About Charlie MJ YouTube
 
 Charlie MJ YouTube 2.0.0 is a local-first Chrome MV3 extension for YouTube content intelligence, technology learning, language learning, productivity controls, filtering and library organization.
@@ -19,3 +21,6 @@ Normal user-facing notifications are rendered as bottom-right in-app toasts. You
 ## 2.0.0 Data Boundary Note
 
 Data Sync and database exports operate on the `database/` scope. Runtime YouTube Library and mode/profile snapshots are designed for portable synchronization, while generated Chrome `_metadata/` content is excluded.
+
+---
+[← Main README](../README.md) · [Documentation index](README.md)

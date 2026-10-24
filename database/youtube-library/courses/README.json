@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "type": "youtube-courses",
+  "description": "Dedicated storage for saved long-form YouTube courses. Runtime records are stored in chrome.storage.local.youtubeLibrary.courses and exported separately to courses.json plus the consolidated library.json.",
+  "identity": [
+    "videoId",
+    "playlistId",
+    "canonical URL"
+  ]
+}

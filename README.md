@@ -10,6 +10,7 @@ Charlie MJ YouTube is a lightweight, local-first Chrome MV3 extension for YouTub
 - **Language Learning** — learning-language profiles backed by the same 7,000+ master language catalog used throughout the extension.
 - **Productivity** — focus and distraction behavior.
 - **Custom** — user-defined rules.
+- **Niches** — focused discovery with its own profiles, target country and content languages.
 
 ## Download
 
@@ -27,77 +28,44 @@ Charlie MJ YouTube is a lightweight, local-first Chrome MV3 extension for YouTub
 
 Only one runtime mode is active at a time, preventing mode conflicts.
 
-## Unified language system
-`database/languages/languages.json` is the single language source for Target Language, Tech Mode and Language Learning Mode. Country selection can automatically suggest national/official languages using `database/countries/language-map.json`, while manual language selection remains fully available.
+## Install (unpacked)
+1. Download and unzip the release.
+2. Open `chrome://extensions` and enable **Developer mode**.
+3. Click **Load unpacked** and select the folder that contains `manifest.json`.
+4. Open YouTube. The floating **CMJ** toolbar appears at the bottom of the page.
 
-## Profile databases
-Every packaged Tech profile and Language Learning profile has its own JSON file and index. Runtime-created custom profiles remain in Chrome storage and can be exported independently.
-
-## YouTube Library
-The Library provides Channels, Playlists, Favorite Videos, Categories and Collections in a grid-style workspace. Saved YouTube URLs can fetch original thumbnails and publicly available metadata. Channel, playlist and video cards support manual refresh; stale data can also refresh automatically.
-
-## Self-identifying exports
-Exports include a clear filename and metadata such as `exportType`, `version`, `exportedAt`, `source` and `items`.
-
-Examples:
-- `youtube-library-channel-YYYYMMDD_HHMMSS.json`
-- `youtube-library-playlist-YYYYMMDD_HHMMSS.json`
-- `youtube-library-video-YYYYMMDD_HHMMSS.json`
-- `tech-profile-devops-YYYYMMDD_HHMMSS.json`
-- `language-profile-turkish-learning-YYYYMMDD_HHMMSS.json`
-
-## Duplicate protection
-YouTube Library duplicate protection is enabled by default and is configurable in **Settings → Data Sync**. Channel, playlist and video saves are checked by stable YouTube IDs and normalized URLs. A duplicate save is rejected with a bottom-right in-app notification instead of creating a second record. Imports also respect the duplicate-protection setting.
-
-## Notifications
-User-facing notifications use an in-app bottom-right toast style. The extension does not rely on Chrome desktop notification popups for normal extension events. YouTube-page notifications are rendered inside the YouTube page at the bottom-right.
+## Highlights
+- **Target Feed** — General, Tech, Language Learning and Niches replace YouTube's Home grid with a feed built from your country, language and profile, with infinite scroll and a `Mode:` subtitle. See [TARGET-FEED](docs/TARGET-FEED.md).
+- **Unified language system** — `database/languages/languages.json` (7,910 languages) is the single source for Target Language, Tech, Language Learning and Niches. See [LANGUAGE-CATALOG](docs/LANGUAGE-CATALOG.md).
+- **Profile databases** — every packaged Tech, Language Learning and Niches profile is its own JSON file; custom profiles live in Chrome storage. See [PROFILE-DATABASE](docs/PROFILE-DATABASE.md).
+- **YouTube Library** — Channels, Playlists, Favorite Videos, Categories and Collections. Each tab accepts only its own item type; duplicates are rejected. See [LIBRARY](docs/LIBRARY.md).
+- **Data Sync** — pull from GitHub and compare **live** local data with GitHub in a summary table (counts plus the items that differ). See [DATA-SYNC](docs/DATA-SYNC.md).
+- **Self-identifying exports** — files carry `exportType`, `version`, `exportedAt`, `source` and `items`. See [EXPORTS](docs/EXPORTS.md).
+- **Notifications** — in-app bottom-right toasts instead of desktop popups.
 
 ## Documentation
-See the bundled `docs/` directory:
+Start at the [documentation index](docs/README.md).
 
-- `ABOUT.md`
-- `LANGUAGE-CATALOG.md`
-- `PROFILE-DATABASE.md`
-- `DATABASE-STRUCTURE.md`
-- `LIBRARY.md`
-- `EXPORTS.md`
-- `REFRESH.md`
-- `DEVELOPMENT.md`
-- `ARCHITECTURE.md`
-- `FEATURES.md`
-- `TARGET-FEED.md`
-- `PRIVACY.md`
-- `TOOLBAR.md`
+| Document | Topic |
+| --- | --- |
+| [ABOUT](docs/ABOUT.md) | What the extension is and is not |
+| [FEATURES](docs/FEATURES.md) | Feature matrix |
+| [ARCHITECTURE](docs/ARCHITECTURE.md) | Runtime parts and data boundaries |
+| [TARGET-FEED](docs/TARGET-FEED.md) | Target Feed engine and mode feeds |
+| [TOOLBAR](docs/TOOLBAR.md) | Floating toolbar |
+| [LANGUAGE-CATALOG](docs/LANGUAGE-CATALOG.md) | 7,910-language master catalog |
+| [PROFILE-DATABASE](docs/PROFILE-DATABASE.md) | Tech, Language Learning and Niches profiles |
+| [DATABASE-STRUCTURE](docs/DATABASE-STRUCTURE.md) | The `database/` folder |
+| [LIBRARY](docs/LIBRARY.md) | YouTube Library |
+| [DATA-SYNC](docs/DATA-SYNC.md) | GitHub pull, live compare and counts |
+| [EXPORTS](docs/EXPORTS.md) | Export and import formats |
+| [REFRESH](docs/REFRESH.md) | Metadata refresh |
+| [PRIVACY](docs/PRIVACY.md) | Privacy |
+| [DEVELOPMENT](docs/DEVELOPMENT.md) | Development and validation |
+| [CODE-STYLE](docs/CODE-STYLE.md) | Formatting and commenting conventions |
 
 ## Privacy / architecture
 No required backend or AI API is needed. Runtime intelligence is local and deterministic. Settings and user library data are stored in Chrome storage. Optional GitHub synchronization remains user-controlled.
 
 ## Version
-**2.0.0** — Charlie MJ YouTube
-
-
-## Niches Mode
-Niches is a dedicated focused-discovery mode with its own HTML manager, JSON profiles, target country, target language, 7,910-language content catalog, import/export/download/refresh/search controls, and a focused YouTube feed. It is independent from Tech and Language Learning.
-
-## 2.0.0 Data Safety & Sync Update — 2026-10-23
-
-Charlie MJ YouTube keeps YouTube Library data type-safe and database sync scoped.
-
-### YouTube Library type safety
-- **Channels** can only receive channel records.
-- **Playlists** can only receive playlist records.
-- **Favorite Videos** can only receive video records and remain backed by the canonical `videos` collection.
-- Importing or adding a different YouTube entity from the wrong Library tab is rejected instead of silently saving it into the wrong database.
-- Duplicate protection remains enabled by default.
-
-### Data Sync
-- **Select Extension Directory** reads only the selected extension's `database/` directory. Non-database extension files are not uploaded or compared.
-- Compare now reports YouTube Library counts for channels, playlists, videos, favorite videos, categories and collections.
-- Compare also reports Tech, Language Learning and Niches profile counts and content/file differences.
-- GitHub Pull restores runtime Library, mode settings and profile snapshots.
-- Prepare for GitHub creates a timestamped ZIP containing only `database/`; Chrome-generated `_metadata/` content is excluded.
-
-### Database Manager
-The YouTube Library section has separate exports for **Channels**, **Playlists** and **Videos** instead of one combined button.
-
-All extension release ZIPs use the format `Charlie-MJ-YouTube-v2.0.0-<timestamp>.zip`.
+**2.0.0** — Charlie MJ YouTube. Release ZIPs are named `Charlie-MJ-YouTube-v2.0.0-<timestamp>.zip`.

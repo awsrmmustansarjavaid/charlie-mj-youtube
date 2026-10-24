@@ -45,28 +45,20 @@
   },
   "content_scripts": [
     {
-      "matches": [
-        "https://www.youtube.com/*"
-      ],
-      "js": [
-        "src/content/youtube-main.js"
-      ],
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["src/content/youtube-main.js"],
       "run_at": "document_start",
       "world": "MAIN"
     },
     {
-      "matches": [
-        "https://www.youtube.com/*"
-      ],
+      "matches": ["https://www.youtube.com/*"],
       "js": [
         "src/content/langdetect.js",
         "src/content/intelligence.js",
         "src/content/youtube.js",
         "src/content/toolbar.js"
       ],
-      "css": [
-        "src/content/youtube.css"
-      ],
+      "css": ["src/content/youtube.css"],
       "run_at": "document_idle"
     }
   ],

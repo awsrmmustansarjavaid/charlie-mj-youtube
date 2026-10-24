@@ -1,6 +1,6 @@
 {
   "version": "2.0.0",
-  "exportedAt": "2026-10-23T17:21:51.948Z",
+  "exportedAt": "2026-10-24T09:17:44.113Z",
   "activeMode": "niches",
   "enabledModes": [
     "niches"
@@ -20,8 +20,10 @@
       "showThreshold": 0
     },
     "languageLearning": {
-      "contentLanguages": [],
-      "country": "GLOBAL",
+      "contentLanguages": [
+        "fr"
+      ],
+      "country": "FR",
       "deprioritizeThreshold": 45,
       "enabled": false,
       "focus": 70,
@@ -37,8 +39,8 @@
         "pronunciation"
       ],
       "hideThreshold": 0,
-      "learningLanguage": "",
-      "profileId": "custom",
+      "learningLanguage": "fr",
+      "profileId": "default",
       "showThreshold": 70
     },
     "niches": {
@@ -49,7 +51,7 @@
       "deprioritizeThreshold": 40,
       "enabled": true,
       "hideThreshold": 0,
-      "profileId": "diy-projects-making",
+      "profileId": "gardening-plants",
       "showThreshold": 65,
       "targetLanguage": "en"
     },
@@ -68,7 +70,7 @@
       "deprioritizeThreshold": 40,
       "enabled": false,
       "hideThreshold": 0,
-      "profileId": "devops",
+      "profileId": "cybersecurity",
       "showThreshold": 65,
       "targetLanguage": "en"
     }

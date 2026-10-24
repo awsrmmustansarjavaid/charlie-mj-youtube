@@ -1,3 +1,5 @@
+[← Main README](../README.md) · [Documentation index](README.md)
+
 # Privacy
 
 The extension stores settings locally with `chrome.storage.local`.
@@ -13,3 +15,6 @@ No claim is made that the extension can access or reproduce YouTube's private re
 ## 2.0.0 Data Boundary Note
 
 Data Sync and database exports operate on the `database/` scope. Runtime YouTube Library and mode/profile snapshots are designed for portable synchronization, while generated Chrome `_metadata/` content is excluded.
+
+---
+[← Main README](../README.md) · [Documentation index](README.md)

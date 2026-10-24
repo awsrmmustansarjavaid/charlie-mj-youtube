@@ -1,3 +1,11 @@
+/**
+ * Lightweight language detector.
+ *
+ * Decides whether a video title is written in a given language using Unicode script
+ * ratios and Latin-language stop-word scoring. Also provides native-language search topics.
+ * Exposed as globalThis.CMJ_LANG = { verdict, topics, hasTopics, scriptOf }.
+ */
+
 (() => {
   // Lightweight language detection + native-language query data for the Target Feed.
   // Works for every language: non-Latin languages by Unicode script, Latin-script
@@ -30,15 +38,63 @@
     Armn: /[԰-֏]/g,
     Hang: /[ᄀ-ᇿ㄰-㆏가-힯]/g,
     Kana: /[぀-ヿㇰ-ㇿ]/g,
-    Hani: /[㐀-䶿一-鿿]/g
+    Hani: /[㐀-䶿一-鿿]/g,
   };
 
   const LANG_SCRIPT = {
-    ar: "Arab", fa: "Arab", ur: "Arab", ps: "Arab", sd: "Arab", ug: "Arab", ckb: "Arab",
-    ru: "Cyrl", uk: "Cyrl", bg: "Cyrl", sr: "Cyrl", mk: "Cyrl", be: "Cyrl", kk: "Cyrl", ky: "Cyrl", mn: "Cyrl", tg: "Cyrl", tt: "Cyrl", ba: "Cyrl", cv: "Cyrl", os: "Cyrl", ce: "Cyrl",
-    hi: "Deva", mr: "Deva", ne: "Deva", sa: "Deva", kok: "Deva", mai: "Deva",
-    bn: "Beng", as: "Beng", gu: "Gujr", pa: "Guru", ta: "Taml", te: "Telu", kn: "Knda", ml: "Mlym", or: "Orya", si: "Sinh",
-    th: "Thai", lo: "Laoo", km: "Khmr", my: "Mymr", ko: "Hang", ja: "Jpan", zh: "Hani", el: "Grek", he: "Hebr", yi: "Hebr", hy: "Armn", ka: "Geor", am: "Ethi", ti: "Ethi", bo: "Tibt"
+    ar: "Arab",
+    fa: "Arab",
+    ur: "Arab",
+    ps: "Arab",
+    sd: "Arab",
+    ug: "Arab",
+    ckb: "Arab",
+    ru: "Cyrl",
+    uk: "Cyrl",
+    bg: "Cyrl",
+    sr: "Cyrl",
+    mk: "Cyrl",
+    be: "Cyrl",
+    kk: "Cyrl",
+    ky: "Cyrl",
+    mn: "Cyrl",
+    tg: "Cyrl",
+    tt: "Cyrl",
+    ba: "Cyrl",
+    cv: "Cyrl",
+    os: "Cyrl",
+    ce: "Cyrl",
+    hi: "Deva",
+    mr: "Deva",
+    ne: "Deva",
+    sa: "Deva",
+    kok: "Deva",
+    mai: "Deva",
+    bn: "Beng",
+    as: "Beng",
+    gu: "Gujr",
+    pa: "Guru",
+    ta: "Taml",
+    te: "Telu",
+    kn: "Knda",
+    ml: "Mlym",
+    or: "Orya",
+    si: "Sinh",
+    th: "Thai",
+    lo: "Laoo",
+    km: "Khmr",
+    my: "Mymr",
+    ko: "Hang",
+    ja: "Jpan",
+    zh: "Hani",
+    el: "Grek",
+    he: "Hebr",
+    yi: "Hebr",
+    hy: "Armn",
+    ka: "Geor",
+    am: "Ethi",
+    ti: "Ethi",
+    bo: "Tibt",
   };
 
   // High-frequency words per Latin-script language (compared after accent stripping).
@@ -63,29 +119,54 @@
     hu: "az es hogy nem egy is van meg de ez volt",
     vi: "va cua la co khong duoc cho mot nhung trong den nguoi",
     sw: "na ya wa kwa ni la za katika hii kuwa",
-    tl: "ang ng sa mga na ay ako ko ito para ano"
+    tl: "ang ng sa mga na ay ako ko ito para ano",
   };
-  const STOP_SETS = Object.fromEntries(Object.entries(STOP).map(([k, v]) => [k, new Set(v.split(" "))]));
+  const STOP_SETS = Object.fromEntries(
+    Object.entries(STOP).map(([k, v]) => [k, new Set(v.split(" "))]),
+  );
   const FAMILY = { id: ["id", "ms"], ms: ["id", "ms"], da: ["da", "no"], no: ["da", "no"] };
 
   // Diacritic fingerprints (checked on the raw, accented text).
   const DIACRITICS = {
-    tr: /[ğışİ]/i, pl: /[ąćęłńśźż]/i, ro: /[ășțşţ]/i, cs: /[ěřůťďň]/i, hu: /[őű]/i,
+    tr: /[ğışİ]/i,
+    pl: /[ąćęłńśźż]/i,
+    ro: /[ășțşţ]/i,
+    cs: /[ěřůťďň]/i,
+    hu: /[őű]/i,
     vi: /[ăđơưạảấầẩẫậắằẳẵặẹẻẽếềểễệỉịọỏốồổỗộớờởỡợụủứừửữựỳỵỷỹ]/i,
-    de: /[ß]/i, es: /[ñ¿¡]/i, pt: /[ãõ]/i, fr: /[œèêëàâùûîï]/i,
-    sv: /[åäö]/i, da: /[åøæ]/i, no: /[åøæ]/i, fi: /[äö]/i
+    de: /[ß]/i,
+    es: /[ñ¿¡]/i,
+    pt: /[ãõ]/i,
+    fr: /[œèêëàâùûîï]/i,
+    sv: /[åäö]/i,
+    da: /[åøæ]/i,
+    no: /[åøæ]/i,
+    fi: /[äö]/i,
   };
 
-  const tokens = text => String(text || "").toLowerCase().normalize("NFKD").replace(/[̀-ͯ]/g, "").split(/[^\p{L}\p{N}]+/u).filter(t => t.length >= 2);
+  const tokens = (text) =>
+    String(text || "")
+      .toLowerCase()
+      .normalize("NFKD")
+      .replace(/[̀-ͯ]/g, "")
+      .split(/[^\p{L}\p{N}]+/u)
+      .filter((t) => t.length >= 2);
 
-  function countMatches(text, re) { const m = text.match(re); return m ? m.length : 0; }
+  /** Count regular-expression matches in text. */
+  function countMatches(text, re) {
+    const m = text.match(re);
+    return m ? m.length : 0;
+  }
 
+  /** Count characters per Unicode script. */
   function scriptCounts(text) {
     const counts = {};
-    for (const [name, re] of Object.entries(SCRIPT_RANGES)) counts[name] = countMatches(text, new RegExp(re.source, "g"));
+    for (const [name, re] of Object.entries(SCRIPT_RANGES))
+      counts[name] = countMatches(text, new RegExp(re.source, "g"));
     return counts;
   }
 
+  /** Score a Latin-script text against the supported Latin languages. */
   function latinScores(text) {
     const toks = tokens(text);
     const scores = {};
@@ -117,15 +198,20 @@
       if (latinRatio < 0.6) return { match: false, reason: "different script" };
       const scores = latinScores(text);
       const family = FAMILY[code] || [code];
-      const own = Math.max(...family.map(l => scores[l] || 0));
-      let bestOther = 0, bestOtherLang = "";
+      const own = Math.max(...family.map((l) => scores[l] || 0));
+      let bestOther = 0,
+        bestOtherLang = "";
       for (const [lang, n] of Object.entries(scores)) {
         if (family.includes(lang)) continue;
-        if (n > bestOther) { bestOther = n; bestOtherLang = lang; }
+        if (n > bestOther) {
+          bestOther = n;
+          bestOtherLang = lang;
+        }
       }
       if (STOP_SETS[code]) {
         if (own >= 1 && own >= bestOther) return { match: true, reason: `${code} words` };
-        if (bestOther >= 1 && bestOther > own) return { match: false, reason: `looks like ${bestOtherLang}` };
+        if (bestOther >= 1 && bestOther > own)
+          return { match: false, reason: `looks like ${bestOtherLang}` };
         return { match: null, reason: "no language words" };
       }
       // Language without a word list: reject only when it is clearly another known language.
@@ -134,33 +220,57 @@
     }
 
     // Japanese / Chinese share Han characters; Kana decides.
-    if (target === "Jpan") return sc.Kana + sc.Hani > 0 && sc.Kana > 0 ? { match: true, reason: "kana" } : { match: false, reason: "no kana" };
+    if (target === "Jpan")
+      return sc.Kana + sc.Hani > 0 && sc.Kana > 0
+        ? { match: true, reason: "kana" }
+        : { match: false, reason: "no kana" };
     if (target === "Hani") {
       if (sc.Kana > 0 || sc.Hang > 0) return { match: false, reason: "kana/hangul present" };
-      return sc.Hani / total >= 0.4 ? { match: true, reason: "han" } : { match: false, reason: "not enough han" };
+      return sc.Hani / total >= 0.4
+        ? { match: true, reason: "han" }
+        : { match: false, reason: "not enough han" };
     }
 
     const own = sc[target] || 0;
     if (own / total < 0.4) return { match: false, reason: "different script" };
     let foreign = 0;
-    for (const [name, n] of Object.entries(sc)) if (name !== target && name !== "Latn") foreign += n;
+    for (const [name, n] of Object.entries(sc))
+      if (name !== target && name !== "Latn") foreign += n;
     if (foreign > own) return { match: false, reason: "other script dominates" };
 
     if (target === "Arab") {
-      const arabicOnly = countMatches(text, /[يكةى]/g);          // ي ك ة ى
+      const arabicOnly = countMatches(text, /[يكةى]/g); // ي ك ة ى
       const persoUrdu = countMatches(text, /[پچژگٹڈڑںےھہکی]/g); // پ چ ژ گ ٹ ڈ ڑ ں ے ھ ہ ک ی
       const urduOnly = countMatches(text, /[ٹڈڑںےھہ]/g);
-      if (code === "ar") return persoUrdu > arabicOnly ? { match: false, reason: "Persian/Urdu letters" } : { match: true, reason: "arabic" };
-      if (code === "ur") return persoUrdu >= arabicOnly && (persoUrdu > 0) ? { match: true, reason: "urdu" } : { match: false, reason: "arabic letters" };
-      if (code === "fa") return persoUrdu > arabicOnly && urduOnly === 0 ? { match: true, reason: "persian" } : { match: false, reason: "not persian" };
+      if (code === "ar")
+        return persoUrdu > arabicOnly
+          ? { match: false, reason: "Persian/Urdu letters" }
+          : { match: true, reason: "arabic" };
+      if (code === "ur")
+        return persoUrdu >= arabicOnly && persoUrdu > 0
+          ? { match: true, reason: "urdu" }
+          : { match: false, reason: "arabic letters" };
+      if (code === "fa")
+        return persoUrdu > arabicOnly && urduOnly === 0
+          ? { match: true, reason: "persian" }
+          : { match: false, reason: "not persian" };
       return { match: true, reason: "arabic script" };
     }
     if (target === "Cyrl") {
       const ukr = countMatches(text, /[іїєґІЇЄҐ]/g);
       const ruOnly = countMatches(text, /[ыэёъЫЭЁ]/g);
-      if (code === "ru") return ukr > 0 ? { match: false, reason: "ukrainian letters" } : { match: true, reason: "cyrillic" };
-      if (code === "uk") return ukr > 0 || ruOnly === 0 ? { match: true, reason: "ukrainian" } : { match: false, reason: "russian letters" };
-      if (code === "bg") return ukr > 0 || countMatches(text, /[ыэё]/g) > 0 ? { match: false, reason: "not bulgarian" } : { match: true, reason: "cyrillic" };
+      if (code === "ru")
+        return ukr > 0
+          ? { match: false, reason: "ukrainian letters" }
+          : { match: true, reason: "cyrillic" };
+      if (code === "uk")
+        return ukr > 0 || ruOnly === 0
+          ? { match: true, reason: "ukrainian" }
+          : { match: false, reason: "russian letters" };
+      if (code === "bg")
+        return ukr > 0 || countMatches(text, /[ыэё]/g) > 0
+          ? { match: false, reason: "not bulgarian" }
+          : { match: true, reason: "cyrillic" };
     }
     return { match: true, reason: `${target} script` };
   }
@@ -201,10 +311,16 @@
     sv: "nyheter|musik|sport|recept|resor|filmer|spel|teknik",
     cs: "zprávy|hudba|sport|recepty|cestování|filmy|hry|technologie",
     hu: "hírek|zene|sport|receptek|utazás|filmek|játékok|technológia",
-    ne: "समाचार|संगीत|खेलकुद|रेसिपी|यात्रा|चलचित्र|खेल|प्रविधि"
+    ne: "समाचार|संगीत|खेलकुद|रेसिपी|यात्रा|चलचित्र|खेल|प्रविधि",
   };
 
-  const topics = code => (TOPICS[String(code || "").toLowerCase()] || "").split("|").filter(Boolean);
+  const topics = (code) =>
+    (TOPICS[String(code || "").toLowerCase()] || "").split("|").filter(Boolean);
 
-  globalThis.CMJ_LANG = { verdict, topics, hasTopics: code => !!TOPICS[String(code || "").toLowerCase()], scriptOf: code => LANG_SCRIPT[String(code || "").toLowerCase()] || "Latn" };
+  globalThis.CMJ_LANG = {
+    verdict,
+    topics,
+    hasTopics: (code) => !!TOPICS[String(code || "").toLowerCase()],
+    scriptOf: (code) => LANG_SCRIPT[String(code || "").toLowerCase()] || "Latn",
+  };
 })();
